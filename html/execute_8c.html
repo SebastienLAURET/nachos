@@ -1,0 +1,474 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>nachos: Référence du fichier bin/execute.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">nachos
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_2ea30aa2956a8db99dd22aa5e597f384.html">bin</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#define-members">Macros</a> &#124;
+<a href="#var-members">Variables</a>  </div>
+  <div class="headertitle">
+<div class="title">Référence du fichier execute.c</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="copyright_8h_source.html">copyright.h</a>&quot;</code><br/>
+<code>#include &lt;stdio.h&gt;</code><br/>
+<code>#include &quot;<a class="el" href="instr_8h_source.html">instr.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="encode_8h_source.html">encode.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="int_8h_source.html">int.h</a>&quot;</code><br/>
+</div><div class="textblock"><div class="dynheader">
+Graphe des dépendances par inclusion de execute.c:</div>
+<div class="dyncontent">
+<div class="center"><img src="execute_8c__incl.png" border="0" usemap="#bin_2execute_8c" alt=""/></div>
+<map name="bin_2execute_8c" id="bin_2execute_8c">
+<area shape="rect" id="node2" href="copyright_8h.html" title="copyright.h" alt="" coords="147,155,240,181"/><area shape="rect" id="node4" href="instr_8h.html" title="instr.h" alt="" coords="115,80,176,107"/><area shape="rect" id="node5" href="encode_8h.html" title="encode.h" alt="" coords="201,80,281,107"/><area shape="rect" id="node6" href="int_8h.html" title="int.h" alt="" coords="307,80,357,107"/></map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a8091c2bcff55cbe0a4a145fd5fb7c22d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="execute_8c.html#a8091c2bcff55cbe0a4a145fd5fb7c22d">FAST</a>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:a8091c2bcff55cbe0a4a145fd5fb7c22d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41f9c5fb8b08eb5dc3edce4dcb37fee7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="execute_8c.html#a41f9c5fb8b08eb5dc3edce4dcb37fee7">true</a>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:a41f9c5fb8b08eb5dc3edce4dcb37fee7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65e9886d74aaee76545e83dd09011727"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="execute_8c.html#a65e9886d74aaee76545e83dd09011727">false</a>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:a65e9886d74aaee76545e83dd09011727"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1bf2067f76720b32f4e37a7a3eb1507"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="execute_8c.html#ab1bf2067f76720b32f4e37a7a3eb1507">b31</a>(z)&#160;&#160;&#160;(((z) &gt;&gt;31 )&amp;0x1)	/* extract bit 31 */</td></tr>
+<tr class="separator:ab1bf2067f76720b32f4e37a7a3eb1507"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe7c0606c8c3a46c0fd0041b1dc1e41a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="execute_8c.html#abe7c0606c8c3a46c0fd0041b1dc1e41a">cc_add</a>(rr, op1, op2)</td></tr>
+<tr class="separator:abe7c0606c8c3a46c0fd0041b1dc1e41a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9bca03373bbcee2ebbc4f6577811d6d4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="execute_8c.html#a9bca03373bbcee2ebbc4f6577811d6d4">cc_sub</a>(rr, op1, op2)</td></tr>
+<tr class="separator:a9bca03373bbcee2ebbc4f6577811d6d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca5e292df88e999d756d028375cc35ab"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="execute_8c.html#aca5e292df88e999d756d028375cc35ab">cc_logic</a>(rr)</td></tr>
+<tr class="separator:aca5e292df88e999d756d028375cc35ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af985d73675946d96ddfe2e9c7084e8a1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="execute_8c.html#af985d73675946d96ddfe2e9c7084e8a1">cc_mulscc</a>(rr, op1, op2)</td></tr>
+<tr class="separator:af985d73675946d96ddfe2e9c7084e8a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc3b05033963c7a33d28a9fc29835b6c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="execute_8c.html#abc3b05033963c7a33d28a9fc29835b6c">NH</a>&#160;&#160;&#160;32</td></tr>
+<tr class="separator:abc3b05033963c7a33d28a9fc29835b6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4d7ec6f9f31fae66711f63fa5c26805"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="execute_8c.html#ae4d7ec6f9f31fae66711f63fa5c26805">NNN</a>&#160;&#160;&#160;33</td></tr>
+<tr class="separator:ae4d7ec6f9f31fae66711f63fa5c26805"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afdad8e3654b5f02ff4c50fcb88f6eed9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="execute_8c.html#afdad8e3654b5f02ff4c50fcb88f6eed9">NNNN</a>&#160;&#160;&#160;(64)</td></tr>
+<tr class="separator:afdad8e3654b5f02ff4c50fcb88f6eed9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:abba2b58d12066c22a7000e0882e8c5bb"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="execute_8c.html#abba2b58d12066c22a7000e0882e8c5bb">mem</a> []</td></tr>
+<tr class="separator:abba2b58d12066c22a7000e0882e8c5bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a231cbc535bda364aa70c8d0617211a65"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="execute_8c.html#a231cbc535bda364aa70c8d0617211a65">TRACE</a></td></tr>
+<tr class="separator:a231cbc535bda364aa70c8d0617211a65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38daff3d696277a81716a8200f659a21"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="execute_8c.html#a38daff3d696277a81716a8200f659a21">Regtrace</a></td></tr>
+<tr class="separator:a38daff3d696277a81716a8200f659a21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f68e5248211a0505dc97d8ac59a0ae5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="execute_8c.html#a6f68e5248211a0505dc97d8ac59a0ae5">Reg</a> [32]</td></tr>
+<tr class="separator:a6f68e5248211a0505dc97d8ac59a0ae5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4692891afb0af53a0c9488c0f8cfc708"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="execute_8c.html#a4692891afb0af53a0c9488c0f8cfc708">HI</a></td></tr>
+<tr class="separator:a4692891afb0af53a0c9488c0f8cfc708"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9192c37abac524f0f61876f8b33f6999"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="execute_8c.html#a9192c37abac524f0f61876f8b33f6999">LO</a></td></tr>
+<tr class="separator:a9192c37abac524f0f61876f8b33f6999"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c795c9d324e98209929e75c3605ebaf"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="execute_8c.html#a5c795c9d324e98209929e75c3605ebaf">numjmpls</a></td></tr>
+<tr class="separator:a5c795c9d324e98209929e75c3605ebaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23f86f71a5c66c42cd4b624e3b9f3c94"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="execute_8c.html#a23f86f71a5c66c42cd4b624e3b9f3c94">arch1cycles</a></td></tr>
+<tr class="separator:a23f86f71a5c66c42cd4b624e3b9f3c94"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Documentation des macros</h2>
+<a class="anchor" id="ab1bf2067f76720b32f4e37a7a3eb1507"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define b31</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">z</td><td>)</td>
+          <td>&#160;&#160;&#160;(((z) &gt;&gt;31 )&amp;0x1)	/* extract bit 31 */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="abe7c0606c8c3a46c0fd0041b1dc1e41a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define cc_add</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">rr, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">op1, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">op2&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Valeur :</b><div class="fragment"><div class="line">N = (rr &lt; 0);   \</div>
+<div class="line">        Z = (rr == 0);  \</div>
+<div class="line">        C = ((unsigned) rr &lt; (<span class="keywordtype">unsigned</span>) op2);   \</div>
+<div class="line">        V = ((op1^op2) &gt;= 0  &amp;&amp;  (op1^rr) &lt; 0);</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="aca5e292df88e999d756d028375cc35ab"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define cc_logic</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">rr</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Valeur :</b><div class="fragment"><div class="line">N = (rr &lt; 0);   \</div>
+<div class="line">        Z = (rr == 0);  \</div>
+<div class="line">        V = 0;  \</div>
+<div class="line">        C = 0;</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="af985d73675946d96ddfe2e9c7084e8a1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define cc_mulscc</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">rr, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">op1, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">op2&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Valeur :</b><div class="fragment"><div class="line">N = (rr &lt; 0);   \</div>
+<div class="line">        Z = (rr == 0);  \</div>
+<div class="line">        V = <a class="code" href="execute_8c.html#ab1bf2067f76720b32f4e37a7a3eb1507">b31</a>((op1 &amp; op2 &amp; ~rr) | (~op1 &amp; ~op2 &amp; rr));        \</div>
+<div class="line">        C = <a class="code" href="execute_8c.html#ab1bf2067f76720b32f4e37a7a3eb1507">b31</a>((op1 &amp; op2) | (~rr &amp; (op1 | op2)));</div>
+<div class="ttc" id="execute_8c_html_ab1bf2067f76720b32f4e37a7a3eb1507"><div class="ttname"><a href="execute_8c.html#ab1bf2067f76720b32f4e37a7a3eb1507">b31</a></div><div class="ttdeci">#define b31(z)</div><div class="ttdef"><b>Definition:</b> execute.c:31</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a9bca03373bbcee2ebbc4f6577811d6d4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define cc_sub</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">rr, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">op1, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">op2&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Valeur :</b><div class="fragment"><div class="line">N = (rr &lt; 0);   \</div>
+<div class="line">        Z = (rr == 0);  \</div>
+<div class="line">        V = <a class="code" href="execute_8c.html#ab1bf2067f76720b32f4e37a7a3eb1507">b31</a>((op1 &amp; ~op2 &amp; ~rr) | (~op1 &amp; op2 &amp; rr));        \</div>
+<div class="line">        C = ((unsigned) op1 &lt; (<span class="keywordtype">unsigned</span>) op2);</div>
+<div class="ttc" id="execute_8c_html_ab1bf2067f76720b32f4e37a7a3eb1507"><div class="ttname"><a href="execute_8c.html#ab1bf2067f76720b32f4e37a7a3eb1507">b31</a></div><div class="ttdeci">#define b31(z)</div><div class="ttdef"><b>Definition:</b> execute.c:31</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a65e9886d74aaee76545e83dd09011727"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define false&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a8091c2bcff55cbe0a4a145fd5fb7c22d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FAST&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="abc3b05033963c7a33d28a9fc29835b6c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NH&#160;&#160;&#160;32</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ae4d7ec6f9f31fae66711f63fa5c26805"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NNN&#160;&#160;&#160;33</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="afdad8e3654b5f02ff4c50fcb88f6eed9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NNNN&#160;&#160;&#160;(64)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a41f9c5fb8b08eb5dc3edce4dcb37fee7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define true&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des variables</h2>
+<a class="anchor" id="a23f86f71a5c66c42cd4b624e3b9f3c94"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int arch1cycles</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4692891afb0af53a0c9488c0f8cfc708"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int HI</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a9192c37abac524f0f61876f8b33f6999"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int LO</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="abba2b58d12066c22a7000e0882e8c5bb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char mem[]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a5c795c9d324e98209929e75c3605ebaf"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int numjmpls</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a6f68e5248211a0505dc97d8ac59a0ae5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Reg[32]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a38daff3d696277a81716a8200f659a21"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Regtrace</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a231cbc535bda364aa70c8d0617211a65"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int TRACE</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Dimanche 12 Février 2017 10:48:15 pour nachos par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.6
+</small></address>
+</body>
+</html>

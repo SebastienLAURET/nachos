@@ -1,0 +1,9 @@
+<map id="AssignNameToSocket" name="AssignNameToSocket">
+<area shape="rect" id="node2" href="$sysdep_8cc.html#ae6e154f3d23907c2f499b54d2d386fc9" title="unlink" alt="" coords="247,5,305,32"/>
+<area shape="rect" id="node3" href="$sysdep_8cc.html#a9465e5e9d8096a8cb70dd8ea8d7dfa8a" title="InitSocketName" alt="" coords="214,56,338,83"/>
+<area shape="rect" id="node5" href="$sysdep_8cc.html#a10f9a6acf254526e09b4d217383d7386" title="bind" alt="" coords="251,107,301,133"/>
+<area shape="rect" id="node6" href="$utility_8cc.html#af1c6878736cbd9e1b531898d8951d613" title="DEBUG" alt="" coords="241,157,311,184"/>
+<area shape="rect" id="node4" href="$disasm_8c.html#add539a5755e4c4070b0c8ca97477fe47" title="strcpy" alt="" coords="419,56,480,83"/>
+<area shape="rect" id="node7" href="$utility_8cc.html#a79c7d1acabdb48f6f6a80ec0abf7cf89" title="DebugIsEnabled" alt="" coords="387,157,512,184"/>
+<area shape="rect" id="node8" href="$stdlib_8h.html#a89c177d1405cf367c2c4874c4449456a" title="strchr" alt="" coords="560,157,619,184"/>
+</map>

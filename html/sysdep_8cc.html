@@ -1,0 +1,1566 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>nachos: Référence du fichier machine/sysdep.cc</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">nachos
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_0909f4a7c39d3e9616c1c9d755842fcb.html">machine</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Fonctions</a>  </div>
+  <div class="headertitle">
+<div class="title">Référence du fichier sysdep.cc</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="copyright_8h_source.html">copyright.h</a>&quot;</code><br/>
+<code>#include &lt;errno.h&gt;</code><br/>
+<code>#include &lt;stdio.h&gt;</code><br/>
+<code>#include &lt;string.h&gt;</code><br/>
+<code>#include &lt;signal.h&gt;</code><br/>
+<code>#include &lt;sys/types.h&gt;</code><br/>
+<code>#include &lt;sys/time.h&gt;</code><br/>
+<code>#include &lt;sys/socket.h&gt;</code><br/>
+<code>#include &lt;sys/file.h&gt;</code><br/>
+<code>#include &lt;sys/un.h&gt;</code><br/>
+<code>#include &lt;sys/mman.h&gt;</code><br/>
+<code>#include &quot;<a class="el" href="interrupt_8h_source.html">interrupt.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="system_8h_source.html">system.h</a>&quot;</code><br/>
+</div><div class="textblock"><div class="dynheader">
+Graphe des dépendances par inclusion de sysdep.cc:</div>
+<div class="dyncontent">
+<div class="center"><img src="sysdep_8cc__incl.png" border="0" usemap="#machine_2sysdep_8cc" alt=""/></div>
+<map name="machine_2sysdep_8cc" id="machine_2sysdep_8cc">
+<area shape="rect" id="node2" href="copyright_8h.html" title="copyright.h" alt="" coords="643,528,736,555"/><area shape="rect" id="node13" href="interrupt_8h.html" title="interrupt.h" alt="" coords="1017,80,1105,107"/><area shape="rect" id="node14" href="system_8h.html" title="system.h" alt="" coords="589,155,669,181"/><area shape="rect" id="node21" href="list_8h.html" title="list.h" alt="" coords="803,304,855,331"/><area shape="rect" id="node15" href="utility_8h.html" title="utility.h" alt="" coords="343,379,409,405"/><area shape="rect" id="node18" href="thread_8h.html" title="thread.h" alt="" coords="459,304,535,331"/><area shape="rect" id="node20" href="scheduler_8h.html" title="scheduler.h" alt="" coords="582,229,676,256"/><area shape="rect" id="node23" href="stats_8h.html" title="stats.h" alt="" coords="848,379,915,405"/><area shape="rect" id="node24" href="timer_8h.html" title="timer.h" alt="" coords="272,304,339,331"/><area shape="rect" id="node25" href="memmgr_8h.html" title="memmgr.h" alt="" coords="464,229,557,256"/><area shape="rect" id="node26" href="swapmgr_8h.html" title="swapmgr.h" alt="" coords="701,229,792,256"/><area shape="rect" id="node27" href="ifdef__symbols_8h.html" title="ifdef_symbols.h" alt="" coords="817,229,937,256"/><area shape="rect" id="node16" href="stdlib_8h.html" title="stdlib.h" alt="" coords="394,453,461,480"/><area shape="rect" id="node17" href="sysdep_8h.html" title="sysdep.h" alt="" coords="189,453,267,480"/><area shape="rect" id="node19" href="defs_8h.html" title="defs.h" alt="" coords="535,379,596,405"/><area shape="rect" id="node22" href="nachos-gdb_8h.html" title="nachos&#45;gdb.h" alt="" coords="669,304,779,331"/></map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:a282c8a42eabdf04f5177d4a88139d0ec"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sysdep_8cc.html#a282c8a42eabdf04f5177d4a88139d0ec">creat</a> (const char *name, unsigned short mode)</td></tr>
+<tr class="separator:a282c8a42eabdf04f5177d4a88139d0ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac843f2e35e60c3bbf1da47d84306f29b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sysdep_8cc.html#ac843f2e35e60c3bbf1da47d84306f29b">open</a> (const char *name, int flags,...)</td></tr>
+<tr class="separator:ac843f2e35e60c3bbf1da47d84306f29b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2aec7b35176e92640714c91ef886f15c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sysdep_8cc.html#a2aec7b35176e92640714c91ef886f15c">select</a> (int numBits, void *readFds, void *writeFds, void *exceptFds, struct timeval *timeout)</td></tr>
+<tr class="separator:a2aec7b35176e92640714c91ef886f15c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6e154f3d23907c2f499b54d2d386fc9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sysdep_8cc.html#ae6e154f3d23907c2f499b54d2d386fc9">unlink</a> (char *name)</td></tr>
+<tr class="separator:ae6e154f3d23907c2f499b54d2d386fc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad69dc0274328d82982430dc65be73623"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sysdep_8cc.html#ad69dc0274328d82982430dc65be73623">read</a> (int filedes, char *buf, int numBytes)</td></tr>
+<tr class="separator:ad69dc0274328d82982430dc65be73623"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a432e107bd9a5102a2b6fe4e8d752ef"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sysdep_8cc.html#a9a432e107bd9a5102a2b6fe4e8d752ef">write</a> (int filedes, char *buf, int numBytes)</td></tr>
+<tr class="separator:a9a432e107bd9a5102a2b6fe4e8d752ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ac81417ea099dcfaa618b46d7fc1ea2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sysdep_8cc.html#a4ac81417ea099dcfaa618b46d7fc1ea2">lseek</a> (int filedes, int offset, int whence)</td></tr>
+<tr class="separator:a4ac81417ea099dcfaa618b46d7fc1ea2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd5fd461185c346576ade864b0cea305"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sysdep_8cc.html#acd5fd461185c346576ade864b0cea305">tell</a> (int filedes)</td></tr>
+<tr class="separator:acd5fd461185c346576ade864b0cea305"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac27bb3145ebeaec9b4661acfd47e4c51"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sysdep_8cc.html#ac27bb3145ebeaec9b4661acfd47e4c51">close</a> (int filedes)</td></tr>
+<tr class="separator:ac27bb3145ebeaec9b4661acfd47e4c51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a210f1bb7dc29a87394a25027e4231004"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sysdep_8cc.html#a210f1bb7dc29a87394a25027e4231004">srand</a> (unsigned seed)</td></tr>
+<tr class="separator:a210f1bb7dc29a87394a25027e4231004"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae23144bcbb8e3742b00eb687c36654d1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sysdep_8cc.html#ae23144bcbb8e3742b00eb687c36654d1">rand</a> (void)</td></tr>
+<tr class="separator:ae23144bcbb8e3742b00eb687c36654d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2035cc6303b152bcae62b88aeb0a1113"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sysdep_8cc.html#a2035cc6303b152bcae62b88aeb0a1113">sleep</a> (unsigned)</td></tr>
+<tr class="separator:a2035cc6303b152bcae62b88aeb0a1113"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac54f53dc342019e8db34f4aa581a5792"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sysdep_8cc.html#ac54f53dc342019e8db34f4aa581a5792">abort</a> ()</td></tr>
+<tr class="separator:ac54f53dc342019e8db34f4aa581a5792"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a358d2e2397ca11ccd17553e3c40e7901"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sysdep_8cc.html#a358d2e2397ca11ccd17553e3c40e7901">exit</a> ()</td></tr>
+<tr class="separator:a358d2e2397ca11ccd17553e3c40e7901"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa519270187f0f6c571726a3c75ac1025"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sysdep_8cc.html#aa519270187f0f6c571726a3c75ac1025">mprotect</a> (char *addr, int len, int prot)</td></tr>
+<tr class="separator:aa519270187f0f6c571726a3c75ac1025"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8757ba7b643ff8279abf9593f543494"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sysdep_8cc.html#ad8757ba7b643ff8279abf9593f543494">socket</a> (int, int, int)</td></tr>
+<tr class="separator:ad8757ba7b643ff8279abf9593f543494"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10f9a6acf254526e09b4d217383d7386"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sysdep_8cc.html#a10f9a6acf254526e09b4d217383d7386">bind</a> (int, const void *, int)</td></tr>
+<tr class="separator:a10f9a6acf254526e09b4d217383d7386"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe6a6510f1a4b2e63b640b6c7ffb9905"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sysdep_8cc.html#afe6a6510f1a4b2e63b640b6c7ffb9905">recvfrom</a> (int, void *, int, int, void *, int *)</td></tr>
+<tr class="separator:afe6a6510f1a4b2e63b640b6c7ffb9905"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5535d888ae2029d4bcb26e947c65bfdc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sysdep_8cc.html#a5535d888ae2029d4bcb26e947c65bfdc">sendto</a> (int, const void *, int, int, void *, int)</td></tr>
+<tr class="separator:a5535d888ae2029d4bcb26e947c65bfdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d54b43fc541aae810be164b449b331a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sysdep_8cc.html#a6d54b43fc541aae810be164b449b331a">PollFile</a> (int fd)</td></tr>
+<tr class="separator:a6d54b43fc541aae810be164b449b331a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68068d69619efab5fe029a00b5114db9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sysdep_8cc.html#a68068d69619efab5fe029a00b5114db9">OpenForWrite</a> (char *name)</td></tr>
+<tr class="separator:a68068d69619efab5fe029a00b5114db9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5cb68486a40540a7a3bd380e15d36d9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sysdep_8cc.html#ab5cb68486a40540a7a3bd380e15d36d9">OpenForReadWrite</a> (char *name, bool crashOnError)</td></tr>
+<tr class="separator:ab5cb68486a40540a7a3bd380e15d36d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e6998f357c2b105b44fbb71fd54afd5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sysdep_8cc.html#a5e6998f357c2b105b44fbb71fd54afd5">Read</a> (int fd, void *buffer, <a class="el" href="stdlib_8h.html#a7c94ea6f8948649f8d181ae55911eeaf">size_t</a> nBytes)</td></tr>
+<tr class="separator:a5e6998f357c2b105b44fbb71fd54afd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af318746bd623cdd12088995045caf66a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sysdep_8cc.html#af318746bd623cdd12088995045caf66a">Write</a> (int fd, void *buffer, <a class="el" href="stdlib_8h.html#a7c94ea6f8948649f8d181ae55911eeaf">size_t</a> nBytes)</td></tr>
+<tr class="separator:af318746bd623cdd12088995045caf66a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63746bed38274bf40016eb8eb90774ea"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sysdep_8cc.html#a63746bed38274bf40016eb8eb90774ea">ReadPartial</a> (int fd, void *buffer, <a class="el" href="stdlib_8h.html#a7c94ea6f8948649f8d181ae55911eeaf">size_t</a> nBytes)</td></tr>
+<tr class="separator:a63746bed38274bf40016eb8eb90774ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a276f8e31e549b44a672e3b1d55951ac0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sysdep_8cc.html#a276f8e31e549b44a672e3b1d55951ac0">WriteFile</a> (int fd, void *buffer, <a class="el" href="stdlib_8h.html#a7c94ea6f8948649f8d181ae55911eeaf">size_t</a> nBytes)</td></tr>
+<tr class="separator:a276f8e31e549b44a672e3b1d55951ac0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e24d90699a8caf5d5ecf0ea461050b4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sysdep_8cc.html#a5e24d90699a8caf5d5ecf0ea461050b4">Lseek</a> (int fd, int offset, int whence)</td></tr>
+<tr class="separator:a5e24d90699a8caf5d5ecf0ea461050b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a031f3b5d904def89e5f0cb71bcd31f91"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sysdep_8cc.html#a031f3b5d904def89e5f0cb71bcd31f91">Tell</a> (int fd)</td></tr>
+<tr class="separator:a031f3b5d904def89e5f0cb71bcd31f91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade6d4842f21ea284e126636e424e6614"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sysdep_8cc.html#ade6d4842f21ea284e126636e424e6614">Close</a> (int fd)</td></tr>
+<tr class="separator:ade6d4842f21ea284e126636e424e6614"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab677eb36a3f9c537674e00ea09c2260"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sysdep_8cc.html#aab677eb36a3f9c537674e00ea09c2260">Unlink</a> (char *name)</td></tr>
+<tr class="separator:aab677eb36a3f9c537674e00ea09c2260"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a776b711cbcad75a385ef20d8cb04a907"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sysdep_8cc.html#a776b711cbcad75a385ef20d8cb04a907">OpenSocket</a> ()</td></tr>
+<tr class="separator:a776b711cbcad75a385ef20d8cb04a907"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f43cc86f59a90746979f53a452a4e0a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sysdep_8cc.html#a0f43cc86f59a90746979f53a452a4e0a">CloseSocket</a> (int sockID)</td></tr>
+<tr class="separator:a0f43cc86f59a90746979f53a452a4e0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9465e5e9d8096a8cb70dd8ea8d7dfa8a"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sysdep_8cc.html#a9465e5e9d8096a8cb70dd8ea8d7dfa8a">InitSocketName</a> (struct sockaddr_un *uname, char *name)</td></tr>
+<tr class="separator:a9465e5e9d8096a8cb70dd8ea8d7dfa8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4825f3e39317fcdec16fb44a93d59320"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sysdep_8cc.html#a4825f3e39317fcdec16fb44a93d59320">AssignNameToSocket</a> (char *socketName, int sockID)</td></tr>
+<tr class="separator:a4825f3e39317fcdec16fb44a93d59320"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad14ac54eb7fd4aa123a0d633650ea198"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sysdep_8cc.html#ad14ac54eb7fd4aa123a0d633650ea198">DeAssignNameToSocket</a> (char *socketName)</td></tr>
+<tr class="separator:ad14ac54eb7fd4aa123a0d633650ea198"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d20b6480716b75b5e1deab47a1f2731"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sysdep_8cc.html#a2d20b6480716b75b5e1deab47a1f2731">PollSocket</a> (int sockID)</td></tr>
+<tr class="separator:a2d20b6480716b75b5e1deab47a1f2731"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a518b36caa5decc1250be9ab742c4d4b7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sysdep_8cc.html#a518b36caa5decc1250be9ab742c4d4b7">ReadFromSocket</a> (int sockID, void *buffer, int packetSize)</td></tr>
+<tr class="separator:a518b36caa5decc1250be9ab742c4d4b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf6ac36662ff2a496b9aa57c15c1b269"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sysdep_8cc.html#acf6ac36662ff2a496b9aa57c15c1b269">SendToSocket</a> (int sockID, const void *buffer, int packetSize, char *toName)</td></tr>
+<tr class="separator:acf6ac36662ff2a496b9aa57c15c1b269"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb2f3e6e1020ef5a3b89a8a870e9ddb1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sysdep_8cc.html#abb2f3e6e1020ef5a3b89a8a870e9ddb1">CallOnUserAbort</a> (<a class="el" href="utility_8h.html#abcdc057086e1b18f5c844742b50d3b93">VoidNoArgFunctionPtr</a> func)</td></tr>
+<tr class="separator:abb2f3e6e1020ef5a3b89a8a870e9ddb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20cfb7568775ef01bd7c43ee8051495c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sysdep_8cc.html#a20cfb7568775ef01bd7c43ee8051495c">Delay</a> (int seconds)</td></tr>
+<tr class="separator:a20cfb7568775ef01bd7c43ee8051495c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12b9283f52eaf7610afe4b04fbca2ff0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sysdep_8cc.html#a12b9283f52eaf7610afe4b04fbca2ff0">Abort</a> ()</td></tr>
+<tr class="separator:a12b9283f52eaf7610afe4b04fbca2ff0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b9ef9330856c5a5a02f2d3ef0497e04"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sysdep_8cc.html#a8b9ef9330856c5a5a02f2d3ef0497e04">Exit</a> (int exitCode)</td></tr>
+<tr class="separator:a8b9ef9330856c5a5a02f2d3ef0497e04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae08b1beb5fa6e506cd63a2637f34e912"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sysdep_8cc.html#ae08b1beb5fa6e506cd63a2637f34e912">RandomInit</a> (unsigned seed)</td></tr>
+<tr class="separator:ae08b1beb5fa6e506cd63a2637f34e912"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac8c6c00a0e52489ecf8e8a6d9eba228"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sysdep_8cc.html#aac8c6c00a0e52489ecf8e8a6d9eba228">Random</a> ()</td></tr>
+<tr class="separator:aac8c6c00a0e52489ecf8e8a6d9eba228"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a183868423241d09c586310b2d5d266c7"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sysdep_8cc.html#a183868423241d09c586310b2d5d266c7">AllocBoundedArray</a> (int size)</td></tr>
+<tr class="separator:a183868423241d09c586310b2d5d266c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa822bb4ab0a638915834056be1393abb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sysdep_8cc.html#aa822bb4ab0a638915834056be1393abb">DeallocBoundedArray</a> (char *ptr, int size)</td></tr>
+<tr class="separator:aa822bb4ab0a638915834056be1393abb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Documentation des fonctions</h2>
+<a class="anchor" id="ac54f53dc342019e8db34f4aa581a5792"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void abort </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a12b9283f52eaf7610afe4b04fbca2ff0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Abort </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="sysdep_8cc_a12b9283f52eaf7610afe4b04fbca2ff0_cgraph.png" border="0" usemap="#sysdep_8cc_a12b9283f52eaf7610afe4b04fbca2ff0_cgraph" alt=""/></div>
+<map name="sysdep_8cc_a12b9283f52eaf7610afe4b04fbca2ff0_cgraph" id="sysdep_8cc_a12b9283f52eaf7610afe4b04fbca2ff0_cgraph">
+<area shape="rect" id="node2" href="sysdep_8cc.html#ac54f53dc342019e8db34f4aa581a5792" title="abort" alt="" coords="112,5,168,32"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a183868423241d09c586310b2d5d266c7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* AllocBoundedArray </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>size</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="sysdep_8cc_a183868423241d09c586310b2d5d266c7_cgraph.png" border="0" usemap="#sysdep_8cc_a183868423241d09c586310b2d5d266c7_cgraph" alt=""/></div>
+<map name="sysdep_8cc_a183868423241d09c586310b2d5d266c7_cgraph" id="sysdep_8cc_a183868423241d09c586310b2d5d266c7_cgraph">
+<area shape="rect" id="node2" href="sysdep_8cc.html#aa519270187f0f6c571726a3c75ac1025" title="mprotect" alt="" coords="198,5,279,32"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a4825f3e39317fcdec16fb44a93d59320"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AssignNameToSocket </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>socketName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>sockID</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="sysdep_8cc_a4825f3e39317fcdec16fb44a93d59320_cgraph.png" border="0" usemap="#sysdep_8cc_a4825f3e39317fcdec16fb44a93d59320_cgraph" alt=""/></div>
+<map name="sysdep_8cc_a4825f3e39317fcdec16fb44a93d59320_cgraph" id="sysdep_8cc_a4825f3e39317fcdec16fb44a93d59320_cgraph">
+<area shape="rect" id="node2" href="sysdep_8cc.html#ae6e154f3d23907c2f499b54d2d386fc9" title="unlink" alt="" coords="247,5,305,32"/><area shape="rect" id="node3" href="sysdep_8cc.html#a9465e5e9d8096a8cb70dd8ea8d7dfa8a" title="InitSocketName" alt="" coords="214,56,338,83"/><area shape="rect" id="node5" href="sysdep_8cc.html#a10f9a6acf254526e09b4d217383d7386" title="bind" alt="" coords="251,107,301,133"/><area shape="rect" id="node6" href="utility_8cc.html#af1c6878736cbd9e1b531898d8951d613" title="DEBUG" alt="" coords="241,157,311,184"/><area shape="rect" id="node4" href="disasm_8c.html#add539a5755e4c4070b0c8ca97477fe47" title="strcpy" alt="" coords="419,56,480,83"/><area shape="rect" id="node7" href="utility_8cc.html#a79c7d1acabdb48f6f6a80ec0abf7cf89" title="DebugIsEnabled" alt="" coords="387,157,512,184"/><area shape="rect" id="node8" href="stdlib_8h.html#a89c177d1405cf367c2c4874c4449456a" title="strchr" alt="" coords="560,157,619,184"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a10f9a6acf254526e09b4d217383d7386"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int bind </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="abb2f3e6e1020ef5a3b89a8a870e9ddb1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CallOnUserAbort </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="utility_8h.html#abcdc057086e1b18f5c844742b50d3b93">VoidNoArgFunctionPtr</a>&#160;</td>
+          <td class="paramname"><em>func</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ac27bb3145ebeaec9b4661acfd47e4c51"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int close </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>filedes</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ade6d4842f21ea284e126636e424e6614"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Close </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>fd</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="sysdep_8cc_ade6d4842f21ea284e126636e424e6614_cgraph.png" border="0" usemap="#sysdep_8cc_ade6d4842f21ea284e126636e424e6614_cgraph" alt=""/></div>
+<map name="sysdep_8cc_ade6d4842f21ea284e126636e424e6614_cgraph" id="sysdep_8cc_ade6d4842f21ea284e126636e424e6614_cgraph">
+<area shape="rect" id="node2" href="sysdep_8cc.html#ac27bb3145ebeaec9b4661acfd47e4c51" title="close" alt="" coords="113,5,167,32"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a0f43cc86f59a90746979f53a452a4e0a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CloseSocket </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>sockID</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="sysdep_8cc_a0f43cc86f59a90746979f53a452a4e0a_cgraph.png" border="0" usemap="#sysdep_8cc_a0f43cc86f59a90746979f53a452a4e0a_cgraph" alt=""/></div>
+<map name="sysdep_8cc_a0f43cc86f59a90746979f53a452a4e0a_cgraph" id="sysdep_8cc_a0f43cc86f59a90746979f53a452a4e0a_cgraph">
+<area shape="rect" id="node2" href="sysdep_8cc.html#ac27bb3145ebeaec9b4661acfd47e4c51" title="close" alt="" coords="155,5,210,32"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a282c8a42eabdf04f5177d4a88139d0ec"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int creat </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned short&#160;</td>
+          <td class="paramname"><em>mode</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa822bb4ab0a638915834056be1393abb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DeallocBoundedArray </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>ptr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="sysdep_8cc_aa822bb4ab0a638915834056be1393abb_cgraph.png" border="0" usemap="#sysdep_8cc_aa822bb4ab0a638915834056be1393abb_cgraph" alt=""/></div>
+<map name="sysdep_8cc_aa822bb4ab0a638915834056be1393abb_cgraph" id="sysdep_8cc_aa822bb4ab0a638915834056be1393abb_cgraph">
+<area shape="rect" id="node2" href="sysdep_8cc.html#aa519270187f0f6c571726a3c75ac1025" title="mprotect" alt="" coords="214,5,295,32"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ad14ac54eb7fd4aa123a0d633650ea198"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DeAssignNameToSocket </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>socketName</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="sysdep_8cc_ad14ac54eb7fd4aa123a0d633650ea198_cgraph.png" border="0" usemap="#sysdep_8cc_ad14ac54eb7fd4aa123a0d633650ea198_cgraph" alt=""/></div>
+<map name="sysdep_8cc_ad14ac54eb7fd4aa123a0d633650ea198_cgraph" id="sysdep_8cc_ad14ac54eb7fd4aa123a0d633650ea198_cgraph">
+<area shape="rect" id="node2" href="sysdep_8cc.html#ae6e154f3d23907c2f499b54d2d386fc9" title="unlink" alt="" coords="232,5,291,32"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a20cfb7568775ef01bd7c43ee8051495c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Delay </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>seconds</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="sysdep_8cc_a20cfb7568775ef01bd7c43ee8051495c_cgraph.png" border="0" usemap="#sysdep_8cc_a20cfb7568775ef01bd7c43ee8051495c_cgraph" alt=""/></div>
+<map name="sysdep_8cc_a20cfb7568775ef01bd7c43ee8051495c_cgraph" id="sysdep_8cc_a20cfb7568775ef01bd7c43ee8051495c_cgraph">
+<area shape="rect" id="node2" href="sysdep_8cc.html#a2035cc6303b152bcae62b88aeb0a1113" title="sleep" alt="" coords="112,5,168,32"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a358d2e2397ca11ccd17553e3c40e7901"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void exit </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a8b9ef9330856c5a5a02f2d3ef0497e04"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Exit </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>exitCode</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="sysdep_8cc_a8b9ef9330856c5a5a02f2d3ef0497e04_cgraph.png" border="0" usemap="#sysdep_8cc_a8b9ef9330856c5a5a02f2d3ef0497e04_cgraph" alt=""/></div>
+<map name="sysdep_8cc_a8b9ef9330856c5a5a02f2d3ef0497e04_cgraph" id="sysdep_8cc_a8b9ef9330856c5a5a02f2d3ef0497e04_cgraph">
+<area shape="rect" id="node2" href="sysdep_8cc.html#a358d2e2397ca11ccd17553e3c40e7901" title="exit" alt="" coords="99,5,144,32"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a9465e5e9d8096a8cb70dd8ea8d7dfa8a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void InitSocketName </td>
+          <td>(</td>
+          <td class="paramtype">struct sockaddr_un *&#160;</td>
+          <td class="paramname"><em>uname</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="sysdep_8cc_a9465e5e9d8096a8cb70dd8ea8d7dfa8a_cgraph.png" border="0" usemap="#sysdep_8cc_a9465e5e9d8096a8cb70dd8ea8d7dfa8a_cgraph" alt=""/></div>
+<map name="sysdep_8cc_a9465e5e9d8096a8cb70dd8ea8d7dfa8a_cgraph" id="sysdep_8cc_a9465e5e9d8096a8cb70dd8ea8d7dfa8a_cgraph">
+<area shape="rect" id="node2" href="disasm_8c.html#add539a5755e4c4070b0c8ca97477fe47" title="strcpy" alt="" coords="179,5,240,32"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a4ac81417ea099dcfaa618b46d7fc1ea2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int lseek </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>filedes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>offset</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>whence</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a5e24d90699a8caf5d5ecf0ea461050b4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Lseek </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>fd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>offset</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>whence</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="sysdep_8cc_a5e24d90699a8caf5d5ecf0ea461050b4_cgraph.png" border="0" usemap="#sysdep_8cc_a5e24d90699a8caf5d5ecf0ea461050b4_cgraph" alt=""/></div>
+<map name="sysdep_8cc_a5e24d90699a8caf5d5ecf0ea461050b4_cgraph" id="sysdep_8cc_a5e24d90699a8caf5d5ecf0ea461050b4_cgraph">
+<area shape="rect" id="node2" href="sysdep_8cc.html#a4ac81417ea099dcfaa618b46d7fc1ea2" title="lseek" alt="" coords="113,5,167,32"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aa519270187f0f6c571726a3c75ac1025"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int mprotect </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>addr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>prot</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ac843f2e35e60c3bbf1da47d84306f29b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int open </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>flags</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab5cb68486a40540a7a3bd380e15d36d9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int OpenForReadWrite </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>crashOnError</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="sysdep_8cc_ab5cb68486a40540a7a3bd380e15d36d9_cgraph.png" border="0" usemap="#sysdep_8cc_ab5cb68486a40540a7a3bd380e15d36d9_cgraph" alt=""/></div>
+<map name="sysdep_8cc_ab5cb68486a40540a7a3bd380e15d36d9_cgraph" id="sysdep_8cc_ab5cb68486a40540a7a3bd380e15d36d9_cgraph">
+<area shape="rect" id="node2" href="sysdep_8cc.html#ac843f2e35e60c3bbf1da47d84306f29b" title="open" alt="" coords="193,5,247,32"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a68068d69619efab5fe029a00b5114db9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int OpenForWrite </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="sysdep_8cc_a68068d69619efab5fe029a00b5114db9_cgraph.png" border="0" usemap="#sysdep_8cc_a68068d69619efab5fe029a00b5114db9_cgraph" alt=""/></div>
+<map name="sysdep_8cc_a68068d69619efab5fe029a00b5114db9_cgraph" id="sysdep_8cc_a68068d69619efab5fe029a00b5114db9_cgraph">
+<area shape="rect" id="node2" href="sysdep_8cc.html#ac843f2e35e60c3bbf1da47d84306f29b" title="open" alt="" coords="161,5,215,32"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a776b711cbcad75a385ef20d8cb04a907"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int OpenSocket </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="sysdep_8cc_a776b711cbcad75a385ef20d8cb04a907_cgraph.png" border="0" usemap="#sysdep_8cc_a776b711cbcad75a385ef20d8cb04a907_cgraph" alt=""/></div>
+<map name="sysdep_8cc_a776b711cbcad75a385ef20d8cb04a907_cgraph" id="sysdep_8cc_a776b711cbcad75a385ef20d8cb04a907_cgraph">
+<area shape="rect" id="node2" href="sysdep_8cc.html#ad8757ba7b643ff8279abf9593f543494" title="socket" alt="" coords="155,5,219,32"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a6d54b43fc541aae810be164b449b331a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool PollFile </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>fd</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="sysdep_8cc_a6d54b43fc541aae810be164b449b331a_cgraph.png" border="0" usemap="#sysdep_8cc_a6d54b43fc541aae810be164b449b331a_cgraph" alt=""/></div>
+<map name="sysdep_8cc_a6d54b43fc541aae810be164b449b331a_cgraph" id="sysdep_8cc_a6d54b43fc541aae810be164b449b331a_cgraph">
+<area shape="rect" id="node2" href="classInterrupt.html#a6b240d463c36d4dcb18c444d4f71b778" title="Interrupt::getStatus" alt="" coords="118,5,266,32"/><area shape="rect" id="node3" href="sysdep_8cc.html#a2aec7b35176e92640714c91ef886f15c" title="select" alt="" coords="162,56,222,83"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a2d20b6480716b75b5e1deab47a1f2731"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool PollSocket </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>sockID</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="sysdep_8cc_a2d20b6480716b75b5e1deab47a1f2731_cgraph.png" border="0" usemap="#sysdep_8cc_a2d20b6480716b75b5e1deab47a1f2731_cgraph" alt=""/></div>
+<map name="sysdep_8cc_a2d20b6480716b75b5e1deab47a1f2731_cgraph" id="sysdep_8cc_a2d20b6480716b75b5e1deab47a1f2731_cgraph">
+<area shape="rect" id="node2" href="sysdep_8cc.html#a6d54b43fc541aae810be164b449b331a" title="PollFile" alt="" coords="141,31,205,57"/><area shape="rect" id="node3" href="classInterrupt.html#a6b240d463c36d4dcb18c444d4f71b778" title="Interrupt::getStatus" alt="" coords="254,5,402,32"/><area shape="rect" id="node4" href="sysdep_8cc.html#a2aec7b35176e92640714c91ef886f15c" title="select" alt="" coords="298,56,358,83"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ae23144bcbb8e3742b00eb687c36654d1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int rand </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aac8c6c00a0e52489ecf8e8a6d9eba228"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Random </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="sysdep_8cc_aac8c6c00a0e52489ecf8e8a6d9eba228_cgraph.png" border="0" usemap="#sysdep_8cc_aac8c6c00a0e52489ecf8e8a6d9eba228_cgraph" alt=""/></div>
+<map name="sysdep_8cc_aac8c6c00a0e52489ecf8e8a6d9eba228_cgraph" id="sysdep_8cc_aac8c6c00a0e52489ecf8e8a6d9eba228_cgraph">
+<area shape="rect" id="node2" href="sysdep_8cc.html#ae23144bcbb8e3742b00eb687c36654d1" title="rand" alt="" coords="128,5,179,32"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ae08b1beb5fa6e506cd63a2637f34e912"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RandomInit </td>
+          <td>(</td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>seed</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="sysdep_8cc_ae08b1beb5fa6e506cd63a2637f34e912_cgraph.png" border="0" usemap="#sysdep_8cc_ae08b1beb5fa6e506cd63a2637f34e912_cgraph" alt=""/></div>
+<map name="sysdep_8cc_ae08b1beb5fa6e506cd63a2637f34e912_cgraph" id="sysdep_8cc_ae08b1beb5fa6e506cd63a2637f34e912_cgraph">
+<area shape="rect" id="node2" href="sysdep_8cc.html#a210f1bb7dc29a87394a25027e4231004" title="srand" alt="" coords="149,5,208,32"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ad69dc0274328d82982430dc65be73623"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int read </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>filedes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>buf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>numBytes</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a5e6998f357c2b105b44fbb71fd54afd5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Read </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>fd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="stdlib_8h.html#a7c94ea6f8948649f8d181ae55911eeaf">size_t</a>&#160;</td>
+          <td class="paramname"><em>nBytes</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="sysdep_8cc_a5e6998f357c2b105b44fbb71fd54afd5_cgraph.png" border="0" usemap="#sysdep_8cc_a5e6998f357c2b105b44fbb71fd54afd5_cgraph" alt=""/></div>
+<map name="sysdep_8cc_a5e6998f357c2b105b44fbb71fd54afd5_cgraph" id="sysdep_8cc_a5e6998f357c2b105b44fbb71fd54afd5_cgraph">
+<area shape="rect" id="node2" href="sysdep_8cc.html#ad69dc0274328d82982430dc65be73623" title="read" alt="" coords="107,5,157,32"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a518b36caa5decc1250be9ab742c4d4b7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ReadFromSocket </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>sockID</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>packetSize</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="sysdep_8cc_a518b36caa5decc1250be9ab742c4d4b7_cgraph.png" border="0" usemap="#sysdep_8cc_a518b36caa5decc1250be9ab742c4d4b7_cgraph" alt=""/></div>
+<map name="sysdep_8cc_a518b36caa5decc1250be9ab742c4d4b7_cgraph" id="sysdep_8cc_a518b36caa5decc1250be9ab742c4d4b7_cgraph">
+<area shape="rect" id="node2" href="sysdep_8cc.html#afe6a6510f1a4b2e63b640b6c7ffb9905" title="recvfrom" alt="" coords="185,31,263,57"/><area shape="rect" id="node3" href="perror_8h.html#a01a54ddbbc6ab18e4853ba0427329aca" title="perror" alt="" coords="193,81,255,108"/><area shape="rect" id="node4" href="disasm_8c.html#add539a5755e4c4070b0c8ca97477fe47" title="strcpy" alt="" coords="312,5,373,32"/><area shape="rect" id="node5" href="stdlib_8h.html#a8908188ae9fc2f05d993257ef001d553" title="strcat" alt="" coords="313,56,372,83"/><area shape="rect" id="node6" href="sysdep_8cc.html#af318746bd623cdd12088995045caf66a" title="Write" alt="" coords="316,107,369,133"/><area shape="rect" id="node8" href="stdlib_8h.html#a40c47e6d6db2b268cf91d16f2b66ca79" title="strlen" alt="" coords="313,157,372,184"/><area shape="rect" id="node7" href="sysdep_8cc.html#a9a432e107bd9a5102a2b6fe4e8d752ef" title="write" alt="" coords="422,107,474,133"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a63746bed38274bf40016eb8eb90774ea"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ReadPartial </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>fd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="stdlib_8h.html#a7c94ea6f8948649f8d181ae55911eeaf">size_t</a>&#160;</td>
+          <td class="paramname"><em>nBytes</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="sysdep_8cc_a63746bed38274bf40016eb8eb90774ea_cgraph.png" border="0" usemap="#sysdep_8cc_a63746bed38274bf40016eb8eb90774ea_cgraph" alt=""/></div>
+<map name="sysdep_8cc_a63746bed38274bf40016eb8eb90774ea_cgraph" id="sysdep_8cc_a63746bed38274bf40016eb8eb90774ea_cgraph">
+<area shape="rect" id="node2" href="sysdep_8cc.html#ad69dc0274328d82982430dc65be73623" title="read" alt="" coords="147,5,197,32"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="afe6a6510f1a4b2e63b640b6c7ffb9905"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int recvfrom </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a2aec7b35176e92640714c91ef886f15c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int select </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>numBits</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>readFds</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>writeFds</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>exceptFds</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct timeval *&#160;</td>
+          <td class="paramname"><em>timeout</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a5535d888ae2029d4bcb26e947c65bfdc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int sendto </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="acf6ac36662ff2a496b9aa57c15c1b269"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SendToSocket </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>sockID</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>packetSize</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>toName</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="sysdep_8cc_acf6ac36662ff2a496b9aa57c15c1b269_cgraph.png" border="0" usemap="#sysdep_8cc_acf6ac36662ff2a496b9aa57c15c1b269_cgraph" alt=""/></div>
+<map name="sysdep_8cc_acf6ac36662ff2a496b9aa57c15c1b269_cgraph" id="sysdep_8cc_acf6ac36662ff2a496b9aa57c15c1b269_cgraph">
+<area shape="rect" id="node2" href="sysdep_8cc.html#a9465e5e9d8096a8cb70dd8ea8d7dfa8a" title="InitSocketName" alt="" coords="166,5,290,32"/><area shape="rect" id="node4" href="sysdep_8cc.html#a5535d888ae2029d4bcb26e947c65bfdc" title="sendto" alt="" coords="195,56,261,83"/><area shape="rect" id="node3" href="disasm_8c.html#add539a5755e4c4070b0c8ca97477fe47" title="strcpy" alt="" coords="339,5,400,32"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a2035cc6303b152bcae62b88aeb0a1113"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned sleep </td>
+          <td>(</td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad8757ba7b643ff8279abf9593f543494"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int socket </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a210f1bb7dc29a87394a25027e4231004"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void srand </td>
+          <td>(</td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>seed</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="acd5fd461185c346576ade864b0cea305"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int tell </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>filedes</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a031f3b5d904def89e5f0cb71bcd31f91"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Tell </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>fd</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="sysdep_8cc_a031f3b5d904def89e5f0cb71bcd31f91_cgraph.png" border="0" usemap="#sysdep_8cc_a031f3b5d904def89e5f0cb71bcd31f91_cgraph" alt=""/></div>
+<map name="sysdep_8cc_a031f3b5d904def89e5f0cb71bcd31f91_cgraph" id="sysdep_8cc_a031f3b5d904def89e5f0cb71bcd31f91_cgraph">
+<area shape="rect" id="node2" href="sysdep_8cc.html#a4ac81417ea099dcfaa618b46d7fc1ea2" title="lseek" alt="" coords="97,5,151,32"/><area shape="rect" id="node3" href="sysdep_8cc.html#acd5fd461185c346576ade864b0cea305" title="tell" alt="" coords="103,56,145,83"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ae6e154f3d23907c2f499b54d2d386fc9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int unlink </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aab677eb36a3f9c537674e00ea09c2260"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Unlink </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="sysdep_8cc_aab677eb36a3f9c537674e00ea09c2260_cgraph.png" border="0" usemap="#sysdep_8cc_aab677eb36a3f9c537674e00ea09c2260_cgraph" alt=""/></div>
+<map name="sysdep_8cc_aab677eb36a3f9c537674e00ea09c2260_cgraph" id="sysdep_8cc_aab677eb36a3f9c537674e00ea09c2260_cgraph">
+<area shape="rect" id="node2" href="sysdep_8cc.html#ae6e154f3d23907c2f499b54d2d386fc9" title="unlink" alt="" coords="115,5,173,32"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a9a432e107bd9a5102a2b6fe4e8d752ef"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int write </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>filedes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>buf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>numBytes</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af318746bd623cdd12088995045caf66a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Write </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>fd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="stdlib_8h.html#a7c94ea6f8948649f8d181ae55911eeaf">size_t</a>&#160;</td>
+          <td class="paramname"><em>nBytes</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="sysdep_8cc_af318746bd623cdd12088995045caf66a_cgraph.png" border="0" usemap="#sysdep_8cc_af318746bd623cdd12088995045caf66a_cgraph" alt=""/></div>
+<map name="sysdep_8cc_af318746bd623cdd12088995045caf66a_cgraph" id="sysdep_8cc_af318746bd623cdd12088995045caf66a_cgraph">
+<area shape="rect" id="node2" href="sysdep_8cc.html#a9a432e107bd9a5102a2b6fe4e8d752ef" title="write" alt="" coords="107,5,159,32"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a276f8e31e549b44a672e3b1d55951ac0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void WriteFile </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>fd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="stdlib_8h.html#a7c94ea6f8948649f8d181ae55911eeaf">size_t</a>&#160;</td>
+          <td class="paramname"><em>nBytes</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="sysdep_8cc_a276f8e31e549b44a672e3b1d55951ac0_cgraph.png" border="0" usemap="#sysdep_8cc_a276f8e31e549b44a672e3b1d55951ac0_cgraph" alt=""/></div>
+<map name="sysdep_8cc_a276f8e31e549b44a672e3b1d55951ac0_cgraph" id="sysdep_8cc_a276f8e31e549b44a672e3b1d55951ac0_cgraph">
+<area shape="rect" id="node2" href="sysdep_8cc.html#a9a432e107bd9a5102a2b6fe4e8d752ef" title="write" alt="" coords="129,5,181,32"/></map>
+</div>
+</p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Dimanche 12 Février 2017 10:48:15 pour nachos par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.6
+</small></address>
+</body>
+</html>

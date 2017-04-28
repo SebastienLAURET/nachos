@@ -1,0 +1,638 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>nachos: Référence du fichier bin/out.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">nachos
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_2ea30aa2956a8db99dd22aa5e597f384.html">bin</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#define-members">Macros</a> &#124;
+<a href="#func-members">Fonctions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
+  <div class="headertitle">
+<div class="title">Référence du fichier out.c</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="copyright_8h_source.html">copyright.h</a>&quot;</code><br/>
+<code>#include &lt;<a class="el" href="filehdr_8h_source.html">filehdr.h</a>&gt;</code><br/>
+<code>#include &lt;aouthdr.h&gt;</code><br/>
+<code>#include &lt;scnhdr.h&gt;</code><br/>
+<code>#include &lt;reloc.h&gt;</code><br/>
+<code>#include &lt;syms.h&gt;</code><br/>
+<code>#include &lt;stdio.h&gt;</code><br/>
+<code>#include &lt;varargs.h&gt;</code><br/>
+<code>#include &quot;<a class="el" href="d_8c.html">d.c</a>&quot;</code><br/>
+</div><div class="textblock"><div class="dynheader">
+Graphe des dépendances par inclusion de out.c:</div>
+<div class="dyncontent">
+<div class="center"><img src="out_8c__incl.png" border="0" usemap="#bin_2out_8c" alt=""/></div>
+<map name="bin_2out_8c" id="bin_2out_8c">
+<area shape="rect" id="node2" href="copyright_8h.html" title="copyright.h" alt="" coords="305,453,398,480"/><area shape="rect" id="node3" href="filehdr_8h.html" title="filehdr.h" alt="" coords="452,80,524,107"/><area shape="rect" id="node17" href="d_8c.html" title="d.c" alt="" coords="54,304,94,331"/><area shape="rect" id="node4" href="disk_8h.html" title="disk.h" alt="" coords="432,229,490,256"/><area shape="rect" id="node10" href="bitmap_8h.html" title="bitmap.h" alt="" coords="302,155,380,181"/><area shape="rect" id="node5" href="utility_8h.html" title="utility.h" alt="" coords="366,304,433,331"/><area shape="rect" id="node6" href="stdlib_8h.html" title="stdlib.h" alt="" coords="318,379,385,405"/><area shape="rect" id="node7" href="sysdep_8h.html" title="sysdep.h" alt="" coords="616,379,694,405"/><area shape="rect" id="node11" href="openfile_8h.html" title="../filesys/openfile.h" alt="" coords="218,229,357,256"/><area shape="rect" id="node18" href="instr_8h.html" title="instr.h" alt="" coords="24,379,85,405"/><area shape="rect" id="node19" href="encode_8h.html" title="encode.h" alt="" coords="110,379,190,405"/></map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdata.html">data</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a34b04bd23b07b485921a728ad0805ac4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="out_8c.html#a34b04bd23b07b485921a728ad0805ac4">MAIN</a></td></tr>
+<tr class="separator:a34b04bd23b07b485921a728ad0805ac4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c0ae844fa0a735ca9f1323a2bd25213"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="out_8c.html#a9c0ae844fa0a735ca9f1323a2bd25213">read_struct</a>(f, s)&#160;&#160;&#160;(fread(&amp;s,sizeof(s),1,f)==1)</td></tr>
+<tr class="separator:a9c0ae844fa0a735ca9f1323a2bd25213"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a926b405638c6ec47d673824649b826df"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="out_8c.html#a926b405638c6ec47d673824649b826df">MAXRELOCS</a>&#160;&#160;&#160;1000</td></tr>
+<tr class="separator:a926b405638c6ec47d673824649b826df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7e715c270481406658bbd2bafa2897f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="out_8c.html#ae7e715c270481406658bbd2bafa2897f">MAXDATA</a>&#160;&#160;&#160;10000</td></tr>
+<tr class="separator:ae7e715c270481406658bbd2bafa2897f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b755fa4590b197a11b1ffc07e5d3987"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="out_8c.html#a5b755fa4590b197a11b1ffc07e5d3987">MAXSCNS</a>&#160;&#160;&#160;10</td></tr>
+<tr class="separator:a5b755fa4590b197a11b1ffc07e5d3987"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8390bee79d08f80714582166875688d9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="out_8c.html#a8390bee79d08f80714582166875688d9">MAXSYMS</a>&#160;&#160;&#160;300</td></tr>
+<tr class="separator:a8390bee79d08f80714582166875688d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba35211207b9c0553e9f96f95a12c91a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="out_8c.html#aba35211207b9c0553e9f96f95a12c91a">MAXSSPACE</a>&#160;&#160;&#160;20000</td></tr>
+<tr class="separator:aba35211207b9c0553e9f96f95a12c91a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3cb9f0894fab1c8fbb0753c9c7c2a8d9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="out_8c.html#a3cb9f0894fab1c8fbb0753c9c7c2a8d9">printf</a>&#160;&#160;&#160;<a class="el" href="out_8c.html#a7fbd5c2baa1ecaad49a15b71b5a55e26">myprintf</a></td></tr>
+<tr class="separator:a3cb9f0894fab1c8fbb0753c9c7c2a8d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:a0708a0954f39ecdc7aa901286295ad01"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="out_8c.html#a0708a0954f39ecdc7aa901286295ad01">main</a> (int argc, argv)</td></tr>
+<tr class="separator:a0708a0954f39ecdc7aa901286295ad01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7fbd5c2baa1ecaad49a15b71b5a55e26"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="out_8c.html#a7fbd5c2baa1ecaad49a15b71b5a55e26">myprintf</a> (va_alist)</td></tr>
+<tr class="separator:a7fbd5c2baa1ecaad49a15b71b5a55e26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b642eef81ba91afb05c6b0aab11ac8a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="out_8c.html#a0b642eef81ba91afb05c6b0aab11ac8a">mytab</a> (int n)</td></tr>
+<tr class="separator:a0b642eef81ba91afb05c6b0aab11ac8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ea7d7b3177363379c7f08e929a0e8a0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="out_8c.html#a0ea7d7b3177363379c7f08e929a0e8a0">mysetfile</a> (FILE *f)</td></tr>
+<tr class="separator:a0ea7d7b3177363379c7f08e929a0e8a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3d08edb94a949a6be417a2eab6054c2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="out_8c.html#ac3d08edb94a949a6be417a2eab6054c2">print_section</a> (int i)</td></tr>
+<tr class="separator:ac3d08edb94a949a6be417a2eab6054c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19adb410075d5b04b266a754d4506e45"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="out_8c.html#a19adb410075d5b04b266a754d4506e45">print_reloc</a> (vaddr, int i, int j)</td></tr>
+<tr class="separator:a19adb410075d5b04b266a754d4506e45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:ae2cad495c9185256f6ee5155593c3dc4"><td class="memItemLeft" align="right" valign="top">struct filehdr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="out_8c.html#ae2cad495c9185256f6ee5155593c3dc4">filehdr</a></td></tr>
+<tr class="separator:ae2cad495c9185256f6ee5155593c3dc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a0b0cf7e410b15145ca78d844d23587"><td class="memItemLeft" align="right" valign="top">struct aouthdr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="out_8c.html#a2a0b0cf7e410b15145ca78d844d23587">aouthdr</a></td></tr>
+<tr class="separator:a2a0b0cf7e410b15145ca78d844d23587"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d2d0976dbb2fb5fc8af48e030416b2d"><td class="memItemLeft" align="right" valign="top">struct scnhdr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="out_8c.html#a1d2d0976dbb2fb5fc8af48e030416b2d">scnhdr</a> [<a class="el" href="out_8c.html#a5b755fa4590b197a11b1ffc07e5d3987">MAXSCNS</a>]</td></tr>
+<tr class="separator:a1d2d0976dbb2fb5fc8af48e030416b2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab91b75e9b6dbaa62440ee2eafac9fccd"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structdata.html">data</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="out_8c.html#ab91b75e9b6dbaa62440ee2eafac9fccd">section</a> [<a class="el" href="out_8c.html#a5b755fa4590b197a11b1ffc07e5d3987">MAXSCNS</a>]</td></tr>
+<tr class="separator:ab91b75e9b6dbaa62440ee2eafac9fccd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57180dec46147996607b066d5bc013cf"><td class="memItemLeft" align="right" valign="top">HDRR&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="out_8c.html#a57180dec46147996607b066d5bc013cf">symhdr</a></td></tr>
+<tr class="separator:a57180dec46147996607b066d5bc013cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a554b3d27c80146901a0e4e77eabccebc"><td class="memItemLeft" align="right" valign="top">EXTR&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="out_8c.html#a554b3d27c80146901a0e4e77eabccebc">symbols</a> [<a class="el" href="out_8c.html#a8390bee79d08f80714582166875688d9">MAXSYMS</a>]</td></tr>
+<tr class="separator:a554b3d27c80146901a0e4e77eabccebc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abfdfdd25fce66a953708f5e983be050c"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="out_8c.html#abfdfdd25fce66a953708f5e983be050c">sspace</a> [20000]</td></tr>
+<tr class="separator:abfdfdd25fce66a953708f5e983be050c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c3abc4fe141ab1bc5522d724df03c81"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="out_8c.html#a5c3abc4fe141ab1bc5522d724df03c81">symbol_type</a> []</td></tr>
+<tr class="separator:a5c3abc4fe141ab1bc5522d724df03c81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97b4f36407c7aeeee031bd65ef0d990d"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="out_8c.html#a97b4f36407c7aeeee031bd65ef0d990d">storage_class</a> []</td></tr>
+<tr class="separator:a97b4f36407c7aeeee031bd65ef0d990d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae78e6e11a40e6dba1bae097358f97d15"><td class="memItemLeft" align="right" valign="top">static&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="out_8c.html#ae78e6e11a40e6dba1bae097358f97d15">column</a> = 1</td></tr>
+<tr class="separator:ae78e6e11a40e6dba1bae097358f97d15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae581849c67336453bd5b81e6518019a9"><td class="memItemLeft" align="right" valign="top">static FILE *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="out_8c.html#ae581849c67336453bd5b81e6518019a9">outfile</a> = stdout</td></tr>
+<tr class="separator:ae581849c67336453bd5b81e6518019a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5da7e486ce50ec0a857d2e17794de15"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="out_8c.html#ad5da7e486ce50ec0a857d2e17794de15">section_name</a> []</td></tr>
+<tr class="separator:ad5da7e486ce50ec0a857d2e17794de15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ef7cba993bb6e3daa67c9121cd60d21"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="out_8c.html#a5ef7cba993bb6e3daa67c9121cd60d21">reloc_type</a> []</td></tr>
+<tr class="separator:a5ef7cba993bb6e3daa67c9121cd60d21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Documentation des macros</h2>
+<a class="anchor" id="a34b04bd23b07b485921a728ad0805ac4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAIN</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ae7e715c270481406658bbd2bafa2897f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAXDATA&#160;&#160;&#160;10000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a926b405638c6ec47d673824649b826df"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAXRELOCS&#160;&#160;&#160;1000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a5b755fa4590b197a11b1ffc07e5d3987"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAXSCNS&#160;&#160;&#160;10</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aba35211207b9c0553e9f96f95a12c91a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAXSSPACE&#160;&#160;&#160;20000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a8390bee79d08f80714582166875688d9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAXSYMS&#160;&#160;&#160;300</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a3cb9f0894fab1c8fbb0753c9c7c2a8d9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define printf&#160;&#160;&#160;<a class="el" href="out_8c.html#a7fbd5c2baa1ecaad49a15b71b5a55e26">myprintf</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a9c0ae844fa0a735ca9f1323a2bd25213"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define read_struct</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">f, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">s&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;(fread(&amp;s,sizeof(s),1,f)==1)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des fonctions</h2>
+<a class="anchor" id="a0708a0954f39ecdc7aa901286295ad01"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">main </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>argc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">argv&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="out_8c_a0708a0954f39ecdc7aa901286295ad01_cgraph.png" border="0" usemap="#out_8c_a0708a0954f39ecdc7aa901286295ad01_cgraph" alt=""/></div>
+<map name="out_8c_a0708a0954f39ecdc7aa901286295ad01_cgraph" id="out_8c_a0708a0954f39ecdc7aa901286295ad01_cgraph">
+<area shape="rect" id="node2" href="perror_8h.html#a01a54ddbbc6ab18e4853ba0427329aca" title="perror" alt="" coords="131,107,192,133"/><area shape="rect" id="node8" href="sysdep_8cc.html#a358d2e2397ca11ccd17553e3c40e7901" title="exit" alt="" coords="139,259,184,285"/><area shape="rect" id="node9" href="out_8c.html#ac3d08edb94a949a6be417a2eab6054c2" title="print_section" alt="" coords="109,309,213,336"/><area shape="rect" id="node14" href="out_8c.html#a0b642eef81ba91afb05c6b0aab11ac8a" title="mytab" alt="" coords="406,385,469,412"/><area shape="rect" id="node15" href="out_8c.html#a7fbd5c2baa1ecaad49a15b71b5a55e26" title="myprintf" alt="" coords="124,461,199,488"/><area shape="rect" id="node3" href="disasm_8c.html#add539a5755e4c4070b0c8ca97477fe47" title="strcpy" alt="" coords="279,5,340,32"/><area shape="rect" id="node4" href="stdlib_8h.html#a8908188ae9fc2f05d993257ef001d553" title="strcat" alt="" coords="280,56,339,83"/><area shape="rect" id="node5" href="sysdep_8cc.html#af318746bd623cdd12088995045caf66a" title="Write" alt="" coords="283,107,336,133"/><area shape="rect" id="node7" href="stdlib_8h.html#a40c47e6d6db2b268cf91d16f2b66ca79" title="strlen" alt="" coords="280,157,339,184"/><area shape="rect" id="node6" href="sysdep_8cc.html#a9a432e107bd9a5102a2b6fe4e8d752ef" title="write" alt="" coords="411,107,463,133"/><area shape="rect" id="node10" href="stdlib_8h.html#a07f4a84c11c106e95c32b6ab509346ef" title="strncmp" alt="" coords="272,208,347,235"/><area shape="rect" id="node11" href="structdata.html#ac96c6a0d863da21a72539ed46f1bf2d1" title="data::data" alt="" coords="265,259,353,285"/><area shape="rect" id="node12" href="d_8c.html#ab3f938c83709a52c0e84a06466a7dacc" title="dump_ascii" alt="" coords="262,309,357,336"/><area shape="rect" id="node13" href="out_8c.html#a19adb410075d5b04b266a754d4506e45" title="print_reloc" alt="" coords="265,360,354,387"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a7fbd5c2baa1ecaad49a15b71b5a55e26"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">myprintf </td>
+          <td>(</td>
+          <td class="paramtype">va_alist&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a0ea7d7b3177363379c7f08e929a0e8a0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">mysetfile </td>
+          <td>(</td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>f</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a0b642eef81ba91afb05c6b0aab11ac8a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">mytab </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a19adb410075d5b04b266a754d4506e45"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">print_reloc </td>
+          <td>(</td>
+          <td class="paramtype">vaddr&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>i</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>j</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="out_8c_a19adb410075d5b04b266a754d4506e45_cgraph.png" border="0" usemap="#out_8c_a19adb410075d5b04b266a754d4506e45_cgraph" alt=""/></div>
+<map name="out_8c_a19adb410075d5b04b266a754d4506e45_cgraph" id="out_8c_a19adb410075d5b04b266a754d4506e45_cgraph">
+<area shape="rect" id="node2" href="out_8c.html#a0b642eef81ba91afb05c6b0aab11ac8a" title="mytab" alt="" coords="145,5,207,32"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ac3d08edb94a949a6be417a2eab6054c2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">print_section </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>i</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="out_8c_ac3d08edb94a949a6be417a2eab6054c2_cgraph.png" border="0" usemap="#out_8c_ac3d08edb94a949a6be417a2eab6054c2_cgraph" alt=""/></div>
+<map name="out_8c_ac3d08edb94a949a6be417a2eab6054c2_cgraph" id="out_8c_ac3d08edb94a949a6be417a2eab6054c2_cgraph">
+<area shape="rect" id="node2" href="stdlib_8h.html#a07f4a84c11c106e95c32b6ab509346ef" title="strncmp" alt="" coords="168,5,243,32"/><area shape="rect" id="node3" href="structdata.html#ac96c6a0d863da21a72539ed46f1bf2d1" title="data::data" alt="" coords="161,56,249,83"/><area shape="rect" id="node4" href="d_8c.html#ab3f938c83709a52c0e84a06466a7dacc" title="dump_ascii" alt="" coords="158,107,253,133"/><area shape="rect" id="node5" href="out_8c.html#a19adb410075d5b04b266a754d4506e45" title="print_reloc" alt="" coords="161,157,250,184"/><area shape="rect" id="node6" href="out_8c.html#a0b642eef81ba91afb05c6b0aab11ac8a" title="mytab" alt="" coords="302,157,365,184"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des variables</h2>
+<a class="anchor" id="a2a0b0cf7e410b15145ca78d844d23587"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct aouthdr aouthdr</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ae78e6e11a40e6dba1bae097358f97d15"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">column = 1</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ae2cad495c9185256f6ee5155593c3dc4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct filehdr filehdr</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ae581849c67336453bd5b81e6518019a9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">FILE* outfile = stdout</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a5ef7cba993bb6e3daa67c9121cd60d21"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* reloc_type[]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Valeur initiale :</b><div class="fragment"><div class="line">= {</div>
+<div class="line">  <span class="stringliteral">&quot;abs&quot;</span>, <span class="stringliteral">&quot;16&quot;</span>, <span class="stringliteral">&quot;32&quot;</span>, <span class="stringliteral">&quot;26&quot;</span>, <span class="stringliteral">&quot;hi16&quot;</span>, <span class="stringliteral">&quot;lo16&quot;</span>, <span class="stringliteral">&quot;gpdata&quot;</span>, <span class="stringliteral">&quot;gplit&quot;</span></div>
+<div class="line">}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a1d2d0976dbb2fb5fc8af48e030416b2d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct scnhdr scnhdr[<a class="el" href="out_8c.html#a5b755fa4590b197a11b1ffc07e5d3987">MAXSCNS</a>]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab91b75e9b6dbaa62440ee2eafac9fccd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structdata.html">data</a> section[<a class="el" href="out_8c.html#a5b755fa4590b197a11b1ffc07e5d3987">MAXSCNS</a>]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad5da7e486ce50ec0a857d2e17794de15"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* section_name[]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Valeur initiale :</b><div class="fragment"><div class="line">= {</div>
+<div class="line">  <span class="stringliteral">&quot;(null)&quot;</span>, <span class="stringliteral">&quot;.text&quot;</span>, <span class="stringliteral">&quot;.rdata&quot;</span>, <span class="stringliteral">&quot;.data&quot;</span>, <span class="stringliteral">&quot;.sdata&quot;</span>, <span class="stringliteral">&quot;.sbss&quot;</span>, <span class="stringliteral">&quot;.bss&quot;</span>,</div>
+<div class="line">  <span class="stringliteral">&quot;.init&quot;</span>, <span class="stringliteral">&quot;.lit8&quot;</span>, <span class="stringliteral">&quot;.lit4&quot;</span></div>
+<div class="line">}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="abfdfdd25fce66a953708f5e983be050c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char sspace[20000]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a97b4f36407c7aeeee031bd65ef0d990d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* storage_class[]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Valeur initiale :</b><div class="fragment"><div class="line">= {</div>
+<div class="line">  <span class="stringliteral">&quot;Nil&quot;</span>, <span class="stringliteral">&quot;Text&quot;</span>, <span class="stringliteral">&quot;Data&quot;</span>, <span class="stringliteral">&quot;Bss&quot;</span>, <span class="stringliteral">&quot;Register&quot;</span>, <span class="stringliteral">&quot;Abs&quot;</span>, <span class="stringliteral">&quot;Undefined&quot;</span>, <span class="stringliteral">&quot;CdbLocal&quot;</span>,</div>
+<div class="line">  <span class="stringliteral">&quot;Bits&quot;</span>, <span class="stringliteral">&quot;CdbSystem&quot;</span>, <span class="stringliteral">&quot;RegImage&quot;</span>, <span class="stringliteral">&quot;Info&quot;</span>, <span class="stringliteral">&quot;UserStruct&quot;</span>, <span class="stringliteral">&quot;SData&quot;</span>, <span class="stringliteral">&quot;SBss&quot;</span>,</div>
+<div class="line">  <span class="stringliteral">&quot;RData&quot;</span>, <span class="stringliteral">&quot;Var&quot;</span>, <span class="stringliteral">&quot;Common&quot;</span>, <span class="stringliteral">&quot;SCommon&quot;</span>, <span class="stringliteral">&quot;VarRegister&quot;</span>, <span class="stringliteral">&quot;Variant&quot;</span>, <span class="stringliteral">&quot;SUndefined&quot;</span>,</div>
+<div class="line">  <span class="stringliteral">&quot;Init&quot;</span> }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a5c3abc4fe141ab1bc5522d724df03c81"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* symbol_type[]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Valeur initiale :</b><div class="fragment"><div class="line">= {</div>
+<div class="line">  <span class="stringliteral">&quot;Nil&quot;</span>, <span class="stringliteral">&quot;Global&quot;</span>, <span class="stringliteral">&quot;Static&quot;</span>, <span class="stringliteral">&quot;Param&quot;</span>, <span class="stringliteral">&quot;Local&quot;</span>, <span class="stringliteral">&quot;Label&quot;</span>, <span class="stringliteral">&quot;Proc&quot;</span>, <span class="stringliteral">&quot;Block&quot;</span>,</div>
+<div class="line">  <span class="stringliteral">&quot;End&quot;</span>, <span class="stringliteral">&quot;Member&quot;</span>, <span class="stringliteral">&quot;Type&quot;</span>, <span class="stringliteral">&quot;File&quot;</span>, <span class="stringliteral">&quot;Register&quot;</span>, <span class="stringliteral">&quot;Forward&quot;</span>, <span class="stringliteral">&quot;StaticProc&quot;</span>,</div>
+<div class="line">  <span class="stringliteral">&quot;Constant&quot;</span> }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a554b3d27c80146901a0e4e77eabccebc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">EXTR symbols[<a class="el" href="out_8c.html#a8390bee79d08f80714582166875688d9">MAXSYMS</a>]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a57180dec46147996607b066d5bc013cf"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">HDRR symhdr</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Dimanche 12 Février 2017 10:48:15 pour nachos par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.6
+</small></address>
+</body>
+</html>

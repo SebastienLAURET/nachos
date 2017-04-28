@@ -1,0 +1,253 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>nachos:  Fichier source de userprog/syscall.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">nachos
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_1d382e90aafd8fa5d2a2b6b84b51ddb5.html">userprog</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">syscall.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="syscall_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* syscalls.h </span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> *      Nachos system call interface.  These are Nachos kernel operations</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *      that can be invoked from user programs, by trapping to the kernel</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *      via the &quot;syscall&quot; instruction.</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> *      This file is included by user programs and by the Nachos kernel. </span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> * Copyright (c) 1992-1993 The Regents of the University of California.</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> * All rights reserved.  See copyright.h for copyright notice and limitation </span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> * of liability and disclaimer of warranty provisions.</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#ifndef SYSCALLS_H</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define SYSCALLS_H</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="copyright_8h.html">copyright.h</a>&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#ifndef SYSCALL_CHANGE</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &quot;<a class="code" href="syscallnumbers_8h.html">syscallnumbers.h</a>&quot;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">//SYSCALL_CHANGE -- removed the redundant #define constants</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#if !defined(IN_ASM) &amp;&amp; !defined(IN_KERNEL)</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">/* The system call interface.  These are the operations the Nachos</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"> * kernel needs to support, to be able to run user programs.</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"> * Each of these is invoked by a user program by simply calling the </span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment"> * procedure; an assembly language stub stuffs the system call code</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment"> * into a register, and traps to the kernel.  The kernel procedures</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment"> * are then invoked in the Nachos kernel, after appropriate error checking, </span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment"> * from the system call entry point in exception.cc.</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">/* Stop Nachos, and print out performance stats */</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keywordtype">void</span> <a class="code" href="syscall_8h.html#a246a11d9ff324ac13351f57415a49975">Halt</a>();            </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">/* Address space control operations: Exit, Exec, and Wait */</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">/* This user program is done (status = 0 means exited normally). */</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keywordtype">void</span> <a class="code" href="syscall_8h.html#a47add669f22e7ffcaf4e4e11f7e5356d">Exit</a>(<span class="keywordtype">int</span> status);  </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">/* A unique identifier for an executing user program (address space) */</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="syscall_8h.html#a0d7b57338da8eaa1439b8ce24cebcc2e">   44</a></span>&#160;<span class="keyword">typedef</span> <span class="keywordtype">int</span> <a class="code" href="syscall_8h.html#a0d7b57338da8eaa1439b8ce24cebcc2e">SpaceId</a>;    </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">/* Run the executable, stored in the Nachos file &quot;name&quot;, and return the </span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment"> * address space identifier</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<a class="code" href="syscall_8h.html#a0d7b57338da8eaa1439b8ce24cebcc2e">SpaceId</a> <a class="code" href="syscall_8h.html#a77e32c8b33b8e14ce90c52091c6f6a10">Exec</a>(<span class="keywordtype">char</span> *name);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">/* Only return once the the user program &quot;id&quot; has finished.  </span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment"> * Return the exit status.</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keywordtype">int</span> <a class="code" href="syscall_8h.html#afe61d9e0d071fcb9c1b266891a02db14">Wait</a> (<span class="keywordtype">int</span> *exitval);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">/* File system operations: Create, Open, Read, Write, Close</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment"> * These functions are patterned after UNIX -- files represent</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment"> * both files *and* hardware I/O devices.</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment"> * If this assignment is done before doing the file system assignment,</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment"> * note that the Nachos file system has a stub implementation, which</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment"> * will work for the purposes of testing out these routines.</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">/* A unique identifier for an open Nachos file. */</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="syscall_8h.html#a1c839ae85ec69dfc198200d9835aa71c">   67</a></span>&#160;<span class="keyword">typedef</span> <span class="keywordtype">int</span> <a class="code" href="syscall_8h.html#a1c839ae85ec69dfc198200d9835aa71c">OpenFileId</a>; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment">/* when an address space starts up, it has two open files, representing </span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment"> * keyboard input and display output (in UNIX terms, stdin and stdout).</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment"> * Read and Write can be used directly on these, without first opening</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment"> * the console device.</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="syscall_8h.html#ac919ccdc41cc51f8fab726b5baa3f9a5">   75</a></span>&#160;<span class="preprocessor">#define ConsoleInput    0  </span></div>
+<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="syscall_8h.html#a7596d7df6f0cd8b5c7c526fab77c00c5">   76</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ConsoleOutput   1  </span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="preprocessor"></span> </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment">/* Create a Nachos file, with &quot;name&quot; */</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="keywordtype">void</span> <a class="code" href="syscall_8h.html#a20418f34291576da23f809efc95dd2da">Create</a>(<span class="keywordtype">char</span> *name);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="comment">/* Open the Nachos file &quot;name&quot;, and return an &quot;OpenFileId&quot; that can </span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="comment"> * be used to read and write to the file.</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<a class="code" href="syscall_8h.html#a1c839ae85ec69dfc198200d9835aa71c">OpenFileId</a> <a class="code" href="syscall_8h.html#a18d0c136ba886f2e4f2545d2ef9c32c2">Open</a>(<span class="keywordtype">char</span> *name);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="comment">/* Write &quot;size&quot; bytes from &quot;buffer&quot; to the open file. */</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="keywordtype">int</span> <a class="code" href="syscall_8h.html#ad25ec54119b1ba58ffa52cda27c29455">Write</a>(<a class="code" href="syscall_8h.html#a1c839ae85ec69dfc198200d9835aa71c">OpenFileId</a> <span class="keywordtype">id</span>, <span class="keyword">const</span> <span class="keywordtype">void</span> *buffer, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> size);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="comment">/* Read &quot;size&quot; bytes from the open file into &quot;buffer&quot;.  </span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="comment"> * Return the number of bytes actually read -- if the open file isn&#39;t</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="comment"> * long enough, or if it is an I/O device, and there aren&#39;t enough </span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="comment"> * characters to read, return whatever is available (for I/O devices, </span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="comment"> * you should always wait until you can return at least one character).</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="keywordtype">int</span> <a class="code" href="syscall_8h.html#ad5ce025ef3b5cbf45c7c9123efc43931">Read</a>(<a class="code" href="syscall_8h.html#a1c839ae85ec69dfc198200d9835aa71c">OpenFileId</a> <span class="keywordtype">id</span>, <span class="keywordtype">void</span> *buffer, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> size);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="comment">/* Close the file, we&#39;re done reading and writing to it. */</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="keywordtype">void</span> <a class="code" href="syscall_8h.html#aab320702cbe4fbc5e27c277bb734401e">Close</a>(<a class="code" href="syscall_8h.html#a1c839ae85ec69dfc198200d9835aa71c">OpenFileId</a> <span class="keywordtype">id</span>);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="comment">/* Delete a file */</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="keywordtype">int</span> <a class="code" href="syscall_8h.html#a2e5960f8d4778b63170e5c5a7674f041">Unlink</a> (<span class="keywordtype">char</span> *<a class="code" href="disasm_8c.html#aa9a76d9571bf39c3d168d222f931ff86">filename</a>);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="comment">/* User-level thread operations: Fork and Yield.  To allow multiple</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="comment"> * threads to run within a user program. </span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="comment">/* Fork a thread to run a procedure (&quot;func&quot;) in the *same* address space </span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="comment"> * as the current thread.</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="keywordtype">int</span> <a class="code" href="syscall_8h.html#a277afb8d7315aba1dc9a9f0d748448a7">Fork</a>();</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="comment">/* Yield the CPU to another runnable thread, whether in this address space </span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="comment"> * or not. </span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="keywordtype">void</span> <a class="code" href="syscall_8h.html#af1c0e21e0767ef32cb1a785ed610e839">Yield</a>();           </div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="comment"> * Get the Process ID of the current process</span></div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="keywordtype">int</span> <a class="code" href="syscall_8h.html#a2f6a68cbae17734baace2e37f7c8c081">GetPID</a>();</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="comment"> * Get the Process ID of the parent of the current process</span></div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="keywordtype">int</span> <a class="code" href="syscall_8h.html#a99cd96480b37b684649807aa1fd0cfcf">GetPPID</a>();</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="comment"> * Set the priority of the process</span></div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;<span class="keywordtype">int</span> <a class="code" href="syscall_8h.html#a818e8417186cba4612bf44a566b400d7">Nice</a> (<span class="keywordtype">int</span> inc);</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* IN_ASM */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif </span><span class="comment">/* SYSCALL_CHANGE */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif </span><span class="comment">/* SYSCALL_H */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="disasm_8c_html_aa9a76d9571bf39c3d168d222f931ff86"><div class="ttname"><a href="disasm_8c.html#aa9a76d9571bf39c3d168d222f931ff86">filename</a></div><div class="ttdeci">static char filename[1000]</div><div class="ttdef"><b>Definition:</b> disasm.c:22</div></div>
+<div class="ttc" id="syscall_8h_html_af1c0e21e0767ef32cb1a785ed610e839"><div class="ttname"><a href="syscall_8h.html#af1c0e21e0767ef32cb1a785ed610e839">Yield</a></div><div class="ttdeci">void Yield()</div></div>
+<div class="ttc" id="syscall_8h_html_afe61d9e0d071fcb9c1b266891a02db14"><div class="ttname"><a href="syscall_8h.html#afe61d9e0d071fcb9c1b266891a02db14">Wait</a></div><div class="ttdeci">int Wait(int *exitval)</div></div>
+<div class="ttc" id="syscall_8h_html_a246a11d9ff324ac13351f57415a49975"><div class="ttname"><a href="syscall_8h.html#a246a11d9ff324ac13351f57415a49975">Halt</a></div><div class="ttdeci">void Halt()</div></div>
+<div class="ttc" id="syscall_8h_html_a2f6a68cbae17734baace2e37f7c8c081"><div class="ttname"><a href="syscall_8h.html#a2f6a68cbae17734baace2e37f7c8c081">GetPID</a></div><div class="ttdeci">int GetPID()</div></div>
+<div class="ttc" id="syscall_8h_html_a1c839ae85ec69dfc198200d9835aa71c"><div class="ttname"><a href="syscall_8h.html#a1c839ae85ec69dfc198200d9835aa71c">OpenFileId</a></div><div class="ttdeci">int OpenFileId</div><div class="ttdef"><b>Definition:</b> syscall.h:67</div></div>
+<div class="ttc" id="syscall_8h_html_ad25ec54119b1ba58ffa52cda27c29455"><div class="ttname"><a href="syscall_8h.html#ad25ec54119b1ba58ffa52cda27c29455">Write</a></div><div class="ttdeci">int Write(OpenFileId id, const void *buffer, unsigned int size)</div></div>
+<div class="ttc" id="syscall_8h_html_a99cd96480b37b684649807aa1fd0cfcf"><div class="ttname"><a href="syscall_8h.html#a99cd96480b37b684649807aa1fd0cfcf">GetPPID</a></div><div class="ttdeci">int GetPPID()</div></div>
+<div class="ttc" id="syscall_8h_html_a18d0c136ba886f2e4f2545d2ef9c32c2"><div class="ttname"><a href="syscall_8h.html#a18d0c136ba886f2e4f2545d2ef9c32c2">Open</a></div><div class="ttdeci">OpenFileId Open(char *name)</div></div>
+<div class="ttc" id="syscallnumbers_8h_html"><div class="ttname"><a href="syscallnumbers_8h.html">syscallnumbers.h</a></div></div>
+<div class="ttc" id="syscall_8h_html_a2e5960f8d4778b63170e5c5a7674f041"><div class="ttname"><a href="syscall_8h.html#a2e5960f8d4778b63170e5c5a7674f041">Unlink</a></div><div class="ttdeci">int Unlink(char *filename)</div><div class="ttdef"><b>Definition:</b> sysdep.cc:281</div></div>
+<div class="ttc" id="syscall_8h_html_a47add669f22e7ffcaf4e4e11f7e5356d"><div class="ttname"><a href="syscall_8h.html#a47add669f22e7ffcaf4e4e11f7e5356d">Exit</a></div><div class="ttdeci">void Exit(int status)</div><div class="ttdef"><b>Definition:</b> sysdep.cc:450</div></div>
+<div class="ttc" id="syscall_8h_html_a77e32c8b33b8e14ce90c52091c6f6a10"><div class="ttname"><a href="syscall_8h.html#a77e32c8b33b8e14ce90c52091c6f6a10">Exec</a></div><div class="ttdeci">SpaceId Exec(char *name)</div></div>
+<div class="ttc" id="syscall_8h_html_aab320702cbe4fbc5e27c277bb734401e"><div class="ttname"><a href="syscall_8h.html#aab320702cbe4fbc5e27c277bb734401e">Close</a></div><div class="ttdeci">void Close(OpenFileId id)</div><div class="ttdef"><b>Definition:</b> sysdep.cc:269</div></div>
+<div class="ttc" id="syscall_8h_html_a20418f34291576da23f809efc95dd2da"><div class="ttname"><a href="syscall_8h.html#a20418f34291576da23f809efc95dd2da">Create</a></div><div class="ttdeci">void Create(char *name)</div></div>
+<div class="ttc" id="syscall_8h_html_a277afb8d7315aba1dc9a9f0d748448a7"><div class="ttname"><a href="syscall_8h.html#a277afb8d7315aba1dc9a9f0d748448a7">Fork</a></div><div class="ttdeci">int Fork()</div></div>
+<div class="ttc" id="syscall_8h_html_ad5ce025ef3b5cbf45c7c9123efc43931"><div class="ttname"><a href="syscall_8h.html#ad5ce025ef3b5cbf45c7c9123efc43931">Read</a></div><div class="ttdeci">int Read(OpenFileId id, void *buffer, unsigned int size)</div><div class="ttdef"><b>Definition:</b> sysdep.cc:187</div></div>
+<div class="ttc" id="syscall_8h_html_a0d7b57338da8eaa1439b8ce24cebcc2e"><div class="ttname"><a href="syscall_8h.html#a0d7b57338da8eaa1439b8ce24cebcc2e">SpaceId</a></div><div class="ttdeci">int SpaceId</div><div class="ttdef"><b>Definition:</b> syscall.h:44</div></div>
+<div class="ttc" id="syscall_8h_html_a818e8417186cba4612bf44a566b400d7"><div class="ttname"><a href="syscall_8h.html#a818e8417186cba4612bf44a566b400d7">Nice</a></div><div class="ttdeci">int Nice(int inc)</div></div>
+<div class="ttc" id="copyright_8h_html"><div class="ttname"><a href="copyright_8h.html">copyright.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Dimanche 12 Février 2017 10:48:15 pour nachos par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.6
+</small></address>
+</body>
+</html>

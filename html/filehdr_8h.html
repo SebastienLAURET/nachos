@@ -1,0 +1,158 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>nachos: Référence du fichier filesys/filehdr.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">nachos
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_386a01e8c60160d2cb79aec927decd2f.html">filesys</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#define-members">Macros</a>  </div>
+  <div class="headertitle">
+<div class="title">Référence du fichier filehdr.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="copyright_8h_source.html">copyright.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="disk_8h_source.html">disk.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="bitmap_8h_source.html">bitmap.h</a>&quot;</code><br/>
+</div><div class="textblock"><div class="dynheader">
+Graphe des dépendances par inclusion de filehdr.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="filehdr_8h__incl.png" border="0" usemap="#filesys_2filehdr_8h" alt=""/></div>
+<map name="filesys_2filehdr_8h" id="filesys_2filehdr_8h">
+<area shape="rect" id="node2" href="copyright_8h.html" title="copyright.h" alt="" coords="120,379,213,405"/><area shape="rect" id="node3" href="disk_8h.html" title="disk.h" alt="" coords="307,155,365,181"/><area shape="rect" id="node9" href="bitmap_8h.html" title="bitmap.h" alt="" coords="123,80,201,107"/><area shape="rect" id="node4" href="utility_8h.html" title="utility.h" alt="" coords="231,229,297,256"/><area shape="rect" id="node5" href="stdlib_8h.html" title="stdlib.h" alt="" coords="230,304,297,331"/><area shape="rect" id="node6" href="sysdep_8h.html" title="sysdep.h" alt="" coords="374,304,452,331"/><area shape="rect" id="node10" href="openfile_8h.html" title="../filesys/openfile.h" alt="" coords="93,155,232,181"/></map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier :</div>
+<div class="dyncontent">
+<div class="center"><img src="filehdr_8h__dep__incl.png" border="0" usemap="#filesys_2filehdr_8hdep" alt=""/></div>
+<map name="filesys_2filehdr_8hdep" id="filesys_2filehdr_8hdep">
+<area shape="rect" id="node2" href="disasm_8c.html" title="bin/disasm.c" alt="" coords="5,80,107,107"/><area shape="rect" id="node3" href="main_8c.html" title="bin/main.c" alt="" coords="132,80,220,107"/><area shape="rect" id="node4" href="out_8c.html" title="bin/out.c" alt="" coords="244,80,321,107"/><area shape="rect" id="node5" href="directory_8cc.html" title="filesys/directory.cc" alt="" coords="346,80,483,107"/><area shape="rect" id="node6" href="filehdr_8cc.html" title="filesys/filehdr.cc" alt="" coords="507,80,628,107"/><area shape="rect" id="node7" href="filesys_8cc.html" title="filesys/filesys.cc" alt="" coords="653,80,776,107"/><area shape="rect" id="node8" href="openfile_8cc.html" title="filesys/openfile.cc" alt="" coords="800,80,933,107"/></map>
+</div>
+</div>
+<p><a href="filehdr_8h_source.html">Aller au code source de ce fichier.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFileHeader.html">FileHeader</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a193693ecec4f818d8270c659139e3961"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="filehdr_8h.html#a193693ecec4f818d8270c659139e3961">NumDirect</a>&#160;&#160;&#160;((<a class="el" href="disk_8h.html#ac729b32bca4535899ef2ee58b6a13d68">SectorSize</a> - 2 * sizeof(int)) / sizeof(int))</td></tr>
+<tr class="separator:a193693ecec4f818d8270c659139e3961"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69b573417babb57474d05562283742b6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="filehdr_8h.html#a69b573417babb57474d05562283742b6">MaxFileSize</a>&#160;&#160;&#160;(<a class="el" href="filehdr_8h.html#a193693ecec4f818d8270c659139e3961">NumDirect</a> * <a class="el" href="disk_8h.html#ac729b32bca4535899ef2ee58b6a13d68">SectorSize</a>)</td></tr>
+<tr class="separator:a69b573417babb57474d05562283742b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Documentation des macros</h2>
+<a class="anchor" id="a69b573417babb57474d05562283742b6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MaxFileSize&#160;&#160;&#160;(<a class="el" href="filehdr_8h.html#a193693ecec4f818d8270c659139e3961">NumDirect</a> * <a class="el" href="disk_8h.html#ac729b32bca4535899ef2ee58b6a13d68">SectorSize</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a193693ecec4f818d8270c659139e3961"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NumDirect&#160;&#160;&#160;((<a class="el" href="disk_8h.html#ac729b32bca4535899ef2ee58b6a13d68">SectorSize</a> - 2 * sizeof(int)) / sizeof(int))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Dimanche 12 Février 2017 10:48:15 pour nachos par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.6
+</small></address>
+</body>
+</html>

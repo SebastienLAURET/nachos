@@ -1,0 +1,5 @@
+<map id="machine/machine.h" name="machine/machine.h">
+<area shape="rect" id="node2" href="$machine_8cc.html" title="machine/machine.cc" alt="" coords="5,80,160,107"/>
+<area shape="rect" id="node3" href="$mipssim_8cc.html" title="machine/mipssim.cc" alt="" coords="185,80,337,107"/>
+<area shape="rect" id="node4" href="$translate_8cc.html" title="machine/translate.cc" alt="" coords="362,80,517,107"/>
+</map>

@@ -1,0 +1,522 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>nachos: Référence du fichier userprog/syscall.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">nachos
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_1d382e90aafd8fa5d2a2b6b84b51ddb5.html">userprog</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#define-members">Macros</a> &#124;
+<a href="#typedef-members">Définitions de type</a> &#124;
+<a href="#func-members">Fonctions</a>  </div>
+  <div class="headertitle">
+<div class="title">Référence du fichier syscall.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="copyright_8h_source.html">copyright.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="syscallnumbers_8h_source.html">syscallnumbers.h</a>&quot;</code><br/>
+</div><div class="textblock"><div class="dynheader">
+Graphe des dépendances par inclusion de syscall.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="syscall_8h__incl.png" border="0" usemap="#userprog_2syscall_8h" alt=""/></div>
+<map name="userprog_2syscall_8h" id="userprog_2syscall_8h">
+<area shape="rect" id="node2" href="copyright_8h.html" title="copyright.h" alt="" coords="5,80,99,107"/><area shape="rect" id="node3" href="syscallnumbers_8h.html" title="syscallnumbers.h" alt="" coords="123,80,256,107"/></map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier :</div>
+<div class="dyncontent">
+<div class="center"><img src="syscall_8h__dep__incl.png" border="0" usemap="#userprog_2syscall_8hdep" alt=""/></div>
+<map name="userprog_2syscall_8hdep" id="userprog_2syscall_8hdep">
+<area shape="rect" id="node2" href="gets_8c.html" title="lib/gets.c" alt="" coords="5,80,83,107"/><area shape="rect" id="node3" href="perror_8h.html" title="lib/perror.h" alt="" coords="108,80,199,107"/></map>
+</div>
+</div>
+<p><a href="syscall_8h_source.html">Aller au code source de ce fichier.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:ac919ccdc41cc51f8fab726b5baa3f9a5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="syscall_8h.html#ac919ccdc41cc51f8fab726b5baa3f9a5">ConsoleInput</a>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:ac919ccdc41cc51f8fab726b5baa3f9a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7596d7df6f0cd8b5c7c526fab77c00c5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="syscall_8h.html#a7596d7df6f0cd8b5c7c526fab77c00c5">ConsoleOutput</a>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:a7596d7df6f0cd8b5c7c526fab77c00c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Définitions de type</h2></td></tr>
+<tr class="memitem:a0d7b57338da8eaa1439b8ce24cebcc2e"><td class="memItemLeft" align="right" valign="top">typedef int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="syscall_8h.html#a0d7b57338da8eaa1439b8ce24cebcc2e">SpaceId</a></td></tr>
+<tr class="separator:a0d7b57338da8eaa1439b8ce24cebcc2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c839ae85ec69dfc198200d9835aa71c"><td class="memItemLeft" align="right" valign="top">typedef int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="syscall_8h.html#a1c839ae85ec69dfc198200d9835aa71c">OpenFileId</a></td></tr>
+<tr class="separator:a1c839ae85ec69dfc198200d9835aa71c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:a246a11d9ff324ac13351f57415a49975"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="syscall_8h.html#a246a11d9ff324ac13351f57415a49975">Halt</a> ()</td></tr>
+<tr class="separator:a246a11d9ff324ac13351f57415a49975"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a47add669f22e7ffcaf4e4e11f7e5356d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="syscall_8h.html#a47add669f22e7ffcaf4e4e11f7e5356d">Exit</a> (int status)</td></tr>
+<tr class="separator:a47add669f22e7ffcaf4e4e11f7e5356d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77e32c8b33b8e14ce90c52091c6f6a10"><td class="memItemLeft" align="right" valign="top"><a class="el" href="syscall_8h.html#a0d7b57338da8eaa1439b8ce24cebcc2e">SpaceId</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="syscall_8h.html#a77e32c8b33b8e14ce90c52091c6f6a10">Exec</a> (char *name)</td></tr>
+<tr class="separator:a77e32c8b33b8e14ce90c52091c6f6a10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe61d9e0d071fcb9c1b266891a02db14"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="syscall_8h.html#afe61d9e0d071fcb9c1b266891a02db14">Wait</a> (int *exitval)</td></tr>
+<tr class="separator:afe61d9e0d071fcb9c1b266891a02db14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20418f34291576da23f809efc95dd2da"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="syscall_8h.html#a20418f34291576da23f809efc95dd2da">Create</a> (char *name)</td></tr>
+<tr class="separator:a20418f34291576da23f809efc95dd2da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18d0c136ba886f2e4f2545d2ef9c32c2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="syscall_8h.html#a1c839ae85ec69dfc198200d9835aa71c">OpenFileId</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="syscall_8h.html#a18d0c136ba886f2e4f2545d2ef9c32c2">Open</a> (char *name)</td></tr>
+<tr class="separator:a18d0c136ba886f2e4f2545d2ef9c32c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad25ec54119b1ba58ffa52cda27c29455"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="syscall_8h.html#ad25ec54119b1ba58ffa52cda27c29455">Write</a> (<a class="el" href="syscall_8h.html#a1c839ae85ec69dfc198200d9835aa71c">OpenFileId</a> id, const void *buffer, unsigned int size)</td></tr>
+<tr class="separator:ad25ec54119b1ba58ffa52cda27c29455"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5ce025ef3b5cbf45c7c9123efc43931"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="syscall_8h.html#ad5ce025ef3b5cbf45c7c9123efc43931">Read</a> (<a class="el" href="syscall_8h.html#a1c839ae85ec69dfc198200d9835aa71c">OpenFileId</a> id, void *buffer, unsigned int size)</td></tr>
+<tr class="separator:ad5ce025ef3b5cbf45c7c9123efc43931"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab320702cbe4fbc5e27c277bb734401e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="syscall_8h.html#aab320702cbe4fbc5e27c277bb734401e">Close</a> (<a class="el" href="syscall_8h.html#a1c839ae85ec69dfc198200d9835aa71c">OpenFileId</a> id)</td></tr>
+<tr class="separator:aab320702cbe4fbc5e27c277bb734401e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e5960f8d4778b63170e5c5a7674f041"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="syscall_8h.html#a2e5960f8d4778b63170e5c5a7674f041">Unlink</a> (char *<a class="el" href="main_8c.html#aa9a76d9571bf39c3d168d222f931ff86">filename</a>)</td></tr>
+<tr class="separator:a2e5960f8d4778b63170e5c5a7674f041"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a277afb8d7315aba1dc9a9f0d748448a7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="syscall_8h.html#a277afb8d7315aba1dc9a9f0d748448a7">Fork</a> ()</td></tr>
+<tr class="separator:a277afb8d7315aba1dc9a9f0d748448a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1c0e21e0767ef32cb1a785ed610e839"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="syscall_8h.html#af1c0e21e0767ef32cb1a785ed610e839">Yield</a> ()</td></tr>
+<tr class="separator:af1c0e21e0767ef32cb1a785ed610e839"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f6a68cbae17734baace2e37f7c8c081"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="syscall_8h.html#a2f6a68cbae17734baace2e37f7c8c081">GetPID</a> ()</td></tr>
+<tr class="separator:a2f6a68cbae17734baace2e37f7c8c081"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99cd96480b37b684649807aa1fd0cfcf"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="syscall_8h.html#a99cd96480b37b684649807aa1fd0cfcf">GetPPID</a> ()</td></tr>
+<tr class="separator:a99cd96480b37b684649807aa1fd0cfcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a818e8417186cba4612bf44a566b400d7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="syscall_8h.html#a818e8417186cba4612bf44a566b400d7">Nice</a> (int inc)</td></tr>
+<tr class="separator:a818e8417186cba4612bf44a566b400d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Documentation des macros</h2>
+<a class="anchor" id="ac919ccdc41cc51f8fab726b5baa3f9a5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ConsoleInput&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a7596d7df6f0cd8b5c7c526fab77c00c5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ConsoleOutput&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des définitions de type</h2>
+<a class="anchor" id="a1c839ae85ec69dfc198200d9835aa71c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef int <a class="el" href="syscall_8h.html#a1c839ae85ec69dfc198200d9835aa71c">OpenFileId</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a0d7b57338da8eaa1439b8ce24cebcc2e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef int <a class="el" href="syscall_8h.html#a0d7b57338da8eaa1439b8ce24cebcc2e">SpaceId</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des fonctions</h2>
+<a class="anchor" id="aab320702cbe4fbc5e27c277bb734401e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Close </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="syscall_8h.html#a1c839ae85ec69dfc198200d9835aa71c">OpenFileId</a>&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="syscall_8h_aab320702cbe4fbc5e27c277bb734401e_cgraph.png" border="0" usemap="#syscall_8h_aab320702cbe4fbc5e27c277bb734401e_cgraph" alt=""/></div>
+<map name="syscall_8h_aab320702cbe4fbc5e27c277bb734401e_cgraph" id="syscall_8h_aab320702cbe4fbc5e27c277bb734401e_cgraph">
+<area shape="rect" id="node2" href="sysdep_8cc.html#ac27bb3145ebeaec9b4661acfd47e4c51" title="close" alt="" coords="113,5,167,32"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a20418f34291576da23f809efc95dd2da"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Create </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a77e32c8b33b8e14ce90c52091c6f6a10"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="syscall_8h.html#a0d7b57338da8eaa1439b8ce24cebcc2e">SpaceId</a> Exec </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a47add669f22e7ffcaf4e4e11f7e5356d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Exit </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>status</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="syscall_8h_a47add669f22e7ffcaf4e4e11f7e5356d_cgraph.png" border="0" usemap="#syscall_8h_a47add669f22e7ffcaf4e4e11f7e5356d_cgraph" alt=""/></div>
+<map name="syscall_8h_a47add669f22e7ffcaf4e4e11f7e5356d_cgraph" id="syscall_8h_a47add669f22e7ffcaf4e4e11f7e5356d_cgraph">
+<area shape="rect" id="node2" href="sysdep_8cc.html#a358d2e2397ca11ccd17553e3c40e7901" title="exit" alt="" coords="99,5,144,32"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a277afb8d7315aba1dc9a9f0d748448a7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Fork </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a2f6a68cbae17734baace2e37f7c8c081"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int GetPID </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a99cd96480b37b684649807aa1fd0cfcf"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int GetPPID </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a246a11d9ff324ac13351f57415a49975"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Halt </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a818e8417186cba4612bf44a566b400d7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Nice </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>inc</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a18d0c136ba886f2e4f2545d2ef9c32c2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="syscall_8h.html#a1c839ae85ec69dfc198200d9835aa71c">OpenFileId</a> Open </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad5ce025ef3b5cbf45c7c9123efc43931"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Read </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="syscall_8h.html#a1c839ae85ec69dfc198200d9835aa71c">OpenFileId</a>&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="syscall_8h_ad5ce025ef3b5cbf45c7c9123efc43931_cgraph.png" border="0" usemap="#syscall_8h_ad5ce025ef3b5cbf45c7c9123efc43931_cgraph" alt=""/></div>
+<map name="syscall_8h_ad5ce025ef3b5cbf45c7c9123efc43931_cgraph" id="syscall_8h_ad5ce025ef3b5cbf45c7c9123efc43931_cgraph">
+<area shape="rect" id="node2" href="sysdep_8cc.html#ad69dc0274328d82982430dc65be73623" title="read" alt="" coords="107,5,157,32"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a2e5960f8d4778b63170e5c5a7674f041"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Unlink </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>filename</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="syscall_8h_a2e5960f8d4778b63170e5c5a7674f041_cgraph.png" border="0" usemap="#syscall_8h_a2e5960f8d4778b63170e5c5a7674f041_cgraph" alt=""/></div>
+<map name="syscall_8h_a2e5960f8d4778b63170e5c5a7674f041_cgraph" id="syscall_8h_a2e5960f8d4778b63170e5c5a7674f041_cgraph">
+<area shape="rect" id="node2" href="sysdep_8cc.html#ae6e154f3d23907c2f499b54d2d386fc9" title="unlink" alt="" coords="115,5,173,32"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="afe61d9e0d071fcb9c1b266891a02db14"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Wait </td>
+          <td>(</td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>exitval</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad25ec54119b1ba58ffa52cda27c29455"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Write </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="syscall_8h.html#a1c839ae85ec69dfc198200d9835aa71c">OpenFileId</a>&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af1c0e21e0767ef32cb1a785ed610e839"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Yield </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Dimanche 12 Février 2017 10:48:15 pour nachos par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.6
+</small></address>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<map id="threads/thread.cc" name="threads/thread.cc">
+<area shape="rect" id="node2" href="$copyright_8h.html" title="copyright.h" alt="" coords="520,453,613,480"/>
+<area shape="rect" id="node3" href="$thread_8h.html" title="thread.h" alt="" coords="49,229,124,256"/>
+<area shape="rect" id="node10" href="$switch_8h.html" title="switch.h" alt="" coords="1071,80,1144,107"/>
+<area shape="rect" id="node11" href="$synch_8h.html" title="synch.h" alt="" coords="925,155,995,181"/>
+<area shape="rect" id="node13" href="$system_8h.html" title="system.h" alt="" coords="481,80,561,107"/>
+<area shape="rect" id="node14" href="$scheduler_8h.html" title="scheduler.h" alt="" coords="110,155,204,181"/>
+<area shape="rect" id="node4" href="$utility_8h.html" title="utility.h" alt="" coords="340,304,407,331"/>
+<area shape="rect" id="node9" href="$defs_8h.html" title="defs.h" alt="" coords="197,304,259,331"/>
+<area shape="rect" id="node5" href="$stdlib_8h.html" title="stdlib.h" alt="" coords="385,379,452,405"/>
+<area shape="rect" id="node6" href="$sysdep_8h.html" title="sysdep.h" alt="" coords="43,379,121,405"/>
+<area shape="rect" id="node12" href="$list_8h.html" title="list.h" alt="" coords="411,229,463,256"/>
+<area shape="rect" id="node16" href="$interrupt_8h.html" title="interrupt.h" alt="" coords="477,155,565,181"/>
+<area shape="rect" id="node17" href="$stats_8h.html" title="stats.h" alt="" coords="760,304,827,331"/>
+<area shape="rect" id="node18" href="$timer_8h.html" title="timer.h" alt="" coords="488,229,555,256"/>
+<area shape="rect" id="node19" href="$memmgr_8h.html" title="memmgr.h" alt="" coords="641,155,735,181"/>
+<area shape="rect" id="node20" href="$swapmgr_8h.html" title="swapmgr.h" alt="" coords="759,155,849,181"/>
+<area shape="rect" id="node21" href="$ifdef__symbols_8h.html" title="ifdef_symbols.h" alt="" coords="229,155,349,181"/>
+<area shape="rect" id="node15" href="$nachos-gdb_8h.html" title="nachos&#45;gdb.h" alt="" coords="149,229,259,256"/>
+</map>

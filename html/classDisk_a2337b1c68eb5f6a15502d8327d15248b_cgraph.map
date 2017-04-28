@@ -1,0 +1,8 @@
+<map id="Disk::ComputeLatency" name="Disk::ComputeLatency">
+<area shape="rect" id="node2" href="$classDisk.html#abecdf19e160925b1bc9b4542c90de2ac" title="Disk::TimeToSeek" alt="" coords="221,5,355,32"/>
+<area shape="rect" id="node4" href="$classDisk.html#a2b4e12aa9e93939c3e03985c16bed453" title="Disk::ModuloDiff" alt="" coords="226,56,350,83"/>
+<area shape="rect" id="node5" href="$utility_8cc.html#af1c6878736cbd9e1b531898d8951d613" title="DEBUG" alt="" coords="253,107,323,133"/>
+<area shape="rect" id="node3" href="$sysdep_8h.html#af15d7205d8d10c4820f997ce5c526279" title="abs" alt="" coords="443,5,488,32"/>
+<area shape="rect" id="node6" href="$utility_8cc.html#a79c7d1acabdb48f6f6a80ec0abf7cf89" title="DebugIsEnabled" alt="" coords="403,107,528,133"/>
+<area shape="rect" id="node7" href="$stdlib_8h.html#a89c177d1405cf367c2c4874c4449456a" title="strchr" alt="" coords="576,107,635,133"/>
+</map>

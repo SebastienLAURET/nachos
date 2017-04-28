@@ -1,0 +1,196 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>nachos:  Fichier source de machine/stats.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">nachos
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_0909f4a7c39d3e9616c1c9d755842fcb.html">machine</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">stats.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="stats_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// stats.h </span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">//      Data structures for gathering statistics about Nachos performance.</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">// DO NOT CHANGE -- these stats are maintained by the machine emulation</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">// Copyright (c) 1992-1993 The Regents of the University of California.</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">// All rights reserved.  See copyright.h for copyright notice and limitation </span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">// of liability and disclaimer of warranty provisions.</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#ifndef STATS_H</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define STATS_H</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#pragma interface &quot;machine/stats.h&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="copyright_8h.html">copyright.h</a>&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">// The following class defines the statistics that are to be kept</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">// about Nachos behavior -- how much time (ticks) elapsed, how</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">// many user instructions executed, etc.</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">// The fields in this class are public to make it easier to update.</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classStatistics.html">   24</a></span>&#160;<span class="keyword">class </span><a class="code" href="classStatistics.html">Statistics</a> {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classStatistics.html#ab3eb67131696f06a941e553086ebe14c">   26</a></span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classStatistics.html#ab3eb67131696f06a941e553086ebe14c">totalTicks</a>;    <span class="comment">// Total time running Nachos</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classStatistics.html#a98373168b111ec835e78c21dd475fb4a">   27</a></span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classStatistics.html#a98373168b111ec835e78c21dd475fb4a">idleTicks</a>;     <span class="comment">// Time spent idle (no threads to run)</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classStatistics.html#afe447b6106f832e8ffffc5445ecaa0b8">   28</a></span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classStatistics.html#afe447b6106f832e8ffffc5445ecaa0b8">systemTicks</a>;   <span class="comment">// Time spent executing system code</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="classStatistics.html#ad29fddec841f93e709837a30fed5aefd">   29</a></span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classStatistics.html#ad29fddec841f93e709837a30fed5aefd">userTicks</a>;     <span class="comment">// Time spent executing user code</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                                <span class="comment">// (this is also equal to # of</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                                <span class="comment">// user instructions executed)</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classStatistics.html#a7116e76ef1940b320e301e3afec8caba">   33</a></span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classStatistics.html#a7116e76ef1940b320e301e3afec8caba">numContextSwitches</a>;     <span class="comment">// number of context switches</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classStatistics.html#ad29875762aface8c162603c9a2586e47">   34</a></span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classStatistics.html#ad29875762aface8c162603c9a2586e47">numVolContextSwitches</a>;  <span class="comment">// number of voluntary context switches</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classStatistics.html#a565b05dc55965d7d96d515938c4cad86">   35</a></span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classStatistics.html#a565b05dc55965d7d96d515938c4cad86">numInvolContextSwitches</a>;<span class="comment">// number of invol. context switches</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="classStatistics.html#ad5c900f4835b42b9a1a8581a9dbdd9bb">   37</a></span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classStatistics.html#ad5c900f4835b42b9a1a8581a9dbdd9bb">numDiskReads</a>;           <span class="comment">// number of disk read requests</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classStatistics.html#a648cf57bd0b2079f57084c33499fde30">   38</a></span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classStatistics.html#a648cf57bd0b2079f57084c33499fde30">numDiskWrites</a>;          <span class="comment">// number of disk write requests</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="classStatistics.html#a72ffbf7f7c3f74ac3b79e8ec9079b7f8">   39</a></span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classStatistics.html#a72ffbf7f7c3f74ac3b79e8ec9079b7f8">numConsoleCharsRead</a>;    <span class="comment">// number of characters read from the </span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                                         <span class="comment">// keyboard</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="classStatistics.html#a20573b386d38bff88ed0bb4d1169a170">   41</a></span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classStatistics.html#a20573b386d38bff88ed0bb4d1169a170">numConsoleCharsWritten</a>; <span class="comment">// number of characters written to </span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                                         <span class="comment">// the display</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="classStatistics.html#a5949b82e9253e2b3e4e612bc14f3eaa1">   43</a></span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classStatistics.html#a5949b82e9253e2b3e4e612bc14f3eaa1">numPageFaults</a>;          <span class="comment">// number of virtual memory page </span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                                         <span class="comment">// faults</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="classStatistics.html#a00b0a45ec75a0cc3dfca6fe70d18bfa9">   45</a></span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classStatistics.html#a00b0a45ec75a0cc3dfca6fe70d18bfa9">numPageIns</a>;             <span class="comment">// number of virtual memory pageins</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="classStatistics.html#a5d0d83c82fd0973402658e0a2d90fd8f">   46</a></span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classStatistics.html#a5d0d83c82fd0973402658e0a2d90fd8f">numPageOuts</a>;            <span class="comment">// number of virtual memory pageouts</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="classStatistics.html#a8fbb98e18eeb9eb8153dbda9d1de5282">   47</a></span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classStatistics.html#a8fbb98e18eeb9eb8153dbda9d1de5282">numPacketsSent</a>;         <span class="comment">// number of packets sent over the </span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                                         <span class="comment">// network</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="classStatistics.html#ac69ff9845d68baaf3628190b70cd5cc3">   49</a></span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classStatistics.html#ac69ff9845d68baaf3628190b70cd5cc3">numPacketsRecvd</a>;        <span class="comment">// number of packets received over </span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                                         <span class="comment">// the network</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <a class="code" href="classStatistics.html#a60ddd90a571ed4c3ce8c0f6317a36d63">Statistics</a>();               <span class="comment">// initialize everything to zero</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classStatistics.html#ade67669fb1436e69a215a780b1ade63e">Print</a>();               <span class="comment">// print collected statistics</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classStatistics.html#afe7217e0945fd9c1f34fa3b6bd491871">ShortPrint</a>(<span class="keywordtype">int</span>);       <span class="comment">// print process statistics</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;};</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment">// Constants used to reflect the relative time an operation would</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">// take in a real system.  A &quot;tick&quot; is a just a unit of time -- if you </span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">// like, a microsecond.</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">// Since Nachos kernel code is directly executed, and the time spent</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment">// in the kernel measured by the number of calls to enable interrupts,</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment">// these time constants are none too exact.</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">// FIXME: Should these be constants, or should we draw values from some</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">// probability distribution?</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="stats_8h.html#a00fab0e666544620e63085a7b8e3781d">   69</a></span>&#160;<span class="preprocessor">#define UserTick        1       // advance for each user-level instruction </span></div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="stats_8h.html#a283cbd193ecf38fd6493d9494f2cfc63">   70</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define SystemTick      10      // advance each time interrupts are enabled</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="stats_8h.html#aeb38b1c6e537381b19fb2713561035d7">   71</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define RotationTime    500     // time disk takes to rotate one sector</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="stats_8h.html#a23e207fd391cb1227bbbf7cbe72e4a11">   72</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define SeekTime        500     // time disk takes to seek past one track</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="stats_8h.html#a2ca07405aac601cb648d4e6a11ebbd1d">   73</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ConsoleTime     100     // time to read or write one character</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="stats_8h.html#a4f7e7c57f153c0a15362fc1bd6684b77">   74</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define NetworkTime     100     // time to send or receive one packet</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="stats_8h.html#ab66f8984a291e152587d29218248e9aa">   75</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define TimerTicks      100     // (average) time between timer interrupts</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="preprocessor">#endif // STATS_H</span></div>
+<div class="ttc" id="classStatistics_html_a72ffbf7f7c3f74ac3b79e8ec9079b7f8"><div class="ttname"><a href="classStatistics.html#a72ffbf7f7c3f74ac3b79e8ec9079b7f8">Statistics::numConsoleCharsRead</a></div><div class="ttdeci">unsigned int numConsoleCharsRead</div><div class="ttdef"><b>Definition:</b> stats.h:39</div></div>
+<div class="ttc" id="classStatistics_html_afe7217e0945fd9c1f34fa3b6bd491871"><div class="ttname"><a href="classStatistics.html#afe7217e0945fd9c1f34fa3b6bd491871">Statistics::ShortPrint</a></div><div class="ttdeci">void ShortPrint(int)</div><div class="ttdef"><b>Definition:</b> stats.cc:59</div></div>
+<div class="ttc" id="classStatistics_html_afe447b6106f832e8ffffc5445ecaa0b8"><div class="ttname"><a href="classStatistics.html#afe447b6106f832e8ffffc5445ecaa0b8">Statistics::systemTicks</a></div><div class="ttdeci">unsigned int systemTicks</div><div class="ttdef"><b>Definition:</b> stats.h:28</div></div>
+<div class="ttc" id="classStatistics_html_a20573b386d38bff88ed0bb4d1169a170"><div class="ttname"><a href="classStatistics.html#a20573b386d38bff88ed0bb4d1169a170">Statistics::numConsoleCharsWritten</a></div><div class="ttdeci">unsigned int numConsoleCharsWritten</div><div class="ttdef"><b>Definition:</b> stats.h:41</div></div>
+<div class="ttc" id="classStatistics_html_a00b0a45ec75a0cc3dfca6fe70d18bfa9"><div class="ttname"><a href="classStatistics.html#a00b0a45ec75a0cc3dfca6fe70d18bfa9">Statistics::numPageIns</a></div><div class="ttdeci">unsigned int numPageIns</div><div class="ttdef"><b>Definition:</b> stats.h:45</div></div>
+<div class="ttc" id="classStatistics_html_a5949b82e9253e2b3e4e612bc14f3eaa1"><div class="ttname"><a href="classStatistics.html#a5949b82e9253e2b3e4e612bc14f3eaa1">Statistics::numPageFaults</a></div><div class="ttdeci">unsigned int numPageFaults</div><div class="ttdef"><b>Definition:</b> stats.h:43</div></div>
+<div class="ttc" id="classStatistics_html_ad29875762aface8c162603c9a2586e47"><div class="ttname"><a href="classStatistics.html#ad29875762aface8c162603c9a2586e47">Statistics::numVolContextSwitches</a></div><div class="ttdeci">unsigned int numVolContextSwitches</div><div class="ttdef"><b>Definition:</b> stats.h:34</div></div>
+<div class="ttc" id="classStatistics_html_a8fbb98e18eeb9eb8153dbda9d1de5282"><div class="ttname"><a href="classStatistics.html#a8fbb98e18eeb9eb8153dbda9d1de5282">Statistics::numPacketsSent</a></div><div class="ttdeci">unsigned int numPacketsSent</div><div class="ttdef"><b>Definition:</b> stats.h:47</div></div>
+<div class="ttc" id="classStatistics_html"><div class="ttname"><a href="classStatistics.html">Statistics</a></div><div class="ttdef"><b>Definition:</b> stats.h:24</div></div>
+<div class="ttc" id="classStatistics_html_a648cf57bd0b2079f57084c33499fde30"><div class="ttname"><a href="classStatistics.html#a648cf57bd0b2079f57084c33499fde30">Statistics::numDiskWrites</a></div><div class="ttdeci">unsigned int numDiskWrites</div><div class="ttdef"><b>Definition:</b> stats.h:38</div></div>
+<div class="ttc" id="classStatistics_html_ad29fddec841f93e709837a30fed5aefd"><div class="ttname"><a href="classStatistics.html#ad29fddec841f93e709837a30fed5aefd">Statistics::userTicks</a></div><div class="ttdeci">unsigned int userTicks</div><div class="ttdef"><b>Definition:</b> stats.h:29</div></div>
+<div class="ttc" id="classStatistics_html_ab3eb67131696f06a941e553086ebe14c"><div class="ttname"><a href="classStatistics.html#ab3eb67131696f06a941e553086ebe14c">Statistics::totalTicks</a></div><div class="ttdeci">unsigned int totalTicks</div><div class="ttdef"><b>Definition:</b> stats.h:26</div></div>
+<div class="ttc" id="classStatistics_html_ac69ff9845d68baaf3628190b70cd5cc3"><div class="ttname"><a href="classStatistics.html#ac69ff9845d68baaf3628190b70cd5cc3">Statistics::numPacketsRecvd</a></div><div class="ttdeci">unsigned int numPacketsRecvd</div><div class="ttdef"><b>Definition:</b> stats.h:49</div></div>
+<div class="ttc" id="classStatistics_html_a7116e76ef1940b320e301e3afec8caba"><div class="ttname"><a href="classStatistics.html#a7116e76ef1940b320e301e3afec8caba">Statistics::numContextSwitches</a></div><div class="ttdeci">unsigned int numContextSwitches</div><div class="ttdef"><b>Definition:</b> stats.h:33</div></div>
+<div class="ttc" id="classStatistics_html_a60ddd90a571ed4c3ce8c0f6317a36d63"><div class="ttname"><a href="classStatistics.html#a60ddd90a571ed4c3ce8c0f6317a36d63">Statistics::Statistics</a></div><div class="ttdeci">Statistics()</div><div class="ttdef"><b>Definition:</b> stats.cc:21</div></div>
+<div class="ttc" id="classStatistics_html_a565b05dc55965d7d96d515938c4cad86"><div class="ttname"><a href="classStatistics.html#a565b05dc55965d7d96d515938c4cad86">Statistics::numInvolContextSwitches</a></div><div class="ttdeci">unsigned int numInvolContextSwitches</div><div class="ttdef"><b>Definition:</b> stats.h:35</div></div>
+<div class="ttc" id="classStatistics_html_ade67669fb1436e69a215a780b1ade63e"><div class="ttname"><a href="classStatistics.html#ade67669fb1436e69a215a780b1ade63e">Statistics::Print</a></div><div class="ttdeci">void Print()</div><div class="ttdef"><b>Definition:</b> stats.cc:38</div></div>
+<div class="ttc" id="classStatistics_html_a5d0d83c82fd0973402658e0a2d90fd8f"><div class="ttname"><a href="classStatistics.html#a5d0d83c82fd0973402658e0a2d90fd8f">Statistics::numPageOuts</a></div><div class="ttdeci">unsigned int numPageOuts</div><div class="ttdef"><b>Definition:</b> stats.h:46</div></div>
+<div class="ttc" id="classStatistics_html_ad5c900f4835b42b9a1a8581a9dbdd9bb"><div class="ttname"><a href="classStatistics.html#ad5c900f4835b42b9a1a8581a9dbdd9bb">Statistics::numDiskReads</a></div><div class="ttdeci">unsigned int numDiskReads</div><div class="ttdef"><b>Definition:</b> stats.h:37</div></div>
+<div class="ttc" id="classStatistics_html_a98373168b111ec835e78c21dd475fb4a"><div class="ttname"><a href="classStatistics.html#a98373168b111ec835e78c21dd475fb4a">Statistics::idleTicks</a></div><div class="ttdeci">unsigned int idleTicks</div><div class="ttdef"><b>Definition:</b> stats.h:27</div></div>
+<div class="ttc" id="copyright_8h_html"><div class="ttname"><a href="copyright_8h.html">copyright.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Dimanche 12 Février 2017 10:48:15 pour nachos par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.6
+</small></address>
+</body>
+</html>

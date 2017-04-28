@@ -1,0 +1,11 @@
+<map id="Scheduler::FindNextToRun" name="Scheduler::FindNextToRun">
+<area shape="rect" id="node2" href="$classThread.html#ad75bd5375287a210520752785f503de4" title="Thread::getStatus" alt="" coords="241,5,378,32"/>
+<area shape="rect" id="node3" href="$classInterrupt.html#a4d9820efbc3e9fd82e82f2eb6ef3613b" title="Interrupt::Halt" alt="" coords="254,56,365,83"/>
+<area shape="rect" id="node8" href="$classThread.html#ad707af00a9ce1a1d324804e7c73dc4ab" title="Thread::Print" alt="" coords="258,107,361,133"/>
+<area shape="rect" id="node9" href="$classList.html#a4f804c07c4cfa4c9b631e6e117156e32" title="List::Remove" alt="" coords="258,157,361,184"/>
+<area shape="rect" id="node4" href="$classStatistics.html#ade67669fb1436e69a215a780b1ade63e" title="Statistics::Print" alt="" coords="427,31,546,57"/>
+<area shape="rect" id="node5" href="$system_8cc.html#ae89a123aad1c66a76c398b7af216aae4" title="Cleanup" alt="" coords="449,81,524,108"/>
+<area shape="rect" id="node6" href="$sysdep_8cc.html#a8b9ef9330856c5a5a02f2d3ef0497e04" title="Exit" alt="" coords="595,81,640,108"/>
+<area shape="rect" id="node7" href="$sysdep_8cc.html#a358d2e2397ca11ccd17553e3c40e7901" title="exit" alt="" coords="688,81,733,108"/>
+<area shape="rect" id="node10" href="$classList.html#a854e9656ddbfae181d12f9d9413bc2b8" title="List::IsEmpty" alt="" coords="435,157,538,184"/>
+</map>

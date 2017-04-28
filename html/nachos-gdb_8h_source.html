@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>nachos:  Fichier source de threads/nachos-gdb.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">nachos
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_b71e9c10552984757907f0ca0d59e659.html">threads</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">nachos-gdb.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="nachos-gdb_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef __NACHOS_GDB__</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define __NACHOS_GDB__</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00004"></a><span class="lineno"><a class="line" href="structnachos__thread.html">    4</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structnachos__thread.html">nachos_thread</a> {</div>
+<div class="line"><a name="l00005"></a><span class="lineno"><a class="line" href="structnachos__thread.html#a2805dfcc921605a2bce8068137b41053">    5</a></span>&#160;  <span class="keywordtype">void</span> *<a class="code" href="structnachos__thread.html#a2805dfcc921605a2bce8068137b41053">thread</a>;</div>
+<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="structnachos__thread.html#a1e632ff08b93a754639ec77ab5663576">    6</a></span>&#160;  <span class="keywordtype">int</span> <a class="code" href="structnachos__thread.html#a1e632ff08b93a754639ec77ab5663576">ID</a>;</div>
+<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="structnachos__thread.html#a03c7608a70cbb51365d55d5ce73dc4b5">    7</a></span>&#160;  <span class="keyword">struct </span><a class="code" href="structnachos__thread.html">nachos_thread</a> *<a class="code" href="structnachos__thread.html#a03c7608a70cbb51365d55d5ce73dc4b5">next</a>;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;};</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="structnachos__thread__list__struct.html">   10</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structnachos__thread__list__struct.html">nachos_thread_list_struct</a> {</div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="structnachos__thread__list__struct.html#a6de22cfa639bbf2976832ac95d108e3a">   11</a></span>&#160;  <span class="keyword">struct </span><a class="code" href="structnachos__thread.html">nachos_thread</a> *<a class="code" href="structnachos__thread__list__struct.html#a6de22cfa639bbf2976832ac95d108e3a">head</a>;</div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="structnachos__thread__list__struct.html#ab8bfde1ce9d7860433333dd2fff75185">   12</a></span>&#160;  <span class="keyword">struct </span><a class="code" href="structnachos__thread.html">nachos_thread</a> *<a class="code" href="structnachos__thread__list__struct.html#ab8bfde1ce9d7860433333dd2fff75185">tail</a>;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;};</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="nachos-gdb_8h.html#ab8df337cd777bdcd1bb9c3fe96657c06">   15</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structnachos__thread__list__struct.html">nachos_thread_list_struct</a> <a class="code" href="structnachos__thread__list__struct.html">nachos_thread_list</a>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">extern</span> <a class="code" href="structnachos__thread__list__struct.html">nachos_thread_list</a> <a class="code" href="nachos-gdb_8h.html#a6dad9d03d4b60f4a4ae899608e5a4ceb">allThreads</a>;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="structnachos__thread_html_a1e632ff08b93a754639ec77ab5663576"><div class="ttname"><a href="structnachos__thread.html#a1e632ff08b93a754639ec77ab5663576">nachos_thread::ID</a></div><div class="ttdeci">int ID</div><div class="ttdef"><b>Definition:</b> nachos-gdb.h:6</div></div>
+<div class="ttc" id="nachos-gdb_8h_html_a6dad9d03d4b60f4a4ae899608e5a4ceb"><div class="ttname"><a href="nachos-gdb_8h.html#a6dad9d03d4b60f4a4ae899608e5a4ceb">allThreads</a></div><div class="ttdeci">nachos_thread_list allThreads</div><div class="ttdef"><b>Definition:</b> system.cc:29</div></div>
+<div class="ttc" id="structnachos__thread__list__struct_html"><div class="ttname"><a href="structnachos__thread__list__struct.html">nachos_thread_list_struct</a></div><div class="ttdef"><b>Definition:</b> nachos-gdb.h:10</div></div>
+<div class="ttc" id="structnachos__thread__list__struct_html_a6de22cfa639bbf2976832ac95d108e3a"><div class="ttname"><a href="structnachos__thread__list__struct.html#a6de22cfa639bbf2976832ac95d108e3a">nachos_thread_list_struct::head</a></div><div class="ttdeci">struct nachos_thread * head</div><div class="ttdef"><b>Definition:</b> nachos-gdb.h:11</div></div>
+<div class="ttc" id="structnachos__thread_html_a2805dfcc921605a2bce8068137b41053"><div class="ttname"><a href="structnachos__thread.html#a2805dfcc921605a2bce8068137b41053">nachos_thread::thread</a></div><div class="ttdeci">void * thread</div><div class="ttdef"><b>Definition:</b> nachos-gdb.h:5</div></div>
+<div class="ttc" id="structnachos__thread_html"><div class="ttname"><a href="structnachos__thread.html">nachos_thread</a></div><div class="ttdef"><b>Definition:</b> nachos-gdb.h:4</div></div>
+<div class="ttc" id="structnachos__thread__list__struct_html_ab8bfde1ce9d7860433333dd2fff75185"><div class="ttname"><a href="structnachos__thread__list__struct.html#ab8bfde1ce9d7860433333dd2fff75185">nachos_thread_list_struct::tail</a></div><div class="ttdeci">struct nachos_thread * tail</div><div class="ttdef"><b>Definition:</b> nachos-gdb.h:12</div></div>
+<div class="ttc" id="structnachos__thread_html_a03c7608a70cbb51365d55d5ce73dc4b5"><div class="ttname"><a href="structnachos__thread.html#a03c7608a70cbb51365d55d5ce73dc4b5">nachos_thread::next</a></div><div class="ttdeci">struct nachos_thread * next</div><div class="ttdef"><b>Definition:</b> nachos-gdb.h:7</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Dimanche 12 Février 2017 10:48:15 pour nachos par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.6
+</small></address>
+</body>
+</html>

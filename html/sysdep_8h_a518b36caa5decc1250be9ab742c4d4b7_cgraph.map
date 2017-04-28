@@ -1,0 +1,9 @@
+<map id="ReadFromSocket" name="ReadFromSocket">
+<area shape="rect" id="node2" href="$sysdep_8cc.html#afe6a6510f1a4b2e63b640b6c7ffb9905" title="recvfrom" alt="" coords="185,31,263,57"/>
+<area shape="rect" id="node3" href="$perror_8h.html#a01a54ddbbc6ab18e4853ba0427329aca" title="perror" alt="" coords="193,81,255,108"/>
+<area shape="rect" id="node4" href="$disasm_8c.html#add539a5755e4c4070b0c8ca97477fe47" title="strcpy" alt="" coords="312,5,373,32"/>
+<area shape="rect" id="node5" href="$stdlib_8h.html#a8908188ae9fc2f05d993257ef001d553" title="strcat" alt="" coords="313,56,372,83"/>
+<area shape="rect" id="node6" href="$sysdep_8cc.html#af318746bd623cdd12088995045caf66a" title="Write" alt="" coords="316,107,369,133"/>
+<area shape="rect" id="node8" href="$stdlib_8h.html#a40c47e6d6db2b268cf91d16f2b66ca79" title="strlen" alt="" coords="313,157,372,184"/>
+<area shape="rect" id="node7" href="$sysdep_8cc.html#a9a432e107bd9a5102a2b6fe4e8d752ef" title="write" alt="" coords="422,107,474,133"/>
+</map>

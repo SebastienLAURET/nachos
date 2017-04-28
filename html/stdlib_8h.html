@@ -1,0 +1,527 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>nachos: Référence du fichier lib/stdlib.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">nachos
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#define-members">Macros</a> &#124;
+<a href="#typedef-members">Définitions de type</a> &#124;
+<a href="#func-members">Fonctions</a>  </div>
+  <div class="headertitle">
+<div class="title">Référence du fichier stdlib.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><div class="dynheader">
+Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier :</div>
+<div class="dyncontent">
+<div class="center"><img src="stdlib_8h__dep__incl.png" border="0" usemap="#lib_2stdlib_8hdep" alt=""/></div>
+<map name="lib_2stdlib_8hdep" id="lib_2stdlib_8hdep">
+<area shape="rect" id="node2" href="gets_8c.html" title="lib/gets.c" alt="" coords="345,80,423,107"/><area shape="rect" id="node3" href="memchr_8c.html" title="lib/memchr.c" alt="" coords="448,80,552,107"/><area shape="rect" id="node4" href="memcpy_8c.html" title="lib/memcpy.c" alt="" coords="577,80,682,107"/><area shape="rect" id="node5" href="memset_8c.html" title="lib/memset.c" alt="" coords="706,80,811,107"/><area shape="rect" id="node6" href="strchr_8c.html" title="lib/strchr.c" alt="" coords="836,80,922,107"/><area shape="rect" id="node7" href="strlen_8c.html" title="lib/strlen.c" alt="" coords="946,80,1032,107"/><area shape="rect" id="node8" href="strncat_8c.html" title="lib/strncat.c" alt="" coords="1058,80,1154,107"/><area shape="rect" id="node9" href="strncmp_8c.html" title="lib/strncmp.c" alt="" coords="1178,80,1282,107"/><area shape="rect" id="node10" href="strncpy_8c.html" title="lib/strncpy.c" alt="" coords="1306,80,1402,107"/><area shape="rect" id="node11" href="strrchr_8c.html" title="lib/strrchr.c" alt="" coords="1426,80,1518,107"/><area shape="rect" id="node12" href="strstr_8c.html" title="lib/strstr.c" alt="" coords="1542,80,1626,107"/><area shape="rect" id="node13" href="utility_8h.html" title="threads/utility.h" alt="" coords="1650,80,1768,107"/><area shape="rect" id="node14" href="nachos-stub_8cc.html" title="debug/nachos&#45;stub.cc" alt="" coords="1527,304,1690,331"/><area shape="rect" id="node15" href="directory_8cc.html" title="filesys/directory.cc" alt="" coords="18,379,155,405"/><area shape="rect" id="node16" href="openfile_8h.html" title="filesys/openfile.h" alt="" coords="625,155,751,181"/><area shape="rect" id="node20" href="fstest_8cc.html" title="filesys/fstest.cc" alt="" coords="802,304,920,331"/><area shape="rect" id="node23" href="addrspace_8cc.html" title="userprog/addrspace.cc" alt="" coords="1963,379,2131,405"/><area shape="rect" id="node27" href="translate_8h.html" title="machine/translate.h" alt="" coords="657,229,807,256"/><area shape="rect" id="node28" href="machine_8h.html" title="machine/machine.h" alt="" coords="630,304,778,331"/><area shape="rect" id="node31" href="bitmap_8h.html" title="userprog/bitmap.h" alt="" coords="201,229,340,256"/><area shape="rect" id="node33" href="breakpoint_8h.html" title="machine/breakpoint.h" alt="" coords="2621,155,2782,181"/><area shape="rect" id="node35" href="console_8h.html" title="machine/console.h" alt="" coords="2021,229,2163,256"/><area shape="rect" id="node38" href="disk_8h.html" title="machine/disk.h" alt="" coords="514,229,632,256"/><area shape="rect" id="node41" href="network_8h.html" title="machine/network.h" alt="" coords="2454,155,2596,181"/><area shape="rect" id="node44" href="stats_8cc.html" title="machine/stats.cc" alt="" coords="2807,155,2938,181"/><area shape="rect" id="node45" href="timer_8h.html" title="machine/timer.h" alt="" coords="1646,155,1772,181"/><area shape="rect" id="node46" href="system_8h.html" title="threads/system.h" alt="" coords="1726,229,1860,256"/><area shape="rect" id="node47" href="main_8cc.html" title="threads/main.cc" alt="" coords="2355,304,2480,331"/><area shape="rect" id="node48" href="list_8h.html" title="threads/list.h" alt="" coords="2962,155,3067,181"/><area shape="rect" id="node49" href="thread_8h.html" title="threads/thread.h" alt="" coords="1353,155,1482,181"/><area shape="rect" id="node50" href="utility_8cc.html" title="threads/utility.cc" alt="" coords="3092,155,3218,181"/><area shape="rect" id="node17" href="directory_8h.html" title="filesys/directory.h" alt="" coords="22,304,152,331"/><area shape="rect" id="node19" href="filesys_8h.html" title="filesys/filesys.h" alt="" coords="1030,229,1146,256"/><area shape="rect" id="node21" href="addrspace_8h.html" title="userprog/addrspace.h" alt="" coords="1146,304,1308,331"/><area shape="rect" id="node26" href="openfile_8cc.html" title="filesys/openfile.cc" alt="" coords="348,379,482,405"/><area shape="rect" id="node18" href="filesys_8cc.html" title="filesys/filesys.cc" alt="" coords="202,379,324,405"/><area shape="rect" id="node25" href="systemcall_8cc.html" title="userprog/systemcall.cc" alt="" coords="1333,304,1502,331"/><area shape="rect" id="node22" href="translate_8cc.html" title="machine/translate.cc" alt="" coords="1149,379,1304,405"/><area shape="rect" id="node24" href="progtest_8cc.html" title="userprog/progtest.cc" alt="" coords="1784,379,1939,405"/><area shape="rect" id="node29" href="machine_8cc.html" title="machine/machine.cc" alt="" coords="798,379,952,405"/><area shape="rect" id="node30" href="mipssim_8cc.html" title="machine/mipssim.cc" alt="" coords="1501,379,1654,405"/><area shape="rect" id="node32" href="filehdr_8h.html" title="filesys/filehdr.h" alt="" coords="227,304,342,331"/><area shape="rect" id="node34" href="breakpoint_8cc.html" title="machine/breakpoint.cc" alt="" coords="2704,229,2870,256"/><area shape="rect" id="node36" href="console_8cc.html" title="machine/console.cc" alt="" coords="2018,304,2166,331"/><area shape="rect" id="node37" href="system_8cc.html" title="threads/system.cc" alt="" coords="2190,304,2330,331"/><area shape="rect" id="node39" href="synchdisk_8h.html" title="filesys/synchdisk.h" alt="" coords="467,304,606,331"/><area shape="rect" id="node40" href="disk_8cc.html" title="machine/disk.cc" alt="" coords="997,304,1120,331"/><area shape="rect" id="node42" href="nettest_8cc.html" title="network/nettest.cc" alt="" coords="2606,304,2746,331"/><area shape="rect" id="node43" href="post_8h.html" title="network/post.h" alt="" coords="2564,229,2679,256"/></map>
+</div>
+</div>
+<p><a href="stdlib_8h_source.html">Aller au code source de ce fichier.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a070d2ce7b6bb7e5c05602aa8c308d0c4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stdlib_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>&#160;&#160;&#160;((void*)0)</td></tr>
+<tr class="separator:a070d2ce7b6bb7e5c05602aa8c308d0c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59adc4c82490d23754cd39c2fb99b0da"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stdlib_8h.html#a59adc4c82490d23754cd39c2fb99b0da">EOF</a>&#160;&#160;&#160;(-1)</td></tr>
+<tr class="separator:a59adc4c82490d23754cd39c2fb99b0da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Définitions de type</h2></td></tr>
+<tr class="memitem:a7c94ea6f8948649f8d181ae55911eeaf"><td class="memItemLeft" align="right" valign="top">typedef unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stdlib_8h.html#a7c94ea6f8948649f8d181ae55911eeaf">size_t</a></td></tr>
+<tr class="separator:a7c94ea6f8948649f8d181ae55911eeaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:a30670a60464f77af17dfb353353d6df8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stdlib_8h.html#a30670a60464f77af17dfb353353d6df8">atoi</a> (const char *s)</td></tr>
+<tr class="separator:a30670a60464f77af17dfb353353d6df8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab85b30d68ce9d9e0475e0f51bf610b1"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stdlib_8h.html#aab85b30d68ce9d9e0475e0f51bf610b1">gets</a> (char *s)</td></tr>
+<tr class="separator:aab85b30d68ce9d9e0475e0f51bf610b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2eb4e84d30d30f692f4ee87348aac05b"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stdlib_8h.html#a2eb4e84d30d30f692f4ee87348aac05b">itoa</a> (int num, char *buffer)</td></tr>
+<tr class="separator:a2eb4e84d30d30f692f4ee87348aac05b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8908188ae9fc2f05d993257ef001d553"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stdlib_8h.html#a8908188ae9fc2f05d993257ef001d553">strcat</a> (char *s1, const char *s2)</td></tr>
+<tr class="separator:a8908188ae9fc2f05d993257ef001d553"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89c177d1405cf367c2c4874c4449456a"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stdlib_8h.html#a89c177d1405cf367c2c4874c4449456a">strchr</a> (const char *s1, int n)</td></tr>
+<tr class="separator:a89c177d1405cf367c2c4874c4449456a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a11bd144d7d44914099a3aeddf1c8567d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stdlib_8h.html#a11bd144d7d44914099a3aeddf1c8567d">strcmp</a> (const char *s1, const char *s2)</td></tr>
+<tr class="separator:a11bd144d7d44914099a3aeddf1c8567d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1eb9cae61e6a6282c28dbc298ef7297e"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stdlib_8h.html#a1eb9cae61e6a6282c28dbc298ef7297e">strcpy</a> (char *s1, const char *s2)</td></tr>
+<tr class="separator:a1eb9cae61e6a6282c28dbc298ef7297e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40c47e6d6db2b268cf91d16f2b66ca79"><td class="memItemLeft" align="right" valign="top"><a class="el" href="stdlib_8h.html#a7c94ea6f8948649f8d181ae55911eeaf">size_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stdlib_8h.html#a40c47e6d6db2b268cf91d16f2b66ca79">strlen</a> (const char *ptr)</td></tr>
+<tr class="separator:a40c47e6d6db2b268cf91d16f2b66ca79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c10a214b02eed3dafc48c59ad71abbd"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stdlib_8h.html#a4c10a214b02eed3dafc48c59ad71abbd">strncat</a> (char *s1, const char *s2, <a class="el" href="stdlib_8h.html#a7c94ea6f8948649f8d181ae55911eeaf">size_t</a> n)</td></tr>
+<tr class="separator:a4c10a214b02eed3dafc48c59ad71abbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07f4a84c11c106e95c32b6ab509346ef"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stdlib_8h.html#a07f4a84c11c106e95c32b6ab509346ef">strncmp</a> (const char *s1, const char *s2, <a class="el" href="stdlib_8h.html#a7c94ea6f8948649f8d181ae55911eeaf">size_t</a> n)</td></tr>
+<tr class="separator:a07f4a84c11c106e95c32b6ab509346ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7982e2515766b25c1157ac30f8bac394"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stdlib_8h.html#a7982e2515766b25c1157ac30f8bac394">strncpy</a> (char *s1, const char *s2, <a class="el" href="stdlib_8h.html#a7c94ea6f8948649f8d181ae55911eeaf">size_t</a> n)</td></tr>
+<tr class="separator:a7982e2515766b25c1157ac30f8bac394"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4f908603db727b2625141c4d4b41177"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stdlib_8h.html#ad4f908603db727b2625141c4d4b41177">strrchr</a> (const char *s1, int n)</td></tr>
+<tr class="separator:ad4f908603db727b2625141c4d4b41177"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb923ee2a7a01f82eb1e2f8ae188c6d4"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stdlib_8h.html#aeb923ee2a7a01f82eb1e2f8ae188c6d4">strstr</a> (const char *s1, const char *s2)</td></tr>
+<tr class="separator:aeb923ee2a7a01f82eb1e2f8ae188c6d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Documentation des macros</h2>
+<a class="anchor" id="a59adc4c82490d23754cd39c2fb99b0da"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EOF&#160;&#160;&#160;(-1)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a070d2ce7b6bb7e5c05602aa8c308d0c4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NULL&#160;&#160;&#160;((void*)0)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des définitions de type</h2>
+<a class="anchor" id="a7c94ea6f8948649f8d181ae55911eeaf"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef unsigned int <a class="el" href="stdlib_8h.html#a7c94ea6f8948649f8d181ae55911eeaf">size_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des fonctions</h2>
+<a class="anchor" id="a30670a60464f77af17dfb353353d6df8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int atoi </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>s</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aab85b30d68ce9d9e0475e0f51bf610b1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* gets </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>s</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="stdlib_8h_aab85b30d68ce9d9e0475e0f51bf610b1_cgraph.png" border="0" usemap="#stdlib_8h_aab85b30d68ce9d9e0475e0f51bf610b1_cgraph" alt=""/></div>
+<map name="stdlib_8h_aab85b30d68ce9d9e0475e0f51bf610b1_cgraph" id="stdlib_8h_aab85b30d68ce9d9e0475e0f51bf610b1_cgraph">
+<area shape="rect" id="node2" href="sysdep_8cc.html#a5e6998f357c2b105b44fbb71fd54afd5" title="Read" alt="" coords="104,5,157,32"/><area shape="rect" id="node3" href="sysdep_8cc.html#ad69dc0274328d82982430dc65be73623" title="read" alt="" coords="205,5,256,32"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a2eb4e84d30d30f692f4ee87348aac05b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* itoa </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>num</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>buffer</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a8908188ae9fc2f05d993257ef001d553"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* strcat </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>s1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>s2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a89c177d1405cf367c2c4874c4449456a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* strchr </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>s1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a11bd144d7d44914099a3aeddf1c8567d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int strcmp </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>s1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>s2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a1eb9cae61e6a6282c28dbc298ef7297e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* strcpy </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>s1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>s2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a40c47e6d6db2b268cf91d16f2b66ca79"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="stdlib_8h.html#a7c94ea6f8948649f8d181ae55911eeaf">size_t</a> strlen </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>ptr</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4c10a214b02eed3dafc48c59ad71abbd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* strncat </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>s1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>s2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="stdlib_8h.html#a7c94ea6f8948649f8d181ae55911eeaf">size_t</a>&#160;</td>
+          <td class="paramname"><em>n</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a07f4a84c11c106e95c32b6ab509346ef"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int strncmp </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>s1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>s2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="stdlib_8h.html#a7c94ea6f8948649f8d181ae55911eeaf">size_t</a>&#160;</td>
+          <td class="paramname"><em>n</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a7982e2515766b25c1157ac30f8bac394"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* strncpy </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>s1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>s2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="stdlib_8h.html#a7c94ea6f8948649f8d181ae55911eeaf">size_t</a>&#160;</td>
+          <td class="paramname"><em>n</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad4f908603db727b2625141c4d4b41177"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* strrchr </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>s1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aeb923ee2a7a01f82eb1e2f8ae188c6d4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* strstr </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>s1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>s2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Dimanche 12 Février 2017 10:48:15 pour nachos par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.6
+</small></address>
+</body>
+</html>

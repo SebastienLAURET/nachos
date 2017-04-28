@@ -1,0 +1,298 @@
+[1mdiff --git a/userprog/systemcall.cc b/userprog/systemcall.cc[m
+[1mindex 15257be..f633d60 100644[m
+[1m--- a/userprog/systemcall.cc[m
+[1m+++ b/userprog/systemcall.cc[m
+[36m@@ -50,16 +50,16 @@[m [mvoid do_system_call(int syscall_num) {[m
+   case SC_Read:[m
+     returnvalue = System_Read ((int) reg4, (char*) reg5, (int) reg6);[m
+     break;[m
+[31m-  case SC_Write:    [m
+[32m+[m[32m  case SC_Write:[m
+     returnvalue = System_Write ((int) reg4, (char *) reg5, (int) reg6);[m
+     break;[m
+[31m-  case SC_Close:    [m
+[32m+[m[32m  case SC_Close:[m
+     returnvalue = System_Close ((int) reg4);[m
+     break;[m
+   case SC_Unlink:[m
+     returnvalue = System_Unlink ((char *) reg4);[m
+     break;[m
+[31m-  case SC_Fork:     [m
+[32m+[m[32m  case SC_Fork:[m
+     returnvalue = System_Fork();[m
+     break;[m
+   case SC_GetPID:[m
+[36m@@ -68,9 +68,12 @@[m [mvoid do_system_call(int syscall_num) {[m
+   case SC_GetPPID:[m
+     returnvalue = System_GetPPID ();[m
+     break;[m
+[31m-  case SC_Yield:    [m
+[32m+[m[32m  case SC_Yield:[m
+     System_Yield();[m
+     break;[m
+[32m+[m[32m  case SC_Nice:[m
+[32m+[m[32m    returnvalue = System_Nice((int) reg4);[m
+[32m+[m[32m    break;[m
+   default:[m
+     fprintf (stderr, "Nonexistent system call: %d\n", syscall_num);[m
+     returnvalue = -1;[m
+[36m@@ -83,7 +86,7 @@[m [mvoid do_system_call(int syscall_num) {[m
+ int System_Create (char *user_space_filename) {[m
+   char * filename = new char[MAXFILENAMELENGTH];[m
+ [m
+[31m-  if (!filename) { [m
+[32m+[m[32m  if (!filename) {[m
+     return -ENOMEM;[m
+   }[m
+   system_read_null (user_space_filename, filename);[m
+[36m@@ -103,8 +106,8 @@[m [mint System_Open (char *user_space_filename) {[m
+   int fd;[m
+   char * filename = new char[MAXFILENAMELENGTH];[m
+   OpenFile *file;[m
+[31m-  [m
+[31m-  if (!filename) { [m
+[32m+[m
+[32m+[m[32m  if (!filename) {[m
+     return -ENOMEM;[m
+   }[m
+   system_read_null (user_space_filename, filename);[m
+[36m@@ -144,18 +147,18 @@[m [mint System_Read (int from_fd, char* to_user_space, int num_to_read) {[m
+    char *buffer;[m
+    int bytesread;[m
+    OpenFile *file;[m
+[31m-   [m
+[32m+[m
+    buffer = new char[num_to_read];[m
+    if (buffer == NULL) {[m
+      return -ENOMEM;[m
+    }[m
+[31m-   [m
+[32m+[m
+    FDTEntry *fdte = currentThread->getFD (from_fd);[m
+    if (!fdte) {[m
+      delete [] buffer;[m
+      return -EBADF;[m
+    }[m
+[31m-   [m
+[32m+[m
+    switch (fdte->type) {[m
+    case ConsoleFile :[m
+      bytesread = ConsoleRead (buffer, num_to_read);[m
+[36m@@ -169,7 +172,7 @@[m [mint System_Read (int from_fd, char* to_user_space, int num_to_read) {[m
+      return -EBADF;[m
+      break;[m
+    }[m
+[31m-   [m
+[32m+[m
+    for (ssize_t i = 0; i < bytesread; i++) {[m
+      bool ok;[m
+      ok = machine->WriteMem ((int)(to_user_space + i), 1, (int) buffer[i]);[m
+[36m@@ -183,7 +186,7 @@[m [mint System_Read (int from_fd, char* to_user_space, int num_to_read) {[m
+        }[m
+      }[m
+    }[m
+[31m-   [m
+[32m+[m
+    delete [] buffer;[m
+    return (int)bytesread;[m
+ }[m
+[36m@@ -201,9 +204,9 @@[m [mint System_Write (int to_fd, char * from_user_space, int num_to_write) {[m
+   int byteswritten;[m
+   char* buffer;[m
+   OpenFile *file;[m
+[31m-  [m
+[32m+[m
+   buffer = new char[num_to_write + 1];[m
+[31m-  [m
+[32m+[m
+   if (buffer == NULL) {[m
+     return -ENOMEM;[m
+   }[m
+[36m@@ -213,7 +216,7 @@[m [mint System_Write (int to_fd, char * from_user_space, int num_to_write) {[m
+     delete [] buffer;[m
+     return -EBADF;[m
+   }[m
+[31m-  [m
+[32m+[m
+   for (int i = 0; i < num_to_write; i++) {[m
+     bool ok;[m
+     ok = machine->ReadMem ((int)(from_user_space + i), 1, (int *)&buffer[i]);[m
+[36m@@ -228,8 +231,8 @@[m [mint System_Write (int to_fd, char * from_user_space, int num_to_write) {[m
+     }[m
+   }[m
+   buffer [num_to_write] = '\0';[m
+[31m-  [m
+[31m-  [m
+[32m+[m
+[32m+[m
+   switch (fdte->type) {[m
+   case ConsoleFile :[m
+     byteswritten = ConsoleWrite (buffer, num_to_write);[m
+[36m@@ -243,7 +246,7 @@[m [mint System_Write (int to_fd, char * from_user_space, int num_to_write) {[m
+     return -EBADF;[m
+     break;[m
+   }[m
+[31m-  [m
+[32m+[m
+   delete [] buffer;[m
+   return byteswritten;[m
+ }[m
+[36m@@ -271,7 +274,7 @@[m [mint System_Close (int fd) {[m
+   }[m
+   currentThread->setFD (fd, (FDTEntry *) NULL);[m
+ [m
+[31m-  return 0;  [m
+[32m+[m[32m  return 0;[m
+ }[m
+ [m
+ [m
+[36m@@ -280,7 +283,7 @@[m [mint System_Close (int fd) {[m
+ int System_Unlink (char *user_space_filename) {[m
+   char * filename = new char[MAXFILENAMELENGTH];[m
+ [m
+[31m-  if (!filename) { [m
+[32m+[m[32m  if (!filename) {[m
+     return -ENOMEM;[m
+   }[m
+   system_read_null (user_space_filename, filename);[m
+[36m@@ -317,7 +320,7 @@[m [mvoid System_Exit (int exitvalue) {[m
+   if (printProcStats && currentThread->procStats) {[m
+     currentThread->procStats->ShortPrint (currentThread->Get_Id());[m
+   }[m
+[31m-  [m
+[32m+[m
+   parent = currentThread->Get_Parent_Ptr ();[m
+   if (!parent) {[m
+     currentThread->Finish ();[m
+[36m@@ -347,11 +350,11 @@[m [mint System_Wait (int *exitvalue) {[m
+   Thread *child;[m
+   int childexitvalue;[m
+   int pid;[m
+[31m-  [m
+[32m+[m
+   if (currentThread->Get_Num_Children () == 0) {[m
+     return -ECHILD;[m
+   }[m
+[31m-  [m
+[32m+[m
+   // currentThread waiting on the semaphore ChildExited[m
+   currentThread->ChildExited->P ();[m
+ [m
+[36m@@ -360,7 +363,7 @@[m [mint System_Wait (int *exitvalue) {[m
+   if (!child) {[m
+     ASSERT (false);[m
+   }[m
+[31m-  [m
+[32m+[m
+   if (exitvalue) {[m
+     bool ok;[m
+ [m
+[36m@@ -383,7 +386,7 @@[m [mint System_Wait (int *exitvalue) {[m
+ 	child->Set_Exit_Val (-childexitvalue); //FIXME : Since the exitvalue for child is written above into memory[m
+ 					       // this Set_Exit_Val is solely for the purpose of signalling child's[m
+ 					       // Exit status, to the parent, which thread_exit_status does.[m
+[31m-					       //  So do we need this line ?? [m
+[32m+[m					[32m       //  So do we need this line ??[m
+   }[m
+ [m
+   return (pid);[m
+[36m@@ -393,20 +396,20 @@[m [mint System_Wait (int *exitvalue) {[m
+ // ================================================================[m
+ // System_Exec:[m
+ // Parameters: register 4 contains a pointer to the filename of[m
+[31m-//             the executable image.  [m
+[31m-// Note: The executable image can take NO arguments.  [m
+[32m+[m[32m//             the executable image.[m
+[32m+[m[32m// Note: The executable image can take NO arguments.[m
+ // Entry Point: Called from do_system_call[m
+ // ================================================================[m
+ int System_Exec (char * user_space_filename) {[m
+   int ret;[m
+   char * filename = new char[MAXFILENAMELENGTH];[m
+[31m- [m
+[31m-  if (!filename) { [m
+[32m+[m
+[32m+[m[32m  if (!filename) {[m
+     return -ENOMEM;[m
+   }[m
+   system_read_null( user_space_filename, filename);[m
+   currentThread->setName(filename);[m
+[31m-  [m
+[32m+[m
+   OpenFile *executable = fileSystem->Open(filename);[m
+   if ( executable == NULL ) {[m
+     printf("Unable to open file %s\n", filename);[m
+[36m@@ -421,10 +424,10 @@[m [mint System_Exec (char * user_space_filename) {[m
+   if (ret < 0) {[m
+     return ret;[m
+   }[m
+[31m-  [m
+[32m+[m
+   currentThread->space->InitRegisters();[m
+[31m-  currentThread->space->RestoreState();  [m
+[31m-  [m
+[32m+[m[32m  currentThread->space->RestoreState();[m
+[32m+[m
+   machine->Run();                     // jump to the user progam[m
+   ASSERT(false);                      // machine->Run never returns;[m
+   return 0;                           // make gcc happy[m
+[36m@@ -443,7 +446,7 @@[m [mint System_Fork( ) {[m
+   }[m
+   // Creat an AddrSpace object for the thread[m
+   AddrSpace *space = new AddrSpace (t);[m
+[31m-  [m
+[32m+[m
+   if (!space) {[m
+     delete t;[m
+     return -EAGAIN;[m
+[36m@@ -463,19 +466,19 @@[m [mint System_Fork( ) {[m
+   }[m
+   //calling the Thread::Fork function with Do_Fork as an argument[m
+   pid = t->Fork((void(*)(size_t))Do_Fork, (size_t)0);[m
+[31m-  [m
+[31m-  //Add the number of children to the currentThread by incrementing the [m
+[32m+[m
+[32m+[m[32m  //Add the number of children to the currentThread by incrementing the[m
+   //member variable Children of the Thread class[m
+   currentThread->Add_Child ();[m
+ [m
+   IntStatus oldLevel = interrupt->SetLevel(IntOff);[m
+   // FIXME: Should this be here or in Thread::Fork()?[m
+[31m-  // THIS should be here because the status of thread "t" can be set to [m
+[32m+[m[32m  // THIS should be here because the status of thread "t" can be set to[m
+   // "READY" only after all operations on it have been completed and it is[m
+   // considered to be done only after the previous instruction finishes[m
+   // adding the Children variable after returning from the Thread::Fork()[m
+[31m-  // function allocating the stack and returning to this function.(System_Fork) [m
+[31m-  scheduler->ReadyToRun(t);              // ReadyToRun assumes that interrupts [m
+[32m+[m[32m  // function allocating the stack and returning to this function.(System_Fork)[m
+[32m+[m[32m  scheduler->ReadyToRun(t);              // ReadyToRun assumes that interrupts[m
+                                          // are disabled![m
+   (void) interrupt->SetLevel(oldLevel);[m
+ [m
+[36m@@ -483,6 +486,16 @@[m [mint System_Fork( ) {[m
+ }[m
+ [m
+ [m
+[32m+[m[32m// ==========================================================================[m
+[32m+[m[32m// System_Nice :[m
+[32m+[m[32m// ==========================================================================[m
+[32m+[m[32m#include <iostream>[m
+[32m+[m[32mint System_Nice(int incr) {[m
+[32m+[m
+[32m+[m[32m  currentThread->setPriority(currentThread->getPriority() + incr);[m
+[32m+[m[32m  currentThread->Yield();[m
+[32m+[m[32m}[m
+[32m+[m
+ // ================================================================[m
+ // ================================================================[m
+ void System_Yield() {[m
+[36m@@ -543,7 +556,7 @@[m [mint system_read_null( char * from_user_space, char * to_k_space ) {[m
+ void Do_Fork(size_t dummy) {[m
+   dummy = 0;  // Keep gcc happy; the mechanism we use to call this only works[m
+ 	      // with functions that take 1 size_t argument[m
+[31m-  [m
+[32m+[m
+   currentThread->RestoreUserState();[m
+   currentThread->space->RestoreState();[m
+ [m

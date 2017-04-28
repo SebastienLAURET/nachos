@@ -1,0 +1,21 @@
+<map id="userprog/addrspace.h" name="userprog/addrspace.h">
+<area shape="rect" id="node2" href="$copyright_8h.html" title="copyright.h" alt="" coords="621,453,715,480"/>
+<area shape="rect" id="node3" href="$filesys_8h.html" title="filesys.h" alt="" coords="1085,155,1157,181"/>
+<area shape="rect" id="node4" href="$openfile_8h.html" title="openfile.h" alt="" coords="1023,229,1107,256"/>
+<area shape="rect" id="node10" href="$thread_8h.html" title="thread.h" alt="" coords="151,229,227,256"/>
+<area shape="rect" id="node12" href="$system_8h.html" title="system.h" alt="" coords="505,80,585,107"/>
+<area shape="rect" id="node22" href="$elf_8h.html" title="elf.h" alt="" coords="1243,80,1291,107"/>
+<area shape="rect" id="node5" href="$utility_8h.html" title="utility.h" alt="" coords="457,304,524,331"/>
+<area shape="rect" id="node6" href="$stdlib_8h.html" title="stdlib.h" alt="" coords="486,379,553,405"/>
+<area shape="rect" id="node7" href="$sysdep_8h.html" title="sysdep.h" alt="" coords="43,379,121,405"/>
+<area shape="rect" id="node11" href="$defs_8h.html" title="defs.h" alt="" coords="197,304,259,331"/>
+<area shape="rect" id="node13" href="$scheduler_8h.html" title="scheduler.h" alt="" coords="213,155,307,181"/>
+<area shape="rect" id="node16" href="$interrupt_8h.html" title="interrupt.h" alt="" coords="501,155,589,181"/>
+<area shape="rect" id="node17" href="$stats_8h.html" title="stats.h" alt="" coords="807,304,873,331"/>
+<area shape="rect" id="node18" href="$timer_8h.html" title="timer.h" alt="" coords="589,229,656,256"/>
+<area shape="rect" id="node19" href="$memmgr_8h.html" title="memmgr.h" alt="" coords="332,155,425,181"/>
+<area shape="rect" id="node20" href="$swapmgr_8h.html" title="swapmgr.h" alt="" coords="665,155,756,181"/>
+<area shape="rect" id="node21" href="$ifdef__symbols_8h.html" title="ifdef_symbols.h" alt="" coords="781,155,901,181"/>
+<area shape="rect" id="node14" href="$list_8h.html" title="list.h" alt="" coords="509,229,560,256"/>
+<area shape="rect" id="node15" href="$nachos-gdb_8h.html" title="nachos&#45;gdb.h" alt="" coords="316,229,425,256"/>
+</map>

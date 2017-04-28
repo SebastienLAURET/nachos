@@ -1,0 +1,6 @@
+<map id="Network::~Network" name="Network::~Network">
+<area shape="rect" id="node2" href="$sysdep_8cc.html#a0f43cc86f59a90746979f53a452a4e0a" title="CloseSocket" alt="" coords="239,5,340,32"/>
+<area shape="rect" id="node4" href="$sysdep_8cc.html#ad14ac54eb7fd4aa123a0d633650ea198" title="DeAssignNameToSocket" alt="" coords="200,56,379,83"/>
+<area shape="rect" id="node3" href="$sysdep_8cc.html#ac27bb3145ebeaec9b4661acfd47e4c51" title="close" alt="" coords="429,5,483,32"/>
+<area shape="rect" id="node5" href="$sysdep_8cc.html#ae6e154f3d23907c2f499b54d2d386fc9" title="unlink" alt="" coords="427,56,485,83"/>
+</map>

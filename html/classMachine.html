@@ -1,0 +1,581 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>nachos: Référence de la classe Machine</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">nachos
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Liste&#160;des&#160;classes</span></a></li>
+      <li><a href="classes.html"><span>Index&#160;des&#160;classes</span></a></li>
+      <li><a href="inherits.html"><span>Hiérarchie&#160;des&#160;classes</span></a></li>
+      <li><a href="functions.html"><span>Membres&#160;de&#160;classe</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Fonctions membres publiques</a> &#124;
+<a href="#pub-attribs">Attributs publics</a> &#124;
+<a href="classMachine-members.html">Liste de tous les membres</a>  </div>
+  <div class="headertitle">
+<div class="title">Référence de la classe Machine</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="machine_8h_source.html">machine.h</a>&gt;</code></p>
+<div class="dynheader">
+Graphe de collaboration de Machine:</div>
+<div class="dyncontent">
+<div class="center"><img src="classMachine__coll__graph.png" border="0" usemap="#Machine_coll__map" alt="Collaboration graph"/></div>
+<map name="Machine_coll__map" id="Machine_coll__map">
+<area shape="rect" id="node2" href="classTranslationEntry.html" title="TranslationEntry" alt="" coords="5,187,128,213"/><area shape="rect" id="node3" href="classOpenFile.html" title="OpenFile" alt="" coords="29,96,104,123"/><area shape="rect" id="node4" href="classFileHeader.html" title="FileHeader" alt="" coords="22,5,111,32"/></map>
+<center><span class="legend">[<a href="graph_legend.html">légende</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Fonctions membres publiques</h2></td></tr>
+<tr class="memitem:ad5958275a54dbc299b71ecdba7da0604"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMachine.html#ad5958275a54dbc299b71ecdba7da0604">Machine</a> (bool debug)</td></tr>
+<tr class="separator:ad5958275a54dbc299b71ecdba7da0604"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f595e09b54761f6c1e73b192067bd9c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMachine.html#a7f595e09b54761f6c1e73b192067bd9c">~Machine</a> ()</td></tr>
+<tr class="separator:a7f595e09b54761f6c1e73b192067bd9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83444e06eb7a7c163a1b9c87a7062d43"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMachine.html#a83444e06eb7a7c163a1b9c87a7062d43">Run</a> ()</td></tr>
+<tr class="separator:a83444e06eb7a7c163a1b9c87a7062d43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a8ed459cb3700c406564db72957bae3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMachine.html#a6a8ed459cb3700c406564db72957bae3">ReadRegister</a> (int num)</td></tr>
+<tr class="separator:a6a8ed459cb3700c406564db72957bae3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad58cc61e347395586a1cb91272dc4d61"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMachine.html#ad58cc61e347395586a1cb91272dc4d61">WriteRegister</a> (int num, int value)</td></tr>
+<tr class="separator:ad58cc61e347395586a1cb91272dc4d61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd8815d4d21a597aebfab1bbc9333b7e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMachine.html#afd8815d4d21a597aebfab1bbc9333b7e">Fix_Fork_Registers</a> ()</td></tr>
+<tr class="separator:afd8815d4d21a597aebfab1bbc9333b7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8d77f2964313173f1bada56bc596e48"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMachine.html#af8d77f2964313173f1bada56bc596e48">OneInstruction</a> (<a class="el" href="classInstruction.html">Instruction</a> *instr)</td></tr>
+<tr class="separator:af8d77f2964313173f1bada56bc596e48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a11fda0ddf1f16d8b1a06f75d1ab5b8a1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMachine.html#a11fda0ddf1f16d8b1a06f75d1ab5b8a1">DelayedLoad</a> (int nextReg, int nextVal)</td></tr>
+<tr class="separator:a11fda0ddf1f16d8b1a06f75d1ab5b8a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c5f4731c90e1df71a5e0145d8287888"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMachine.html#a9c5f4731c90e1df71a5e0145d8287888">ReadMem</a> (int addr, int size, void *value)</td></tr>
+<tr class="separator:a9c5f4731c90e1df71a5e0145d8287888"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f442601e649b537a65b8b2440342227"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMachine.html#a1f442601e649b537a65b8b2440342227">WriteMem</a> (int addr, int size, int value)</td></tr>
+<tr class="separator:a1f442601e649b537a65b8b2440342227"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a754ddcbc077cc91463398de8b0f1d077"><td class="memItemLeft" align="right" valign="top"><a class="el" href="machine_8h.html#a0e0f0f1661d7aeb71ed9698bff6c6383">ExceptionType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMachine.html#a754ddcbc077cc91463398de8b0f1d077">Translate</a> (int virtAddr, int *physAddr, int size, bool writing)</td></tr>
+<tr class="separator:a754ddcbc077cc91463398de8b0f1d077"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d6f63790c0568437b100171f61fd77f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMachine.html#a0d6f63790c0568437b100171f61fd77f">RaiseException</a> (<a class="el" href="machine_8h.html#a0e0f0f1661d7aeb71ed9698bff6c6383">ExceptionType</a> which, int badVAddr)</td></tr>
+<tr class="separator:a0d6f63790c0568437b100171f61fd77f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e4dee4ed66da41de9bbebb161efd06f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMachine.html#a4e4dee4ed66da41de9bbebb161efd06f">DumpState</a> ()</td></tr>
+<tr class="separator:a4e4dee4ed66da41de9bbebb161efd06f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Attributs publics</h2></td></tr>
+<tr class="memitem:aa2ad571478bcc8aa88cebe50fc533ec7"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMachine.html#aa2ad571478bcc8aa88cebe50fc533ec7">mainMemory</a></td></tr>
+<tr class="separator:aa2ad571478bcc8aa88cebe50fc533ec7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97712e3db6165648d169598fdf26b756"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMachine.html#a97712e3db6165648d169598fdf26b756">registers</a> [<a class="el" href="machine_8h.html#a3d05ab2fa1bfa8eb176488fe4119a464">NumTotalRegs</a>]</td></tr>
+<tr class="separator:a97712e3db6165648d169598fdf26b756"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a900108b92c72cfbcab9106d99be5a315"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classTranslationEntry.html">TranslationEntry</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMachine.html#a900108b92c72cfbcab9106d99be5a315">tlb</a></td></tr>
+<tr class="separator:a900108b92c72cfbcab9106d99be5a315"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e4092e3d7bab29b7d1f54ad005527ca"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classTranslationEntry.html">TranslationEntry</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMachine.html#a9e4092e3d7bab29b7d1f54ad005527ca">pageTable</a></td></tr>
+<tr class="separator:a9e4092e3d7bab29b7d1f54ad005527ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a439af96b1d906dbea5dfb538d8491418"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMachine.html#a439af96b1d906dbea5dfb538d8491418">pageTableSize</a></td></tr>
+<tr class="separator:a439af96b1d906dbea5dfb538d8491418"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Documentation des constructeurs et destructeur</h2>
+<a class="anchor" id="ad5958275a54dbc299b71ecdba7da0604"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Machine::Machine </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>debug</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="classMachine_ad5958275a54dbc299b71ecdba7da0604_cgraph.png" border="0" usemap="#classMachine_ad5958275a54dbc299b71ecdba7da0604_cgraph" alt=""/></div>
+<map name="classMachine_ad5958275a54dbc299b71ecdba7da0604_cgraph" id="classMachine_ad5958275a54dbc299b71ecdba7da0604_cgraph">
+<area shape="rect" id="node2" href="machine_8cc.html#a720b8c31feb713e6e3cf5953c75f06e8" title="CheckEndian" alt="" coords="189,5,293,32"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a7f595e09b54761f6c1e73b192067bd9c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Machine::~Machine </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des fonctions membres</h2>
+<a class="anchor" id="a11fda0ddf1f16d8b1a06f75d1ab5b8a1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Machine::DelayedLoad </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nextReg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nextVal</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4e4dee4ed66da41de9bbebb161efd06f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Machine::DumpState </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="afd8815d4d21a597aebfab1bbc9333b7e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Machine::Fix_Fork_Registers </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="classMachine_afd8815d4d21a597aebfab1bbc9333b7e_cgraph.png" border="0" usemap="#classMachine_afd8815d4d21a597aebfab1bbc9333b7e_cgraph" alt=""/></div>
+<map name="classMachine_afd8815d4d21a597aebfab1bbc9333b7e_cgraph" id="classMachine_afd8815d4d21a597aebfab1bbc9333b7e_cgraph">
+<area shape="rect" id="node2" href="classMachine.html#a11fda0ddf1f16d8b1a06f75d1ab5b8a1" title="Machine::DelayedLoad" alt="" coords="254,5,421,32"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="af8d77f2964313173f1bada56bc596e48"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Machine::OneInstruction </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classInstruction.html">Instruction</a> *&#160;</td>
+          <td class="paramname"><em>instr</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="classMachine_af8d77f2964313173f1bada56bc596e48_cgraph.png" border="0" usemap="#classMachine_af8d77f2964313173f1bada56bc596e48_cgraph" alt=""/></div>
+<map name="classMachine_af8d77f2964313173f1bada56bc596e48_cgraph" id="classMachine_af8d77f2964313173f1bada56bc596e48_cgraph">
+<area shape="rect" id="node2" href="classInstruction.html#a768408b570ff48dfc9b8853d9a327139" title="Instruction::Decode" alt="" coords="245,5,392,32"/><area shape="rect" id="node3" href="utility_8cc.html#a79c7d1acabdb48f6f6a80ec0abf7cf89" title="DebugIsEnabled" alt="" coords="2069,487,2195,513"/><area shape="rect" id="node5" href="mipssim_8cc.html#a1afe7dc150d01782aacc1c90fea93e0d" title="TypeToReg" alt="" coords="275,309,362,336"/><area shape="rect" id="node6" href="classMachine.html#a0d6f63790c0568437b100171f61fd77f" title="Machine::RaiseException" alt="" coords="229,208,408,235"/><area shape="rect" id="node7" href="utility_8cc.html#af1c6878736cbd9e1b531898d8951d613" title="DEBUG" alt="" coords="1927,487,1996,513"/><area shape="rect" id="node8" href="classMachine.html#a11fda0ddf1f16d8b1a06f75d1ab5b8a1" title="Machine::DelayedLoad" alt="" coords="457,360,623,387"/><area shape="rect" id="node45" href="mipssim_8cc.html#aced37fd50630f731c8c1b83dea978750" title="Mult" alt="" coords="294,360,343,387"/><area shape="rect" id="node4" href="stdlib_8h.html#a89c177d1405cf367c2c4874c4449456a" title="strchr" alt="" coords="2243,487,2301,513"/><area shape="rect" id="node9" href="classInterrupt.html#a6b240d463c36d4dcb18c444d4f71b778" title="Interrupt::getStatus" alt="" coords="466,208,614,235"/><area shape="rect" id="node10" href="classInterrupt.html#a35a3cf7b10315addeee6ed0730225d57" title="Interrupt::setStatus" alt="" coords="467,259,613,285"/><area shape="rect" id="node11" href="machine_8h.html#a69c8c3bb4a492eeea6b21600a76cada7" title="ExceptionHandler" alt="" coords="473,309,607,336"/><area shape="rect" id="node12" href="classThread.html#a46450bb50c81bbfc0fd254fa7b72d821" title="Thread::getName" alt="" coords="1690,461,1825,488"/><area shape="rect" id="node13" href="classThread.html#a5877e34f6fc245af696320375a0b616c" title="Thread::Get_Id" alt="" coords="672,309,787,336"/><area shape="rect" id="node14" href="classThread.html#a1e43c788c40e9783311c970bcea7239b" title="Thread::Finish" alt="" coords="675,392,784,419"/><area shape="rect" id="node15" href="classInterrupt.html#af55a6cea64a8a3de49bad9ea3843addb" title="Interrupt::SetLevel" alt="" coords="835,392,975,419"/><area shape="rect" id="node42" href="classThread.html#a187a4c1e62087511b69068220840244a" title="Thread::Sleep" alt="" coords="850,664,961,691"/><area shape="rect" id="node16" href="classInterrupt.html#ab3ca8b04757f024242b1037cf5b2ede8" title="Interrupt::ChangeLevel" alt="" coords="1211,309,1378,336"/><area shape="rect" id="node17" href="classInterrupt.html#af7e385b28c374d35c4ca3763efac2b33" title="Interrupt::OneTick" alt="" coords="1026,392,1161,419"/><area shape="rect" id="node18" href="classInterrupt.html#aa0b369ce526d17d07dc24027a1bf63a9" title="Interrupt::HandleIfDue" alt="" coords="1213,1069,1376,1096"/><area shape="rect" id="node27" href="classThread.html#adbc2bfb172d2eff4b46882aade9eeb8a" title="Thread::Yield" alt="" coords="1243,461,1346,488"/><area shape="rect" id="node19" href="classInterrupt.html#a8f9a7ddd0f250de0dcd45fa5bfd80c11" title="Interrupt::DumpState" alt="" coords="1441,1069,1599,1096"/><area shape="rect" id="node22" href="classList.html#a27695119b3728f2a9315cdb14ab685e8" title="List::Head" alt="" coords="1477,1221,1563,1248"/><area shape="rect" id="node23" href="classList.html#a4f804c07c4cfa4c9b631e6e117156e32" title="List::Remove" alt="" coords="1706,1019,1809,1045"/><area shape="rect" id="node24" href="classList.html#a854e9656ddbfae181d12f9d9413bc2b8" title="List::IsEmpty" alt="" coords="1910,1019,2013,1045"/><area shape="rect" id="node25" href="classSortedList.html#aba1018141145192392e15ad6277d814a" title="SortedList::Insert" alt="" coords="1455,828,1585,855"/><area shape="rect" id="node20" href="classList.html#ab57e90b8b2a790db7f2cad1e7aaa72d3" title="List::Mapcar" alt="" coords="1708,1120,1807,1147"/><area shape="rect" id="node21" href="interrupt_8cc.html#ae48c7f55ff352d1274e2563d8f97f20b" title="PrintPending" alt="" coords="1706,1069,1809,1096"/><area shape="rect" id="node26" href="classList.html#aea4cc7578bb4db7f502dc005e5edc902" title="List::Append" alt="" coords="1707,816,1808,843"/><area shape="rect" id="node28" href="classScheduler.html#a18e89ab130a40c423da77673f12585d7" title="Scheduler::ReadyToRun" alt="" coords="1436,613,1604,640"/><area shape="rect" id="node32" href="classScheduler.html#a0fa7daec8d1058a8e6b5cbfbdd09555e" title="Scheduler::FindNextToRun" alt="" coords="1427,892,1613,919"/><area shape="rect" id="node39" href="classScheduler.html#a87205b0773d3dd84752ec779c890f5e1" title="Scheduler::Run" alt="" coords="1461,664,1579,691"/><area shape="rect" id="node29" href="classThread.html#ad707af00a9ce1a1d324804e7c73dc4ab" title="Thread::Print" alt="" coords="1706,867,1809,893"/><area shape="rect" id="node30" href="classInterrupt.html#a863f619c2596c5cf53d412a94642db41" title="Interrupt::setNeedResched" alt="" coords="1661,512,1853,539"/><area shape="rect" id="node31" href="classThread.html#a39061ce2692542188f82f909d005b1c3" title="Thread::setStatus" alt="" coords="1689,613,1825,640"/><area shape="rect" id="node33" href="classThread.html#ad75bd5375287a210520752785f503de4" title="Thread::getStatus" alt="" coords="1689,917,1826,944"/><area shape="rect" id="node34" href="classInterrupt.html#a4d9820efbc3e9fd82e82f2eb6ef3613b" title="Interrupt::Halt" alt="" coords="1702,1373,1813,1400"/><area shape="rect" id="node35" href="classStatistics.html#ade67669fb1436e69a215a780b1ade63e" title="Statistics::Print" alt="" coords="1902,1348,2021,1375"/><area shape="rect" id="node36" href="system_8cc.html#ae89a123aad1c66a76c398b7af216aae4" title="Cleanup" alt="" coords="1924,1399,1999,1425"/><area shape="rect" id="node37" href="sysdep_8cc.html#a8b9ef9330856c5a5a02f2d3ef0497e04" title="Exit" alt="" coords="2109,1399,2155,1425"/><area shape="rect" id="node38" href="sysdep_8cc.html#a358d2e2397ca11ccd17553e3c40e7901" title="exit" alt="" coords="2249,1399,2295,1425"/><area shape="rect" id="node40" href="classThread.html#afa6657ff14b9c6866eadd85ea32c9147" title="Thread::CheckOverflow" alt="" coords="1674,715,1841,741"/><area shape="rect" id="node41" href="thread_8h.html#a10e80b5f1da660f5390f448c8fee2ae7" title="SWITCH" alt="" coords="1722,664,1793,691"/><area shape="rect" id="node43" href="classInterrupt.html#aa519deead8b512a52ba4ad9fb0e2643b" title="Interrupt::getLevel" alt="" coords="1024,563,1163,589"/><area shape="rect" id="node44" href="classInterrupt.html#ace54aece18806bae3614ebf9cc8c2991" title="Interrupt::Idle" alt="" coords="1040,1221,1147,1248"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a0d6f63790c0568437b100171f61fd77f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Machine::RaiseException </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="machine_8h.html#a0e0f0f1661d7aeb71ed9698bff6c6383">ExceptionType</a>&#160;</td>
+          <td class="paramname"><em>which</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>badVAddr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="classMachine_a0d6f63790c0568437b100171f61fd77f_cgraph.png" border="0" usemap="#classMachine_a0d6f63790c0568437b100171f61fd77f_cgraph" alt=""/></div>
+<map name="classMachine_a0d6f63790c0568437b100171f61fd77f_cgraph" id="classMachine_a0d6f63790c0568437b100171f61fd77f_cgraph">
+<area shape="rect" id="node2" href="utility_8cc.html#af1c6878736cbd9e1b531898d8951d613" title="DEBUG" alt="" coords="1703,249,1772,275"/><area shape="rect" id="node5" href="classMachine.html#a11fda0ddf1f16d8b1a06f75d1ab5b8a1" title="Machine::DelayedLoad" alt="" coords="233,230,399,257"/><area shape="rect" id="node6" href="classInterrupt.html#a6b240d463c36d4dcb18c444d4f71b778" title="Interrupt::getStatus" alt="" coords="242,281,390,307"/><area shape="rect" id="node7" href="classInterrupt.html#a35a3cf7b10315addeee6ed0730225d57" title="Interrupt::setStatus" alt="" coords="243,331,389,358"/><area shape="rect" id="node8" href="machine_8h.html#a69c8c3bb4a492eeea6b21600a76cada7" title="ExceptionHandler" alt="" coords="249,698,383,725"/><area shape="rect" id="node3" href="utility_8cc.html#a79c7d1acabdb48f6f6a80ec0abf7cf89" title="DebugIsEnabled" alt="" coords="1845,274,1971,301"/><area shape="rect" id="node4" href="stdlib_8h.html#a89c177d1405cf367c2c4874c4449456a" title="strchr" alt="" coords="2019,274,2077,301"/><area shape="rect" id="node9" href="classThread.html#a46450bb50c81bbfc0fd254fa7b72d821" title="Thread::getName" alt="" coords="1466,1110,1601,1137"/><area shape="rect" id="node10" href="classThread.html#a5877e34f6fc245af696320375a0b616c" title="Thread::Get_Id" alt="" coords="448,673,563,699"/><area shape="rect" id="node11" href="classThread.html#a1e43c788c40e9783311c970bcea7239b" title="Thread::Finish" alt="" coords="451,723,560,750"/><area shape="rect" id="node12" href="classInterrupt.html#af55a6cea64a8a3de49bad9ea3843addb" title="Interrupt::SetLevel" alt="" coords="611,831,751,858"/><area shape="rect" id="node39" href="classThread.html#a187a4c1e62087511b69068220840244a" title="Thread::Sleep" alt="" coords="626,615,737,642"/><area shape="rect" id="node13" href="classInterrupt.html#ab3ca8b04757f024242b1037cf5b2ede8" title="Interrupt::ChangeLevel" alt="" coords="987,806,1154,833"/><area shape="rect" id="node14" href="classInterrupt.html#af7e385b28c374d35c4ca3763efac2b33" title="Interrupt::OneTick" alt="" coords="802,857,937,883"/><area shape="rect" id="node15" href="classInterrupt.html#aa0b369ce526d17d07dc24027a1bf63a9" title="Interrupt::HandleIfDue" alt="" coords="989,401,1152,427"/><area shape="rect" id="node24" href="classThread.html#adbc2bfb172d2eff4b46882aade9eeb8a" title="Thread::Yield" alt="" coords="1019,907,1122,934"/><area shape="rect" id="node16" href="classInterrupt.html#a8f9a7ddd0f250de0dcd45fa5bfd80c11" title="Interrupt::DumpState" alt="" coords="1217,350,1375,377"/><area shape="rect" id="node19" href="classList.html#a27695119b3728f2a9315cdb14ab685e8" title="List::Head" alt="" coords="1253,249,1339,275"/><area shape="rect" id="node20" href="classList.html#a4f804c07c4cfa4c9b631e6e117156e32" title="List::Remove" alt="" coords="1482,502,1585,529"/><area shape="rect" id="node21" href="classList.html#a854e9656ddbfae181d12f9d9413bc2b8" title="List::IsEmpty" alt="" coords="1686,502,1789,529"/><area shape="rect" id="node22" href="classSortedList.html#aba1018141145192392e15ad6277d814a" title="SortedList::Insert" alt="" coords="1231,654,1361,681"/><area shape="rect" id="node17" href="classList.html#ab57e90b8b2a790db7f2cad1e7aaa72d3" title="List::Mapcar" alt="" coords="1484,249,1583,275"/><area shape="rect" id="node18" href="interrupt_8cc.html#ae48c7f55ff352d1274e2563d8f97f20b" title="PrintPending" alt="" coords="1482,299,1585,326"/><area shape="rect" id="node23" href="classList.html#aea4cc7578bb4db7f502dc005e5edc902" title="List::Append" alt="" coords="1483,907,1584,934"/><area shape="rect" id="node25" href="classScheduler.html#a18e89ab130a40c423da77673f12585d7" title="Scheduler::ReadyToRun" alt="" coords="1212,907,1380,934"/><area shape="rect" id="node29" href="classScheduler.html#a0fa7daec8d1058a8e6b5cbfbdd09555e" title="Scheduler::FindNextToRun" alt="" coords="1203,553,1389,579"/><area shape="rect" id="node36" href="classScheduler.html#a87205b0773d3dd84752ec779c890f5e1" title="Scheduler::Run" alt="" coords="1237,755,1355,782"/><area shape="rect" id="node26" href="classThread.html#ad707af00a9ce1a1d324804e7c73dc4ab" title="Thread::Print" alt="" coords="1482,705,1585,731"/><area shape="rect" id="node27" href="classInterrupt.html#a863f619c2596c5cf53d412a94642db41" title="Interrupt::setNeedResched" alt="" coords="1437,1059,1629,1086"/><area shape="rect" id="node28" href="classThread.html#a39061ce2692542188f82f909d005b1c3" title="Thread::setStatus" alt="" coords="1465,958,1601,985"/><area shape="rect" id="node30" href="classThread.html#ad75bd5375287a210520752785f503de4" title="Thread::getStatus" alt="" coords="1465,553,1602,579"/><area shape="rect" id="node31" href="classInterrupt.html#a4d9820efbc3e9fd82e82f2eb6ef3613b" title="Interrupt::Halt" alt="" coords="1478,350,1589,377"/><area shape="rect" id="node32" href="classStatistics.html#ade67669fb1436e69a215a780b1ade63e" title="Statistics::Print" alt="" coords="1678,299,1797,326"/><area shape="rect" id="node33" href="system_8cc.html#ae89a123aad1c66a76c398b7af216aae4" title="Cleanup" alt="" coords="1700,350,1775,377"/><area shape="rect" id="node34" href="sysdep_8cc.html#a8b9ef9330856c5a5a02f2d3ef0497e04" title="Exit" alt="" coords="1885,350,1931,377"/><area shape="rect" id="node35" href="sysdep_8cc.html#a358d2e2397ca11ccd17553e3c40e7901" title="exit" alt="" coords="2025,350,2071,377"/><area shape="rect" id="node37" href="classThread.html#afa6657ff14b9c6866eadd85ea32c9147" title="Thread::CheckOverflow" alt="" coords="1450,654,1617,681"/><area shape="rect" id="node38" href="thread_8h.html#a10e80b5f1da660f5390f448c8fee2ae7" title="SWITCH" alt="" coords="1498,755,1569,782"/><area shape="rect" id="node40" href="classInterrupt.html#aa519deead8b512a52ba4ad9fb0e2643b" title="Interrupt::getLevel" alt="" coords="800,615,939,642"/><area shape="rect" id="node41" href="classInterrupt.html#ace54aece18806bae3614ebf9cc8c2991" title="Interrupt::Idle" alt="" coords="816,249,923,275"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a9c5f4731c90e1df71a5e0145d8287888"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Machine::ReadMem </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>addr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="classMachine_a9c5f4731c90e1df71a5e0145d8287888_cgraph.png" border="0" usemap="#classMachine_a9c5f4731c90e1df71a5e0145d8287888_cgraph" alt=""/></div>
+<map name="classMachine_a9c5f4731c90e1df71a5e0145d8287888_cgraph" id="classMachine_a9c5f4731c90e1df71a5e0145d8287888_cgraph">
+<area shape="rect" id="node2" href="utility_8cc.html#af1c6878736cbd9e1b531898d8951d613" title="DEBUG" alt="" coords="437,5,507,32"/><area shape="rect" id="node5" href="classMachine.html#a754ddcbc077cc91463398de8b0f1d077" title="Machine::Translate" alt="" coords="201,56,341,83"/><area shape="rect" id="node3" href="utility_8cc.html#a79c7d1acabdb48f6f6a80ec0abf7cf89" title="DebugIsEnabled" alt="" coords="603,5,728,32"/><area shape="rect" id="node4" href="stdlib_8h.html#a89c177d1405cf367c2c4874c4449456a" title="strchr" alt="" coords="776,5,835,32"/><area shape="rect" id="node6" href="classMachine.html#ad58cc61e347395586a1cb91272dc4d61" title="Machine::WriteRegister" alt="" coords="389,56,555,83"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a6a8ed459cb3700c406564db72957bae3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Machine::ReadRegister </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>num</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a83444e06eb7a7c163a1b9c87a7062d43"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Machine::Run </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="classMachine_a83444e06eb7a7c163a1b9c87a7062d43_cgraph.png" border="0" usemap="#classMachine_a83444e06eb7a7c163a1b9c87a7062d43_cgraph" alt=""/></div>
+<map name="classMachine_a83444e06eb7a7c163a1b9c87a7062d43_cgraph" id="classMachine_a83444e06eb7a7c163a1b9c87a7062d43_cgraph">
+<area shape="rect" id="node2" href="utility_8cc.html#a79c7d1acabdb48f6f6a80ec0abf7cf89" title="DebugIsEnabled" alt="" coords="2224,664,2349,691"/><area shape="rect" id="node4" href="classThread.html#a46450bb50c81bbfc0fd254fa7b72d821" title="Thread::getName" alt="" coords="1845,1069,1979,1096"/><area shape="rect" id="node5" href="classInterrupt.html#a35a3cf7b10315addeee6ed0730225d57" title="Interrupt::setStatus" alt="" coords="621,1221,768,1248"/><area shape="rect" id="node6" href="classMachine.html#af8d77f2964313173f1bada56bc596e48" title="Machine::OneInstruction" alt="" coords="160,1069,336,1096"/><area shape="rect" id="node18" href="classInterrupt.html#af7e385b28c374d35c4ca3763efac2b33" title="Interrupt::OneTick" alt="" coords="1181,1120,1315,1147"/><area shape="rect" id="node3" href="stdlib_8h.html#a89c177d1405cf367c2c4874c4449456a" title="strchr" alt="" coords="2397,664,2456,691"/><area shape="rect" id="node7" href="classInstruction.html#a768408b570ff48dfc9b8853d9a327139" title="Instruction::Decode" alt="" coords="400,1095,547,1121"/><area shape="rect" id="node8" href="mipssim_8cc.html#a1afe7dc150d01782aacc1c90fea93e0d" title="TypeToReg" alt="" coords="430,5,517,32"/><area shape="rect" id="node9" href="classMachine.html#a0d6f63790c0568437b100171f61fd77f" title="Machine::RaiseException" alt="" coords="384,1145,563,1172"/><area shape="rect" id="node10" href="utility_8cc.html#af1c6878736cbd9e1b531898d8951d613" title="DEBUG" alt="" coords="2081,917,2151,944"/><area shape="rect" id="node11" href="classMachine.html#a11fda0ddf1f16d8b1a06f75d1ab5b8a1" title="Machine::DelayedLoad" alt="" coords="611,1007,778,1033"/><area shape="rect" id="node46" href="mipssim_8cc.html#aced37fd50630f731c8c1b83dea978750" title="Mult" alt="" coords="449,1044,498,1071"/><area shape="rect" id="node12" href="classInterrupt.html#a6b240d463c36d4dcb18c444d4f71b778" title="Interrupt::getStatus" alt="" coords="621,1069,769,1096"/><area shape="rect" id="node13" href="machine_8h.html#a69c8c3bb4a492eeea6b21600a76cada7" title="ExceptionHandler" alt="" coords="627,1120,762,1147"/><area shape="rect" id="node14" href="classThread.html#a5877e34f6fc245af696320375a0b616c" title="Thread::Get_Id" alt="" coords="827,1007,941,1033"/><area shape="rect" id="node15" href="classThread.html#a1e43c788c40e9783311c970bcea7239b" title="Thread::Finish" alt="" coords="829,1057,939,1084"/><area shape="rect" id="node16" href="classInterrupt.html#af55a6cea64a8a3de49bad9ea3843addb" title="Interrupt::SetLevel" alt="" coords="990,1095,1130,1121"/><area shape="rect" id="node43" href="classThread.html#a187a4c1e62087511b69068220840244a" title="Thread::Sleep" alt="" coords="1005,715,1115,741"/><area shape="rect" id="node17" href="classInterrupt.html#ab3ca8b04757f024242b1037cf5b2ede8" title="Interrupt::ChangeLevel" alt="" coords="1366,1171,1533,1197"/><area shape="rect" id="node19" href="classInterrupt.html#aa0b369ce526d17d07dc24027a1bf63a9" title="Interrupt::HandleIfDue" alt="" coords="1368,392,1531,419"/><area shape="rect" id="node28" href="classThread.html#adbc2bfb172d2eff4b46882aade9eeb8a" title="Thread::Yield" alt="" coords="1398,968,1501,995"/><area shape="rect" id="node20" href="classInterrupt.html#a8f9a7ddd0f250de0dcd45fa5bfd80c11" title="Interrupt::DumpState" alt="" coords="1595,512,1754,539"/><area shape="rect" id="node23" href="classList.html#a27695119b3728f2a9315cdb14ab685e8" title="List::Head" alt="" coords="1631,157,1718,184"/><area shape="rect" id="node24" href="classList.html#a4f804c07c4cfa4c9b631e6e117156e32" title="List::Remove" alt="" coords="1861,157,1963,184"/><area shape="rect" id="node25" href="classList.html#a854e9656ddbfae181d12f9d9413bc2b8" title="List::IsEmpty" alt="" coords="2065,259,2167,285"/><area shape="rect" id="node26" href="classSortedList.html#aba1018141145192392e15ad6277d814a" title="SortedList::Insert" alt="" coords="1609,360,1740,387"/><area shape="rect" id="node21" href="classList.html#ab57e90b8b2a790db7f2cad1e7aaa72d3" title="List::Mapcar" alt="" coords="1863,563,1961,589"/><area shape="rect" id="node22" href="interrupt_8cc.html#ae48c7f55ff352d1274e2563d8f97f20b" title="PrintPending" alt="" coords="1861,512,1963,539"/><area shape="rect" id="node27" href="classList.html#aea4cc7578bb4db7f502dc005e5edc902" title="List::Append" alt="" coords="1861,360,1963,387"/><area shape="rect" id="node29" href="classScheduler.html#a18e89ab130a40c423da77673f12585d7" title="Scheduler::ReadyToRun" alt="" coords="1591,867,1759,893"/><area shape="rect" id="node33" href="classScheduler.html#a0fa7daec8d1058a8e6b5cbfbdd09555e" title="Scheduler::FindNextToRun" alt="" coords="1582,259,1767,285"/><area shape="rect" id="node40" href="classScheduler.html#a87205b0773d3dd84752ec779c890f5e1" title="Scheduler::Run" alt="" coords="1616,765,1733,792"/><area shape="rect" id="node30" href="classThread.html#ad707af00a9ce1a1d324804e7c73dc4ab" title="Thread::Print" alt="" coords="1861,309,1963,336"/><area shape="rect" id="node31" href="classInterrupt.html#a863f619c2596c5cf53d412a94642db41" title="Interrupt::setNeedResched" alt="" coords="1816,968,2008,995"/><area shape="rect" id="node32" href="classThread.html#a39061ce2692542188f82f909d005b1c3" title="Thread::setStatus" alt="" coords="1844,867,1980,893"/><area shape="rect" id="node34" href="classThread.html#ad75bd5375287a210520752785f503de4" title="Thread::getStatus" alt="" coords="1843,208,1981,235"/><area shape="rect" id="node35" href="classInterrupt.html#a4d9820efbc3e9fd82e82f2eb6ef3613b" title="Interrupt::Halt" alt="" coords="1857,107,1967,133"/><area shape="rect" id="node36" href="classStatistics.html#ade67669fb1436e69a215a780b1ade63e" title="Statistics::Print" alt="" coords="2057,107,2175,133"/><area shape="rect" id="node37" href="system_8cc.html#ae89a123aad1c66a76c398b7af216aae4" title="Cleanup" alt="" coords="2079,5,2153,32"/><area shape="rect" id="node38" href="sysdep_8cc.html#a8b9ef9330856c5a5a02f2d3ef0497e04" title="Exit" alt="" coords="2264,5,2309,32"/><area shape="rect" id="node39" href="sysdep_8cc.html#a358d2e2397ca11ccd17553e3c40e7901" title="exit" alt="" coords="2404,5,2449,32"/><area shape="rect" id="node41" href="classThread.html#afa6657ff14b9c6866eadd85ea32c9147" title="Thread::CheckOverflow" alt="" coords="1829,715,1995,741"/><area shape="rect" id="node42" href="thread_8h.html#a10e80b5f1da660f5390f448c8fee2ae7" title="SWITCH" alt="" coords="1877,765,1947,792"/><area shape="rect" id="node44" href="classInterrupt.html#aa519deead8b512a52ba4ad9fb0e2643b" title="Interrupt::getLevel" alt="" coords="1179,715,1317,741"/><area shape="rect" id="node45" href="classInterrupt.html#ace54aece18806bae3614ebf9cc8c2991" title="Interrupt::Idle" alt="" coords="1195,392,1301,419"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a754ddcbc077cc91463398de8b0f1d077"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="machine_8h.html#a0e0f0f1661d7aeb71ed9698bff6c6383">ExceptionType</a> Machine::Translate </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>virtAddr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>physAddr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>writing</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="classMachine_a754ddcbc077cc91463398de8b0f1d077_cgraph.png" border="0" usemap="#classMachine_a754ddcbc077cc91463398de8b0f1d077_cgraph" alt=""/></div>
+<map name="classMachine_a754ddcbc077cc91463398de8b0f1d077_cgraph" id="classMachine_a754ddcbc077cc91463398de8b0f1d077_cgraph">
+<area shape="rect" id="node2" href="utility_8cc.html#af1c6878736cbd9e1b531898d8951d613" title="DEBUG" alt="" coords="243,5,312,32"/><area shape="rect" id="node5" href="classMachine.html#ad58cc61e347395586a1cb91272dc4d61" title="Machine::WriteRegister" alt="" coords="195,56,360,83"/><area shape="rect" id="node3" href="utility_8cc.html#a79c7d1acabdb48f6f6a80ec0abf7cf89" title="DebugIsEnabled" alt="" coords="408,5,533,32"/><area shape="rect" id="node4" href="stdlib_8h.html#a89c177d1405cf367c2c4874c4449456a" title="strchr" alt="" coords="581,5,640,32"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a1f442601e649b537a65b8b2440342227"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Machine::WriteMem </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>addr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="classMachine_a1f442601e649b537a65b8b2440342227_cgraph.png" border="0" usemap="#classMachine_a1f442601e649b537a65b8b2440342227_cgraph" alt=""/></div>
+<map name="classMachine_a1f442601e649b537a65b8b2440342227_cgraph" id="classMachine_a1f442601e649b537a65b8b2440342227_cgraph">
+<area shape="rect" id="node2" href="utility_8cc.html#af1c6878736cbd9e1b531898d8951d613" title="DEBUG" alt="" coords="437,5,507,32"/><area shape="rect" id="node5" href="classMachine.html#a754ddcbc077cc91463398de8b0f1d077" title="Machine::Translate" alt="" coords="201,56,341,83"/><area shape="rect" id="node3" href="utility_8cc.html#a79c7d1acabdb48f6f6a80ec0abf7cf89" title="DebugIsEnabled" alt="" coords="603,5,728,32"/><area shape="rect" id="node4" href="stdlib_8h.html#a89c177d1405cf367c2c4874c4449456a" title="strchr" alt="" coords="776,5,835,32"/><area shape="rect" id="node6" href="classMachine.html#ad58cc61e347395586a1cb91272dc4d61" title="Machine::WriteRegister" alt="" coords="389,56,555,83"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ad58cc61e347395586a1cb91272dc4d61"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Machine::WriteRegister </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>num</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des données membres</h2>
+<a class="anchor" id="aa2ad571478bcc8aa88cebe50fc533ec7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* Machine::mainMemory</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a9e4092e3d7bab29b7d1f54ad005527ca"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classTranslationEntry.html">TranslationEntry</a>* Machine::pageTable</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a439af96b1d906dbea5dfb538d8491418"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int Machine::pageTableSize</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a97712e3db6165648d169598fdf26b756"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Machine::registers[<a class="el" href="machine_8h.html#a3d05ab2fa1bfa8eb176488fe4119a464">NumTotalRegs</a>]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a900108b92c72cfbcab9106d99be5a315"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classTranslationEntry.html">TranslationEntry</a>* Machine::tlb</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>La documentation de cette classe a été générée à partir des fichiers suivants :<ul>
+<li>machine/<a class="el" href="machine_8h_source.html">machine.h</a></li>
+<li>machine/<a class="el" href="machine_8cc.html">machine.cc</a></li>
+<li>machine/<a class="el" href="mipssim_8cc.html">mipssim.cc</a></li>
+<li>machine/<a class="el" href="translate_8cc.html">translate.cc</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Dimanche 12 Février 2017 10:48:15 pour nachos par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.6
+</small></address>
+</body>
+</html>

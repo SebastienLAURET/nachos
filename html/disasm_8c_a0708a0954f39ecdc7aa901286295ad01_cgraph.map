@@ -1,0 +1,8 @@
+<map id="main" name="main">
+<area shape="rect" id="node2" href="$disasm_8c.html#add539a5755e4c4070b0c8ca97477fe47" title="strcpy" alt="" coords="135,5,196,32"/>
+<area shape="rect" id="node3" href="$sysdep_8cc.html#a358d2e2397ca11ccd17553e3c40e7901" title="exit" alt="" coords="271,81,316,108"/>
+<area shape="rect" id="node4" href="$disasm_8c.html#ada24d1ce2974c9825e3363a8d5931333" title="load_program" alt="" coords="110,107,221,133"/>
+<area shape="rect" id="node5" href="$disasm_8c.html#a5d831af7834c07d31e83bd7fb7751627" title="disasm" alt="" coords="131,157,199,184"/>
+<area shape="rect" id="node6" href="$disasm_8c.html#a22b02790608460e65f12d8a3d8bcaa03" title="dis1" alt="" coords="269,157,317,184"/>
+<area shape="rect" id="node7" href="$d_8c.html#ab3f938c83709a52c0e84a06466a7dacc" title="dump_ascii" alt="" coords="366,157,461,184"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="machine/console.h" name="machine/console.h">
+<area shape="rect" id="node2" href="$console_8cc.html" title="machine/console.cc" alt="" coords="5,80,152,107"/>
+<area shape="rect" id="node3" href="$system_8cc.html" title="threads/system.cc" alt="" coords="177,80,316,107"/>
+<area shape="rect" id="node4" href="$progtest_8cc.html" title="userprog/progtest.cc" alt="" coords="341,80,496,107"/>
+<area shape="rect" id="node5" href="$systemcall_8cc.html" title="userprog/systemcall.cc" alt="" coords="521,80,689,107"/>
+</map>

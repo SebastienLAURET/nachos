@@ -1,0 +1,202 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>nachos:  Fichier source de machine/sysdep.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">nachos
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_0909f4a7c39d3e9616c1c9d755842fcb.html">machine</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">sysdep.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="sysdep_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// sysdep.h </span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">//      System-dependent interface.  Nachos uses the routines defined</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">//      here, rather than directly calling the UNIX library functions, to</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">//      simplify porting between versions of UNIX, and even to</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">//      other systems, such as MSDOS and the Macintosh.</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">// Copyright (c) 1992-1993 The Regents of the University of California.</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">// All rights reserved.  See copyright.h for copyright notice and limitation </span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">// of liability and disclaimer of warranty provisions.</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#ifndef SYSDEP_H</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define SYSDEP_H</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#pragma interface &quot;machine/sysdep.h&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="copyright_8h.html">copyright.h</a>&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">// Check file to see if there are any characters to be read.</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">// If no characters in the file, return without waiting.</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">bool</span> <a class="code" href="sysdep_8h.html#a6d54b43fc541aae810be164b449b331a">PollFile</a>(<span class="keywordtype">int</span> fd);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">// File operations: open/read/write/lseek/close, and check for error</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">// For simulating the disk and the console devices.</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">int</span> <a class="code" href="sysdep_8h.html#a68068d69619efab5fe029a00b5114db9">OpenForWrite</a>(<span class="keywordtype">char</span> *name);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">int</span> <a class="code" href="sysdep_8h.html#ab5cb68486a40540a7a3bd380e15d36d9">OpenForReadWrite</a>(<span class="keywordtype">char</span> *name, <span class="keywordtype">bool</span> crashOnError);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="sysdep_8h.html#a5e6998f357c2b105b44fbb71fd54afd5">Read</a>(<span class="keywordtype">int</span> fd, <span class="keywordtype">void</span> *buffer, <span class="keywordtype">size_t</span> nBytes);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="sysdep_8h.html#af318746bd623cdd12088995045caf66a">Write</a>(<span class="keywordtype">int</span> fd, <span class="keywordtype">void</span> *buffer, <span class="keywordtype">size_t</span> nBytes);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">int</span> <a class="code" href="sysdep_8h.html#a63746bed38274bf40016eb8eb90774ea">ReadPartial</a>(<span class="keywordtype">int</span> fd, <span class="keywordtype">void</span> *buffer, <span class="keywordtype">size_t</span> nBytes);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="sysdep_8h.html#a276f8e31e549b44a672e3b1d55951ac0">WriteFile</a>(<span class="keywordtype">int</span> fd, <span class="keywordtype">void</span> *buffer, <span class="keywordtype">size_t</span> nBytes);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="sysdep_8h.html#a5e24d90699a8caf5d5ecf0ea461050b4">Lseek</a>(<span class="keywordtype">int</span> fd, <span class="keywordtype">int</span> offset, <span class="keywordtype">int</span> whence);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">int</span> <a class="code" href="sysdep_8h.html#a031f3b5d904def89e5f0cb71bcd31f91">Tell</a>(<span class="keywordtype">int</span> fd);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="sysdep_8h.html#ade6d4842f21ea284e126636e424e6614">Close</a>(<span class="keywordtype">int</span> fd);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">bool</span> <a class="code" href="sysdep_8h.html#aab677eb36a3f9c537674e00ea09c2260">Unlink</a>(<span class="keywordtype">char</span> *name);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">// Interprocess communication operations, for simulating the network</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">int</span> <a class="code" href="sysdep_8h.html#a776b711cbcad75a385ef20d8cb04a907">OpenSocket</a>();</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="sysdep_8h.html#a0f43cc86f59a90746979f53a452a4e0a">CloseSocket</a>(<span class="keywordtype">int</span> sockID);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="sysdep_8h.html#a4825f3e39317fcdec16fb44a93d59320">AssignNameToSocket</a>(<span class="keywordtype">char</span> *socketName, <span class="keywordtype">int</span> sockID);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="sysdep_8h.html#ad14ac54eb7fd4aa123a0d633650ea198">DeAssignNameToSocket</a>(<span class="keywordtype">char</span> *socketName);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">bool</span> <a class="code" href="sysdep_8h.html#a2d20b6480716b75b5e1deab47a1f2731">PollSocket</a>(<span class="keywordtype">int</span> sockID);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="sysdep_8h.html#a518b36caa5decc1250be9ab742c4d4b7">ReadFromSocket</a>(<span class="keywordtype">int</span> sockID, <span class="keywordtype">void</span> *buffer, <span class="keywordtype">int</span> packetSize);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="sysdep_8h.html#acf6ac36662ff2a496b9aa57c15c1b269">SendToSocket</a>(<span class="keywordtype">int</span> sockID, <span class="keyword">const</span> <span class="keywordtype">void</span> *buffer, <span class="keywordtype">int</span> packetSize,</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                         <span class="keywordtype">char</span> *toName);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">// Process control: abort, exit, and sleep</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="sysdep_8h.html#a12b9283f52eaf7610afe4b04fbca2ff0">Abort</a>();</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="sysdep_8h.html#a8b9ef9330856c5a5a02f2d3ef0497e04">Exit</a>(<span class="keywordtype">int</span> exitCode);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="sysdep_8h.html#a20cfb7568775ef01bd7c43ee8051495c">Delay</a>(<span class="keywordtype">int</span> seconds);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">// Initialize system so that cleanUp routine is called when user hits ctl-C</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="sysdep_8h.html#a87b7e2768d527868344abcf22f9fefe6">CallOnUserAbort</a>(<a class="code" href="utility_8h.html#abcdc057086e1b18f5c844742b50d3b93">VoidNoArgFunctionPtr</a> cleanUp);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">// Initialize the pseudo random number generator</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="sysdep_8h.html#ae08b1beb5fa6e506cd63a2637f34e912">RandomInit</a>(<span class="keywordtype">unsigned</span> seed);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">int</span> <a class="code" href="sysdep_8h.html#aac8c6c00a0e52489ecf8e8a6d9eba228">Random</a>();</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">// Allocate, de-allocate an array, such that de-referencing</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment">// just beyond either end of the array will cause an error</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">char</span> *<a class="code" href="sysdep_8h.html#a183868423241d09c586310b2d5d266c7">AllocBoundedArray</a>(<span class="keywordtype">int</span> size);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="sysdep_8h.html#a76ed51e3376b728f6e0c03705a71d8e3">DeallocBoundedArray</a>(<span class="keywordtype">char</span> *p, <span class="keywordtype">int</span> size);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">// Other C library routines that are used by Nachos.</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment">// These are assumed to be portable, so we don&#39;t include a wrapper.</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="keywordtype">int</span> <a class="code" href="sysdep_8h.html#aec327ac88a4cd588e82a8b0ac752b089">atoi</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *str);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="keywordtype">double</span> <a class="code" href="sysdep_8h.html#a5aff941a8b7b49b2e7160449a3d413fc">atof</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *str);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="keywordtype">int</span> <a class="code" href="sysdep_8h.html#af15d7205d8d10c4820f997ce5c526279">abs</a>(<span class="keywordtype">int</span> i);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span>              <span class="comment">// for printf, fprintf</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="preprocessor">#include &lt;string.h&gt;</span>             <span class="comment">// for DEBUG, etc.</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;}</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="preprocessor">#endif // SYSDEP_H</span></div>
+<div class="ttc" id="sysdep_8h_html_a276f8e31e549b44a672e3b1d55951ac0"><div class="ttname"><a href="sysdep_8h.html#a276f8e31e549b44a672e3b1d55951ac0">WriteFile</a></div><div class="ttdeci">void WriteFile(int fd, void *buffer, size_t nBytes)</div><div class="ttdef"><b>Definition:</b> sysdep.cc:225</div></div>
+<div class="ttc" id="sysdep_8h_html_a87b7e2768d527868344abcf22f9fefe6"><div class="ttname"><a href="sysdep_8h.html#a87b7e2768d527868344abcf22f9fefe6">CallOnUserAbort</a></div><div class="ttdeci">void CallOnUserAbort(VoidNoArgFunctionPtr cleanUp)</div><div class="ttdef"><b>Definition:</b> sysdep.cc:414</div></div>
+<div class="ttc" id="utility_8h_html_abcdc057086e1b18f5c844742b50d3b93"><div class="ttname"><a href="utility_8h.html#abcdc057086e1b18f5c844742b50d3b93">VoidNoArgFunctionPtr</a></div><div class="ttdeci">void(* VoidNoArgFunctionPtr)()</div><div class="ttdef"><b>Definition:</b> utility.h:54</div></div>
+<div class="ttc" id="sysdep_8h_html_af15d7205d8d10c4820f997ce5c526279"><div class="ttname"><a href="sysdep_8h.html#af15d7205d8d10c4820f997ce5c526279">abs</a></div><div class="ttdeci">int abs(int i)</div></div>
+<div class="ttc" id="sysdep_8h_html_a12b9283f52eaf7610afe4b04fbca2ff0"><div class="ttname"><a href="sysdep_8h.html#a12b9283f52eaf7610afe4b04fbca2ff0">Abort</a></div><div class="ttdeci">void Abort()</div><div class="ttdef"><b>Definition:</b> sysdep.cc:439</div></div>
+<div class="ttc" id="sysdep_8h_html_a68068d69619efab5fe029a00b5114db9"><div class="ttname"><a href="sysdep_8h.html#a68068d69619efab5fe029a00b5114db9">OpenForWrite</a></div><div class="ttdeci">int OpenForWrite(char *name)</div><div class="ttdef"><b>Definition:</b> sysdep.cc:156</div></div>
+<div class="ttc" id="sysdep_8h_html_ab5cb68486a40540a7a3bd380e15d36d9"><div class="ttname"><a href="sysdep_8h.html#ab5cb68486a40540a7a3bd380e15d36d9">OpenForReadWrite</a></div><div class="ttdeci">int OpenForReadWrite(char *name, bool crashOnError)</div><div class="ttdef"><b>Definition:</b> sysdep.cc:173</div></div>
+<div class="ttc" id="sysdep_8h_html_a5e24d90699a8caf5d5ecf0ea461050b4"><div class="ttname"><a href="sysdep_8h.html#a5e24d90699a8caf5d5ecf0ea461050b4">Lseek</a></div><div class="ttdeci">void Lseek(int fd, int offset, int whence)</div><div class="ttdef"><b>Definition:</b> sysdep.cc:241</div></div>
+<div class="ttc" id="sysdep_8h_html_ade6d4842f21ea284e126636e424e6614"><div class="ttname"><a href="sysdep_8h.html#ade6d4842f21ea284e126636e424e6614">Close</a></div><div class="ttdeci">void Close(int fd)</div><div class="ttdef"><b>Definition:</b> sysdep.cc:269</div></div>
+<div class="ttc" id="sysdep_8h_html_a5aff941a8b7b49b2e7160449a3d413fc"><div class="ttname"><a href="sysdep_8h.html#a5aff941a8b7b49b2e7160449a3d413fc">atof</a></div><div class="ttdeci">double atof(const char *str)</div></div>
+<div class="ttc" id="sysdep_8h_html_a031f3b5d904def89e5f0cb71bcd31f91"><div class="ttname"><a href="sysdep_8h.html#a031f3b5d904def89e5f0cb71bcd31f91">Tell</a></div><div class="ttdeci">int Tell(int fd)</div><div class="ttdef"><b>Definition:</b> sysdep.cc:253</div></div>
+<div class="ttc" id="sysdep_8h_html_ae08b1beb5fa6e506cd63a2637f34e912"><div class="ttname"><a href="sysdep_8h.html#ae08b1beb5fa6e506cd63a2637f34e912">RandomInit</a></div><div class="ttdeci">void RandomInit(unsigned seed)</div><div class="ttdef"><b>Definition:</b> sysdep.cc:462</div></div>
+<div class="ttc" id="sysdep_8h_html_ad14ac54eb7fd4aa123a0d633650ea198"><div class="ttname"><a href="sysdep_8h.html#ad14ac54eb7fd4aa123a0d633650ea198">DeAssignNameToSocket</a></div><div class="ttdeci">void DeAssignNameToSocket(char *socketName)</div><div class="ttdef"><b>Definition:</b> sysdep.cc:352</div></div>
+<div class="ttc" id="sysdep_8h_html_a2d20b6480716b75b5e1deab47a1f2731"><div class="ttname"><a href="sysdep_8h.html#a2d20b6480716b75b5e1deab47a1f2731">PollSocket</a></div><div class="ttdeci">bool PollSocket(int sockID)</div><div class="ttdef"><b>Definition:</b> sysdep.cc:363</div></div>
+<div class="ttc" id="sysdep_8h_html_a5e6998f357c2b105b44fbb71fd54afd5"><div class="ttname"><a href="sysdep_8h.html#a5e6998f357c2b105b44fbb71fd54afd5">Read</a></div><div class="ttdeci">void Read(int fd, void *buffer, size_t nBytes)</div><div class="ttdef"><b>Definition:</b> sysdep.cc:187</div></div>
+<div class="ttc" id="sysdep_8h_html_a63746bed38274bf40016eb8eb90774ea"><div class="ttname"><a href="sysdep_8h.html#a63746bed38274bf40016eb8eb90774ea">ReadPartial</a></div><div class="ttdeci">int ReadPartial(int fd, void *buffer, size_t nBytes)</div><div class="ttdef"><b>Definition:</b> sysdep.cc:213</div></div>
+<div class="ttc" id="sysdep_8h_html_a76ed51e3376b728f6e0c03705a71d8e3"><div class="ttname"><a href="sysdep_8h.html#a76ed51e3376b728f6e0c03705a71d8e3">DeallocBoundedArray</a></div><div class="ttdeci">void DeallocBoundedArray(char *p, int size)</div><div class="ttdef"><b>Definition:</b> sysdep.cc:510</div></div>
+<div class="ttc" id="sysdep_8h_html_a4825f3e39317fcdec16fb44a93d59320"><div class="ttname"><a href="sysdep_8h.html#a4825f3e39317fcdec16fb44a93d59320">AssignNameToSocket</a></div><div class="ttdeci">void AssignNameToSocket(char *socketName, int sockID)</div><div class="ttdef"><b>Definition:</b> sysdep.cc:334</div></div>
+<div class="ttc" id="sysdep_8h_html_a8b9ef9330856c5a5a02f2d3ef0497e04"><div class="ttname"><a href="sysdep_8h.html#a8b9ef9330856c5a5a02f2d3ef0497e04">Exit</a></div><div class="ttdeci">void Exit(int exitCode)</div><div class="ttdef"><b>Definition:</b> sysdep.cc:450</div></div>
+<div class="ttc" id="sysdep_8h_html_a0f43cc86f59a90746979f53a452a4e0a"><div class="ttname"><a href="sysdep_8h.html#a0f43cc86f59a90746979f53a452a4e0a">CloseSocket</a></div><div class="ttdeci">void CloseSocket(int sockID)</div><div class="ttdef"><b>Definition:</b> sysdep.cc:310</div></div>
+<div class="ttc" id="sysdep_8h_html_aab677eb36a3f9c537674e00ea09c2260"><div class="ttname"><a href="sysdep_8h.html#aab677eb36a3f9c537674e00ea09c2260">Unlink</a></div><div class="ttdeci">bool Unlink(char *name)</div><div class="ttdef"><b>Definition:</b> sysdep.cc:281</div></div>
+<div class="ttc" id="sysdep_8h_html_aac8c6c00a0e52489ecf8e8a6d9eba228"><div class="ttname"><a href="sysdep_8h.html#aac8c6c00a0e52489ecf8e8a6d9eba228">Random</a></div><div class="ttdeci">int Random()</div><div class="ttdef"><b>Definition:</b> sysdep.cc:473</div></div>
+<div class="ttc" id="sysdep_8h_html_a20cfb7568775ef01bd7c43ee8051495c"><div class="ttname"><a href="sysdep_8h.html#a20cfb7568775ef01bd7c43ee8051495c">Delay</a></div><div class="ttdeci">void Delay(int seconds)</div><div class="ttdef"><b>Definition:</b> sysdep.cc:428</div></div>
+<div class="ttc" id="sysdep_8h_html_a183868423241d09c586310b2d5d266c7"><div class="ttname"><a href="sysdep_8h.html#a183868423241d09c586310b2d5d266c7">AllocBoundedArray</a></div><div class="ttdeci">char * AllocBoundedArray(int size)</div><div class="ttdef"><b>Definition:</b> sysdep.cc:491</div></div>
+<div class="ttc" id="sysdep_8h_html_a518b36caa5decc1250be9ab742c4d4b7"><div class="ttname"><a href="sysdep_8h.html#a518b36caa5decc1250be9ab742c4d4b7">ReadFromSocket</a></div><div class="ttdeci">void ReadFromSocket(int sockID, void *buffer, int packetSize)</div><div class="ttdef"><b>Definition:</b> sysdep.cc:373</div></div>
+<div class="ttc" id="sysdep_8h_html_aec327ac88a4cd588e82a8b0ac752b089"><div class="ttname"><a href="sysdep_8h.html#aec327ac88a4cd588e82a8b0ac752b089">atoi</a></div><div class="ttdeci">int atoi(const char *str)</div><div class="ttdef"><b>Definition:</b> atoi.c:1</div></div>
+<div class="ttc" id="sysdep_8h_html_acf6ac36662ff2a496b9aa57c15c1b269"><div class="ttname"><a href="sysdep_8h.html#acf6ac36662ff2a496b9aa57c15c1b269">SendToSocket</a></div><div class="ttdeci">void SendToSocket(int sockID, const void *buffer, int packetSize, char *toName)</div><div class="ttdef"><b>Definition:</b> sysdep.cc:395</div></div>
+<div class="ttc" id="sysdep_8h_html_a776b711cbcad75a385ef20d8cb04a907"><div class="ttname"><a href="sysdep_8h.html#a776b711cbcad75a385ef20d8cb04a907">OpenSocket</a></div><div class="ttdeci">int OpenSocket()</div><div class="ttdef"><b>Definition:</b> sysdep.cc:294</div></div>
+<div class="ttc" id="sysdep_8h_html_af318746bd623cdd12088995045caf66a"><div class="ttname"><a href="sysdep_8h.html#af318746bd623cdd12088995045caf66a">Write</a></div><div class="ttdeci">void Write(int fd, void *buffer, size_t nBytes)</div><div class="ttdef"><b>Definition:</b> sysdep.cc:199</div></div>
+<div class="ttc" id="sysdep_8h_html_a6d54b43fc541aae810be164b449b331a"><div class="ttname"><a href="sysdep_8h.html#a6d54b43fc541aae810be164b449b331a">PollFile</a></div><div class="ttdeci">bool PollFile(int fd)</div><div class="ttdef"><b>Definition:</b> sysdep.cc:121</div></div>
+<div class="ttc" id="copyright_8h_html"><div class="ttname"><a href="copyright_8h.html">copyright.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Dimanche 12 Février 2017 10:48:15 pour nachos par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.6
+</small></address>
+</body>
+</html>

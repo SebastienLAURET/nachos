@@ -1,0 +1,169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>nachos:  Fichier source de threads/scheduler.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">nachos
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_b71e9c10552984757907f0ca0d59e659.html">threads</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">scheduler.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="scheduler_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// -*- C++ -*-</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">// scheduler.h </span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">//      Data structures for the thread dispatcher and scheduler.</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">//      Primarily, the list of threads that are ready to run.</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">// Copyright (c) 1992-1993 The Regents of the University of California.</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">// All rights reserved.  See copyright.h for copyright notice and limitation </span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">// of liability and disclaimer of warranty provisions.</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#ifndef SCHEDULER_H</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define SCHEDULER_H</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#pragma interface &quot;threads/scheduler.h&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="copyright_8h.html">copyright.h</a>&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="list_8h.html">list.h</a>&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="thread_8h.html">thread.h</a>&quot;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="system_8h.html">system.h</a>&quot;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="nachos-gdb_8h.html">nachos-gdb.h</a>&quot;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">class </span><a class="code" href="classThread.html">Thread</a>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">// The following class defines the scheduler/dispatcher abstraction -- </span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">// the data structures and operations needed to keep track of which </span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">// thread is running, and which threads are ready but not running.</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">bool</span> <a class="code" href="scheduler_8h.html#a19c682c1b3aed30b42d0e1d7750ac167">ThreadOrder</a>(<span class="keywordtype">void</span> *, <span class="keywordtype">void</span> *); <span class="comment">// Order two threads by priority</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="classScheduler.html">   29</a></span>&#160;<span class="keyword">class </span><a class="code" href="classScheduler.html">Scheduler</a> {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <a class="code" href="classScheduler.html#a3b61aac11466cd45ae42ab8c2b0013f6">Scheduler</a>();                          <span class="comment">// Initialize a scheduler</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classScheduler.html#a18e89ab130a40c423da77673f12585d7">ReadyToRun</a>(<a class="code" href="classThread.html">Thread</a>* thread);      <span class="comment">// Thread can be dispatched.</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <a class="code" href="classThread.html">Thread</a>* <a class="code" href="classScheduler.html#a0fa7daec8d1058a8e6b5cbfbdd09555e">FindNextToRun</a>();              <span class="comment">// Dequeue first thread on the ready </span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                                        <span class="comment">// list, if any, and return thread.</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classScheduler.html#a87205b0773d3dd84752ec779c890f5e1">Run</a>(<a class="code" href="classThread.html">Thread</a>* nextThread);         <span class="comment">// Cause nextThread to start running</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#ifdef RDN_DEBUG_HELP</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor"></span>  <span class="keywordtype">void</span> PrintReadyList();                <span class="comment">// Print contents of ready list</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="keywordtype">int</span> <a class="code" href="classScheduler.html#a1c9333c029d36a1c36d5d8ab15f1881d">addToList</a>(<a class="code" href="classThread.html">Thread</a> * thread);       <span class="comment">// Add a thread to the list</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classScheduler.html#a1c667b25b366389e7ab84f11793a4808">removeFromList</a>(<a class="code" href="classThread.html">Thread</a> * thread); <span class="comment">// Remove a thread from the list</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#ifdef SMARTGDB</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor"></span>  <a class="code" href="classThread.html">Thread</a> * GetThis( <a class="code" href="classThread.html">Thread</a> * thread );</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor"></span>  <span class="keywordtype">void</span> <a class="code" href="classScheduler.html#a2a38cf84bceac26c68040025fe66dbc7">Switch_To</a>( <a class="code" href="classThread.html">Thread</a> * newthread ); <span class="comment">// Switch to execute newthread.</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="classScheduler.html#a4bbdf589ed9c02181c4f712e3af0ede2">   48</a></span>&#160;  <a class="code" href="classSortedList.html">SortedList</a> <a class="code" href="classScheduler.html#a4bbdf589ed9c02181c4f712e3af0ede2">readyList</a>;                 <span class="comment">// Queue of threads that are ready to</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                                        <span class="comment">// run, but are not running</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="classScheduler.html#a7a587c1b0b455b16fe946ca2119d671d">   50</a></span>&#160;  <span class="keywordtype">int</span> <a class="code" href="classScheduler.html#a7a587c1b0b455b16fe946ca2119d671d">threadid</a>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;};</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#endif // SCHEDULER_H</span></div>
+<div class="ttc" id="nachos-gdb_8h_html"><div class="ttname"><a href="nachos-gdb_8h.html">nachos-gdb.h</a></div></div>
+<div class="ttc" id="classScheduler_html_a4bbdf589ed9c02181c4f712e3af0ede2"><div class="ttname"><a href="classScheduler.html#a4bbdf589ed9c02181c4f712e3af0ede2">Scheduler::readyList</a></div><div class="ttdeci">SortedList readyList</div><div class="ttdef"><b>Definition:</b> scheduler.h:48</div></div>
+<div class="ttc" id="classScheduler_html"><div class="ttname"><a href="classScheduler.html">Scheduler</a></div><div class="ttdef"><b>Definition:</b> scheduler.h:29</div></div>
+<div class="ttc" id="classScheduler_html_a1c9333c029d36a1c36d5d8ab15f1881d"><div class="ttname"><a href="classScheduler.html#a1c9333c029d36a1c36d5d8ab15f1881d">Scheduler::addToList</a></div><div class="ttdeci">int addToList(Thread *thread)</div><div class="ttdef"><b>Definition:</b> scheduler.cc:238</div></div>
+<div class="ttc" id="thread_8h_html"><div class="ttname"><a href="thread_8h.html">thread.h</a></div></div>
+<div class="ttc" id="classScheduler_html_a0fa7daec8d1058a8e6b5cbfbdd09555e"><div class="ttname"><a href="classScheduler.html#a0fa7daec8d1058a8e6b5cbfbdd09555e">Scheduler::FindNextToRun</a></div><div class="ttdeci">Thread * FindNextToRun()</div><div class="ttdef"><b>Definition:</b> scheduler.cc:98</div></div>
+<div class="ttc" id="classScheduler_html_a2a38cf84bceac26c68040025fe66dbc7"><div class="ttname"><a href="classScheduler.html#a2a38cf84bceac26c68040025fe66dbc7">Scheduler::Switch_To</a></div><div class="ttdeci">void Switch_To(Thread *newthread)</div><div class="ttdef"><b>Definition:</b> scheduler.cc:311</div></div>
+<div class="ttc" id="list_8h_html"><div class="ttname"><a href="list_8h.html">list.h</a></div></div>
+<div class="ttc" id="classScheduler_html_a3b61aac11466cd45ae42ab8c2b0013f6"><div class="ttname"><a href="classScheduler.html#a3b61aac11466cd45ae42ab8c2b0013f6">Scheduler::Scheduler</a></div><div class="ttdeci">Scheduler()</div><div class="ttdef"><b>Definition:</b> scheduler.cc:32</div></div>
+<div class="ttc" id="classScheduler_html_a1c667b25b366389e7ab84f11793a4808"><div class="ttname"><a href="classScheduler.html#a1c667b25b366389e7ab84f11793a4808">Scheduler::removeFromList</a></div><div class="ttdeci">void removeFromList(Thread *thread)</div><div class="ttdef"><b>Definition:</b> scheduler.cc:263</div></div>
+<div class="ttc" id="scheduler_8h_html_a19c682c1b3aed30b42d0e1d7750ac167"><div class="ttname"><a href="scheduler_8h.html#a19c682c1b3aed30b42d0e1d7750ac167">ThreadOrder</a></div><div class="ttdeci">bool ThreadOrder(void *, void *)</div><div class="ttdef"><b>Definition:</b> scheduler.cc:44</div></div>
+<div class="ttc" id="classThread_html"><div class="ttname"><a href="classThread.html">Thread</a></div><div class="ttdef"><b>Definition:</b> thread.h:93</div></div>
+<div class="ttc" id="classSortedList_html"><div class="ttname"><a href="classSortedList.html">SortedList</a></div><div class="ttdef"><b>Definition:</b> list.h:77</div></div>
+<div class="ttc" id="system_8h_html"><div class="ttname"><a href="system_8h.html">system.h</a></div></div>
+<div class="ttc" id="classScheduler_html_a18e89ab130a40c423da77673f12585d7"><div class="ttname"><a href="classScheduler.html#a18e89ab130a40c423da77673f12585d7">Scheduler::ReadyToRun</a></div><div class="ttdeci">void ReadyToRun(Thread *thread)</div><div class="ttdef"><b>Definition:</b> scheduler.cc:62</div></div>
+<div class="ttc" id="classScheduler_html_a87205b0773d3dd84752ec779c890f5e1"><div class="ttname"><a href="classScheduler.html#a87205b0773d3dd84752ec779c890f5e1">Scheduler::Run</a></div><div class="ttdeci">void Run(Thread *nextThread)</div><div class="ttdef"><b>Definition:</b> scheduler.cc:155</div></div>
+<div class="ttc" id="classScheduler_html_a7a587c1b0b455b16fe946ca2119d671d"><div class="ttname"><a href="classScheduler.html#a7a587c1b0b455b16fe946ca2119d671d">Scheduler::threadid</a></div><div class="ttdeci">int threadid</div><div class="ttdef"><b>Definition:</b> scheduler.h:50</div></div>
+<div class="ttc" id="copyright_8h_html"><div class="ttname"><a href="copyright_8h.html">copyright.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Dimanche 12 Février 2017 10:48:15 pour nachos par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.6
+</small></address>
+</body>
+</html>

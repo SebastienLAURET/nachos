@@ -1,0 +1,23 @@
+<map id="machine/mipssim.cc" name="machine/mipssim.cc">
+<area shape="rect" id="node2" href="$copyright_8h.html" title="copyright.h" alt="" coords="704,453,797,480"/>
+<area shape="rect" id="node3" href="$machine_8h.html" title="machine.h" alt="" coords="331,80,420,107"/>
+<area shape="rect" id="node14" href="$mipssim_8h.html" title="mipssim.h" alt="" coords="623,80,711,107"/>
+<area shape="rect" id="node15" href="$system_8h.html" title="system.h" alt="" coords="1058,80,1139,107"/>
+<area shape="rect" id="node5" href="$ifdef__symbols_8h.html" title="../threads/ifdef_symbols.h" alt="" coords="573,155,760,181"/>
+<area shape="rect" id="node6" href="$utility_8h.html" title="utility.h" alt="" coords="484,304,551,331"/>
+<area shape="rect" id="node11" href="$translate_8h.html" title="translate.h" alt="" coords="248,155,339,181"/>
+<area shape="rect" id="node13" href="$disk_8h.html" title="disk.h" alt="" coords="197,229,256,256"/>
+<area shape="rect" id="node7" href="$stdlib_8h.html" title="stdlib.h" alt="" coords="555,379,623,405"/>
+<area shape="rect" id="node8" href="$sysdep_8h.html" title="sysdep.h" alt="" coords="43,379,121,405"/>
+<area shape="rect" id="node12" href="$openfile_8h.html" title="openfile.h" alt="" coords="331,229,415,256"/>
+<area shape="rect" id="node16" href="$thread_8h.html" title="thread.h" alt="" coords="789,229,864,256"/>
+<area shape="rect" id="node18" href="$scheduler_8h.html" title="scheduler.h" alt="" coords="1051,155,1145,181"/>
+<area shape="rect" id="node21" href="$interrupt_8h.html" title="interrupt.h" alt="" coords="1170,155,1259,181"/>
+<area shape="rect" id="node22" href="$stats_8h.html" title="stats.h" alt="" coords="1308,304,1375,331"/>
+<area shape="rect" id="node23" href="$timer_8h.html" title="timer.h" alt="" coords="1151,229,1217,256"/>
+<area shape="rect" id="node24" href="$memmgr_8h.html" title="memmgr.h" alt="" coords="1385,155,1479,181"/>
+<area shape="rect" id="node25" href="$swapmgr_8h.html" title="swapmgr.h" alt="" coords="835,155,925,181"/>
+<area shape="rect" id="node17" href="$defs_8h.html" title="defs.h" alt="" coords="839,304,900,331"/>
+<area shape="rect" id="node19" href="$list_8h.html" title="list.h" alt="" coords="1023,229,1075,256"/>
+<area shape="rect" id="node20" href="$nachos-gdb_8h.html" title="nachos&#45;gdb.h" alt="" coords="889,229,999,256"/>
+</map>

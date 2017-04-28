@@ -1,0 +1,16 @@
+<map id="threads/synch.h" name="threads/synch.h">
+<area shape="rect" id="node2" href="$synchdisk_8h.html" title="filesys/synchdisk.h" alt="" coords="77,80,216,107"/>
+<area shape="rect" id="node4" href="$console_8h.html" title="machine/console.h" alt="" coords="497,80,639,107"/>
+<area shape="rect" id="node6" href="$system_8cc.html" title="threads/system.cc" alt="" coords="174,155,313,181"/>
+<area shape="rect" id="node7" href="$progtest_8cc.html" title="userprog/progtest.cc" alt="" coords="704,155,859,181"/>
+<area shape="rect" id="node9" href="$synch_8cc.html" title="threads/synch.cc" alt="" coords="715,80,845,107"/>
+<area shape="rect" id="node10" href="$synchlist_8h.html" title="threads/synchlist.h" alt="" coords="870,80,1012,107"/>
+<area shape="rect" id="node15" href="$thread_8cc.html" title="threads/thread.cc" alt="" coords="1037,80,1171,107"/>
+<area shape="rect" id="node3" href="$synchdisk_8cc.html" title="filesys/synchdisk.cc" alt="" coords="5,155,149,181"/>
+<area shape="rect" id="node5" href="$console_8cc.html" title="machine/console.cc" alt="" coords="338,155,485,181"/>
+<area shape="rect" id="node8" href="$systemcall_8cc.html" title="userprog/systemcall.cc" alt="" coords="510,155,679,181"/>
+<area shape="rect" id="node11" href="$post_8h.html" title="network/post.h" alt="" coords="883,155,999,181"/>
+<area shape="rect" id="node14" href="$synchlist_8cc.html" title="threads/synchlist.cc" alt="" coords="1023,155,1171,181"/>
+<area shape="rect" id="node12" href="$nettest_8cc.html" title="network/nettest.cc" alt="" coords="793,229,932,256"/>
+<area shape="rect" id="node13" href="$post_8cc.html" title="network/post.cc" alt="" coords="957,229,1080,256"/>
+</map>

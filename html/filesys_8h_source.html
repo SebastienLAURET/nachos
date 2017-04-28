@@ -1,0 +1,216 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>nachos:  Fichier source de filesys/filesys.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">nachos
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_386a01e8c60160d2cb79aec927decd2f.html">filesys</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">filesys.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="filesys_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// filesys.h </span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">//      Data structures to represent the Nachos file system.</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">//      A file system is a set of files stored on disk, organized</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">//      into directories.  Operations on the file system have to</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">//      do with &quot;naming&quot; -- creating, opening, and deleting files,</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">//      given a textual file name.  Operations on an individual</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">//      &quot;open&quot; file (read, write, close) are to be found in the OpenFile</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">//      class (openfile.h).</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">//      We define two separate implementations of the file system. </span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">//      The &quot;STUB&quot; version just re-defines the Nachos file system </span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">//      operations as operations on the native UNIX file system on the machine</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">//      running the Nachos simulation.  This is provided in case the</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">//      multiprogramming and virtual memory assignments (which make use</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">//      of the file system) are done before the file system assignment.</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">//      The other version is a &quot;real&quot; file system, built on top of </span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">//      a disk simulator.  The disk is simulated using the native UNIX </span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">//      file system (in a file named &quot;DISK&quot;). </span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">//      In the &quot;real&quot; implementation, there are two key data structures used </span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">//      in the file system.  There is a single &quot;root&quot; directory, listing</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">//      all of the files in the file system; unlike UNIX, the baseline</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">//      system does not provide a hierarchical directory structure.  </span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">//      In addition, there is a bitmap for allocating</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">//      disk sectors.  Both the root directory and the bitmap are themselves</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">//      stored as files in the Nachos file system -- this causes an interesting</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">//      bootstrap problem when the simulated disk is initialized. </span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">// Copyright (c) 1992-1993 The Regents of the University of California.</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">// All rights reserved.  See copyright.h for copyright notice and limitation </span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">// of liability and disclaimer of warranty provisions.</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#ifndef FS_H</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define FS_H</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="copyright_8h.html">copyright.h</a>&quot;</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="openfile_8h.html">openfile.h</a>&quot;</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#ifdef FILESYS_STUB             // Temporarily implement file system calls as </span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor"></span>                                <span class="comment">// calls to UNIX, until the real file system</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                                <span class="comment">// implementation is available</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">class </span><a class="code" href="classFileSystem.html">FileSystem</a> {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <a class="code" href="classFileSystem.html#a12d63294322b37e934edd03ff614b95a">FileSystem</a>(<span class="keywordtype">bool</span> format) { </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;      format = <span class="keyword">false</span>;                                    <span class="comment">// Keep gcc happy </span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    }</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classFileSystem.html#af7f9082f193ed2c390d9a8afc58608d5">Create</a>(<span class="keywordtype">char</span> *name, <span class="keywordtype">int</span> initialSize) { </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        initialSize = 0;                                 <span class="comment">// Keep gcc happy </span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordtype">int</span> fileDescriptor = <a class="code" href="sysdep_8cc.html#a68068d69619efab5fe029a00b5114db9">OpenForWrite</a>(name);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordflow">if</span> (fileDescriptor == -1) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <a class="code" href="sysdep_8cc.html#ade6d4842f21ea284e126636e424e6614">Close</a>(fileDescriptor); </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        }</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <a class="code" href="classOpenFile.html">OpenFile</a>* <a class="code" href="classFileSystem.html#a606ea080a2a0fe5e3be3c3f5b8f4e7bc">Open</a>(<span class="keywordtype">char</span> *name) {</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;          <span class="keywordtype">int</span> fileDescriptor = <a class="code" href="sysdep_8cc.html#ab5cb68486a40540a7a3bd380e15d36d9">OpenForReadWrite</a>(name, <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;          <span class="keywordflow">if</span> (fileDescriptor == -1) <span class="keywordflow">return</span> <a class="code" href="d_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;          <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="classOpenFile.html">OpenFile</a>(fileDescriptor);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;      }</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classFileSystem.html#a07c4b8a3c508355c0ee3f4d8cf638edb">Remove</a>(<span class="keywordtype">char</span> *name) { <span class="keywordflow">return</span> <a class="code" href="sysdep_8cc.html#aab677eb36a3f9c537674e00ea09c2260">Unlink</a>(name) == 0; }</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;};</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="preprocessor">#else // FILESYS</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="classFileSystem.html">   72</a></span>&#160;<span class="preprocessor"></span><span class="keyword">class </span><a class="code" href="classFileSystem.html">FileSystem</a> {</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <a class="code" href="classFileSystem.html#a12d63294322b37e934edd03ff614b95a">FileSystem</a>(<span class="keywordtype">bool</span> format);            <span class="comment">// Initialize the file system.</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                                        <span class="comment">// Must be called *after* &quot;synchDisk&quot; </span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                                        <span class="comment">// has been initialized.</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                                        <span class="comment">// If &quot;format&quot;, there is nothing on</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                                        <span class="comment">// the disk, so initialize the directory</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                                        <span class="comment">// and the bitmap of free blocks.</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classFileSystem.html#af7f9082f193ed2c390d9a8afc58608d5">Create</a>(<span class="keywordtype">char</span> *name, <span class="keywordtype">int</span> initialSize);   </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                                        <span class="comment">// Create a file (UNIX creat)</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <a class="code" href="classOpenFile.html">OpenFile</a>* <a class="code" href="classFileSystem.html#a606ea080a2a0fe5e3be3c3f5b8f4e7bc">Open</a>(<span class="keywordtype">char</span> *name);         <span class="comment">// Open a file (UNIX open)</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classFileSystem.html#a07c4b8a3c508355c0ee3f4d8cf638edb">Remove</a>(<span class="keywordtype">char</span> *name);            <span class="comment">// Delete a file (UNIX unlink)</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classFileSystem.html#aaf76918c6f0d24bc72aaa84625adfddf">List</a>();                        <span class="comment">// List all the files in the file system</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classFileSystem.html#aebaf06661b1879a62afefa5abe99f21e">Print</a>();                       <span class="comment">// List all the files and their contents</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00093"></a><span class="lineno"><a class="line" href="classFileSystem.html#ac011f3b710a3b03d29fb9e554008699d">   93</a></span>&#160;   <a class="code" href="classOpenFile.html">OpenFile</a>* <a class="code" href="classFileSystem.html#ac011f3b710a3b03d29fb9e554008699d">freeMapFile</a>;               <span class="comment">// Bit map of free disk blocks,</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                                        <span class="comment">// represented as a file</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno"><a class="line" href="classFileSystem.html#a8d062da5905bf0eca01033ad70d0e2d5">   95</a></span>&#160;   <a class="code" href="classOpenFile.html">OpenFile</a>* <a class="code" href="classFileSystem.html#a8d062da5905bf0eca01033ad70d0e2d5">directoryFile</a>;             <span class="comment">// &quot;Root&quot; directory -- list of </span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                                        <span class="comment">// file names, represented as a file</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;};</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="preprocessor">#endif // FILESYS</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="preprocessor">#endif // FS_H</span></div>
+<div class="ttc" id="classFileSystem_html_a12d63294322b37e934edd03ff614b95a"><div class="ttname"><a href="classFileSystem.html#a12d63294322b37e934edd03ff614b95a">FileSystem::FileSystem</a></div><div class="ttdeci">FileSystem(bool format)</div><div class="ttdef"><b>Definition:</b> filesys.cc:80</div></div>
+<div class="ttc" id="classFileSystem_html"><div class="ttname"><a href="classFileSystem.html">FileSystem</a></div><div class="ttdef"><b>Definition:</b> filesys.h:72</div></div>
+<div class="ttc" id="classFileSystem_html_a606ea080a2a0fe5e3be3c3f5b8f4e7bc"><div class="ttname"><a href="classFileSystem.html#a606ea080a2a0fe5e3be3c3f5b8f4e7bc">FileSystem::Open</a></div><div class="ttdeci">OpenFile * Open(char *name)</div><div class="ttdef"><b>Definition:</b> filesys.cc:228</div></div>
+<div class="ttc" id="classOpenFile_html"><div class="ttname"><a href="classOpenFile.html">OpenFile</a></div><div class="ttdef"><b>Definition:</b> openfile.h:64</div></div>
+<div class="ttc" id="classFileSystem_html_a8d062da5905bf0eca01033ad70d0e2d5"><div class="ttname"><a href="classFileSystem.html#a8d062da5905bf0eca01033ad70d0e2d5">FileSystem::directoryFile</a></div><div class="ttdeci">OpenFile * directoryFile</div><div class="ttdef"><b>Definition:</b> filesys.h:95</div></div>
+<div class="ttc" id="classFileSystem_html_aaf76918c6f0d24bc72aaa84625adfddf"><div class="ttname"><a href="classFileSystem.html#aaf76918c6f0d24bc72aaa84625adfddf">FileSystem::List</a></div><div class="ttdeci">void List()</div><div class="ttdef"><b>Definition:</b> filesys.cc:296</div></div>
+<div class="ttc" id="openfile_8h_html"><div class="ttname"><a href="openfile_8h.html">openfile.h</a></div></div>
+<div class="ttc" id="sysdep_8cc_html_ade6d4842f21ea284e126636e424e6614"><div class="ttname"><a href="sysdep_8cc.html#ade6d4842f21ea284e126636e424e6614">Close</a></div><div class="ttdeci">void Close(int fd)</div><div class="ttdef"><b>Definition:</b> sysdep.cc:269</div></div>
+<div class="ttc" id="classFileSystem_html_aebaf06661b1879a62afefa5abe99f21e"><div class="ttname"><a href="classFileSystem.html#aebaf06661b1879a62afefa5abe99f21e">FileSystem::Print</a></div><div class="ttdeci">void Print()</div><div class="ttdef"><b>Definition:</b> filesys.cc:316</div></div>
+<div class="ttc" id="d_8c_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="d_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> d.c:11</div></div>
+<div class="ttc" id="classFileSystem_html_ac011f3b710a3b03d29fb9e554008699d"><div class="ttname"><a href="classFileSystem.html#ac011f3b710a3b03d29fb9e554008699d">FileSystem::freeMapFile</a></div><div class="ttdeci">OpenFile * freeMapFile</div><div class="ttdef"><b>Definition:</b> filesys.h:93</div></div>
+<div class="ttc" id="classFileSystem_html_a07c4b8a3c508355c0ee3f4d8cf638edb"><div class="ttname"><a href="classFileSystem.html#a07c4b8a3c508355c0ee3f4d8cf638edb">FileSystem::Remove</a></div><div class="ttdeci">bool Remove(char *name)</div><div class="ttdef"><b>Definition:</b> filesys.cc:258</div></div>
+<div class="ttc" id="sysdep_8cc_html_aab677eb36a3f9c537674e00ea09c2260"><div class="ttname"><a href="sysdep_8cc.html#aab677eb36a3f9c537674e00ea09c2260">Unlink</a></div><div class="ttdeci">bool Unlink(char *name)</div><div class="ttdef"><b>Definition:</b> sysdep.cc:281</div></div>
+<div class="ttc" id="sysdep_8cc_html_ab5cb68486a40540a7a3bd380e15d36d9"><div class="ttname"><a href="sysdep_8cc.html#ab5cb68486a40540a7a3bd380e15d36d9">OpenForReadWrite</a></div><div class="ttdeci">int OpenForReadWrite(char *name, bool crashOnError)</div><div class="ttdef"><b>Definition:</b> sysdep.cc:173</div></div>
+<div class="ttc" id="classFileSystem_html_af7f9082f193ed2c390d9a8afc58608d5"><div class="ttname"><a href="classFileSystem.html#af7f9082f193ed2c390d9a8afc58608d5">FileSystem::Create</a></div><div class="ttdeci">bool Create(char *name, int initialSize)</div><div class="ttdef"><b>Definition:</b> filesys.cc:175</div></div>
+<div class="ttc" id="sysdep_8cc_html_a68068d69619efab5fe029a00b5114db9"><div class="ttname"><a href="sysdep_8cc.html#a68068d69619efab5fe029a00b5114db9">OpenForWrite</a></div><div class="ttdeci">int OpenForWrite(char *name)</div><div class="ttdef"><b>Definition:</b> sysdep.cc:156</div></div>
+<div class="ttc" id="copyright_8h_html"><div class="ttname"><a href="copyright_8h.html">copyright.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Dimanche 12 Février 2017 10:48:15 pour nachos par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.6
+</small></address>
+</body>
+</html>

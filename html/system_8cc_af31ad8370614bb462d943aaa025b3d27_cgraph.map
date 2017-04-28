@@ -1,0 +1,4 @@
+<map id="TimerInterruptHandler" name="TimerInterruptHandler">
+<area shape="rect" id="node2" href="$classInterrupt.html#a6b240d463c36d4dcb18c444d4f71b778" title="Interrupt::getStatus" alt="" coords="229,5,377,32"/>
+<area shape="rect" id="node3" href="$classInterrupt.html#a2dd7548881fde3cf3c8fba4d75437849" title="Interrupt::YieldOnReturn" alt="" coords="216,56,389,83"/>
+</map>

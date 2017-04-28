@@ -1,0 +1,12 @@
+<map id="StartProcess" name="StartProcess">
+<area shape="rect" id="node2" href="$classAddrSpace.html#ac986344d11b78c096ef772e55c7ad54d" title="AddrSpace::InitSpace" alt="" coords="170,56,329,83"/>
+<area shape="rect" id="node10" href="$classAddrSpace.html#a9c055c31c424f834832733cc2fb3c88e" title="AddrSpace::InitRegisters" alt="" coords="390,5,567,32"/>
+<area shape="rect" id="node11" href="$classAddrSpace.html#af675701abb847806b2052525308a6adf" title="AddrSpace::RestoreState" alt="" coords="158,107,341,133"/>
+<area shape="rect" id="node3" href="$classAddrSpace.html#af2ae105a1ee5000a65b6d021f14c49f8" title="AddrSpace::SetupTable" alt="" coords="393,56,564,83"/>
+<area shape="rect" id="node4" href="$utility_8cc.html#af1c6878736cbd9e1b531898d8951d613" title="DEBUG" alt="" coords="672,5,741,32"/>
+<area shape="rect" id="node7" href="$classTranslationEntry.html#a07a2a72dd64e735157541eab6b2b4245" title="TranslationEntry::clearSC" alt="" coords="617,56,796,83"/>
+<area shape="rect" id="node8" href="$classTranslationEntry.html#a62cc12e88975c77edabaacd1ce8ff4b4" title="TranslationEntry::setTime" alt="" coords="616,107,797,133"/>
+<area shape="rect" id="node9" href="$classTranslationEntry.html#abe138dcedf0224eb8aeebefd477729bc" title="TranslationEntry::clearRef\lHistory" alt="" coords="617,158,797,199"/>
+<area shape="rect" id="node5" href="$utility_8cc.html#a79c7d1acabdb48f6f6a80ec0abf7cf89" title="DebugIsEnabled" alt="" coords="845,5,971,32"/>
+<area shape="rect" id="node6" href="$stdlib_8h.html#a89c177d1405cf367c2c4874c4449456a" title="strchr" alt="" coords="1019,5,1077,32"/>
+</map>

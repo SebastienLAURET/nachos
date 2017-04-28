@@ -1,0 +1,150 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>nachos: Référence du fichier machine/timer.cc</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">nachos
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_0909f4a7c39d3e9616c1c9d755842fcb.html">machine</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Fonctions</a>  </div>
+  <div class="headertitle">
+<div class="title">Référence du fichier timer.cc</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="copyright_8h_source.html">copyright.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="timer_8h_source.html">timer.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="system_8h_source.html">system.h</a>&quot;</code><br/>
+</div><div class="textblock"><div class="dynheader">
+Graphe des dépendances par inclusion de timer.cc:</div>
+<div class="dyncontent">
+<div class="center"><img src="timer_8cc__incl.png" border="0" usemap="#machine_2timer_8cc" alt=""/></div>
+<map name="machine_2timer_8cc" id="machine_2timer_8cc">
+<area shape="rect" id="node2" href="copyright_8h.html" title="copyright.h" alt="" coords="388,453,481,480"/><area shape="rect" id="node3" href="timer_8h.html" title="timer.h" alt="" coords="820,229,887,256"/><area shape="rect" id="node9" href="system_8h.html" title="system.h" alt="" coords="313,80,393,107"/><area shape="rect" id="node4" href="utility_8h.html" title="utility.h" alt="" coords="524,304,591,331"/><area shape="rect" id="node5" href="stdlib_8h.html" title="stdlib.h" alt="" coords="523,379,591,405"/><area shape="rect" id="node6" href="sysdep_8h.html" title="sysdep.h" alt="" coords="973,379,1051,405"/><area shape="rect" id="node10" href="thread_8h.html" title="thread.h" alt="" coords="431,229,507,256"/><area shape="rect" id="node12" href="scheduler_8h.html" title="scheduler.h" alt="" coords="170,155,264,181"/><area shape="rect" id="node15" href="interrupt_8h.html" title="interrupt.h" alt="" coords="5,155,93,181"/><area shape="rect" id="node16" href="stats_8h.html" title="stats.h" alt="" coords="87,304,153,331"/><area shape="rect" id="node17" href="memmgr_8h.html" title="memmgr.h" alt="" coords="391,155,484,181"/><area shape="rect" id="node18" href="swapmgr_8h.html" title="swapmgr.h" alt="" coords="508,155,599,181"/><area shape="rect" id="node19" href="ifdef__symbols_8h.html" title="ifdef_symbols.h" alt="" coords="623,155,744,181"/><area shape="rect" id="node11" href="defs_8h.html" title="defs.h" alt="" coords="439,304,500,331"/><area shape="rect" id="node13" href="list_8h.html" title="list.h" alt="" coords="221,229,272,256"/><area shape="rect" id="node14" href="nachos-gdb_8h.html" title="nachos&#45;gdb.h" alt="" coords="297,229,407,256"/></map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:a49a8cc77c503ee50daf45b8a26d765b4"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="timer_8cc.html#a49a8cc77c503ee50daf45b8a26d765b4">TimerHandler</a> (<a class="el" href="stdlib_8h.html#a7c94ea6f8948649f8d181ae55911eeaf">size_t</a> arg)</td></tr>
+<tr class="separator:a49a8cc77c503ee50daf45b8a26d765b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Documentation des fonctions</h2>
+<a class="anchor" id="a49a8cc77c503ee50daf45b8a26d765b4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void TimerHandler </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="stdlib_8h.html#a7c94ea6f8948649f8d181ae55911eeaf">size_t</a>&#160;</td>
+          <td class="paramname"><em>arg</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="timer_8cc_a49a8cc77c503ee50daf45b8a26d765b4_cgraph.png" border="0" usemap="#timer_8cc_a49a8cc77c503ee50daf45b8a26d765b4_cgraph" alt=""/></div>
+<map name="timer_8cc_a49a8cc77c503ee50daf45b8a26d765b4_cgraph" id="timer_8cc_a49a8cc77c503ee50daf45b8a26d765b4_cgraph">
+<area shape="rect" id="node2" href="classTimer.html#ad0198c93d207f2f303b3c5ff5cfd8ef4" title="Timer::TimerExpired" alt="" coords="163,411,312,438"/><area shape="rect" id="node3" href="classInterrupt.html#a9d5c35bd5c50ef5061f31dddf07af297" title="Interrupt::Schedule" alt="" coords="387,335,531,362"/><area shape="rect" id="node35" href="classTimer.html#a2846bc4b6ef4ad61e3de987aee4d85ab" title="Timer::TimeOfNextInterrupt" alt="" coords="361,487,557,514"/><area shape="rect" id="node4" href="utility_8cc.html#af1c6878736cbd9e1b531898d8951d613" title="DEBUG" alt="" coords="1695,284,1764,311"/><area shape="rect" id="node7" href="classInterrupt.html#af55a6cea64a8a3de49bad9ea3843addb" title="Interrupt::SetLevel" alt="" coords="606,183,746,210"/><area shape="rect" id="node17" href="classSortedList.html#aba1018141145192392e15ad6277d814a" title="SortedList::Insert" alt="" coords="1223,702,1353,728"/><area shape="rect" id="node5" href="utility_8cc.html#a79c7d1acabdb48f6f6a80ec0abf7cf89" title="DebugIsEnabled" alt="" coords="1837,335,1963,362"/><area shape="rect" id="node6" href="stdlib_8h.html#a89c177d1405cf367c2c4874c4449456a" title="strchr" alt="" coords="2011,335,2069,362"/><area shape="rect" id="node8" href="classInterrupt.html#ab3ca8b04757f024242b1037cf5b2ede8" title="Interrupt::ChangeLevel" alt="" coords="979,31,1146,58"/><area shape="rect" id="node9" href="classInterrupt.html#af7e385b28c374d35c4ca3763efac2b33" title="Interrupt::OneTick" alt="" coords="795,183,930,210"/><area shape="rect" id="node10" href="classInterrupt.html#aa0b369ce526d17d07dc24027a1bf63a9" title="Interrupt::HandleIfDue" alt="" coords="981,386,1144,412"/><area shape="rect" id="node19" href="classThread.html#adbc2bfb172d2eff4b46882aade9eeb8a" title="Thread::Yield" alt="" coords="1011,436,1114,463"/><area shape="rect" id="node11" href="classInterrupt.html#a8f9a7ddd0f250de0dcd45fa5bfd80c11" title="Interrupt::DumpState" alt="" coords="1209,183,1367,210"/><area shape="rect" id="node14" href="classList.html#a27695119b3728f2a9315cdb14ab685e8" title="List::Head" alt="" coords="1245,335,1331,362"/><area shape="rect" id="node15" href="classList.html#a4f804c07c4cfa4c9b631e6e117156e32" title="List::Remove" alt="" coords="1474,943,1577,970"/><area shape="rect" id="node16" href="classList.html#a854e9656ddbfae181d12f9d9413bc2b8" title="List::IsEmpty" alt="" coords="1678,892,1781,919"/><area shape="rect" id="node12" href="classList.html#ab57e90b8b2a790db7f2cad1e7aaa72d3" title="List::Mapcar" alt="" coords="1476,183,1575,210"/><area shape="rect" id="node13" href="interrupt_8cc.html#ae48c7f55ff352d1274e2563d8f97f20b" title="PrintPending" alt="" coords="1474,132,1577,159"/><area shape="rect" id="node18" href="classList.html#aea4cc7578bb4db7f502dc005e5edc902" title="List::Append" alt="" coords="1475,791,1576,818"/><area shape="rect" id="node20" href="classThread.html#a46450bb50c81bbfc0fd254fa7b72d821" title="Thread::getName" alt="" coords="1458,588,1593,615"/><area shape="rect" id="node21" href="classScheduler.html#a18e89ab130a40c423da77673f12585d7" title="Scheduler::ReadyToRun" alt="" coords="1204,651,1372,678"/><area shape="rect" id="node25" href="classScheduler.html#a0fa7daec8d1058a8e6b5cbfbdd09555e" title="Scheduler::FindNextToRun" alt="" coords="1195,994,1381,1020"/><area shape="rect" id="node32" href="classScheduler.html#a87205b0773d3dd84752ec779c890f5e1" title="Scheduler::Run" alt="" coords="1229,512,1347,539"/><area shape="rect" id="node22" href="classThread.html#ad707af00a9ce1a1d324804e7c73dc4ab" title="Thread::Print" alt="" coords="1474,842,1577,868"/><area shape="rect" id="node23" href="classInterrupt.html#a863f619c2596c5cf53d412a94642db41" title="Interrupt::setNeedResched" alt="" coords="1429,740,1621,767"/><area shape="rect" id="node24" href="classThread.html#a39061ce2692542188f82f909d005b1c3" title="Thread::setStatus" alt="" coords="1457,639,1593,666"/><area shape="rect" id="node26" href="classThread.html#ad75bd5375287a210520752785f503de4" title="Thread::getStatus" alt="" coords="1457,994,1594,1020"/><area shape="rect" id="node27" href="classInterrupt.html#a4d9820efbc3e9fd82e82f2eb6ef3613b" title="Interrupt::Halt" alt="" coords="1470,1044,1581,1071"/><area shape="rect" id="node28" href="classStatistics.html#ade67669fb1436e69a215a780b1ade63e" title="Statistics::Print" alt="" coords="1670,1070,1789,1096"/><area shape="rect" id="node29" href="system_8cc.html#ae89a123aad1c66a76c398b7af216aae4" title="Cleanup" alt="" coords="1692,1019,1767,1046"/><area shape="rect" id="node30" href="sysdep_8cc.html#a8b9ef9330856c5a5a02f2d3ef0497e04" title="Exit" alt="" coords="1877,1019,1923,1046"/><area shape="rect" id="node31" href="sysdep_8cc.html#a358d2e2397ca11ccd17553e3c40e7901" title="exit" alt="" coords="2017,1019,2063,1046"/><area shape="rect" id="node33" href="classThread.html#afa6657ff14b9c6866eadd85ea32c9147" title="Thread::CheckOverflow" alt="" coords="1442,538,1609,564"/><area shape="rect" id="node34" href="thread_8h.html#a10e80b5f1da660f5390f448c8fee2ae7" title="SWITCH" alt="" coords="1490,487,1561,514"/><area shape="rect" id="node36" href="sysdep_8cc.html#aac8c6c00a0e52489ecf8e8a6d9eba228" title="Random" alt="" coords="639,538,713,564"/><area shape="rect" id="node37" href="sysdep_8cc.html#ae23144bcbb8e3742b00eb687c36654d1" title="rand" alt="" coords="837,538,888,564"/></map>
+</div>
+</p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Dimanche 12 Février 2017 10:48:15 pour nachos par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.6
+</small></address>
+</body>
+</html>

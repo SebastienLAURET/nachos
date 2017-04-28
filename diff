@@ -1,0 +1,1098 @@
+diff --git a/threads/list.cc b/threads/list.cc
+index ef31f42..cbe6ba9 100644
+--- a/threads/list.cc
++++ b/threads/list.cc
+@@ -1,4 +1,4 @@
+-// list.cc 
++// list.cc
+ //
+ //     	Routines to manage a singly-linked list of "things".
+ //
+@@ -6,13 +6,13 @@
+ //	list; it is deallocated when the item is removed.  This means
+ //      we don't need to keep a "next" pointer in every object we
+ //      want to put on a list.
+-// 
++//
+ //     	NOTE: Mutual exclusion must be provided by the caller.
+-//  	If you want a synchronized list, you must use the routines 
++//  	If you want a synchronized list, you must use the routines
+ //	in synchlist.cc.
+ //
+ // Copyright (c) 1992-1993 The Regents of the University of California.
+-// All rights reserved.  See copyright.h for copyright notice and limitation 
++// All rights reserved.  See copyright.h for copyright notice and limitation
+ // of liability and disclaimer of warranty provisions.
+ 
+ #pragma implementation "threads/list.h"
+@@ -20,6 +20,7 @@
+ #include <iostream>
+ #include "copyright.h"
+ #include "list.h"
++#include "thread.h"
+ 
+ //----------------------------------------------------------------------
+ // ListElement::ListElement
+@@ -46,7 +47,7 @@ List::List()
+ 
+ //----------------------------------------------------------------------
+ // List::~List
+-//	Prepare a list for deallocation.  If the list still contains any 
++//	Prepare a list for deallocation.  If the list still contains any
+ //	ListElements, deallocate them.  However, note that we do *not*
+ //	deallocate the "items" on the list -- this module allocates
+ //	and deallocates the ListElements to keep track of each item,
+@@ -55,7 +56,7 @@ List::List()
+ //----------------------------------------------------------------------
+ 
+ List::~List()
+-{ 
++{
+   while (Remove() != NULL)
+     ;	 // delete all the list elements
+ }
+@@ -73,7 +74,7 @@ bool List::IsEmpty ()
+ //----------------------------------------------------------------------
+ // List::Prepend
+ //      Put an "item" on the front of the list.
+-//      
++//
+ //	Allocate a ListElement to keep track of the item.
+ //      If the list is empty, then this will be the only element.
+ //	Otherwise, put it at the beginning.
+@@ -94,6 +95,7 @@ void List::Prepend (void *item)
+     {				// else put it before first
+       element->next = first;
+       first = element;
++
+     }
+ }
+ 
+@@ -101,7 +103,7 @@ void List::Prepend (void *item)
+ //----------------------------------------------------------------------
+ // List::Append
+ //      Append an "item" to the end of the list.
+-//      
++//
+ //	Allocate a ListElement to keep track of the item.
+ //      If the list is empty, then this will be the only element.
+ //	Otherwise, put it at the end.
+@@ -125,7 +127,7 @@ void List::Append(void *item)
+ //----------------------------------------------------------------------
+ // List::Remove
+ //      Remove the first "item" from the front of the list.
+-// 
++//
+ // Returns:
+ //	Pointer to removed item, NULL if nothing on the list.
+ //----------------------------------------------------------------------
+@@ -154,10 +156,12 @@ void *List::Remove ()
+   return thing;
+ }
+ 
++
++
+ //----------------------------------------------------------------------
+ // List::Remove
+ //      Remove a specific item from the list.
+-// 
++//
+ //----------------------------------------------------------------------
+ 
+ void *List::Remove (void *item)
+@@ -169,24 +173,24 @@ void *List::Remove (void *item)
+     {
+       // Did we find it?
+       if (temp->item == item)
+-	{
+-	  // We found it; unlink it from the list
+-	  if (prev == NULL)
+-	    {
+-	      first = temp->next;
++	     {
++	        // We found it; unlink it from the list
++	        if (prev == NULL)
++	        {
++	           first = temp->next;
++	        }
++	        else
++	        {
++	           prev->next = temp->next;
++	        }
++	        if (temp == last)
++	        {
++	           last = prev;
++	        }
++	        void* retval = temp->item;
++	        delete temp;
++	        return retval;
+ 	    }
+-	  else
+-	    {
+-	      prev->next = temp->next;
+-	    }
+-	  if (temp == last)
+-	    {
+-	      last = prev;
+-	    }
+-	  void* retval = temp->item;
+-	  delete temp;
+-	  return retval;
+-	}
+       prev = temp;
+     }
+ 
+@@ -228,7 +232,7 @@ void *List::Tail ()
+ 
+ //----------------------------------------------------------------------
+ // List::Mapcar
+-//	Apply a function to each item on the list, by walking through  
++//	Apply a function to each item on the list, by walking through
+ //	the list, one element at a time.
+ //
+ //	Unlike LISP, this mapcar does not return anything!  (So it should be
+@@ -256,6 +260,7 @@ void List::Mapcar (VoidFunctionPtr func)
+ void
+ SortedList::setComparator (listItemComparator comp)
+ {
++  std::cout << "UN message " << '\n';
+   compare = comp;
+ }
+ 
+@@ -272,8 +277,31 @@ SortedList::setComparator (listItemComparator comp)
+ //	"item" is the thing to put on the list
+ //----------------------------------------------------------------------
+ 
++
++
+ void SortedList::Insert (void *item)
+ {
+-  // The stub of Insert simply calls Append to get you started.
+-  Append (item);
++   if (IsEmpty()) {
++      Append(item);
++
++      return;
++    }
++    ListElement *currentElem = first;
++    ListElement *prevElem = first;
++    ListElement *newElement = new ListElement(item);
++
++    while (currentElem && this->compare(currentElem->item, item)) {
++      prevElem = currentElem;
++      currentElem = currentElem->next;
++    }
++    if (currentElem == NULL){
++      delete newElement;
++      Append(item);
++    } else if (currentElem == first) {
++      newElement->next = first;
++      first = newElement;
++    } else {
++      prevElem->next = newElement;
++      newElement->next = currentElem;
++    }
+ }
+diff --git a/threads/scheduler.cc b/threads/scheduler.cc
+index 43282f8..f3b3052 100644
+--- a/threads/scheduler.cc
++++ b/threads/scheduler.cc
+@@ -1,4 +1,4 @@
+-// scheduler.cc 
++// scheduler.cc
+ //	Routines to choose the next thread to run, and to dispatch to
+ //	that thread.
+ //
+@@ -7,15 +7,15 @@
+ //	(since we are on a uniprocessor).
+ //
+ // 	NOTE: We can't use Locks to provide mutual exclusion here, since
+-// 	if we needed to wait for a lock, and the lock was busy, we would 
+-//	end up calling FindNextToRun(), and that would put us in an 
++// 	if we needed to wait for a lock, and the lock was busy, we would
++//	end up calling FindNextToRun(), and that would put us in an
+ //	infinite loop.
+ //
+ // 	Very simple implementation -- no priorities, straight FIFO.
+ //	Might need to be improved in later assignments.
+ //
+ // Copyright (c) 1992-1993 The Regents of the University of California.
+-// All rights reserved.  See copyright.h for copyright notice and limitation 
++// All rights reserved.  See copyright.h for copyright notice and limitation
+ // of liability and disclaimer of warranty provisions.
+ 
+ #pragma implementation "threads/scheduler.h"
+@@ -39,15 +39,17 @@ Scheduler::Scheduler ()
+ // Scheduler::ThreadOrder
+ // 	Order two threads by priority.
+ //----------------------------------------------------------------------
+-
++#include <iostream>
+ bool
+ ThreadOrder(void *thread1, void *thread2)
+ {
++//  std::cout << "TOTO" << std::endl;
+   Thread *t1 = static_cast<Thread *>(thread1);
+   Thread *t2 = static_cast<Thread *>(thread2);
+   /* Return true if the priority of thread t1 is BETTER than the priority of
+      thread t2; return false otherwise. */
+-  return true;
++//  std::cout <<t1->getPriority()<< "<" << t2->getPriority()<<std::endl;
++  return (t1->getPriority() < t2->getPriority());
+ }
+ 
+ //----------------------------------------------------------------------
+@@ -78,7 +80,7 @@ Scheduler::ReadyToRun (Thread *thread)
+     }
+ 
+     thread->setStatus(READY);
+-    readyList.Append(thread);
++    readyList.Insert(thread);
+ 
+ #ifdef RDN_DEBUG_HELP
+     PrintReadyList();
+@@ -102,7 +104,7 @@ Scheduler::FindNextToRun ()
+   //
+   // Check to see if all threads have run to completion
+   //
+-  if ((lastThread = (Thread *) allThreads.head->thread) == 
++  if ((lastThread = (Thread *) allThreads.head->thread) ==
+       (Thread *) allThreads.tail->thread &&
+       lastThread->getStatus() == ZOMBIE) {
+     //
+@@ -155,8 +157,13 @@ void
+ Scheduler::Run (Thread *nextThread)
+ {
+     Thread *oldThread = currentThread;
+-    
+-#ifdef USER_PROGRAM			// ignore until running user programs 
++    ListElement *elem = readyList.Head();
++    while (elem) {
++        if (elem->item)
++          ((Thread*)elem->item)->decrPriority();
++        elem = elem->next;
++    }
++#ifdef USER_PROGRAM			// ignore until running user programs
+     if (currentThread->space != NULL) {	// if this thread is a user program,
+         currentThread->SaveUserState(); // save the user's CPU registers
+ 	currentThread->space->SaveState();
+@@ -172,7 +179,7 @@ Scheduler::Run (Thread *nextThread)
+     DEBUG('t', "Switching from thread \"%s\" to thread \"%s\"\n",
+ 	  oldThread->getName(), nextThread->getName());
+ 
+-    // This is a machine-dependent assembly language routine defined 
++    // This is a machine-dependent assembly language routine defined
+     // in switch.s.  You may have to think
+     // a bit to figure out what happens after this, both from the point
+     // of view of the thread and from the perspective of the "outside world".
+@@ -242,7 +249,7 @@ Scheduler::addToList (Thread* thread)
+   node->ID = threadid++;
+   node->next = NULL;
+   node->thread = (void *)thread;
+-  
++
+   if (allThreads.tail) {
+     allThreads.tail->next = node;
+     allThreads.tail = node;
+@@ -309,7 +316,7 @@ Scheduler::GetThis (Thread* thread)
+ //           anything.
+ //----------------------------------------------------------------------
+ void Scheduler::Switch_To( Thread * newthread ) {
+-  
++
+   // If no thread, return.
+   if ( newthread == NULL ) {
+     return;
+@@ -324,12 +331,12 @@ void Scheduler::Switch_To( Thread * newthread ) {
+   // Remove the thread from the ready list.
+   // So we don't have it on there twice.
+   //
+-  readyList.Delete (newthread);  
++  readyList.Delete (newthread);
+ 
+   //
+   // Add it to the front of the readylist.
+   //
+   readyList.Prepend (newthread);
+-  
++
+   currentThread->Yield();
+ }
+diff --git a/threads/thread.cc b/threads/thread.cc
+index 05a279d..b21ca07 100644
+--- a/threads/thread.cc
++++ b/threads/thread.cc
+@@ -1,4 +1,4 @@
+-// thread.cc 
++// thread.cc
+ //	Routines to manage threads.  There are four main operations:
+ //
+ //	Fork -- create a thread to run a procedure concurrently
+@@ -7,11 +7,11 @@
+ //	Finish -- called when the forked procedure finishes, to clean up
+ //	Yield -- relinquish control over the CPU to another ready thread
+ //	Sleep -- relinquish control over the CPU, but thread is now blocked.
+-//		In other words, it will not run again, until explicitly 
++//		In other words, it will not run again, until explicitly
+ //		put back on the ready queue.
+ //
+ // Copyright (c) 1992-1993 The Regents of the University of California.
+-// All rights reserved.  See copyright.h for copyright notice and limitation 
++// All rights reserved.  See copyright.h for copyright notice and limitation
+ // of liability and disclaimer of warranty provisions.
+ 
+ #pragma implementation "threads/thread.h"
+@@ -24,7 +24,7 @@
+ #include "scheduler.h"
+ 
+ #define STACK_FENCEPOST 0xdeadbeef	// this is put at the top of the
+-					// execution stack, for detecting 
++					// execution stack, for detecting
+ 					// stack overflows
+ 
+ #ifdef USE_PTHREAD
+@@ -122,6 +122,10 @@ Thread::Thread()
+ {
+     char tid_string[75];
+ 
++    // Set priority to default : 20
++    priority = 20;
++
++
+ #ifdef USER_PROGRAM
+     ChildExited = new Semaphore("ChildWait", 0);
+     exitval = 0;
+@@ -133,7 +137,7 @@ Thread::Thread()
+     status = JUST_CREATED;
+ 
+     thread_exit_status = false;
+-    
++
+     // Just after a thread is created, register it with the list in the
+     // scheduler.
+     ThreadID = scheduler->addToList (this);
+@@ -189,7 +193,7 @@ Thread::~Thread()
+     }
+ 
+ #ifdef USER_PROGRAM
+-    for (int i = 0; i < MAX_FD; i++) { 
++    for (int i = 0; i < MAX_FD; i++) {
+       if (FDTable [i]) {
+ 	switch ( FDTable[i]->type ) {
+ 	case ConsoleFile:
+@@ -199,8 +203,8 @@ Thread::~Thread()
+ 	break;
+ 	default:
+ 	break;
+-	};	
+-	delete FDTable [i]; 
++	};
++	delete FDTable [i];
+       }
+     }
+     delete space;
+@@ -272,7 +276,7 @@ void SWITCH(Thread *oldThread, Thread *newThread)
+ 
+ //----------------------------------------------------------------------
+ // Thread::Fork
+-// 	Invoke (*func)(arg), allowing caller and callee to execute 
++// 	Invoke (*func)(arg), allowing caller and callee to execute
+ //	concurrently.
+ //
+ //	NOTE: although our definition allows only a single integer argument
+@@ -284,7 +288,7 @@ void SWITCH(Thread *oldThread, Thread *newThread)
+ //		1. Allocate a stack
+ //		2. Initialize the stack so that a call to SWITCH will
+ //		cause it to run the procedure
+-// 	
++//
+ //	"func" is the procedure to run concurrently.
+ //	"arg" is a single argument to be passed to the procedure.
+ //----------------------------------------------------------------------
+@@ -303,7 +307,7 @@ Thread::Fork(VoidFunctionPtr func, size_t arg)
+ 
+     DEBUG('t', "Forking thread \"%s\" with func = 0x%x, arg = %d\n",
+ 	  name, (size_t) func, arg);
+-    
++
+ #ifdef USE_PTHREAD
+     pthread_attr_init (&attr);
+     pthread_attr_setdetachstate (&attr, PTHREAD_CREATE_DETACHED);
+@@ -313,8 +317,22 @@ Thread::Fork(VoidFunctionPtr func, size_t arg)
+ #endif
+ 
+     return ThreadID;
+-}    
++}
+ 
++int Thread::getPriority() {
++  return priority;
++}
++
++void Thread::setPriority(int newPriority) {
++  priority = newPriority;
++}
++
++void Thread::decrPriority() {
++  priority -= 1;
++  if (priority < 0) {
++    priority = 0;
++  }
++}
+ 
+ //----------------------------------------------------------------------
+ // Thread::CheckOverflow
+@@ -347,27 +365,27 @@ Thread::CheckOverflow()
+ 
+ //----------------------------------------------------------------------
+ // Thread::Finish
+-// 	Called by ThreadRoot when a thread is done executing the 
++// 	Called by ThreadRoot when a thread is done executing the
+ //	forked procedure.
+ //
+-// 	NOTE: we don't immediately de-allocate the thread data structure 
+-//	or the execution stack, because we're still running in the thread 
+-//	and we're still on the stack!  Instead, we set "threadToBeDestroyed", 
++// 	NOTE: we don't immediately de-allocate the thread data structure
++//	or the execution stack, because we're still running in the thread
++//	and we're still on the stack!  Instead, we set "threadToBeDestroyed",
+ //	so that Scheduler::Run() will call the destructor, once we're
+ //	running in the context of a different thread.
+ //
+-// 	NOTE: we disable interrupts, so that we don't get a time slice 
++// 	NOTE: we disable interrupts, so that we don't get a time slice
+ //	between setting threadToBeDestroyed, and going to sleep.
+ //----------------------------------------------------------------------
+ 
+ void
+ Thread::Finish ()
+ {
+-    (void) interrupt->SetLevel(IntOff);		
++    (void) interrupt->SetLevel(IntOff);
+     ASSERT(this == currentThread);
+-    
++
+     DEBUG('t', "Finishing thread \"%s\"\n", getName());
+-    
++
+     threadToBeDestroyed = currentThread;
+ #ifdef USE_PTHREAD
+     pthread_mutex_destroy (&schedLock);
+@@ -390,7 +408,7 @@ Thread::Finish ()
+ //	NOTE: we disable interrupts, so that looking at the thread
+ //	on the front of the ready list, and switching to it, can be done
+ //	atomically.  On return, we re-set the interrupt level to its
+-//	original state, in case we are called with interrupts disabled. 
++//	original state, in case we are called with interrupts disabled.
+ //
+ // 	Similar to Thread::Sleep(), but a little different.
+ //----------------------------------------------------------------------
+@@ -400,9 +418,9 @@ Thread::Yield ()
+ {
+     Thread *nextThread;
+     IntStatus oldLevel = interrupt->SetLevel(IntOff);
+-    
++
+     ASSERT(this == currentThread);
+-    
++
+     DEBUG('t', "Yielding thread \"%s\"\n", getName());
+ 
+ 
+@@ -418,7 +436,10 @@ Thread::Yield ()
+     // changing the structure of readyList may be a good idea in the
+     // near future.
+     //
++
++
+     scheduler->ReadyToRun(this);
++
+     nextThread = scheduler->FindNextToRun();
+ 
+     if (nextThread != NULL) {
+@@ -443,12 +464,12 @@ Thread::ForceYield ( Thread * nextThread)
+ {
+ 
+     IntStatus oldLevel = interrupt->SetLevel(IntOff);
+-    
++
+     ASSERT(this == currentThread);
+-    
++
+     DEBUG('t', "Yielding thread \"%s\"\n", getName());
+-  
+-  
++
++
+     nextThread = scheduler->GetThis( nextThread );
+     if (nextThread != NULL) {
+ 	scheduler->ReadyToRun(this);
+@@ -472,7 +493,7 @@ Thread::ForceYield ( Thread * nextThread)
+ //
+ //	NOTE: we assume interrupts are already disabled, because it
+ //	is called from the synchronization routines which must
+-//	disable interrupts for atomicity.   We need interrupts off 
++//	disable interrupts for atomicity.   We need interrupts off
+ //	so that there can't be a time slice between pulling the first thread
+ //	off the ready list, and switching to it.
+ //----------------------------------------------------------------------
+@@ -480,30 +501,30 @@ void
+ Thread::Sleep ()
+ {
+     Thread *nextThread;
+-    
++
+     ASSERT(this == currentThread);
+     ASSERT(interrupt->getLevel() == IntOff);
+-    
++
+     DEBUG('t', "Sleeping thread \"%s\"\n", getName());
+     status = BLOCKED;
+ 
+     while ((nextThread = scheduler->FindNextToRun()) == NULL)
+ 	interrupt->Idle();	// no one to run, wait for an interrupt
+-        
++
+     scheduler->Run(nextThread); // returns when we've been signalled
+ }
+ 
+ 
+ 
+ //----------------------------------------------------------------------
+-// Thread::Sleep 
++// Thread::Sleep
+ //       Puts the current process to sleep with the specified status
+ //----------------------------------------------------------------------
+ void
+ Thread::Sleep (ThreadStatus newstatus)
+ {
+     Thread *nextThread;
+-    
++
+     ASSERT(this == currentThread);
+     status = newstatus;
+     IntStatus oldLevel = interrupt->SetLevel(IntOff);
+@@ -521,7 +542,7 @@ Thread::Sleep (ThreadStatus newstatus)
+ // ThreadFinish, InterruptEnable, ThreadPrint
+ //	Dummy functions because C++ does not allow a pointer to a member
+ //	function.  So in order to do this, we create a dummy C function
+-//	(which we can pass a pointer to), that then simply calls the 
++//	(which we can pass a pointer to), that then simply calls the
+ //	member function.
+ //----------------------------------------------------------------------
+ 
+@@ -596,7 +617,7 @@ Thread::StackAllocate (VoidFunctionPtr func, size_t arg)
+     *stack = STACK_FENCEPOST;
+ #endif  // HOST_SNAKE
+ #endif // USE_PTHREAD
+-    
++
+ #ifdef HOST_ALPHA
+     machineState[PCState] = (u_long) ThreadRoot;
+     machineState[StartupPCState] = (u_long) InterruptEnable;
+@@ -621,8 +642,8 @@ Thread::StackAllocate (VoidFunctionPtr func, size_t arg)
+ // Thread::SaveUserState
+ //	Save the CPU state of a user program on a context switch.
+ //
+-//	Note that a user program thread has *two* sets of CPU registers -- 
+-//	one for its state while executing user code, one for its state 
++//	Note that a user program thread has *two* sets of CPU registers --
++//	one for its state while executing user code, one for its state
+ //	while executing kernel code.  This routine saves the former.
+ //----------------------------------------------------------------------
+ 
+@@ -638,8 +659,8 @@ Thread::SaveUserState()
+ // Thread::RestoreUserState
+ //	Restore the CPU state of a user program on a context switch.
+ //
+-//	Note that a user program thread has *two* sets of CPU registers -- 
+-//	one for its state while executing user code, one for its state 
++//	Note that a user program thread has *two* sets of CPU registers --
++//	one for its state while executing user code, one for its state
+ //	while executing kernel code.  This routine restores the former.
+ //----------------------------------------------------------------------
+ 
+diff --git a/threads/thread.h b/threads/thread.h
+index b4543ea..0667b0c 100644
+--- a/threads/thread.h
++++ b/threads/thread.h
+@@ -1,9 +1,9 @@
+-// thread.h 
++// thread.h
+ //	Data structures for managing threads.  A thread represents
+ //	sequential execution of code within a program.
+ //	So the state of a thread includes the program counter,
+ //	the processor registers, and the execution stack.
+-//	
++//
+ // 	Note that because we allocate a fixed size stack for each
+ //	thread, it is possible to overflow the stack -- for instance,
+ //	by recursing to too deep a level.  The most common reason
+@@ -17,12 +17,12 @@
+ //		void foo() { int *buf = new int[1000]; ...}
+ //
+ //
+-// 	Bad things happen if you overflow the stack, and in the worst 
++// 	Bad things happen if you overflow the stack, and in the worst
+ //	case, the problem may not be caught explicitly.  Instead,
+ //	the only symptom may be bizarre segmentation faults.  (Of course,
+ //	other problems can cause seg faults, so that isn't a sure sign
+ //	that your thread stacks are too small.)
+-//	
++//
+ //	One thing to try if you find yourself with seg faults is to
+ //	increase the size of thread stack -- ThreadStackSize.
+ //
+@@ -31,7 +31,7 @@
+ //	Only then can we do the fork: "t->fork(f, arg)".
+ //
+ // Copyright (c) 1992-1993 The Regents of the University of California.
+-// All rights reserved.  See copyright.h for copyright notice and limitation 
++// All rights reserved.  See copyright.h for copyright notice and limitation
+ // of liability and disclaimer of warranty provisions.
+ 
+ #ifndef THREAD_H
+@@ -58,7 +58,7 @@ class AddrSpace;
+ #include <pthread.h>
+ #endif
+ 
+-// CPU register state to be saved on context switch.  
++// CPU register state to be saved on context switch.
+ // The SPARC and MIPS only need 10 registers, but the Snake needs 18.
+ // The Alpha needs to save 10 64bit registers
+ // For simplicity, this is just the max over all architectures.
+@@ -76,7 +76,7 @@ enum ThreadStatus { JUST_CREATED, RUNNING, READY, BLOCKED, ZOMBIE };
+ // Externally available function wrapper whose sole job is to call
+ // Thread class method Print from MapCar when the readylist is being
+ // operated on.
+-extern void ThreadPrint(size_t arg);	 
++extern void ThreadPrint(size_t arg);
+ 
+ 
+ // The following class defines a "thread control block" -- which
+@@ -86,7 +86,7 @@ extern void ThreadPrint(size_t arg);
+ //     an execution stack for activation records ("stackTop" and "stack")
+ //     space to save CPU registers while not running ("machineState")
+ //     a "status" (running/ready/blocked)
+-//    
++//
+ //  Some threads also belong to a user address space; threads
+ //  that only run in the kernel have a NULL address space.
+ 
+@@ -100,44 +100,53 @@ private:
+ #else
+   unsigned int machineState[MachineStateSize];  // all registers except for stackTop
+ #endif
+-  
++
++  // Add variable priority to thread
++  int priority;
++
++
+ public:
+-  Thread();				// initialize a Thread 
++  Thread();				// initialize a Thread
+   ~Thread(); 				// deallocate a Thread
+   // NOTE -- thread being deleted
+-  // must not be running when delete 
++  // must not be running when delete
+   // is called
+ 
+   // basic thread operations
+-  
++
+   int Fork(VoidFunctionPtr func, size_t arg);   // Fork to create another thread
++
++  int getPriority();
++  void setPriority(int newPriority);
++  void decrPriority();
++
+   void Yield();  				// Yield to another thread
+ #ifdef SMARTGDB
+   void ForceYield( Thread * nextThread );
+-#endif                                         
++#endif
+   void Sleep();                                 // Put the thread to sleep and
+   void Sleep (ThreadStatus newstatus);
+ 
+   void Finish();  				// The thread is done executing
+-  
+-  void CheckOverflow();   			// Check if thread has 
++
++  void CheckOverflow();   			// Check if thread has
+                                                 // overflowed its stack
+ 
+   void setStatus(ThreadStatus st) { status = st; }
+   ThreadStatus getStatus () const { return status; }
+   const char* getName() const { return name; }
+-  void setName (char *threadName) { 
++  void setName (char *threadName) {
+     strncpy (name, threadName, MAXFILENAMELENGTH);
+       *(name + MAXFILENAMELENGTH) = '\0';
+   }
+ 
+ 
+- void Print();  // Print the priority information of a thread OR just 
++ void Print();  // Print the priority information of a thread OR just
+                 // the ThreadID depending on the ifdef Flag (F_PRIORITY).
+  int Get_Id(); // Returns the ThreadID
+ 
+ 
+-#ifdef USER_PROGRAM 
++#ifdef USER_PROGRAM
+   // --------------------------------
+   // Child Stuff
+   // --------------------------------
+@@ -145,11 +154,11 @@ public:
+   Thread* UnQueue_Child(); // Removes the child from the ChildList
+   List ChildList; // List of Children for the currentThread
+   Statistics *procStats; // Object to record performance metrics.
+-  
++
+   Thread* Get_Parent_Ptr();  //Returns the Parent Pointer
+   int Set_Parent_Ptr( Thread * parent ); // Sets the Parent pointer to parent.
+ 
+-  
++
+   void Add_Child(); // Increment the Children variable
+   void Remove_Child(); // Decrement the Children variable
+   int Get_Num_Children(); // Returns the value of the variable Children
+@@ -160,7 +169,7 @@ public:
+   // -------------------------------
+   int Get_Exit_Val(); // Returns the value of exitval
+   void Set_Exit_Val( int val ); // Sets the value of exitval to val
+-  Semaphore* ChildExited;  
++  Semaphore* ChildExited;
+ #endif
+ 
+   bool thread_exit_status; // To signal to the parent that the child has finished execution
+@@ -192,8 +201,8 @@ public:
+ 
+ 
+ #ifdef USER_PROGRAM
+-// A thread running a user program actually has *two* sets of CPU registers -- 
+-// one for its state while executing user code, one for its state 
++// A thread running a user program actually has *two* sets of CPU registers --
++// one for its state while executing user code, one for its state
+ // while executing kernel code.
+ 
+     int userRegisters[NumTotalRegs];	// user-level CPU register state
+@@ -218,7 +227,7 @@ public:
+ // Magical machine-dependent routines, defined in switch.s
+ 
+ extern "C" {
+-// First frame on thread execution stack; 
++// First frame on thread execution stack;
+ //   	enable interrupts
+ //	call "func"
+ //	(when func returns, if ever) call ThreadFinish()
+diff --git a/userprog/systemcall.cc b/userprog/systemcall.cc
+index 15257be..f633d60 100644
+--- a/userprog/systemcall.cc
++++ b/userprog/systemcall.cc
+@@ -50,16 +50,16 @@ void do_system_call(int syscall_num) {
+   case SC_Read:
+     returnvalue = System_Read ((int) reg4, (char*) reg5, (int) reg6);
+     break;
+-  case SC_Write:    
++  case SC_Write:
+     returnvalue = System_Write ((int) reg4, (char *) reg5, (int) reg6);
+     break;
+-  case SC_Close:    
++  case SC_Close:
+     returnvalue = System_Close ((int) reg4);
+     break;
+   case SC_Unlink:
+     returnvalue = System_Unlink ((char *) reg4);
+     break;
+-  case SC_Fork:     
++  case SC_Fork:
+     returnvalue = System_Fork();
+     break;
+   case SC_GetPID:
+@@ -68,9 +68,12 @@ void do_system_call(int syscall_num) {
+   case SC_GetPPID:
+     returnvalue = System_GetPPID ();
+     break;
+-  case SC_Yield:    
++  case SC_Yield:
+     System_Yield();
+     break;
++  case SC_Nice:
++    returnvalue = System_Nice((int) reg4);
++    break;
+   default:
+     fprintf (stderr, "Nonexistent system call: %d\n", syscall_num);
+     returnvalue = -1;
+@@ -83,7 +86,7 @@ void do_system_call(int syscall_num) {
+ int System_Create (char *user_space_filename) {
+   char * filename = new char[MAXFILENAMELENGTH];
+ 
+-  if (!filename) { 
++  if (!filename) {
+     return -ENOMEM;
+   }
+   system_read_null (user_space_filename, filename);
+@@ -103,8 +106,8 @@ int System_Open (char *user_space_filename) {
+   int fd;
+   char * filename = new char[MAXFILENAMELENGTH];
+   OpenFile *file;
+-  
+-  if (!filename) { 
++
++  if (!filename) {
+     return -ENOMEM;
+   }
+   system_read_null (user_space_filename, filename);
+@@ -144,18 +147,18 @@ int System_Read (int from_fd, char* to_user_space, int num_to_read) {
+    char *buffer;
+    int bytesread;
+    OpenFile *file;
+-   
++
+    buffer = new char[num_to_read];
+    if (buffer == NULL) {
+      return -ENOMEM;
+    }
+-   
++
+    FDTEntry *fdte = currentThread->getFD (from_fd);
+    if (!fdte) {
+      delete [] buffer;
+      return -EBADF;
+    }
+-   
++
+    switch (fdte->type) {
+    case ConsoleFile :
+      bytesread = ConsoleRead (buffer, num_to_read);
+@@ -169,7 +172,7 @@ int System_Read (int from_fd, char* to_user_space, int num_to_read) {
+      return -EBADF;
+      break;
+    }
+-   
++
+    for (ssize_t i = 0; i < bytesread; i++) {
+      bool ok;
+      ok = machine->WriteMem ((int)(to_user_space + i), 1, (int) buffer[i]);
+@@ -183,7 +186,7 @@ int System_Read (int from_fd, char* to_user_space, int num_to_read) {
+        }
+      }
+    }
+-   
++
+    delete [] buffer;
+    return (int)bytesread;
+ }
+@@ -201,9 +204,9 @@ int System_Write (int to_fd, char * from_user_space, int num_to_write) {
+   int byteswritten;
+   char* buffer;
+   OpenFile *file;
+-  
++
+   buffer = new char[num_to_write + 1];
+-  
++
+   if (buffer == NULL) {
+     return -ENOMEM;
+   }
+@@ -213,7 +216,7 @@ int System_Write (int to_fd, char * from_user_space, int num_to_write) {
+     delete [] buffer;
+     return -EBADF;
+   }
+-  
++
+   for (int i = 0; i < num_to_write; i++) {
+     bool ok;
+     ok = machine->ReadMem ((int)(from_user_space + i), 1, (int *)&buffer[i]);
+@@ -228,8 +231,8 @@ int System_Write (int to_fd, char * from_user_space, int num_to_write) {
+     }
+   }
+   buffer [num_to_write] = '\0';
+-  
+-  
++
++
+   switch (fdte->type) {
+   case ConsoleFile :
+     byteswritten = ConsoleWrite (buffer, num_to_write);
+@@ -243,7 +246,7 @@ int System_Write (int to_fd, char * from_user_space, int num_to_write) {
+     return -EBADF;
+     break;
+   }
+-  
++
+   delete [] buffer;
+   return byteswritten;
+ }
+@@ -271,7 +274,7 @@ int System_Close (int fd) {
+   }
+   currentThread->setFD (fd, (FDTEntry *) NULL);
+ 
+-  return 0;  
++  return 0;
+ }
+ 
+ 
+@@ -280,7 +283,7 @@ int System_Close (int fd) {
+ int System_Unlink (char *user_space_filename) {
+   char * filename = new char[MAXFILENAMELENGTH];
+ 
+-  if (!filename) { 
++  if (!filename) {
+     return -ENOMEM;
+   }
+   system_read_null (user_space_filename, filename);
+@@ -317,7 +320,7 @@ void System_Exit (int exitvalue) {
+   if (printProcStats && currentThread->procStats) {
+     currentThread->procStats->ShortPrint (currentThread->Get_Id());
+   }
+-  
++
+   parent = currentThread->Get_Parent_Ptr ();
+   if (!parent) {
+     currentThread->Finish ();
+@@ -347,11 +350,11 @@ int System_Wait (int *exitvalue) {
+   Thread *child;
+   int childexitvalue;
+   int pid;
+-  
++
+   if (currentThread->Get_Num_Children () == 0) {
+     return -ECHILD;
+   }
+-  
++
+   // currentThread waiting on the semaphore ChildExited
+   currentThread->ChildExited->P ();
+ 
+@@ -360,7 +363,7 @@ int System_Wait (int *exitvalue) {
+   if (!child) {
+     ASSERT (false);
+   }
+-  
++
+   if (exitvalue) {
+     bool ok;
+ 
+@@ -383,7 +386,7 @@ int System_Wait (int *exitvalue) {
+ 	child->Set_Exit_Val (-childexitvalue); //FIXME : Since the exitvalue for child is written above into memory
+ 					       // this Set_Exit_Val is solely for the purpose of signalling child's
+ 					       // Exit status, to the parent, which thread_exit_status does.
+-					       //  So do we need this line ?? 
++					       //  So do we need this line ??
+   }
+ 
+   return (pid);
+@@ -393,20 +396,20 @@ int System_Wait (int *exitvalue) {
+ // ================================================================
+ // System_Exec:
+ // Parameters: register 4 contains a pointer to the filename of
+-//             the executable image.  
+-// Note: The executable image can take NO arguments.  
++//             the executable image.
++// Note: The executable image can take NO arguments.
+ // Entry Point: Called from do_system_call
+ // ================================================================
+ int System_Exec (char * user_space_filename) {
+   int ret;
+   char * filename = new char[MAXFILENAMELENGTH];
+- 
+-  if (!filename) { 
++
++  if (!filename) {
+     return -ENOMEM;
+   }
+   system_read_null( user_space_filename, filename);
+   currentThread->setName(filename);
+-  
++
+   OpenFile *executable = fileSystem->Open(filename);
+   if ( executable == NULL ) {
+     printf("Unable to open file %s\n", filename);
+@@ -421,10 +424,10 @@ int System_Exec (char * user_space_filename) {
+   if (ret < 0) {
+     return ret;
+   }
+-  
++
+   currentThread->space->InitRegisters();
+-  currentThread->space->RestoreState();  
+-  
++  currentThread->space->RestoreState();
++
+   machine->Run();                     // jump to the user progam
+   ASSERT(false);                      // machine->Run never returns;
+   return 0;                           // make gcc happy
+@@ -443,7 +446,7 @@ int System_Fork( ) {
+   }
+   // Creat an AddrSpace object for the thread
+   AddrSpace *space = new AddrSpace (t);
+-  
++
+   if (!space) {
+     delete t;
+     return -EAGAIN;
+@@ -463,19 +466,19 @@ int System_Fork( ) {
+   }
+   //calling the Thread::Fork function with Do_Fork as an argument
+   pid = t->Fork((void(*)(size_t))Do_Fork, (size_t)0);
+-  
+-  //Add the number of children to the currentThread by incrementing the 
++
++  //Add the number of children to the currentThread by incrementing the
+   //member variable Children of the Thread class
+   currentThread->Add_Child ();
+ 
+   IntStatus oldLevel = interrupt->SetLevel(IntOff);
+   // FIXME: Should this be here or in Thread::Fork()?
+-  // THIS should be here because the status of thread "t" can be set to 
++  // THIS should be here because the status of thread "t" can be set to
+   // "READY" only after all operations on it have been completed and it is
+   // considered to be done only after the previous instruction finishes
+   // adding the Children variable after returning from the Thread::Fork()
+-  // function allocating the stack and returning to this function.(System_Fork) 
+-  scheduler->ReadyToRun(t);              // ReadyToRun assumes that interrupts 
++  // function allocating the stack and returning to this function.(System_Fork)
++  scheduler->ReadyToRun(t);              // ReadyToRun assumes that interrupts
+                                          // are disabled!
+   (void) interrupt->SetLevel(oldLevel);
+ 
+@@ -483,6 +486,16 @@ int System_Fork( ) {
+ }
+ 
+ 
++// ==========================================================================
++// System_Nice :
++// ==========================================================================
++#include <iostream>
++int System_Nice(int incr) {
++
++  currentThread->setPriority(currentThread->getPriority() + incr);
++  currentThread->Yield();
++}
++
+ // ================================================================
+ // ================================================================
+ void System_Yield() {
+@@ -543,7 +556,7 @@ int system_read_null( char * from_user_space, char * to_k_space ) {
+ void Do_Fork(size_t dummy) {
+   dummy = 0;  // Keep gcc happy; the mechanism we use to call this only works
+ 	      // with functions that take 1 size_t argument
+-  
++
+   currentThread->RestoreUserState();
+   currentThread->space->RestoreState();
+ 
+diff --git a/userprog/systemcall.h b/userprog/systemcall.h
+index 5bcb68e..09baf36 100644
+--- a/userprog/systemcall.h
++++ b/userprog/systemcall.h
+@@ -25,6 +25,7 @@ extern int System_Close (int fd);
+ extern int System_Unlink (char *user_space_filename);
+ extern int System_GetPID (void);
+ extern int System_GetPPID (void);
++extern int System_Nice(int incr);
+ extern void System_Yield (void);
+ extern void System_Halt (void);
+ extern void System_Exit (int exitvalue);

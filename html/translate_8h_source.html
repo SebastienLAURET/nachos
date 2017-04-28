@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>nachos:  Fichier source de machine/translate.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">nachos
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_0909f4a7c39d3e9616c1c9d755842fcb.html">machine</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">translate.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="translate_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// translate.h </span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">//      Data structures for managing the translation from </span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">//      virtual page # -&gt; physical page #, used for managing</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">//      physical memory on behalf of user programs.</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">//      The data structures in this file are &quot;dual-use&quot; - they</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">//      serve both as a page table entry, and as an entry in</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">//      a software-managed translation lookaside buffer (TLB).</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">//      Either way, each entry is of the form:</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">//      &lt;virtual page #, physical page #&gt;.</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">// DO NOT CHANGE -- part of the machine emulation</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">// Copyright (c) 1992-1993 The Regents of the University of California.</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">// All rights reserved.  See copyright.h for copyright notice and limitation </span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">// of liability and disclaimer of warranty provisions.</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#ifndef TRANSLATE_H</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define TRANSLATE_H</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#pragma interface &quot;machine/translate.h&quot;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="copyright_8h.html">copyright.h</a>&quot;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="utility_8h.html">utility.h</a>&quot;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="openfile_8h.html">openfile.h</a>&quot;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">// The following class defines an entry in a translation table -- either</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">// in a page table or a TLB.  Each entry defines a mapping from one </span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">// virtual page to one physical page.</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">// In addition, there are some extra bits for access control (valid and </span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">// read-only) and some bits for usage information (use and dirty).</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classTranslationEntry.html">   33</a></span>&#160;<span class="keyword">class </span><a class="code" href="classTranslationEntry.html">TranslationEntry</a> {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="classTranslationEntry.html#af7d48c86a1188e1e78f00d3eaa1b21ad">   36</a></span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classTranslationEntry.html#af7d48c86a1188e1e78f00d3eaa1b21ad">virtualPage</a>;   <span class="comment">// The page number in virtual memory.</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="classTranslationEntry.html#ada1901a6079061755592c3b5d6a4098c">   37</a></span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classTranslationEntry.html#ada1901a6079061755592c3b5d6a4098c">physicalPage</a>;  <span class="comment">// The page number in real memory (relative</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                                <span class="comment">// to the start of &quot;mainMemory&quot;</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="classTranslationEntry.html#a655ccdb71f2e1c8bc43d751b5c375cd2">   39</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classTranslationEntry.html#a655ccdb71f2e1c8bc43d751b5c375cd2">valid</a>;         <span class="comment">// If this bit is set, the translation is ignored.</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                        <span class="comment">// (In other words, the entry hasn&#39;t been initialized.)</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="classTranslationEntry.html#a99d5c440c0d011213a39edf4d0844a7d">   41</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classTranslationEntry.html#a99d5c440c0d011213a39edf4d0844a7d">readOnly</a>;      <span class="comment">// If this bit is set, the user program is not allowed</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                        <span class="comment">// to modify the contents of the page.</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="classTranslationEntry.html#acd4ec2f9980de42c849562c211a3813a">   43</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classTranslationEntry.html#acd4ec2f9980de42c849562c211a3813a">use</a>;           <span class="comment">// This bit is set by the hardware every time the</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                        <span class="comment">// page is referenced or modified.</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="classTranslationEntry.html#a4a198eb7773a247967dcf4e377d3717f">   45</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classTranslationEntry.html#a4a198eb7773a247967dcf4e377d3717f">dirty</a>;         <span class="comment">// This bit is set by the hardware every time the</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                        <span class="comment">// page is modified.</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="comment">// VIRTUAL_MEMORY</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="classTranslationEntry.html#a14b0899cbb44f9851a632e9ec2f3262d">   48</a></span>&#160;    <a class="code" href="classOpenFile.html">OpenFile</a>* <a class="code" href="classTranslationEntry.html#a14b0899cbb44f9851a632e9ec2f3262d">File</a>;     <span class="comment">// This is the file where the page can be found</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="classTranslationEntry.html#a9e47df4e32ff85de433a4a7ea47346b2">   49</a></span>&#160;    <span class="keywordtype">size_t</span> <a class="code" href="classTranslationEntry.html#a9e47df4e32ff85de433a4a7ea47346b2">offset</a>;      <span class="comment">// this is the offset within the file </span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                        <span class="comment">//    where the page starts</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="classTranslationEntry.html#ab8e82227849bf2dc385b8fde8a8408ff">   51</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classTranslationEntry.html#ab8e82227849bf2dc385b8fde8a8408ff">zero</a>;          <span class="comment">// do we zero out the page ( for uninit/stack ) data</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="classTranslationEntry.html#ab6e988d3d7a1c32cbb74f5caf9e93332">   53</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classTranslationEntry.html#ab6e988d3d7a1c32cbb74f5caf9e93332">cow</a>;           <span class="comment">// copy-on-write; do we need to copy the page</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                        <span class="comment">// before we write to it</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classTranslationEntry.html#a07a2a72dd64e735157541eab6b2b4245">clearSC</a> ();</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classTranslationEntry.html#abe138dcedf0224eb8aeebefd477729bc">clearRefHistory</a> ();</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classTranslationEntry.html#a62cc12e88975c77edabaacd1ce8ff4b4">setTime</a> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> theTime);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classTranslationEntry.html#aa30e9ed870d4842212120ca8c5027809">getTime</a> ();</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;};</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* TRANSLATE_H */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="classTranslationEntry_html_af7d48c86a1188e1e78f00d3eaa1b21ad"><div class="ttname"><a href="classTranslationEntry.html#af7d48c86a1188e1e78f00d3eaa1b21ad">TranslationEntry::virtualPage</a></div><div class="ttdeci">unsigned int virtualPage</div><div class="ttdef"><b>Definition:</b> translate.h:36</div></div>
+<div class="ttc" id="classTranslationEntry_html"><div class="ttname"><a href="classTranslationEntry.html">TranslationEntry</a></div><div class="ttdef"><b>Definition:</b> translate.h:33</div></div>
+<div class="ttc" id="classTranslationEntry_html_a655ccdb71f2e1c8bc43d751b5c375cd2"><div class="ttname"><a href="classTranslationEntry.html#a655ccdb71f2e1c8bc43d751b5c375cd2">TranslationEntry::valid</a></div><div class="ttdeci">bool valid</div><div class="ttdef"><b>Definition:</b> translate.h:39</div></div>
+<div class="ttc" id="classOpenFile_html"><div class="ttname"><a href="classOpenFile.html">OpenFile</a></div><div class="ttdef"><b>Definition:</b> openfile.h:64</div></div>
+<div class="ttc" id="classTranslationEntry_html_ada1901a6079061755592c3b5d6a4098c"><div class="ttname"><a href="classTranslationEntry.html#ada1901a6079061755592c3b5d6a4098c">TranslationEntry::physicalPage</a></div><div class="ttdeci">unsigned int physicalPage</div><div class="ttdef"><b>Definition:</b> translate.h:37</div></div>
+<div class="ttc" id="classTranslationEntry_html_a4a198eb7773a247967dcf4e377d3717f"><div class="ttname"><a href="classTranslationEntry.html#a4a198eb7773a247967dcf4e377d3717f">TranslationEntry::dirty</a></div><div class="ttdeci">bool dirty</div><div class="ttdef"><b>Definition:</b> translate.h:45</div></div>
+<div class="ttc" id="classTranslationEntry_html_aa30e9ed870d4842212120ca8c5027809"><div class="ttname"><a href="classTranslationEntry.html#aa30e9ed870d4842212120ca8c5027809">TranslationEntry::getTime</a></div><div class="ttdeci">unsigned int getTime()</div><div class="ttdef"><b>Definition:</b> translate.cc:296</div></div>
+<div class="ttc" id="openfile_8h_html"><div class="ttname"><a href="openfile_8h.html">openfile.h</a></div></div>
+<div class="ttc" id="classTranslationEntry_html_ab6e988d3d7a1c32cbb74f5caf9e93332"><div class="ttname"><a href="classTranslationEntry.html#ab6e988d3d7a1c32cbb74f5caf9e93332">TranslationEntry::cow</a></div><div class="ttdeci">bool cow</div><div class="ttdef"><b>Definition:</b> translate.h:53</div></div>
+<div class="ttc" id="classTranslationEntry_html_acd4ec2f9980de42c849562c211a3813a"><div class="ttname"><a href="classTranslationEntry.html#acd4ec2f9980de42c849562c211a3813a">TranslationEntry::use</a></div><div class="ttdeci">bool use</div><div class="ttdef"><b>Definition:</b> translate.h:43</div></div>
+<div class="ttc" id="classTranslationEntry_html_a07a2a72dd64e735157541eab6b2b4245"><div class="ttname"><a href="classTranslationEntry.html#a07a2a72dd64e735157541eab6b2b4245">TranslationEntry::clearSC</a></div><div class="ttdeci">void clearSC()</div><div class="ttdef"><b>Definition:</b> translate.cc:266</div></div>
+<div class="ttc" id="utility_8h_html"><div class="ttname"><a href="utility_8h.html">utility.h</a></div></div>
+<div class="ttc" id="classTranslationEntry_html_a9e47df4e32ff85de433a4a7ea47346b2"><div class="ttname"><a href="classTranslationEntry.html#a9e47df4e32ff85de433a4a7ea47346b2">TranslationEntry::offset</a></div><div class="ttdeci">size_t offset</div><div class="ttdef"><b>Definition:</b> translate.h:49</div></div>
+<div class="ttc" id="classTranslationEntry_html_a62cc12e88975c77edabaacd1ce8ff4b4"><div class="ttname"><a href="classTranslationEntry.html#a62cc12e88975c77edabaacd1ce8ff4b4">TranslationEntry::setTime</a></div><div class="ttdeci">void setTime(unsigned int theTime)</div><div class="ttdef"><b>Definition:</b> translate.cc:286</div></div>
+<div class="ttc" id="classTranslationEntry_html_abe138dcedf0224eb8aeebefd477729bc"><div class="ttname"><a href="classTranslationEntry.html#abe138dcedf0224eb8aeebefd477729bc">TranslationEntry::clearRefHistory</a></div><div class="ttdeci">void clearRefHistory()</div><div class="ttdef"><b>Definition:</b> translate.cc:276</div></div>
+<div class="ttc" id="classTranslationEntry_html_a14b0899cbb44f9851a632e9ec2f3262d"><div class="ttname"><a href="classTranslationEntry.html#a14b0899cbb44f9851a632e9ec2f3262d">TranslationEntry::File</a></div><div class="ttdeci">OpenFile * File</div><div class="ttdef"><b>Definition:</b> translate.h:48</div></div>
+<div class="ttc" id="classTranslationEntry_html_a99d5c440c0d011213a39edf4d0844a7d"><div class="ttname"><a href="classTranslationEntry.html#a99d5c440c0d011213a39edf4d0844a7d">TranslationEntry::readOnly</a></div><div class="ttdeci">bool readOnly</div><div class="ttdef"><b>Definition:</b> translate.h:41</div></div>
+<div class="ttc" id="classTranslationEntry_html_ab8e82227849bf2dc385b8fde8a8408ff"><div class="ttname"><a href="classTranslationEntry.html#ab8e82227849bf2dc385b8fde8a8408ff">TranslationEntry::zero</a></div><div class="ttdeci">bool zero</div><div class="ttdef"><b>Definition:</b> translate.h:51</div></div>
+<div class="ttc" id="copyright_8h_html"><div class="ttname"><a href="copyright_8h.html">copyright.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Dimanche 12 Février 2017 10:48:15 pour nachos par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.6
+</small></address>
+</body>
+</html>

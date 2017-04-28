@@ -1,0 +1,507 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>nachos: Référence de la classe PostOffice</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">nachos
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Liste&#160;des&#160;classes</span></a></li>
+      <li><a href="classes.html"><span>Index&#160;des&#160;classes</span></a></li>
+      <li><a href="inherits.html"><span>Hiérarchie&#160;des&#160;classes</span></a></li>
+      <li><a href="functions.html"><span>Membres&#160;de&#160;classe</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Fonctions membres publiques</a> &#124;
+<a href="#pri-attribs">Attributs privés</a> &#124;
+<a href="classPostOffice-members.html">Liste de tous les membres</a>  </div>
+  <div class="headertitle">
+<div class="title">Référence de la classe PostOffice</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="post_8h_source.html">post.h</a>&gt;</code></p>
+<div class="dynheader">
+Graphe de collaboration de PostOffice:</div>
+<div class="dyncontent">
+<div class="center"><img src="classPostOffice__coll__graph.png" border="0" usemap="#PostOffice_coll__map" alt="Collaboration graph"/></div>
+<map name="PostOffice_coll__map" id="PostOffice_coll__map">
+<area shape="rect" id="node2" href="classSemaphore.html" title="Semaphore" alt="" coords="293,251,389,277"/><area shape="rect" id="node3" href="classList.html" title="List" alt="" coords="186,109,229,136"/><area shape="rect" id="node5" href="classLock.html" title="Lock" alt="" coords="72,200,123,227"/><area shape="rect" id="node8" href="classSynchList.html" title="SynchList" alt="" coords="137,301,220,328"/><area shape="rect" id="node9" href="classCondition.html" title="Condition" alt="" coords="215,200,297,227"/><area shape="rect" id="node4" href="classListElement.html" title="ListElement" alt="" coords="159,5,256,32"/><area shape="rect" id="node6" href="classThread.html" title="Thread" alt="" coords="5,109,72,136"/><area shape="rect" id="node7" href="classMailBox.html" title="MailBox" alt="" coords="158,405,228,432"/><area shape="rect" id="node10" href="classNetwork.html" title="Network" alt="" coords="355,405,429,432"/><area shape="rect" id="node11" href="classPacketHeader.html" title="PacketHeader" alt="" coords="373,301,483,328"/></map>
+<center><span class="legend">[<a href="graph_legend.html">légende</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Fonctions membres publiques</h2></td></tr>
+<tr class="memitem:af79d08378025395d9e5fbcb62fc508cb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPostOffice.html#af79d08378025395d9e5fbcb62fc508cb">PostOffice</a> (<a class="el" href="network_8h.html#a5f46a8b9223b0d95abfe3f8f39bc4e39">NetworkAddress</a> addr, double reliability, int nBoxes)</td></tr>
+<tr class="separator:af79d08378025395d9e5fbcb62fc508cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63fc4bc1a2dfd2a2a911342bfec9f2f1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPostOffice.html#a63fc4bc1a2dfd2a2a911342bfec9f2f1">~PostOffice</a> ()</td></tr>
+<tr class="separator:a63fc4bc1a2dfd2a2a911342bfec9f2f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f1ee00a2384c5b5a150a18bb9ad411b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPostOffice.html#a0f1ee00a2384c5b5a150a18bb9ad411b">Send</a> (<a class="el" href="classPacketHeader.html">PacketHeader</a> pktHdr, <a class="el" href="classMailHeader.html">MailHeader</a> mailHdr, char *<a class="el" href="structdata.html">data</a>)</td></tr>
+<tr class="separator:a0f1ee00a2384c5b5a150a18bb9ad411b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a933ada80e0a7a5f360b80a26134b5f53"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPostOffice.html#a933ada80e0a7a5f360b80a26134b5f53">Receive</a> (int box, <a class="el" href="classPacketHeader.html">PacketHeader</a> *pktHdr, <a class="el" href="classMailHeader.html">MailHeader</a> *mailHdr, char *<a class="el" href="structdata.html">data</a>)</td></tr>
+<tr class="separator:a933ada80e0a7a5f360b80a26134b5f53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67ca2cc25e411b1e83580728d8fcfea8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPostOffice.html#a67ca2cc25e411b1e83580728d8fcfea8">PostalDelivery</a> ()</td></tr>
+<tr class="separator:a67ca2cc25e411b1e83580728d8fcfea8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab32fd95c48b517b274f4e20bf16e775"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPostOffice.html#aab32fd95c48b517b274f4e20bf16e775">PacketSent</a> ()</td></tr>
+<tr class="separator:aab32fd95c48b517b274f4e20bf16e775"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f1c8896b71f3ef617e106baf1d08e59"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPostOffice.html#a4f1c8896b71f3ef617e106baf1d08e59">IncomingPacket</a> ()</td></tr>
+<tr class="separator:a4f1c8896b71f3ef617e106baf1d08e59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Attributs privés</h2></td></tr>
+<tr class="memitem:a9cfcf52fe591f3f1b6d8d18bae9fb5f2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classNetwork.html">Network</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPostOffice.html#a9cfcf52fe591f3f1b6d8d18bae9fb5f2">network</a></td></tr>
+<tr class="separator:a9cfcf52fe591f3f1b6d8d18bae9fb5f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2629527ecb1896af5282890317637435"><td class="memItemLeft" align="right" valign="top"><a class="el" href="network_8h.html#a5f46a8b9223b0d95abfe3f8f39bc4e39">NetworkAddress</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPostOffice.html#a2629527ecb1896af5282890317637435">netAddr</a></td></tr>
+<tr class="separator:a2629527ecb1896af5282890317637435"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab76ac854b2245a41f7161372f8f84a86"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classMailBox.html">MailBox</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPostOffice.html#ab76ac854b2245a41f7161372f8f84a86">boxes</a></td></tr>
+<tr class="separator:ab76ac854b2245a41f7161372f8f84a86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a107b1729cd4c44edb6e4609effc6f440"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPostOffice.html#a107b1729cd4c44edb6e4609effc6f440">numBoxes</a></td></tr>
+<tr class="separator:a107b1729cd4c44edb6e4609effc6f440"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f9c284a9400f3dc590f08d68d22c3c7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSemaphore.html">Semaphore</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPostOffice.html#a7f9c284a9400f3dc590f08d68d22c3c7">messageAvailable</a></td></tr>
+<tr class="separator:a7f9c284a9400f3dc590f08d68d22c3c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab02631a735f6822bc3a15dd7599b07d8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSemaphore.html">Semaphore</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPostOffice.html#ab02631a735f6822bc3a15dd7599b07d8">messageSent</a></td></tr>
+<tr class="separator:ab02631a735f6822bc3a15dd7599b07d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6c10429a2a090ca4df78b026e32fc85"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classLock.html">Lock</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPostOffice.html#ae6c10429a2a090ca4df78b026e32fc85">sendLock</a></td></tr>
+<tr class="separator:ae6c10429a2a090ca4df78b026e32fc85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Documentation des constructeurs et destructeur</h2>
+<a class="anchor" id="af79d08378025395d9e5fbcb62fc508cb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">PostOffice::PostOffice </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="network_8h.html#a5f46a8b9223b0d95abfe3f8f39bc4e39">NetworkAddress</a>&#160;</td>
+          <td class="paramname"><em>addr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>reliability</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nBoxes</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="classPostOffice_af79d08378025395d9e5fbcb62fc508cb_cgraph.png" border="0" usemap="#classPostOffice_af79d08378025395d9e5fbcb62fc508cb_cgraph" alt=""/></div>
+<map name="classPostOffice_af79d08378025395d9e5fbcb62fc508cb_cgraph" id="classPostOffice_af79d08378025395d9e5fbcb62fc508cb_cgraph">
+<area shape="rect" id="node2" href="post_8cc.html#a9d83094330655c2b108268a73e99b94e" title="ReadAvail" alt="" coords="224,1140,307,1167"/><area shape="rect" id="node26" href="post_8cc.html#a1be20c06e8a95fd71e2c83a89b15befd" title="WriteDone" alt="" coords="222,1059,309,1085"/><area shape="rect" id="node28" href="classThread.html#abde878684846a3351fd566b8e1bf0e8a" title="Thread::Fork" alt="" coords="623,321,724,348"/><area shape="rect" id="node40" href="post_8cc.html#af3c11030999d71c38b534a26a65d533c" title="PostalHelper" alt="" coords="214,983,317,1009"/><area shape="rect" id="node3" href="classPostOffice.html#a4f1c8896b71f3ef617e106baf1d08e59" title="PostOffice::IncomingPacket" alt="" coords="365,1172,560,1199"/><area shape="rect" id="node4" href="classSemaphore.html#a3e42125b95660ef696d0d0069b804343" title="Semaphore::V" alt="" coords="1220,1183,1335,1209"/><area shape="rect" id="node5" href="classInterrupt.html#af55a6cea64a8a3de49bad9ea3843addb" title="Interrupt::SetLevel" alt="" coords="1390,803,1530,829"/><area shape="rect" id="node13" href="classList.html#a4f804c07c4cfa4c9b631e6e117156e32" title="List::Remove" alt="" coords="2258,1031,2361,1057"/><area shape="rect" id="node17" href="classScheduler.html#a18e89ab130a40c423da77673f12585d7" title="Scheduler::ReadyToRun" alt="" coords="1988,828,2156,855"/><area shape="rect" id="node6" href="classInterrupt.html#ab3ca8b04757f024242b1037cf5b2ede8" title="Interrupt::ChangeLevel" alt="" coords="1763,803,1930,829"/><area shape="rect" id="node10" href="classInterrupt.html#af7e385b28c374d35c4ca3763efac2b33" title="Interrupt::OneTick" alt="" coords="1579,752,1714,779"/><area shape="rect" id="node7" href="utility_8cc.html#af1c6878736cbd9e1b531898d8951d613" title="DEBUG" alt="" coords="2275,499,2344,525"/><area shape="rect" id="node8" href="utility_8cc.html#a79c7d1acabdb48f6f6a80ec0abf7cf89" title="DebugIsEnabled" alt="" coords="2453,499,2579,525"/><area shape="rect" id="node9" href="stdlib_8h.html#a89c177d1405cf367c2c4874c4449456a" title="strchr" alt="" coords="2627,499,2685,525"/><area shape="rect" id="node11" href="classInterrupt.html#aa0b369ce526d17d07dc24027a1bf63a9" title="Interrupt::HandleIfDue" alt="" coords="1991,752,2153,779"/><area shape="rect" id="node15" href="classThread.html#adbc2bfb172d2eff4b46882aade9eeb8a" title="Thread::Yield" alt="" coords="1795,549,1898,576"/><area shape="rect" id="node12" href="classList.html#a27695119b3728f2a9315cdb14ab685e8" title="List::Head" alt="" coords="2266,625,2353,652"/><area shape="rect" id="node14" href="classList.html#a854e9656ddbfae181d12f9d9413bc2b8" title="List::IsEmpty" alt="" coords="2465,1031,2567,1057"/><area shape="rect" id="node16" href="classThread.html#a46450bb50c81bbfc0fd254fa7b72d821" title="Thread::getName" alt="" coords="2242,220,2377,247"/><area shape="rect" id="node22" href="classScheduler.html#a0fa7daec8d1058a8e6b5cbfbdd09555e" title="Scheduler::FindNextToRun" alt="" coords="1979,929,2165,956"/><area shape="rect" id="node25" href="classScheduler.html#a87205b0773d3dd84752ec779c890f5e1" title="Scheduler::Run" alt="" coords="2013,448,2131,475"/><area shape="rect" id="node18" href="classThread.html#ad707af00a9ce1a1d324804e7c73dc4ab" title="Thread::Print" alt="" coords="2258,879,2361,905"/><area shape="rect" id="node19" href="classInterrupt.html#a863f619c2596c5cf53d412a94642db41" title="Interrupt::setNeedResched" alt="" coords="2213,828,2405,855"/><area shape="rect" id="node20" href="classThread.html#a39061ce2692542188f82f909d005b1c3" title="Thread::setStatus" alt="" coords="2241,777,2377,804"/><area shape="rect" id="node21" href="classList.html#aea4cc7578bb4db7f502dc005e5edc902" title="List::Append" alt="" coords="2259,1081,2360,1108"/><area shape="rect" id="node23" href="classThread.html#ad75bd5375287a210520752785f503de4" title="Thread::getStatus" alt="" coords="2241,980,2378,1007"/><area shape="rect" id="node24" href="classInterrupt.html#a4d9820efbc3e9fd82e82f2eb6ef3613b" title="Interrupt::Halt" alt="" coords="2254,929,2365,956"/><area shape="rect" id="node27" href="classPostOffice.html#aab32fd95c48b517b274f4e20bf16e775" title="PostOffice::PacketSent" alt="" coords="998,1119,1165,1145"/><area shape="rect" id="node29" href="thread_8h.html#ac34fec5b8ba05e6039703ab68f5e9118" title="ThreadRoot" alt="" coords="1034,296,1129,323"/><area shape="rect" id="node30" href="classThread.html#a16bc85dce2d722bae57132d372a5fe86" title="Thread::StackAllocate" alt="" coords="787,245,949,272"/><area shape="rect" id="node31" href="sysdep_8cc.html#a183868423241d09c586310b2d5d266c7" title="AllocBoundedArray" alt="" coords="1010,245,1153,272"/><area shape="rect" id="node33" href="thread_8cc.html#a3531366f158d43bfad0a5d2303bcfc90" title="InterruptEnable" alt="" coords="1021,119,1141,145"/><area shape="rect" id="node35" href="thread_8cc.html#a785ba88c77321048ea0eb39df672f38c" title="ThreadFinish" alt="" coords="1031,195,1132,221"/><area shape="rect" id="node32" href="sysdep_8cc.html#aa519270187f0f6c571726a3c75ac1025" title="mprotect" alt="" coords="1237,296,1318,323"/><area shape="rect" id="node34" href="classInterrupt.html#a16eca26a7162f7099e5b043d0c0de344" title="Interrupt::Enable" alt="" coords="1213,245,1341,272"/><area shape="rect" id="node36" href="classThread.html#a1e43c788c40e9783311c970bcea7239b" title="Thread::Finish" alt="" coords="1223,195,1332,221"/><area shape="rect" id="node37" href="classThread.html#a187a4c1e62087511b69068220840244a" title="Thread::Sleep" alt="" coords="1591,499,1702,525"/><area shape="rect" id="node38" href="classInterrupt.html#aa519deead8b512a52ba4ad9fb0e2643b" title="Interrupt::getLevel" alt="" coords="1777,499,1916,525"/><area shape="rect" id="node39" href="classInterrupt.html#ace54aece18806bae3614ebf9cc8c2991" title="Interrupt::Idle" alt="" coords="1793,651,1900,677"/><area shape="rect" id="node41" href="classPostOffice.html#a67ca2cc25e411b1e83580728d8fcfea8" title="PostOffice::PostalDelivery" alt="" coords="371,899,555,925"/><area shape="rect" id="node42" href="classSemaphore.html#a4fee22da0205e3c704b08beaa17e0e7a" title="Semaphore::P" alt="" coords="1221,804,1334,831"/><area shape="rect" id="node43" href="classNetwork.html#a65fc6c013612cd582c099e46c1395066" title="Network::Receive" alt="" coords="608,873,739,900"/><area shape="rect" id="node45" href="post_8cc.html#a035090b78a62c703d0c364ea1eed61b6" title="PrintHeader" alt="" coords="624,924,723,951"/><area shape="rect" id="node46" href="classMailBox.html#ad3c3f85a2bc7e49081e7d8b793b1ef6f" title="MailBox::Put" alt="" coords="623,1000,723,1027"/><area shape="rect" id="node44" href="memcpy_8c.html#a870aa7fc44d719f4e01a8edad14cf46c" title="memcpy" alt="" coords="829,873,907,900"/><area shape="rect" id="node47" href="classSynchList.html#a8cd56b067f02d53025d8078f748e6b75" title="SynchList::Append" alt="" coords="798,1003,938,1029"/><area shape="rect" id="node48" href="classLock.html#ad4c4699fd1ab73f3927b10edc01c54db" title="Lock::Acquire" alt="" coords="1224,952,1331,979"/><area shape="rect" id="node49" href="classCondition.html#ada25a70d161b7dc9b81eaad0ef66d91c" title="Condition::Signal" alt="" coords="1017,1053,1146,1080"/><area shape="rect" id="node50" href="classLock.html#a5ca005b84272e56c2bf447056ee9217c" title="Lock::Release" alt="" coords="1223,1003,1331,1029"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a63fc4bc1a2dfd2a2a911342bfec9f2f1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">PostOffice::~PostOffice </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des fonctions membres</h2>
+<a class="anchor" id="a4f1c8896b71f3ef617e106baf1d08e59"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PostOffice::IncomingPacket </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="classPostOffice_a4f1c8896b71f3ef617e106baf1d08e59_cgraph.png" border="0" usemap="#classPostOffice_a4f1c8896b71f3ef617e106baf1d08e59_cgraph" alt=""/></div>
+<map name="classPostOffice_a4f1c8896b71f3ef617e106baf1d08e59_cgraph" id="classPostOffice_a4f1c8896b71f3ef617e106baf1d08e59_cgraph">
+<area shape="rect" id="node2" href="classSemaphore.html#a3e42125b95660ef696d0d0069b804343" title="Semaphore::V" alt="" coords="248,685,363,712"/><area shape="rect" id="node3" href="classInterrupt.html#af55a6cea64a8a3de49bad9ea3843addb" title="Interrupt::SetLevel" alt="" coords="411,432,551,458"/><area shape="rect" id="node14" href="classList.html#a4f804c07c4cfa4c9b631e6e117156e32" title="List::Remove" alt="" coords="1279,888,1382,914"/><area shape="rect" id="node20" href="classScheduler.html#a18e89ab130a40c423da77673f12585d7" title="Scheduler::ReadyToRun" alt="" coords="1009,685,1177,712"/><area shape="rect" id="node4" href="classInterrupt.html#ab3ca8b04757f024242b1037cf5b2ede8" title="Interrupt::ChangeLevel" alt="" coords="785,26,951,53"/><area shape="rect" id="node8" href="classInterrupt.html#af7e385b28c374d35c4ca3763efac2b33" title="Interrupt::OneTick" alt="" coords="601,330,735,357"/><area shape="rect" id="node5" href="utility_8cc.html#af1c6878736cbd9e1b531898d8951d613" title="DEBUG" alt="" coords="1500,229,1569,256"/><area shape="rect" id="node6" href="utility_8cc.html#a79c7d1acabdb48f6f6a80ec0abf7cf89" title="DebugIsEnabled" alt="" coords="1643,280,1768,306"/><area shape="rect" id="node7" href="stdlib_8h.html#a89c177d1405cf367c2c4874c4449456a" title="strchr" alt="" coords="1816,280,1875,306"/><area shape="rect" id="node9" href="classInterrupt.html#aa0b369ce526d17d07dc24027a1bf63a9" title="Interrupt::HandleIfDue" alt="" coords="787,330,949,357"/><area shape="rect" id="node18" href="classThread.html#adbc2bfb172d2eff4b46882aade9eeb8a" title="Thread::Yield" alt="" coords="817,533,919,560"/><area shape="rect" id="node10" href="classInterrupt.html#a8f9a7ddd0f250de0dcd45fa5bfd80c11" title="Interrupt::DumpState" alt="" coords="1014,229,1173,256"/><area shape="rect" id="node13" href="classList.html#a27695119b3728f2a9315cdb14ab685e8" title="List::Head" alt="" coords="1050,280,1137,306"/><area shape="rect" id="node15" href="classList.html#a854e9656ddbfae181d12f9d9413bc2b8" title="List::IsEmpty" alt="" coords="1483,685,1586,712"/><area shape="rect" id="node16" href="classSortedList.html#aba1018141145192392e15ad6277d814a" title="SortedList::Insert" alt="" coords="1028,634,1159,661"/><area shape="rect" id="node11" href="classList.html#ab57e90b8b2a790db7f2cad1e7aaa72d3" title="List::Mapcar" alt="" coords="1281,178,1380,205"/><area shape="rect" id="node12" href="interrupt_8cc.html#ae48c7f55ff352d1274e2563d8f97f20b" title="PrintPending" alt="" coords="1279,229,1382,256"/><area shape="rect" id="node17" href="classList.html#aea4cc7578bb4db7f502dc005e5edc902" title="List::Append" alt="" coords="1280,685,1381,712"/><area shape="rect" id="node19" href="classThread.html#a46450bb50c81bbfc0fd254fa7b72d821" title="Thread::getName" alt="" coords="1263,584,1398,610"/><area shape="rect" id="node24" href="classScheduler.html#a0fa7daec8d1058a8e6b5cbfbdd09555e" title="Scheduler::FindNextToRun" alt="" coords="1001,888,1186,914"/><area shape="rect" id="node31" href="classScheduler.html#a87205b0773d3dd84752ec779c890f5e1" title="Scheduler::Run" alt="" coords="1035,533,1152,560"/><area shape="rect" id="node21" href="classThread.html#ad707af00a9ce1a1d324804e7c73dc4ab" title="Thread::Print" alt="" coords="1279,837,1382,864"/><area shape="rect" id="node22" href="classInterrupt.html#a863f619c2596c5cf53d412a94642db41" title="Interrupt::setNeedResched" alt="" coords="1235,786,1427,813"/><area shape="rect" id="node23" href="classThread.html#a39061ce2692542188f82f909d005b1c3" title="Thread::setStatus" alt="" coords="1263,634,1399,661"/><area shape="rect" id="node25" href="classThread.html#ad75bd5375287a210520752785f503de4" title="Thread::getStatus" alt="" coords="1262,938,1399,965"/><area shape="rect" id="node26" href="classInterrupt.html#a4d9820efbc3e9fd82e82f2eb6ef3613b" title="Interrupt::Halt" alt="" coords="1275,989,1386,1016"/><area shape="rect" id="node27" href="classStatistics.html#ade67669fb1436e69a215a780b1ade63e" title="Statistics::Print" alt="" coords="1475,1014,1594,1041"/><area shape="rect" id="node28" href="system_8cc.html#ae89a123aad1c66a76c398b7af216aae4" title="Cleanup" alt="" coords="1497,964,1572,990"/><area shape="rect" id="node29" href="sysdep_8cc.html#a8b9ef9330856c5a5a02f2d3ef0497e04" title="Exit" alt="" coords="1683,964,1728,990"/><area shape="rect" id="node30" href="sysdep_8cc.html#a358d2e2397ca11ccd17553e3c40e7901" title="exit" alt="" coords="1823,964,1868,990"/><area shape="rect" id="node32" href="classThread.html#afa6657ff14b9c6866eadd85ea32c9147" title="Thread::CheckOverflow" alt="" coords="1247,482,1414,509"/><area shape="rect" id="node33" href="thread_8h.html#a10e80b5f1da660f5390f448c8fee2ae7" title="SWITCH" alt="" coords="1295,533,1366,560"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aab32fd95c48b517b274f4e20bf16e775"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PostOffice::PacketSent </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="classPostOffice_aab32fd95c48b517b274f4e20bf16e775_cgraph.png" border="0" usemap="#classPostOffice_aab32fd95c48b517b274f4e20bf16e775_cgraph" alt=""/></div>
+<map name="classPostOffice_aab32fd95c48b517b274f4e20bf16e775_cgraph" id="classPostOffice_aab32fd95c48b517b274f4e20bf16e775_cgraph">
+<area shape="rect" id="node2" href="classSemaphore.html#a3e42125b95660ef696d0d0069b804343" title="Semaphore::V" alt="" coords="221,685,336,712"/><area shape="rect" id="node3" href="classInterrupt.html#af55a6cea64a8a3de49bad9ea3843addb" title="Interrupt::SetLevel" alt="" coords="385,432,525,458"/><area shape="rect" id="node14" href="classList.html#a4f804c07c4cfa4c9b631e6e117156e32" title="List::Remove" alt="" coords="1253,888,1355,914"/><area shape="rect" id="node20" href="classScheduler.html#a18e89ab130a40c423da77673f12585d7" title="Scheduler::ReadyToRun" alt="" coords="983,685,1151,712"/><area shape="rect" id="node4" href="classInterrupt.html#ab3ca8b04757f024242b1037cf5b2ede8" title="Interrupt::ChangeLevel" alt="" coords="758,26,925,53"/><area shape="rect" id="node8" href="classInterrupt.html#af7e385b28c374d35c4ca3763efac2b33" title="Interrupt::OneTick" alt="" coords="574,330,709,357"/><area shape="rect" id="node5" href="utility_8cc.html#af1c6878736cbd9e1b531898d8951d613" title="DEBUG" alt="" coords="1473,229,1543,256"/><area shape="rect" id="node6" href="utility_8cc.html#a79c7d1acabdb48f6f6a80ec0abf7cf89" title="DebugIsEnabled" alt="" coords="1616,280,1741,306"/><area shape="rect" id="node7" href="stdlib_8h.html#a89c177d1405cf367c2c4874c4449456a" title="strchr" alt="" coords="1789,280,1848,306"/><area shape="rect" id="node9" href="classInterrupt.html#aa0b369ce526d17d07dc24027a1bf63a9" title="Interrupt::HandleIfDue" alt="" coords="760,330,923,357"/><area shape="rect" id="node18" href="classThread.html#adbc2bfb172d2eff4b46882aade9eeb8a" title="Thread::Yield" alt="" coords="790,533,893,560"/><area shape="rect" id="node10" href="classInterrupt.html#a8f9a7ddd0f250de0dcd45fa5bfd80c11" title="Interrupt::DumpState" alt="" coords="987,229,1146,256"/><area shape="rect" id="node13" href="classList.html#a27695119b3728f2a9315cdb14ab685e8" title="List::Head" alt="" coords="1023,280,1110,306"/><area shape="rect" id="node15" href="classList.html#a854e9656ddbfae181d12f9d9413bc2b8" title="List::IsEmpty" alt="" coords="1457,685,1559,712"/><area shape="rect" id="node16" href="classSortedList.html#aba1018141145192392e15ad6277d814a" title="SortedList::Insert" alt="" coords="1001,634,1132,661"/><area shape="rect" id="node11" href="classList.html#ab57e90b8b2a790db7f2cad1e7aaa72d3" title="List::Mapcar" alt="" coords="1255,178,1353,205"/><area shape="rect" id="node12" href="interrupt_8cc.html#ae48c7f55ff352d1274e2563d8f97f20b" title="PrintPending" alt="" coords="1253,229,1355,256"/><area shape="rect" id="node17" href="classList.html#aea4cc7578bb4db7f502dc005e5edc902" title="List::Append" alt="" coords="1253,685,1355,712"/><area shape="rect" id="node19" href="classThread.html#a46450bb50c81bbfc0fd254fa7b72d821" title="Thread::getName" alt="" coords="1237,584,1371,610"/><area shape="rect" id="node24" href="classScheduler.html#a0fa7daec8d1058a8e6b5cbfbdd09555e" title="Scheduler::FindNextToRun" alt="" coords="974,888,1159,914"/><area shape="rect" id="node31" href="classScheduler.html#a87205b0773d3dd84752ec779c890f5e1" title="Scheduler::Run" alt="" coords="1008,533,1125,560"/><area shape="rect" id="node21" href="classThread.html#ad707af00a9ce1a1d324804e7c73dc4ab" title="Thread::Print" alt="" coords="1253,837,1355,864"/><area shape="rect" id="node22" href="classInterrupt.html#a863f619c2596c5cf53d412a94642db41" title="Interrupt::setNeedResched" alt="" coords="1208,786,1400,813"/><area shape="rect" id="node23" href="classThread.html#a39061ce2692542188f82f909d005b1c3" title="Thread::setStatus" alt="" coords="1236,634,1372,661"/><area shape="rect" id="node25" href="classThread.html#ad75bd5375287a210520752785f503de4" title="Thread::getStatus" alt="" coords="1235,938,1373,965"/><area shape="rect" id="node26" href="classInterrupt.html#a4d9820efbc3e9fd82e82f2eb6ef3613b" title="Interrupt::Halt" alt="" coords="1249,989,1359,1016"/><area shape="rect" id="node27" href="classStatistics.html#ade67669fb1436e69a215a780b1ade63e" title="Statistics::Print" alt="" coords="1449,1014,1567,1041"/><area shape="rect" id="node28" href="system_8cc.html#ae89a123aad1c66a76c398b7af216aae4" title="Cleanup" alt="" coords="1471,964,1545,990"/><area shape="rect" id="node29" href="sysdep_8cc.html#a8b9ef9330856c5a5a02f2d3ef0497e04" title="Exit" alt="" coords="1656,964,1701,990"/><area shape="rect" id="node30" href="sysdep_8cc.html#a358d2e2397ca11ccd17553e3c40e7901" title="exit" alt="" coords="1796,964,1841,990"/><area shape="rect" id="node32" href="classThread.html#afa6657ff14b9c6866eadd85ea32c9147" title="Thread::CheckOverflow" alt="" coords="1221,482,1387,509"/><area shape="rect" id="node33" href="thread_8h.html#a10e80b5f1da660f5390f448c8fee2ae7" title="SWITCH" alt="" coords="1269,533,1339,560"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a67ca2cc25e411b1e83580728d8fcfea8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PostOffice::PostalDelivery </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="classPostOffice_a67ca2cc25e411b1e83580728d8fcfea8_cgraph.png" border="0" usemap="#classPostOffice_a67ca2cc25e411b1e83580728d8fcfea8_cgraph" alt=""/></div>
+<map name="classPostOffice_a67ca2cc25e411b1e83580728d8fcfea8_cgraph" id="classPostOffice_a67ca2cc25e411b1e83580728d8fcfea8_cgraph">
+<area shape="rect" id="node2" href="classSemaphore.html#a4fee22da0205e3c704b08beaa17e0e7a" title="Semaphore::P" alt="" coords="785,233,898,260"/><area shape="rect" id="node6" href="utility_8cc.html#a79c7d1acabdb48f6f6a80ec0abf7cf89" title="DebugIsEnabled" alt="" coords="2181,816,2307,843"/><area shape="rect" id="node37" href="classNetwork.html#a65fc6c013612cd582c099e46c1395066" title="Network::Receive" alt="" coords="237,816,368,843"/><area shape="rect" id="node39" href="post_8cc.html#a035090b78a62c703d0c364ea1eed61b6" title="PrintHeader" alt="" coords="253,867,352,893"/><area shape="rect" id="node40" href="classMailBox.html#ad3c3f85a2bc7e49081e7d8b793b1ef6f" title="MailBox::Put" alt="" coords="253,765,353,792"/><area shape="rect" id="node3" href="classInterrupt.html#af55a6cea64a8a3de49bad9ea3843addb" title="Interrupt::SetLevel" alt="" coords="947,892,1087,919"/><area shape="rect" id="node17" href="classList.html#aea4cc7578bb4db7f502dc005e5edc902" title="List::Append" alt="" coords="1819,259,1920,285"/><area shape="rect" id="node34" href="classThread.html#a187a4c1e62087511b69068220840244a" title="Thread::Sleep" alt="" coords="962,639,1073,665"/><area shape="rect" id="node4" href="classInterrupt.html#ab3ca8b04757f024242b1037cf5b2ede8" title="Interrupt::ChangeLevel" alt="" coords="1323,968,1490,995"/><area shape="rect" id="node8" href="classInterrupt.html#af7e385b28c374d35c4ca3763efac2b33" title="Interrupt::OneTick" alt="" coords="1138,917,1273,944"/><area shape="rect" id="node5" href="utility_8cc.html#af1c6878736cbd9e1b531898d8951d613" title="DEBUG" alt="" coords="2039,816,2108,843"/><area shape="rect" id="node7" href="stdlib_8h.html#a89c177d1405cf367c2c4874c4449456a" title="strchr" alt="" coords="2355,816,2413,843"/><area shape="rect" id="node9" href="classInterrupt.html#aa0b369ce526d17d07dc24027a1bf63a9" title="Interrupt::HandleIfDue" alt="" coords="1325,284,1488,311"/><area shape="rect" id="node18" href="classThread.html#adbc2bfb172d2eff4b46882aade9eeb8a" title="Thread::Yield" alt="" coords="1355,867,1458,893"/><area shape="rect" id="node10" href="classInterrupt.html#a8f9a7ddd0f250de0dcd45fa5bfd80c11" title="Interrupt::DumpState" alt="" coords="1553,715,1711,741"/><area shape="rect" id="node13" href="classList.html#a27695119b3728f2a9315cdb14ab685e8" title="List::Head" alt="" coords="1589,107,1675,133"/><area shape="rect" id="node14" href="classList.html#a4f804c07c4cfa4c9b631e6e117156e32" title="List::Remove" alt="" coords="1818,411,1921,437"/><area shape="rect" id="node15" href="classList.html#a854e9656ddbfae181d12f9d9413bc2b8" title="List::IsEmpty" alt="" coords="2022,259,2125,285"/><area shape="rect" id="node16" href="classSortedList.html#aba1018141145192392e15ad6277d814a" title="SortedList::Insert" alt="" coords="1567,259,1697,285"/><area shape="rect" id="node11" href="classList.html#ab57e90b8b2a790db7f2cad1e7aaa72d3" title="List::Mapcar" alt="" coords="1820,613,1919,640"/><area shape="rect" id="node12" href="interrupt_8cc.html#ae48c7f55ff352d1274e2563d8f97f20b" title="PrintPending" alt="" coords="1818,563,1921,589"/><area shape="rect" id="node19" href="classThread.html#a46450bb50c81bbfc0fd254fa7b72d821" title="Thread::getName" alt="" coords="1802,867,1937,893"/><area shape="rect" id="node20" href="classScheduler.html#a18e89ab130a40c423da77673f12585d7" title="Scheduler::ReadyToRun" alt="" coords="1548,917,1716,944"/><area shape="rect" id="node24" href="classScheduler.html#a0fa7daec8d1058a8e6b5cbfbdd09555e" title="Scheduler::FindNextToRun" alt="" coords="1539,664,1725,691"/><area shape="rect" id="node31" href="classScheduler.html#a87205b0773d3dd84752ec779c890f5e1" title="Scheduler::Run" alt="" coords="1573,765,1691,792"/><area shape="rect" id="node21" href="classThread.html#ad707af00a9ce1a1d324804e7c73dc4ab" title="Thread::Print" alt="" coords="1818,715,1921,741"/><area shape="rect" id="node22" href="classInterrupt.html#a863f619c2596c5cf53d412a94642db41" title="Interrupt::setNeedResched" alt="" coords="1773,1019,1965,1045"/><area shape="rect" id="node23" href="classThread.html#a39061ce2692542188f82f909d005b1c3" title="Thread::setStatus" alt="" coords="1801,917,1937,944"/><area shape="rect" id="node25" href="classThread.html#ad75bd5375287a210520752785f503de4" title="Thread::getStatus" alt="" coords="1801,512,1938,539"/><area shape="rect" id="node26" href="classInterrupt.html#a4d9820efbc3e9fd82e82f2eb6ef3613b" title="Interrupt::Halt" alt="" coords="1814,31,1925,57"/><area shape="rect" id="node27" href="classStatistics.html#ade67669fb1436e69a215a780b1ade63e" title="Statistics::Print" alt="" coords="2014,56,2133,83"/><area shape="rect" id="node28" href="system_8cc.html#ae89a123aad1c66a76c398b7af216aae4" title="Cleanup" alt="" coords="2036,5,2111,32"/><area shape="rect" id="node29" href="sysdep_8cc.html#a8b9ef9330856c5a5a02f2d3ef0497e04" title="Exit" alt="" coords="2221,5,2267,32"/><area shape="rect" id="node30" href="sysdep_8cc.html#a358d2e2397ca11ccd17553e3c40e7901" title="exit" alt="" coords="2361,5,2407,32"/><area shape="rect" id="node32" href="classThread.html#afa6657ff14b9c6866eadd85ea32c9147" title="Thread::CheckOverflow" alt="" coords="1786,765,1953,792"/><area shape="rect" id="node33" href="thread_8h.html#a10e80b5f1da660f5390f448c8fee2ae7" title="SWITCH" alt="" coords="1834,664,1905,691"/><area shape="rect" id="node35" href="classInterrupt.html#aa519deead8b512a52ba4ad9fb0e2643b" title="Interrupt::getLevel" alt="" coords="1136,563,1275,589"/><area shape="rect" id="node36" href="classInterrupt.html#ace54aece18806bae3614ebf9cc8c2991" title="Interrupt::Idle" alt="" coords="1152,284,1259,311"/><area shape="rect" id="node38" href="memcpy_8c.html#a870aa7fc44d719f4e01a8edad14cf46c" title="memcpy" alt="" coords="447,816,526,843"/><area shape="rect" id="node41" href="classSynchList.html#a8cd56b067f02d53025d8078f748e6b75" title="SynchList::Append" alt="" coords="417,765,557,792"/><area shape="rect" id="node42" href="classLock.html#ad4c4699fd1ab73f3927b10edc01c54db" title="Lock::Acquire" alt="" coords="788,740,895,767"/><area shape="rect" id="node43" href="classCondition.html#ada25a70d161b7dc9b81eaad0ef66d91c" title="Condition::Signal" alt="" coords="606,791,735,817"/><area shape="rect" id="node44" href="classLock.html#a5ca005b84272e56c2bf447056ee9217c" title="Lock::Release" alt="" coords="787,955,895,981"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a933ada80e0a7a5f360b80a26134b5f53"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PostOffice::Receive </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>box</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classPacketHeader.html">PacketHeader</a> *&#160;</td>
+          <td class="paramname"><em>pktHdr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classMailHeader.html">MailHeader</a> *&#160;</td>
+          <td class="paramname"><em>mailHdr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="classPostOffice_a933ada80e0a7a5f360b80a26134b5f53_cgraph.png" border="0" usemap="#classPostOffice_a933ada80e0a7a5f360b80a26134b5f53_cgraph" alt=""/></div>
+<map name="classPostOffice_a933ada80e0a7a5f360b80a26134b5f53_cgraph" id="classPostOffice_a933ada80e0a7a5f360b80a26134b5f53_cgraph">
+<area shape="rect" id="node2" href="classMailBox.html#a4eda4fa3299b15d8c0cf23d620676524" title="MailBox::Get" alt="" coords="198,485,301,512"/><area shape="rect" id="node3" href="utility_8cc.html#af1c6878736cbd9e1b531898d8951d613" title="DEBUG" alt="" coords="1956,271,2025,297"/><area shape="rect" id="node4" href="utility_8cc.html#a79c7d1acabdb48f6f6a80ec0abf7cf89" title="DebugIsEnabled" alt="" coords="2099,271,2224,297"/><area shape="rect" id="node6" href="classSynchList.html#afe8d909e1ab9dce01ddd7d24716be56f" title="SynchList::Remove" alt="" coords="350,485,493,512"/><area shape="rect" id="node41" href="post_8cc.html#a035090b78a62c703d0c364ea1eed61b6" title="PrintHeader" alt="" coords="372,536,471,563"/><area shape="rect" id="node42" href="memcpy_8c.html#a870aa7fc44d719f4e01a8edad14cf46c" title="memcpy" alt="" coords="382,587,461,613"/><area shape="rect" id="node5" href="stdlib_8h.html#a89c177d1405cf367c2c4874c4449456a" title="strchr" alt="" coords="2272,271,2331,297"/><area shape="rect" id="node7" href="classLock.html#ad4c4699fd1ab73f3927b10edc01c54db" title="Lock::Acquire" alt="" coords="708,536,815,563"/><area shape="rect" id="node16" href="classList.html#a4f804c07c4cfa4c9b631e6e117156e32" title="List::Remove" alt="" coords="1735,1183,1838,1209"/><area shape="rect" id="node17" href="classList.html#a854e9656ddbfae181d12f9d9413bc2b8" title="List::IsEmpty" alt="" coords="1939,1157,2042,1184"/><area shape="rect" id="node39" href="classCondition.html#aa0442520888bd371ce07d07c0a4313a7" title="Condition::Wait" alt="" coords="542,485,658,512"/><area shape="rect" id="node40" href="classLock.html#a5ca005b84272e56c2bf447056ee9217c" title="Lock::Release" alt="" coords="707,435,815,461"/><area shape="rect" id="node8" href="classInterrupt.html#af55a6cea64a8a3de49bad9ea3843addb" title="Interrupt::SetLevel" alt="" coords="865,261,1005,288"/><area shape="rect" id="node19" href="classList.html#aea4cc7578bb4db7f502dc005e5edc902" title="List::Append" alt="" coords="1736,1132,1837,1159"/><area shape="rect" id="node36" href="classThread.html#a187a4c1e62087511b69068220840244a" title="Thread::Sleep" alt="" coords="879,511,990,537"/><area shape="rect" id="node9" href="classInterrupt.html#ab3ca8b04757f024242b1037cf5b2ede8" title="Interrupt::ChangeLevel" alt="" coords="1241,93,1407,120"/><area shape="rect" id="node10" href="classInterrupt.html#af7e385b28c374d35c4ca3763efac2b33" title="Interrupt::OneTick" alt="" coords="1055,169,1190,196"/><area shape="rect" id="node11" href="classInterrupt.html#aa0b369ce526d17d07dc24027a1bf63a9" title="Interrupt::HandleIfDue" alt="" coords="1243,879,1405,905"/><area shape="rect" id="node20" href="classThread.html#adbc2bfb172d2eff4b46882aade9eeb8a" title="Thread::Yield" alt="" coords="1273,397,1375,424"/><area shape="rect" id="node12" href="classInterrupt.html#a8f9a7ddd0f250de0dcd45fa5bfd80c11" title="Interrupt::DumpState" alt="" coords="1470,651,1629,677"/><area shape="rect" id="node15" href="classList.html#a27695119b3728f2a9315cdb14ab685e8" title="List::Head" alt="" coords="1506,1056,1593,1083"/><area shape="rect" id="node18" href="classSortedList.html#aba1018141145192392e15ad6277d814a" title="SortedList::Insert" alt="" coords="1484,955,1615,981"/><area shape="rect" id="node13" href="classList.html#ab57e90b8b2a790db7f2cad1e7aaa72d3" title="List::Mapcar" alt="" coords="1737,651,1836,677"/><area shape="rect" id="node14" href="interrupt_8cc.html#ae48c7f55ff352d1274e2563d8f97f20b" title="PrintPending" alt="" coords="1735,549,1838,576"/><area shape="rect" id="node21" href="classThread.html#a46450bb50c81bbfc0fd254fa7b72d821" title="Thread::getName" alt="" coords="1719,448,1854,475"/><area shape="rect" id="node22" href="classScheduler.html#a18e89ab130a40c423da77673f12585d7" title="Scheduler::ReadyToRun" alt="" coords="1465,701,1633,728"/><area shape="rect" id="node26" href="classScheduler.html#a0fa7daec8d1058a8e6b5cbfbdd09555e" title="Scheduler::FindNextToRun" alt="" coords="1457,803,1642,829"/><area shape="rect" id="node33" href="classScheduler.html#a87205b0773d3dd84752ec779c890f5e1" title="Scheduler::Run" alt="" coords="1491,347,1608,373"/><area shape="rect" id="node23" href="classThread.html#ad707af00a9ce1a1d324804e7c73dc4ab" title="Thread::Print" alt="" coords="1735,803,1838,829"/><area shape="rect" id="node24" href="classInterrupt.html#a863f619c2596c5cf53d412a94642db41" title="Interrupt::setNeedResched" alt="" coords="1691,752,1883,779"/><area shape="rect" id="node25" href="classThread.html#a39061ce2692542188f82f909d005b1c3" title="Thread::setStatus" alt="" coords="1719,600,1855,627"/><area shape="rect" id="node27" href="classThread.html#ad75bd5375287a210520752785f503de4" title="Thread::getStatus" alt="" coords="1718,904,1855,931"/><area shape="rect" id="node28" href="classInterrupt.html#a4d9820efbc3e9fd82e82f2eb6ef3613b" title="Interrupt::Halt" alt="" coords="1731,1005,1842,1032"/><area shape="rect" id="node29" href="classStatistics.html#ade67669fb1436e69a215a780b1ade63e" title="Statistics::Print" alt="" coords="1931,1056,2050,1083"/><area shape="rect" id="node30" href="system_8cc.html#ae89a123aad1c66a76c398b7af216aae4" title="Cleanup" alt="" coords="1953,1005,2028,1032"/><area shape="rect" id="node31" href="sysdep_8cc.html#a8b9ef9330856c5a5a02f2d3ef0497e04" title="Exit" alt="" coords="2139,1005,2184,1032"/><area shape="rect" id="node32" href="sysdep_8cc.html#a358d2e2397ca11ccd17553e3c40e7901" title="exit" alt="" coords="2279,1005,2324,1032"/><area shape="rect" id="node34" href="classThread.html#afa6657ff14b9c6866eadd85ea32c9147" title="Thread::CheckOverflow" alt="" coords="1703,397,1870,424"/><area shape="rect" id="node35" href="thread_8h.html#a10e80b5f1da660f5390f448c8fee2ae7" title="SWITCH" alt="" coords="1751,347,1822,373"/><area shape="rect" id="node37" href="classInterrupt.html#aa519deead8b512a52ba4ad9fb0e2643b" title="Interrupt::getLevel" alt="" coords="1053,536,1192,563"/><area shape="rect" id="node38" href="classInterrupt.html#ace54aece18806bae3614ebf9cc8c2991" title="Interrupt::Idle" alt="" coords="1069,879,1176,905"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a0f1ee00a2384c5b5a150a18bb9ad411b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PostOffice::Send </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classPacketHeader.html">PacketHeader</a>&#160;</td>
+          <td class="paramname"><em>pktHdr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classMailHeader.html">MailHeader</a>&#160;</td>
+          <td class="paramname"><em>mailHdr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="classPostOffice_a0f1ee00a2384c5b5a150a18bb9ad411b_cgraph.png" border="0" usemap="#classPostOffice_a0f1ee00a2384c5b5a150a18bb9ad411b_cgraph" alt=""/></div>
+<map name="classPostOffice_a0f1ee00a2384c5b5a150a18bb9ad411b_cgraph" id="classPostOffice_a0f1ee00a2384c5b5a150a18bb9ad411b_cgraph">
+<area shape="rect" id="node2" href="utility_8cc.html#a79c7d1acabdb48f6f6a80ec0abf7cf89" title="DebugIsEnabled" alt="" coords="1779,968,1904,995"/><area shape="rect" id="node4" href="post_8cc.html#a035090b78a62c703d0c364ea1eed61b6" title="PrintHeader" alt="" coords="189,1475,288,1501"/><area shape="rect" id="node5" href="memcpy_8c.html#a870aa7fc44d719f4e01a8edad14cf46c" title="memcpy" alt="" coords="377,1373,455,1400"/><area shape="rect" id="node6" href="classLock.html#ad4c4699fd1ab73f3927b10edc01c54db" title="Lock::Acquire" alt="" coords="363,777,469,804"/><area shape="rect" id="node39" href="classNetwork.html#ab68e75d65ef18f8a94a2f002c9e7f4ca" title="Network::Send" alt="" coords="181,1247,296,1273"/><area shape="rect" id="node49" href="classSemaphore.html#a4fee22da0205e3c704b08beaa17e0e7a" title="Semaphore::P" alt="" coords="359,676,473,703"/><area shape="rect" id="node50" href="classLock.html#a5ca005b84272e56c2bf447056ee9217c" title="Lock::Release" alt="" coords="362,879,470,905"/><area shape="rect" id="node3" href="stdlib_8h.html#a89c177d1405cf367c2c4874c4449456a" title="strchr" alt="" coords="1952,968,2011,995"/><area shape="rect" id="node7" href="classInterrupt.html#af55a6cea64a8a3de49bad9ea3843addb" title="Interrupt::SetLevel" alt="" coords="541,929,681,956"/><area shape="rect" id="node19" href="classList.html#aea4cc7578bb4db7f502dc005e5edc902" title="List::Append" alt="" coords="1416,461,1517,488"/><area shape="rect" id="node36" href="classThread.html#a187a4c1e62087511b69068220840244a" title="Thread::Sleep" alt="" coords="555,651,666,677"/><area shape="rect" id="node8" href="classInterrupt.html#ab3ca8b04757f024242b1037cf5b2ede8" title="Interrupt::ChangeLevel" alt="" coords="921,1120,1087,1147"/><area shape="rect" id="node10" href="classInterrupt.html#af7e385b28c374d35c4ca3763efac2b33" title="Interrupt::OneTick" alt="" coords="735,929,870,956"/><area shape="rect" id="node9" href="utility_8cc.html#af1c6878736cbd9e1b531898d8951d613" title="DEBUG" alt="" coords="1636,968,1705,995"/><area shape="rect" id="node11" href="classInterrupt.html#aa0b369ce526d17d07dc24027a1bf63a9" title="Interrupt::HandleIfDue" alt="" coords="923,259,1085,285"/><area shape="rect" id="node20" href="classThread.html#adbc2bfb172d2eff4b46882aade9eeb8a" title="Thread::Yield" alt="" coords="953,879,1055,905"/><area shape="rect" id="node12" href="classInterrupt.html#a8f9a7ddd0f250de0dcd45fa5bfd80c11" title="Interrupt::DumpState" alt="" coords="1150,309,1309,336"/><area shape="rect" id="node15" href="classList.html#a27695119b3728f2a9315cdb14ab685e8" title="List::Head" alt="" coords="1186,56,1273,83"/><area shape="rect" id="node16" href="classList.html#a4f804c07c4cfa4c9b631e6e117156e32" title="List::Remove" alt="" coords="1415,208,1518,235"/><area shape="rect" id="node17" href="classList.html#a854e9656ddbfae181d12f9d9413bc2b8" title="List::IsEmpty" alt="" coords="1619,208,1722,235"/><area shape="rect" id="node18" href="classSortedList.html#aba1018141145192392e15ad6277d814a" title="SortedList::Insert" alt="" coords="1164,512,1295,539"/><area shape="rect" id="node13" href="classList.html#ab57e90b8b2a790db7f2cad1e7aaa72d3" title="List::Mapcar" alt="" coords="1417,309,1516,336"/><area shape="rect" id="node14" href="interrupt_8cc.html#ae48c7f55ff352d1274e2563d8f97f20b" title="PrintPending" alt="" coords="1415,259,1518,285"/><area shape="rect" id="node21" href="classThread.html#a46450bb50c81bbfc0fd254fa7b72d821" title="Thread::getName" alt="" coords="1399,867,1534,893"/><area shape="rect" id="node22" href="classScheduler.html#a18e89ab130a40c423da77673f12585d7" title="Scheduler::ReadyToRun" alt="" coords="1145,828,1313,855"/><area shape="rect" id="node26" href="classScheduler.html#a0fa7daec8d1058a8e6b5cbfbdd09555e" title="Scheduler::FindNextToRun" alt="" coords="1137,563,1322,589"/><area shape="rect" id="node33" href="classScheduler.html#a87205b0773d3dd84752ec779c890f5e1" title="Scheduler::Run" alt="" coords="1171,727,1288,753"/><area shape="rect" id="node23" href="classThread.html#ad707af00a9ce1a1d324804e7c73dc4ab" title="Thread::Print" alt="" coords="1415,563,1518,589"/><area shape="rect" id="node24" href="classInterrupt.html#a863f619c2596c5cf53d412a94642db41" title="Interrupt::setNeedResched" alt="" coords="1371,917,1563,944"/><area shape="rect" id="node25" href="classThread.html#a39061ce2692542188f82f909d005b1c3" title="Thread::setStatus" alt="" coords="1399,816,1535,843"/><area shape="rect" id="node27" href="classThread.html#ad75bd5375287a210520752785f503de4" title="Thread::getStatus" alt="" coords="1398,512,1535,539"/><area shape="rect" id="node28" href="classInterrupt.html#a4d9820efbc3e9fd82e82f2eb6ef3613b" title="Interrupt::Halt" alt="" coords="1411,31,1522,57"/><area shape="rect" id="node29" href="classStatistics.html#ade67669fb1436e69a215a780b1ade63e" title="Statistics::Print" alt="" coords="1611,56,1730,83"/><area shape="rect" id="node30" href="system_8cc.html#ae89a123aad1c66a76c398b7af216aae4" title="Cleanup" alt="" coords="1633,5,1708,32"/><area shape="rect" id="node31" href="sysdep_8cc.html#a8b9ef9330856c5a5a02f2d3ef0497e04" title="Exit" alt="" coords="1819,5,1864,32"/><area shape="rect" id="node32" href="sysdep_8cc.html#a358d2e2397ca11ccd17553e3c40e7901" title="exit" alt="" coords="1959,5,2004,32"/><area shape="rect" id="node34" href="classThread.html#afa6657ff14b9c6866eadd85ea32c9147" title="Thread::CheckOverflow" alt="" coords="1383,664,1550,691"/><area shape="rect" id="node35" href="thread_8h.html#a10e80b5f1da660f5390f448c8fee2ae7" title="SWITCH" alt="" coords="1431,715,1502,741"/><area shape="rect" id="node37" href="classInterrupt.html#aa519deead8b512a52ba4ad9fb0e2643b" title="Interrupt::getLevel" alt="" coords="733,423,872,449"/><area shape="rect" id="node38" href="classInterrupt.html#ace54aece18806bae3614ebf9cc8c2991" title="Interrupt::Idle" alt="" coords="749,259,856,285"/><area shape="rect" id="node40" href="classInterrupt.html#a9d5c35bd5c50ef5061f31dddf07af297" title="Interrupt::Schedule" alt="" coords="344,993,488,1020"/><area shape="rect" id="node41" href="network_8cc.html#acdfa6c90c203465defcaececa95c38e7" title="NetworkSendDone" alt="" coords="345,1272,487,1299"/><area shape="rect" id="node43" href="sysdep_8cc.html#aac8c6c00a0e52489ecf8e8a6d9eba228" title="Random" alt="" coords="379,1323,453,1349"/><area shape="rect" id="node45" href="sysdep_8cc.html#acf6ac36662ff2a496b9aa57c15c1b269" title="SendToSocket" alt="" coords="360,1171,472,1197"/><area shape="rect" id="node42" href="classNetwork.html#ace79fd02d0d8404789162e991df951fe" title="Network::SendDone" alt="" coords="536,1272,685,1299"/><area shape="rect" id="node44" href="sysdep_8cc.html#ae23144bcbb8e3742b00eb687c36654d1" title="rand" alt="" coords="585,1323,636,1349"/><area shape="rect" id="node46" href="sysdep_8cc.html#a9465e5e9d8096a8cb70dd8ea8d7dfa8a" title="InitSocketName" alt="" coords="549,1120,673,1147"/><area shape="rect" id="node48" href="sysdep_8cc.html#a5535d888ae2029d4bcb26e947c65bfdc" title="sendto" alt="" coords="577,1171,644,1197"/><area shape="rect" id="node47" href="disasm_8c.html#add539a5755e4c4070b0c8ca97477fe47" title="strcpy" alt="" coords="772,1120,833,1147"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des données membres</h2>
+<a class="anchor" id="ab76ac854b2245a41f7161372f8f84a86"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classMailBox.html">MailBox</a>* PostOffice::boxes</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a7f9c284a9400f3dc590f08d68d22c3c7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classSemaphore.html">Semaphore</a>* PostOffice::messageAvailable</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab02631a735f6822bc3a15dd7599b07d8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classSemaphore.html">Semaphore</a>* PostOffice::messageSent</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a2629527ecb1896af5282890317637435"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="network_8h.html#a5f46a8b9223b0d95abfe3f8f39bc4e39">NetworkAddress</a> PostOffice::netAddr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a9cfcf52fe591f3f1b6d8d18bae9fb5f2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classNetwork.html">Network</a>* PostOffice::network</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a107b1729cd4c44edb6e4609effc6f440"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int PostOffice::numBoxes</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ae6c10429a2a090ca4df78b026e32fc85"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classLock.html">Lock</a>* PostOffice::sendLock</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>La documentation de cette classe a été générée à partir des fichiers suivants :<ul>
+<li>network/<a class="el" href="post_8h_source.html">post.h</a></li>
+<li>network/<a class="el" href="post_8cc.html">post.cc</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Dimanche 12 Février 2017 10:48:15 pour nachos par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.6
+</small></address>
+</body>
+</html>

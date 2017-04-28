@@ -1,0 +1,230 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>nachos: Référence du fichier machine/disk.cc</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">nachos
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_0909f4a7c39d3e9616c1c9d755842fcb.html">machine</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#define-members">Macros</a> &#124;
+<a href="#func-members">Fonctions</a>  </div>
+  <div class="headertitle">
+<div class="title">Référence du fichier disk.cc</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="copyright_8h_source.html">copyright.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="disk_8h_source.html">disk.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="system_8h_source.html">system.h</a>&quot;</code><br/>
+</div><div class="textblock"><div class="dynheader">
+Graphe des dépendances par inclusion de disk.cc:</div>
+<div class="dyncontent">
+<div class="center"><img src="disk_8cc__incl.png" border="0" usemap="#machine_2disk_8cc" alt=""/></div>
+<map name="machine_2disk_8cc" id="machine_2disk_8cc">
+<area shape="rect" id="node2" href="copyright_8h.html" title="copyright.h" alt="" coords="603,453,696,480"/><area shape="rect" id="node3" href="disk_8h.html" title="disk.h" alt="" coords="879,229,937,256"/><area shape="rect" id="node9" href="system_8h.html" title="system.h" alt="" coords="558,80,639,107"/><area shape="rect" id="node4" href="utility_8h.html" title="utility.h" alt="" coords="511,304,577,331"/><area shape="rect" id="node5" href="stdlib_8h.html" title="stdlib.h" alt="" coords="543,379,611,405"/><area shape="rect" id="node6" href="sysdep_8h.html" title="sysdep.h" alt="" coords="95,379,173,405"/><area shape="rect" id="node10" href="thread_8h.html" title="thread.h" alt="" coords="383,229,459,256"/><area shape="rect" id="node12" href="scheduler_8h.html" title="scheduler.h" alt="" coords="5,155,99,181"/><area shape="rect" id="node15" href="interrupt_8h.html" title="interrupt.h" alt="" coords="554,155,643,181"/><area shape="rect" id="node16" href="stats_8h.html" title="stats.h" alt="" coords="737,304,804,331"/><area shape="rect" id="node17" href="timer_8h.html" title="timer.h" alt="" coords="687,229,753,256"/><area shape="rect" id="node18" href="memmgr_8h.html" title="memmgr.h" alt="" coords="124,155,217,181"/><area shape="rect" id="node19" href="swapmgr_8h.html" title="swapmgr.h" alt="" coords="241,155,332,181"/><area shape="rect" id="node20" href="ifdef__symbols_8h.html" title="ifdef_symbols.h" alt="" coords="357,155,477,181"/><area shape="rect" id="node11" href="defs_8h.html" title="defs.h" alt="" coords="305,304,367,331"/><area shape="rect" id="node13" href="list_8h.html" title="list.h" alt="" coords="505,229,556,256"/><area shape="rect" id="node14" href="nachos-gdb_8h.html" title="nachos&#45;gdb.h" alt="" coords="249,229,359,256"/></map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a0221e53d8505517e0ec9d01b71cec9c7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="disk_8cc.html#a0221e53d8505517e0ec9d01b71cec9c7">MagicNumber</a>&#160;&#160;&#160;0x456789ab</td></tr>
+<tr class="separator:a0221e53d8505517e0ec9d01b71cec9c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1c8beed1a7d50b8ffcacd9b2d4b6353"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="disk_8cc.html#af1c8beed1a7d50b8ffcacd9b2d4b6353">MagicSize</a>&#160;&#160;&#160;sizeof(int)</td></tr>
+<tr class="separator:af1c8beed1a7d50b8ffcacd9b2d4b6353"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9815f820b9a9d47afed6c5c855228c45"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="disk_8cc.html#a9815f820b9a9d47afed6c5c855228c45">DiskSize</a>&#160;&#160;&#160;(<a class="el" href="disk_8cc.html#af1c8beed1a7d50b8ffcacd9b2d4b6353">MagicSize</a> + (<a class="el" href="disk_8h.html#a0ee898980dd88701d0d9d67dad0b7c2c">NumSectors</a> * <a class="el" href="disk_8h.html#ac729b32bca4535899ef2ee58b6a13d68">SectorSize</a>))</td></tr>
+<tr class="separator:a9815f820b9a9d47afed6c5c855228c45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:aa9389db37222a8934cbb27da4c20e76b"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="disk_8cc.html#aa9389db37222a8934cbb27da4c20e76b">DiskDone</a> (<a class="el" href="stdlib_8h.html#a7c94ea6f8948649f8d181ae55911eeaf">size_t</a> arg)</td></tr>
+<tr class="separator:aa9389db37222a8934cbb27da4c20e76b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f97a10c00c77d969f5ec6423403b6cc"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="disk_8cc.html#a3f97a10c00c77d969f5ec6423403b6cc">PrintSector</a> (bool writing, int sector, char *<a class="el" href="structdata.html">data</a>)</td></tr>
+<tr class="separator:a3f97a10c00c77d969f5ec6423403b6cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Documentation des macros</h2>
+<a class="anchor" id="a9815f820b9a9d47afed6c5c855228c45"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DiskSize&#160;&#160;&#160;(<a class="el" href="disk_8cc.html#af1c8beed1a7d50b8ffcacd9b2d4b6353">MagicSize</a> + (<a class="el" href="disk_8h.html#a0ee898980dd88701d0d9d67dad0b7c2c">NumSectors</a> * <a class="el" href="disk_8h.html#ac729b32bca4535899ef2ee58b6a13d68">SectorSize</a>))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a0221e53d8505517e0ec9d01b71cec9c7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MagicNumber&#160;&#160;&#160;0x456789ab</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af1c8beed1a7d50b8ffcacd9b2d4b6353"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MagicSize&#160;&#160;&#160;sizeof(int)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des fonctions</h2>
+<a class="anchor" id="aa9389db37222a8934cbb27da4c20e76b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void DiskDone </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="stdlib_8h.html#a7c94ea6f8948649f8d181ae55911eeaf">size_t</a>&#160;</td>
+          <td class="paramname"><em>arg</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a3f97a10c00c77d969f5ec6423403b6cc"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void PrintSector </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>writing</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>sector</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Dimanche 12 Février 2017 10:48:15 pour nachos par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.6
+</small></address>
+</body>
+</html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>nachos:  Fichier source de userprog/addrspace.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">nachos
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_1d382e90aafd8fa5d2a2b6b84b51ddb5.html">userprog</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">addrspace.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="addrspace_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// -*- C++ -*-</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">// addrspace.h </span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">//      Data structures to keep track of executing user programs </span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">//      (address spaces).</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">//      For now, we do not keep any information about address spaces.</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">//      The user level CPU state is saved and restored in the thread</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">//      executing the user program (see thread.h).</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">// Copyright (c) 1992-1993 The Regents of the University of California.</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">// All rights reserved.  See copyright.h for copyright notice and limitation </span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">// of liability and disclaimer of warranty provisions.</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#ifndef ADDRSPACE_H</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ADDRSPACE_H</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#pragma interface &quot;userprog/addrspace.h&quot;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="copyright_8h.html">copyright.h</a>&quot;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="filesys_8h.html">filesys.h</a>&quot;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="openfile_8h.html">openfile.h</a>&quot;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="thread_8h.html">thread.h</a>&quot;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="system_8h.html">system.h</a>&quot;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="elf_8h.html">elf.h</a>&quot;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">class </span><a class="code" href="classThread.html">Thread</a>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="addrspace_8h.html#a7f75893a4e3fe202253c015a4b75a1cc">   28</a></span>&#160;<span class="preprocessor">#define UserStackSize           4096    // increase this as necessary!</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">// Section types</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="addrspace_8h.html#a59c86a842818e652ff7297761aa3607a">   31</a></span>&#160;<span class="preprocessor">#define REGINFO 0</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="addrspace_8h.html#a52e3db5a1724beab41ebbabe72460f12">   32</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define TEXT    1</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="addrspace_8h.html#ac44cbcdd450c41da61bbbffe2cc49e01">   33</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define RDATA   2</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="addrspace_8h.html#aad9ae913bdfab20dd94ad04ee2d5b045">   34</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define DATA    3</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="addrspace_8h.html#a476baf4669c951eb7864d94f15a49f75">   35</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define BSS     4</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="addrspace_8h.html#a8bb6a13e6e973c6922ba5118fde8536d">   36</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define SBSS    5</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="addrspace_8h.html#a6974c83481090ea7dd3b9dc08f32ef1f">   37</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define NUM_SECTIONS 6</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="structnachosHeader.html">   39</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structnachosHeader.html">nachosHeader</a></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;{</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="structnachosHeader.html#a7673edf66cc6aff26de1af0ee2129686">   41</a></span>&#160;  <a class="code" href="structElf32__Elf__header.html">Elf32_Elf_header</a> <a class="code" href="structnachosHeader.html#a7673edf66cc6aff26de1af0ee2129686">file_header</a>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="structnachosHeader.html#a194b265c3cd6a1e4f32bb31d987db456">   42</a></span>&#160;  <a class="code" href="structElf32__Section__header.html">Elf32_Section_header</a> <a class="code" href="structnachosHeader.html#a194b265c3cd6a1e4f32bb31d987db456">section</a>[<a class="code" href="addrspace_8h.html#a6974c83481090ea7dd3b9dc08f32ef1f">NUM_SECTIONS</a>];</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;} <a class="code" href="addrspace_8h.html#a290065036353633d489946ad8032e8ce">NachosHeader</a>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="classAddrSpace.html">   45</a></span>&#160;<span class="keyword">class </span><a class="code" href="classAddrSpace.html">AddrSpace</a> {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="classAddrSpace.html#a3ba46dcefdc9a8ed8b8a17ce84e18959">   47</a></span>&#160;  <span class="keyword">const</span> <a class="code" href="classThread.html">Thread</a> *<a class="code" href="classAddrSpace.html#a3ba46dcefdc9a8ed8b8a17ce84e18959">owner</a>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="classAddrSpace.html#ac56c536475ee0a47fb59c697f7eba720">   49</a></span>&#160;  <a class="code" href="classAddrSpace.html#ac56c536475ee0a47fb59c697f7eba720">AddrSpace</a> (<a class="code" href="classThread.html">Thread</a> *t) :</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <a class="code" href="classAddrSpace.html#a3ba46dcefdc9a8ed8b8a17ce84e18959">owner</a>(t),</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <a class="code" href="classAddrSpace.html#adf07f482066dfc9b526918d4e2cf747a">pageTable</a>(<a class="code" href="d_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>), <a class="code" href="classAddrSpace.html#a337a28919411c2ff85837d442a7c86ef">numPages</a>(0), <a class="code" href="classAddrSpace.html#a5d3aaa575dd62bb8dc580b1d079b4687">execFile</a>(<a class="code" href="d_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {}</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <a class="code" href="classAddrSpace.html#add4a9431912394188b08c03346632737">~AddrSpace</a>();                 <span class="comment">// Deallocate an address space</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keywordtype">int</span> <a class="code" href="classAddrSpace.html#ac986344d11b78c096ef772e55c7ad54d">InitSpace</a>(<span class="keywordtype">int</span> numpages);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="keywordtype">int</span> <a class="code" href="classAddrSpace.html#ac986344d11b78c096ef772e55c7ad54d">InitSpace</a>(<a class="code" href="classOpenFile.html">OpenFile</a> *executable);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keywordtype">int</span> <a class="code" href="classAddrSpace.html#a454e2bc84aa309d41155eaa6eee791ab">ModifySpace</a>(<a class="code" href="classOpenFile.html">OpenFile</a> *executable);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classAddrSpace.html#a9c055c31c424f834832733cc2fb3c88e">InitRegisters</a>(<span class="keywordtype">void</span>);             <span class="comment">// Initialize user-level CPU registers,</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="comment">// before jumping to user code</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classAddrSpace.html#a5e2ba2b783e8a1a63d034abcf1055395">SaveState</a>(<span class="keywordtype">void</span>);                 <span class="comment">// Save/restore address space-specific</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classAddrSpace.html#af675701abb847806b2052525308a6adf">RestoreState</a>(<span class="keywordtype">void</span>);              <span class="comment">// info on a context switch </span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="classAddrSpace.html#acf20e6df31577ae3d4852d75e652a912">   62</a></span>&#160;  <a class="code" href="classTranslationEntry.html">TranslationEntry</a> *<a class="code" href="classAddrSpace.html#acf20e6df31577ae3d4852d75e652a912">get_page_ptr</a> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> virtPage)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordflow">return</span> (virtPage &gt;= <a class="code" href="classAddrSpace.html#a337a28919411c2ff85837d442a7c86ef">numPages</a>) ? <a class="code" href="d_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a> : &amp;(<a class="code" href="classAddrSpace.html#adf07f482066dfc9b526918d4e2cf747a">pageTable</a>[virtPage]);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  }</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="keywordtype">int</span> <a class="code" href="classAddrSpace.html#adf648840d0d5cc91088c0807c106fafd">CopyFrom</a>(<a class="code" href="classThread.html">Thread</a> *ourThread);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classAddrSpace.html#aeffe57a81080ee156c8a4741a2735152">duplicatePage</a> (<span class="keywordtype">int</span> page_number);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="keywordtype">int</span> <a class="code" href="classAddrSpace.html#a06ac8b5e282b926e999c3539f787f558">FIFO_Choose_Victim</a> (<span class="keywordtype">int</span> notMe);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="keywordtype">int</span> <a class="code" href="classAddrSpace.html#aaffe2684d589af98f4809ceee0bb5832">LRU_Choose_Victim</a> (<span class="keywordtype">int</span> notMe);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="keywordtype">int</span> <a class="code" href="classAddrSpace.html#a8351b5f8f46ef121b35957d5c92d620a">SC_Choose_Victim</a> (<span class="keywordtype">int</span> notMe);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="keywordtype">int</span> <a class="code" href="classAddrSpace.html#a73d8ac41dce5866a431d03c6db84ae75">TooManyPages</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classAddrSpace.html#afd6654143310bd2ce04813b8ac47a3d0">CopyPageTable</a> (<a class="code" href="classTranslationEntry.html">TranslationEntry</a> *oldPT, <a class="code" href="classTranslationEntry.html">TranslationEntry</a> *newPT, </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                      <span class="keywordtype">int</span> numpages);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <span class="keywordtype">int</span> <a class="code" href="classAddrSpace.html#af2ae105a1ee5000a65b6d021f14c49f8">SetupTable</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <span class="keywordtype">int</span> <a class="code" href="classAddrSpace.html#ac180a18651bd237561fb9ea814978fa9">Setup_Load</a>(<a class="code" href="classOpenFile.html">OpenFile</a> *executable, <a class="code" href="structnachosHeader.html">NachosHeader</a> *nachosH);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classAddrSpace.html#a5c14b396b5ccd3ebc2e5b1e3aaf11908">NumPagesUsed</a> (<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="classAddrSpace.html#adf07f482066dfc9b526918d4e2cf747a">   82</a></span>&#160;  <a class="code" href="classTranslationEntry.html">TranslationEntry</a> *<a class="code" href="classAddrSpace.html#adf07f482066dfc9b526918d4e2cf747a">pageTable</a>;        <span class="comment">// Assume linear page table translation</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                                      <span class="comment">// for now!</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="classAddrSpace.html#a337a28919411c2ff85837d442a7c86ef">   84</a></span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classAddrSpace.html#a337a28919411c2ff85837d442a7c86ef">numPages</a>;              <span class="comment">// Number of pages in the virtual </span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                                      <span class="comment">// address space</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="classAddrSpace.html#a5d3aaa575dd62bb8dc580b1d079b4687">   86</a></span>&#160;  <a class="code" href="classOpenFile.html">OpenFile</a> *<a class="code" href="classAddrSpace.html#a5d3aaa575dd62bb8dc580b1d079b4687">execFile</a>;                 <span class="comment">// Executable that is currently running</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                                      <span class="comment">// in this address space.  NULL if none</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="classAddrSpace.html#a943e71ad912b3e441ba0f6676d784007">   88</a></span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classAddrSpace.html#a943e71ad912b3e441ba0f6676d784007">startAddress</a>;          <span class="comment">// Where to start executing</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;};</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="preprocessor">#endif // ADDRSPACE_H</span></div>
+<div class="ttc" id="classAddrSpace_html_a9c055c31c424f834832733cc2fb3c88e"><div class="ttname"><a href="classAddrSpace.html#a9c055c31c424f834832733cc2fb3c88e">AddrSpace::InitRegisters</a></div><div class="ttdeci">void InitRegisters(void)</div><div class="ttdef"><b>Definition:</b> addrspace.cc:505</div></div>
+<div class="ttc" id="classAddrSpace_html"><div class="ttname"><a href="classAddrSpace.html">AddrSpace</a></div><div class="ttdef"><b>Definition:</b> addrspace.h:45</div></div>
+<div class="ttc" id="classAddrSpace_html_adf07f482066dfc9b526918d4e2cf747a"><div class="ttname"><a href="classAddrSpace.html#adf07f482066dfc9b526918d4e2cf747a">AddrSpace::pageTable</a></div><div class="ttdeci">TranslationEntry * pageTable</div><div class="ttdef"><b>Definition:</b> addrspace.h:82</div></div>
+<div class="ttc" id="classAddrSpace_html_a8351b5f8f46ef121b35957d5c92d620a"><div class="ttname"><a href="classAddrSpace.html#a8351b5f8f46ef121b35957d5c92d620a">AddrSpace::SC_Choose_Victim</a></div><div class="ttdeci">int SC_Choose_Victim(int notMe)</div><div class="ttdef"><b>Definition:</b> addrspace.cc:859</div></div>
+<div class="ttc" id="structnachosHeader_html"><div class="ttname"><a href="structnachosHeader.html">nachosHeader</a></div><div class="ttdef"><b>Definition:</b> addrspace.h:39</div></div>
+<div class="ttc" id="classTranslationEntry_html"><div class="ttname"><a href="classTranslationEntry.html">TranslationEntry</a></div><div class="ttdef"><b>Definition:</b> translate.h:33</div></div>
+<div class="ttc" id="classAddrSpace_html_a06ac8b5e282b926e999c3539f787f558"><div class="ttname"><a href="classAddrSpace.html#a06ac8b5e282b926e999c3539f787f558">AddrSpace::FIFO_Choose_Victim</a></div><div class="ttdeci">int FIFO_Choose_Victim(int notMe)</div><div class="ttdef"><b>Definition:</b> addrspace.cc:829</div></div>
+<div class="ttc" id="classAddrSpace_html_ac986344d11b78c096ef772e55c7ad54d"><div class="ttname"><a href="classAddrSpace.html#ac986344d11b78c096ef772e55c7ad54d">AddrSpace::InitSpace</a></div><div class="ttdeci">int InitSpace(int numpages)</div><div class="ttdef"><b>Definition:</b> addrspace.cc:407</div></div>
+<div class="ttc" id="classOpenFile_html"><div class="ttname"><a href="classOpenFile.html">OpenFile</a></div><div class="ttdef"><b>Definition:</b> openfile.h:64</div></div>
+<div class="ttc" id="addrspace_8h_html_a290065036353633d489946ad8032e8ce"><div class="ttname"><a href="addrspace_8h.html#a290065036353633d489946ad8032e8ce">NachosHeader</a></div><div class="ttdeci">struct nachosHeader NachosHeader</div></div>
+<div class="ttc" id="openfile_8h_html"><div class="ttname"><a href="openfile_8h.html">openfile.h</a></div></div>
+<div class="ttc" id="classAddrSpace_html_acf20e6df31577ae3d4852d75e652a912"><div class="ttname"><a href="classAddrSpace.html#acf20e6df31577ae3d4852d75e652a912">AddrSpace::get_page_ptr</a></div><div class="ttdeci">TranslationEntry * get_page_ptr(unsigned int virtPage) const </div><div class="ttdef"><b>Definition:</b> addrspace.h:62</div></div>
+<div class="ttc" id="classAddrSpace_html_aeffe57a81080ee156c8a4741a2735152"><div class="ttname"><a href="classAddrSpace.html#aeffe57a81080ee156c8a4741a2735152">AddrSpace::duplicatePage</a></div><div class="ttdeci">void duplicatePage(int page_number)</div><div class="ttdef"><b>Definition:</b> addrspace.cc:596</div></div>
+<div class="ttc" id="thread_8h_html"><div class="ttname"><a href="thread_8h.html">thread.h</a></div></div>
+<div class="ttc" id="classAddrSpace_html_aaffe2684d589af98f4809ceee0bb5832"><div class="ttname"><a href="classAddrSpace.html#aaffe2684d589af98f4809ceee0bb5832">AddrSpace::LRU_Choose_Victim</a></div><div class="ttdeci">int LRU_Choose_Victim(int notMe)</div><div class="ttdef"><b>Definition:</b> addrspace.cc:844</div></div>
+<div class="ttc" id="structElf32__Elf__header_html"><div class="ttname"><a href="structElf32__Elf__header.html">Elf32_Elf_header</a></div><div class="ttdef"><b>Definition:</b> elf.h:65</div></div>
+<div class="ttc" id="classAddrSpace_html_ac56c536475ee0a47fb59c697f7eba720"><div class="ttname"><a href="classAddrSpace.html#ac56c536475ee0a47fb59c697f7eba720">AddrSpace::AddrSpace</a></div><div class="ttdeci">AddrSpace(Thread *t)</div><div class="ttdef"><b>Definition:</b> addrspace.h:49</div></div>
+<div class="ttc" id="classAddrSpace_html_a5c14b396b5ccd3ebc2e5b1e3aaf11908"><div class="ttname"><a href="classAddrSpace.html#a5c14b396b5ccd3ebc2e5b1e3aaf11908">AddrSpace::NumPagesUsed</a></div><div class="ttdeci">unsigned int NumPagesUsed(void)</div><div class="ttdef"><b>Definition:</b> addrspace.cc:796</div></div>
+<div class="ttc" id="addrspace_8h_html_a6974c83481090ea7dd3b9dc08f32ef1f"><div class="ttname"><a href="addrspace_8h.html#a6974c83481090ea7dd3b9dc08f32ef1f">NUM_SECTIONS</a></div><div class="ttdeci">#define NUM_SECTIONS</div><div class="ttdef"><b>Definition:</b> addrspace.h:37</div></div>
+<div class="ttc" id="d_8c_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="d_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> d.c:11</div></div>
+<div class="ttc" id="elf_8h_html"><div class="ttname"><a href="elf_8h.html">elf.h</a></div></div>
+<div class="ttc" id="structnachosHeader_html_a194b265c3cd6a1e4f32bb31d987db456"><div class="ttname"><a href="structnachosHeader.html#a194b265c3cd6a1e4f32bb31d987db456">nachosHeader::section</a></div><div class="ttdeci">Elf32_Section_header section[NUM_SECTIONS]</div><div class="ttdef"><b>Definition:</b> addrspace.h:42</div></div>
+<div class="ttc" id="classAddrSpace_html_a5e2ba2b783e8a1a63d034abcf1055395"><div class="ttname"><a href="classAddrSpace.html#a5e2ba2b783e8a1a63d034abcf1055395">AddrSpace::SaveState</a></div><div class="ttdeci">void SaveState(void)</div><div class="ttdef"><b>Definition:</b> addrspace.cc:534</div></div>
+<div class="ttc" id="classAddrSpace_html_a943e71ad912b3e441ba0f6676d784007"><div class="ttname"><a href="classAddrSpace.html#a943e71ad912b3e441ba0f6676d784007">AddrSpace::startAddress</a></div><div class="ttdeci">unsigned int startAddress</div><div class="ttdef"><b>Definition:</b> addrspace.h:88</div></div>
+<div class="ttc" id="classAddrSpace_html_af675701abb847806b2052525308a6adf"><div class="ttname"><a href="classAddrSpace.html#af675701abb847806b2052525308a6adf">AddrSpace::RestoreState</a></div><div class="ttdeci">void RestoreState(void)</div><div class="ttdef"><b>Definition:</b> addrspace.cc:545</div></div>
+<div class="ttc" id="classAddrSpace_html_afd6654143310bd2ce04813b8ac47a3d0"><div class="ttname"><a href="classAddrSpace.html#afd6654143310bd2ce04813b8ac47a3d0">AddrSpace::CopyPageTable</a></div><div class="ttdeci">void CopyPageTable(TranslationEntry *oldPT, TranslationEntry *newPT, int numpages)</div><div class="ttdef"><b>Definition:</b> addrspace.cc:259</div></div>
+<div class="ttc" id="classAddrSpace_html_adf648840d0d5cc91088c0807c106fafd"><div class="ttname"><a href="classAddrSpace.html#adf648840d0d5cc91088c0807c106fafd">AddrSpace::CopyFrom</a></div><div class="ttdeci">int CopyFrom(Thread *ourThread)</div><div class="ttdef"><b>Definition:</b> addrspace.cc:562</div></div>
+<div class="ttc" id="classThread_html"><div class="ttname"><a href="classThread.html">Thread</a></div><div class="ttdef"><b>Definition:</b> thread.h:93</div></div>
+<div class="ttc" id="system_8h_html"><div class="ttname"><a href="system_8h.html">system.h</a></div></div>
+<div class="ttc" id="structElf32__Section__header_html"><div class="ttname"><a href="structElf32__Section__header.html">Elf32_Section_header</a></div><div class="ttdef"><b>Definition:</b> elf.h:127</div></div>
+<div class="ttc" id="structnachosHeader_html_a7673edf66cc6aff26de1af0ee2129686"><div class="ttname"><a href="structnachosHeader.html#a7673edf66cc6aff26de1af0ee2129686">nachosHeader::file_header</a></div><div class="ttdeci">Elf32_Elf_header file_header</div><div class="ttdef"><b>Definition:</b> addrspace.h:41</div></div>
+<div class="ttc" id="classAddrSpace_html_ac180a18651bd237561fb9ea814978fa9"><div class="ttname"><a href="classAddrSpace.html#ac180a18651bd237561fb9ea814978fa9">AddrSpace::Setup_Load</a></div><div class="ttdeci">int Setup_Load(OpenFile *executable, NachosHeader *nachosH)</div><div class="ttdef"><b>Definition:</b> addrspace.cc:643</div></div>
+<div class="ttc" id="classAddrSpace_html_a337a28919411c2ff85837d442a7c86ef"><div class="ttname"><a href="classAddrSpace.html#a337a28919411c2ff85837d442a7c86ef">AddrSpace::numPages</a></div><div class="ttdeci">unsigned int numPages</div><div class="ttdef"><b>Definition:</b> addrspace.h:84</div></div>
+<div class="ttc" id="filesys_8h_html"><div class="ttname"><a href="filesys_8h.html">filesys.h</a></div></div>
+<div class="ttc" id="classAddrSpace_html_af2ae105a1ee5000a65b6d021f14c49f8"><div class="ttname"><a href="classAddrSpace.html#af2ae105a1ee5000a65b6d021f14c49f8">AddrSpace::SetupTable</a></div><div class="ttdeci">int SetupTable(void)</div><div class="ttdef"><b>Definition:</b> addrspace.cc:425</div></div>
+<div class="ttc" id="classAddrSpace_html_add4a9431912394188b08c03346632737"><div class="ttname"><a href="classAddrSpace.html#add4a9431912394188b08c03346632737">AddrSpace::~AddrSpace</a></div><div class="ttdeci">~AddrSpace()</div><div class="ttdef"><b>Definition:</b> addrspace.cc:467</div></div>
+<div class="ttc" id="classAddrSpace_html_a3ba46dcefdc9a8ed8b8a17ce84e18959"><div class="ttname"><a href="classAddrSpace.html#a3ba46dcefdc9a8ed8b8a17ce84e18959">AddrSpace::owner</a></div><div class="ttdeci">const Thread * owner</div><div class="ttdef"><b>Definition:</b> addrspace.h:47</div></div>
+<div class="ttc" id="classAddrSpace_html_a5d3aaa575dd62bb8dc580b1d079b4687"><div class="ttname"><a href="classAddrSpace.html#a5d3aaa575dd62bb8dc580b1d079b4687">AddrSpace::execFile</a></div><div class="ttdeci">OpenFile * execFile</div><div class="ttdef"><b>Definition:</b> addrspace.h:86</div></div>
+<div class="ttc" id="classAddrSpace_html_a454e2bc84aa309d41155eaa6eee791ab"><div class="ttname"><a href="classAddrSpace.html#a454e2bc84aa309d41155eaa6eee791ab">AddrSpace::ModifySpace</a></div><div class="ttdeci">int ModifySpace(OpenFile *executable)</div><div class="ttdef"><b>Definition:</b> addrspace.cc:296</div></div>
+<div class="ttc" id="classAddrSpace_html_a73d8ac41dce5866a431d03c6db84ae75"><div class="ttname"><a href="classAddrSpace.html#a73d8ac41dce5866a431d03c6db84ae75">AddrSpace::TooManyPages</a></div><div class="ttdeci">int TooManyPages(void)</div><div class="ttdef"><b>Definition:</b> addrspace.cc:814</div></div>
+<div class="ttc" id="copyright_8h_html"><div class="ttname"><a href="copyright_8h.html">copyright.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Dimanche 12 Février 2017 10:48:15 pour nachos par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.6
+</small></address>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<map id="userprog/memmgr.h" name="userprog/memmgr.h">
+<area shape="rect" id="node2" href="$system_8h.html" title="threads/system.h" alt="" coords="1550,80,1684,107"/>
+<area shape="rect" id="node23" href="$system_8cc.html" title="threads/system.cc" alt="" coords="3566,155,3705,181"/>
+<area shape="rect" id="node25" href="$addrspace_8cc.html" title="userprog/addrspace.cc" alt="" coords="2823,229,2991,256"/>
+<area shape="rect" id="node3" href="$nachos-stub_8cc.html" title="debug/nachos&#45;stub.cc" alt="" coords="2560,155,2723,181"/>
+<area shape="rect" id="node4" href="$filehdr_8cc.html" title="filesys/filehdr.cc" alt="" coords="2747,155,2868,181"/>
+<area shape="rect" id="node5" href="$fstest_8cc.html" title="filesys/fstest.cc" alt="" coords="2945,155,3063,181"/>
+<area shape="rect" id="node6" href="$openfile_8cc.html" title="filesys/openfile.cc" alt="" coords="3088,155,3221,181"/>
+<area shape="rect" id="node7" href="$console_8cc.html" title="machine/console.cc" alt="" coords="3246,155,3393,181"/>
+<area shape="rect" id="node8" href="$disk_8cc.html" title="machine/disk.cc" alt="" coords="3418,155,3541,181"/>
+<area shape="rect" id="node9" href="$interrupt_8h.html" title="machine/interrupt.h" alt="" coords="166,155,313,181"/>
+<area shape="rect" id="node10" href="$interrupt_8cc.html" title="machine/interrupt.cc" alt="" coords="5,229,160,256"/>
+<area shape="rect" id="node11" href="$sysdep_8cc.html" title="machine/sysdep.cc" alt="" coords="184,229,328,256"/>
+<area shape="rect" id="node12" href="$nettest_8cc.html" title="network/nettest.cc" alt="" coords="353,229,492,256"/>
+<area shape="rect" id="node13" href="$machine_8cc.html" title="machine/machine.cc" alt="" coords="440,155,595,181"/>
+<area shape="rect" id="node14" href="$mipssim_8cc.html" title="machine/mipssim.cc" alt="" coords="619,155,772,181"/>
+<area shape="rect" id="node15" href="$network_8cc.html" title="machine/network.cc" alt="" coords="797,155,947,181"/>
+<area shape="rect" id="node16" href="$timer_8cc.html" title="machine/timer.cc" alt="" coords="971,155,1103,181"/>
+<area shape="rect" id="node17" href="$translate_8cc.html" title="machine/translate.cc" alt="" coords="1654,229,1809,256"/>
+<area shape="rect" id="node18" href="$main_8cc.html" title="threads/main.cc" alt="" coords="1179,155,1304,181"/>
+<area shape="rect" id="node19" href="$scheduler_8h.html" title="threads/scheduler.h" alt="" coords="1329,155,1476,181"/>
+<area shape="rect" id="node20" href="$scheduler_8cc.html" title="threads/scheduler.cc" alt="" coords="1137,229,1292,256"/>
+<area shape="rect" id="node21" href="$thread_8cc.html" title="threads/thread.cc" alt="" coords="1391,229,1525,256"/>
+<area shape="rect" id="node22" href="$synch_8cc.html" title="threads/synch.cc" alt="" coords="1603,155,1733,181"/>
+<area shape="rect" id="node24" href="$threadtest_8cc.html" title="threads/threadtest.cc" alt="" coords="1757,155,1917,181"/>
+<area shape="rect" id="node26" href="$addrspace_8h.html" title="userprog/addrspace.h" alt="" coords="1992,155,2155,181"/>
+<area shape="rect" id="node27" href="$progtest_8cc.html" title="userprog/progtest.cc" alt="" coords="1936,229,2091,256"/>
+<area shape="rect" id="node28" href="$exception_8cc.html" title="userprog/exception.cc" alt="" coords="2179,155,2341,181"/>
+<area shape="rect" id="node29" href="$systemcall_8cc.html" title="userprog/systemcall.cc" alt="" coords="2366,155,2535,181"/>
+</map>

@@ -1,0 +1,231 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>nachos:  Fichier source de machine/network.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">nachos
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_0909f4a7c39d3e9616c1c9d755842fcb.html">machine</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">network.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="network_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// network.h </span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">//      Data structures to emulate a physical network connection.</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">//      The network provides the abstraction of ordered, unreliable,</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">//      fixed-size packet delivery to other machines on the network.</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">//      You may note that the interface to the network is similar to </span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">//      the console device -- both are full duplex channels.</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">//  DO NOT CHANGE -- part of the machine emulation</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">// Copyright (c) 1992-1993 The Regents of the University of California.</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">// All rights reserved.  See copyright.h for copyright notice and limitation </span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">// of liability and disclaimer of warranty provisions.</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#ifndef NETWORK_H</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define NETWORK_H</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#pragma interface &quot;machine/network.h&quot;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="copyright_8h.html">copyright.h</a>&quot;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="utility_8h.html">utility.h</a>&quot;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">// Network address -- uniquely identifies a machine.  This machine&#39;s ID </span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">//  is given on the command line.</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="network_8h.html#a5f46a8b9223b0d95abfe3f8f39bc4e39">   25</a></span>&#160;<span class="keyword">typedef</span> <span class="keywordtype">int</span> <a class="code" href="network_8h.html#a5f46a8b9223b0d95abfe3f8f39bc4e39">NetworkAddress</a>;      </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">// The following class defines the network packet header.</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">// The packet header is prepended to the data payload by the Network driver, </span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">// before the packet is sent over the wire.  The format on the wire is:  </span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">//      packet header (PacketHeader)</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">//      data (containing MailHeader from the PostOffice!)</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classPacketHeader.html">   33</a></span>&#160;<span class="keyword">class </span><a class="code" href="classPacketHeader.html">PacketHeader</a> {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classPacketHeader.html#a928d5f00dfc8c7ef789b40c7e23482a6">   35</a></span>&#160;    <a class="code" href="network_8h.html#a5f46a8b9223b0d95abfe3f8f39bc4e39">NetworkAddress</a> <a class="code" href="classPacketHeader.html#a928d5f00dfc8c7ef789b40c7e23482a6">to</a>;          <span class="comment">// Destination machine ID</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="classPacketHeader.html#ae385e650d708b1682c5705ce20dbb6c1">   36</a></span>&#160;    <a class="code" href="network_8h.html#a5f46a8b9223b0d95abfe3f8f39bc4e39">NetworkAddress</a> <a class="code" href="classPacketHeader.html#ae385e650d708b1682c5705ce20dbb6c1">from</a>;        <span class="comment">// source machine ID</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="classPacketHeader.html#aae6f56002b452b6dc43828fbf1a37699">   37</a></span>&#160;    <span class="keywordtype">unsigned</span> <a class="code" href="classPacketHeader.html#aae6f56002b452b6dc43828fbf1a37699">length</a>;            <span class="comment">// bytes of packet data, excluding the </span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                                <span class="comment">// packet header (but including the </span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                                <span class="comment">// MailHeader prepended by the post office)</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;};</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="network_8h.html#a26d25e38e0b52ca3712c41301030d9a5">   42</a></span>&#160;<span class="preprocessor">#define MaxWireSize     64      // largest packet that can go out on the wire</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="network_8h.html#a13aa348efea7645f4ee794cfa0521335">   43</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define MaxPacketSize   (MaxWireSize - sizeof(struct PacketHeader))     </span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor"></span>                                <span class="comment">// data &quot;payload&quot; of the largest packet</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">// The following class defines a physical network device.  The network</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">// is capable of delivering fixed sized packets, in order but unreliably, </span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">// to other machines connected to the network.</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">// The &quot;reliability&quot; of the network can be specified to the constructor.</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">// This number, between 0 and 1, is the chance that the network will lose </span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">// a packet.  Note that you can change the seed for the random number </span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">// generator, by changing the arguments to RandomInit() in Initialize().</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">// The random number generator is used to choose which packets to drop.</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="classNetwork.html">   57</a></span>&#160;<span class="keyword">class </span><a class="code" href="classNetwork.html">Network</a> {</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <a class="code" href="classNetwork.html#a1f06c6da33452d5d9485854d6f14ab04">Network</a>(<a class="code" href="network_8h.html#a5f46a8b9223b0d95abfe3f8f39bc4e39">NetworkAddress</a> addr, <span class="keywordtype">double</span> reliability,</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;          <a class="code" href="utility_8h.html#a2bf42b385c85e0c8aaedc4ba5d3a7bff">VoidFunctionPtr</a> <a class="code" href="progtest_8cc.html#a8cb122f7adfddacaa7e4451bbe538390">readAvail</a>, <a class="code" href="utility_8h.html#a2bf42b385c85e0c8aaedc4ba5d3a7bff">VoidFunctionPtr</a> <a class="code" href="progtest_8cc.html#a11ada0e7115ad30e49bf3ac9783d2edb">writeDone</a>, <span class="keywordtype">size_t</span> callArg);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                                <span class="comment">// Allocate and initialize network driver</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <a class="code" href="classNetwork.html#a7a4e19cdb4bf0c7ecf82baa643831492">~Network</a>();                 <span class="comment">// De-allocate the network driver data</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classNetwork.html#ab68e75d65ef18f8a94a2f002c9e7f4ca">Send</a>(<a class="code" href="classPacketHeader.html">PacketHeader</a> hdr, <span class="keywordtype">char</span>* <a class="code" href="structdata.html">data</a>);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                                <span class="comment">// Send the packet data to a remote machine,</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                                <span class="comment">// specified by &quot;hdr&quot;.  Returns immediately.</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                                <span class="comment">// &quot;writeHandler&quot; is invoked once the next </span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                                <span class="comment">// packet can be sent.  Note that writeHandler </span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                                <span class="comment">// is called whether or not the packet is </span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                                <span class="comment">// dropped, and note that the &quot;from&quot; field of </span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                                <span class="comment">// the PacketHeader is filled in automatically </span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                                <span class="comment">// by Send().</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <a class="code" href="classPacketHeader.html">PacketHeader</a> <a class="code" href="classNetwork.html#a65fc6c013612cd582c099e46c1395066">Receive</a>(<span class="keywordtype">char</span>* data);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                                <span class="comment">// Poll the network for incoming messages.  </span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                                <span class="comment">// If there is a packet waiting, copy the </span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                                <span class="comment">// packet into &quot;data&quot; and return the header.</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                                <span class="comment">// If no packet is waiting, return a header </span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                                <span class="comment">// with length 0.</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classNetwork.html#ace79fd02d0d8404789162e991df951fe">SendDone</a>();            <span class="comment">// Interrupt handler, called when message is </span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                                <span class="comment">// sent</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classNetwork.html#af33f61b6bb77606dc25805578e71abd0">CheckPktAvail</a>();       <span class="comment">// Check if there is an incoming packet</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="classNetwork.html#a3ae032efa004363c75e271f6c2511120">   86</a></span>&#160;    <a class="code" href="network_8h.html#a5f46a8b9223b0d95abfe3f8f39bc4e39">NetworkAddress</a> <a class="code" href="classNetwork.html#a3ae032efa004363c75e271f6c2511120">ident</a>;       <span class="comment">// This machine&#39;s network address</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="classNetwork.html#ad7c13d9b762a6f5507e606c3b155fda0">   87</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="classNetwork.html#ad7c13d9b762a6f5507e606c3b155fda0">chanceToWork</a>;        <span class="comment">// Likelihood packet will be dropped</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="classNetwork.html#ad3175dd7f73b9fc80f6951e9bdbb4003">   88</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classNetwork.html#ad3175dd7f73b9fc80f6951e9bdbb4003">sock</a>;                   <span class="comment">// UNIX socket number for incoming packets</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="classNetwork.html#ad944b6abcb052bba08ac4b96ee948087">   89</a></span>&#160;    <span class="keywordtype">char</span> <a class="code" href="classNetwork.html#ad944b6abcb052bba08ac4b96ee948087">sockName</a>[32];          <span class="comment">// File name corresponding to UNIX socket</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="classNetwork.html#ab02494839dcc7a83a00b8d8baf444c63">   90</a></span>&#160;    <a class="code" href="utility_8h.html#a2bf42b385c85e0c8aaedc4ba5d3a7bff">VoidFunctionPtr</a> <a class="code" href="classNetwork.html#ab02494839dcc7a83a00b8d8baf444c63">writeHandler</a>; <span class="comment">// Interrupt handler, signalling next packet </span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                                <span class="comment">//      can be sent.  </span></div>
+<div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="classNetwork.html#a1756ec12581072e48a475d9ba9b9c533">   92</a></span>&#160;    <a class="code" href="utility_8h.html#a2bf42b385c85e0c8aaedc4ba5d3a7bff">VoidFunctionPtr</a> <a class="code" href="classNetwork.html#a1756ec12581072e48a475d9ba9b9c533">readHandler</a>;  <span class="comment">// Interrupt handler, signalling packet has </span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                                <span class="comment">//      arrived.</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno"><a class="line" href="classNetwork.html#acdb37b096697191ba5959e2baf689bcc">   94</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classNetwork.html#acdb37b096697191ba5959e2baf689bcc">handlerArg</a>;             <span class="comment">// Argument to be passed to interrupt handler</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                                <span class="comment">//   (pointer to post office)</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="classNetwork.html#a1cd885e10158a863ee80b950c576c4a4">   96</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classNetwork.html#a1cd885e10158a863ee80b950c576c4a4">sendBusy</a>;              <span class="comment">// Packet is being sent.</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="classNetwork.html#aa5b78b0da20c8fd26d812c7bfd191a43">   97</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classNetwork.html#aa5b78b0da20c8fd26d812c7bfd191a43">packetAvail</a>;           <span class="comment">// Packet has arrived, can be pulled off of</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                                <span class="comment">//   network</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="classNetwork.html#aaefabeae4dff580c7a9bfbb4c943eb6b">   99</a></span>&#160;    <a class="code" href="classPacketHeader.html">PacketHeader</a> <a class="code" href="classNetwork.html#aaefabeae4dff580c7a9bfbb4c943eb6b">inHdr</a>;         <span class="comment">// Information about arrived packet</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="classNetwork.html#ae63ae6d608c1c534c546376937291db4">  100</a></span>&#160;    <span class="keywordtype">char</span> <a class="code" href="classNetwork.html#ae63ae6d608c1c534c546376937291db4">inbox</a>[<a class="code" href="network_8h.html#a13aa348efea7645f4ee794cfa0521335">MaxPacketSize</a>];  <span class="comment">// Data for arrived packet</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;};</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="preprocessor">#endif // NETWORK_H</span></div>
+<div class="ttc" id="classNetwork_html_ab02494839dcc7a83a00b8d8baf444c63"><div class="ttname"><a href="classNetwork.html#ab02494839dcc7a83a00b8d8baf444c63">Network::writeHandler</a></div><div class="ttdeci">VoidFunctionPtr writeHandler</div><div class="ttdef"><b>Definition:</b> network.h:90</div></div>
+<div class="ttc" id="classNetwork_html_a1756ec12581072e48a475d9ba9b9c533"><div class="ttname"><a href="classNetwork.html#a1756ec12581072e48a475d9ba9b9c533">Network::readHandler</a></div><div class="ttdeci">VoidFunctionPtr readHandler</div><div class="ttdef"><b>Definition:</b> network.h:92</div></div>
+<div class="ttc" id="network_8h_html_a5f46a8b9223b0d95abfe3f8f39bc4e39"><div class="ttname"><a href="network_8h.html#a5f46a8b9223b0d95abfe3f8f39bc4e39">NetworkAddress</a></div><div class="ttdeci">int NetworkAddress</div><div class="ttdef"><b>Definition:</b> network.h:25</div></div>
+<div class="ttc" id="classNetwork_html_a3ae032efa004363c75e271f6c2511120"><div class="ttname"><a href="classNetwork.html#a3ae032efa004363c75e271f6c2511120">Network::ident</a></div><div class="ttdeci">NetworkAddress ident</div><div class="ttdef"><b>Definition:</b> network.h:86</div></div>
+<div class="ttc" id="classNetwork_html"><div class="ttname"><a href="classNetwork.html">Network</a></div><div class="ttdef"><b>Definition:</b> network.h:57</div></div>
+<div class="ttc" id="progtest_8cc_html_a11ada0e7115ad30e49bf3ac9783d2edb"><div class="ttname"><a href="progtest_8cc.html#a11ada0e7115ad30e49bf3ac9783d2edb">writeDone</a></div><div class="ttdeci">static Semaphore * writeDone</div><div class="ttdef"><b>Definition:</b> progtest.cc:53</div></div>
+<div class="ttc" id="classNetwork_html_acdb37b096697191ba5959e2baf689bcc"><div class="ttname"><a href="classNetwork.html#acdb37b096697191ba5959e2baf689bcc">Network::handlerArg</a></div><div class="ttdeci">int handlerArg</div><div class="ttdef"><b>Definition:</b> network.h:94</div></div>
+<div class="ttc" id="classPacketHeader_html_ae385e650d708b1682c5705ce20dbb6c1"><div class="ttname"><a href="classPacketHeader.html#ae385e650d708b1682c5705ce20dbb6c1">PacketHeader::from</a></div><div class="ttdeci">NetworkAddress from</div><div class="ttdef"><b>Definition:</b> network.h:36</div></div>
+<div class="ttc" id="classPacketHeader_html_aae6f56002b452b6dc43828fbf1a37699"><div class="ttname"><a href="classPacketHeader.html#aae6f56002b452b6dc43828fbf1a37699">PacketHeader::length</a></div><div class="ttdeci">unsigned length</div><div class="ttdef"><b>Definition:</b> network.h:37</div></div>
+<div class="ttc" id="classNetwork_html_ad7c13d9b762a6f5507e606c3b155fda0"><div class="ttname"><a href="classNetwork.html#ad7c13d9b762a6f5507e606c3b155fda0">Network::chanceToWork</a></div><div class="ttdeci">double chanceToWork</div><div class="ttdef"><b>Definition:</b> network.h:87</div></div>
+<div class="ttc" id="classNetwork_html_a7a4e19cdb4bf0c7ecf82baa643831492"><div class="ttname"><a href="classNetwork.html#a7a4e19cdb4bf0c7ecf82baa643831492">Network::~Network</a></div><div class="ttdeci">~Network()</div><div class="ttdef"><b>Definition:</b> network.cc:50</div></div>
+<div class="ttc" id="classNetwork_html_aaefabeae4dff580c7a9bfbb4c943eb6b"><div class="ttname"><a href="classNetwork.html#aaefabeae4dff580c7a9bfbb4c943eb6b">Network::inHdr</a></div><div class="ttdeci">PacketHeader inHdr</div><div class="ttdef"><b>Definition:</b> network.h:99</div></div>
+<div class="ttc" id="classPacketHeader_html"><div class="ttname"><a href="classPacketHeader.html">PacketHeader</a></div><div class="ttdef"><b>Definition:</b> network.h:33</div></div>
+<div class="ttc" id="classNetwork_html_ab68e75d65ef18f8a94a2f002c9e7f4ca"><div class="ttname"><a href="classNetwork.html#ab68e75d65ef18f8a94a2f002c9e7f4ca">Network::Send</a></div><div class="ttdeci">void Send(PacketHeader hdr, char *data)</div><div class="ttdef"><b>Definition:</b> network.cc:103</div></div>
+<div class="ttc" id="classNetwork_html_a65fc6c013612cd582c099e46c1395066"><div class="ttname"><a href="classNetwork.html#a65fc6c013612cd582c099e46c1395066">Network::Receive</a></div><div class="ttdeci">PacketHeader Receive(char *data)</div><div class="ttdef"><b>Definition:</b> network.cc:131</div></div>
+<div class="ttc" id="classPacketHeader_html_a928d5f00dfc8c7ef789b40c7e23482a6"><div class="ttname"><a href="classPacketHeader.html#a928d5f00dfc8c7ef789b40c7e23482a6">PacketHeader::to</a></div><div class="ttdeci">NetworkAddress to</div><div class="ttdef"><b>Definition:</b> network.h:35</div></div>
+<div class="ttc" id="classNetwork_html_ad944b6abcb052bba08ac4b96ee948087"><div class="ttname"><a href="classNetwork.html#ad944b6abcb052bba08ac4b96ee948087">Network::sockName</a></div><div class="ttdeci">char sockName[32]</div><div class="ttdef"><b>Definition:</b> network.h:89</div></div>
+<div class="ttc" id="progtest_8cc_html_a8cb122f7adfddacaa7e4451bbe538390"><div class="ttname"><a href="progtest_8cc.html#a8cb122f7adfddacaa7e4451bbe538390">readAvail</a></div><div class="ttdeci">static Semaphore * readAvail</div><div class="ttdef"><b>Definition:</b> progtest.cc:52</div></div>
+<div class="ttc" id="utility_8h_html"><div class="ttname"><a href="utility_8h.html">utility.h</a></div></div>
+<div class="ttc" id="classNetwork_html_ae63ae6d608c1c534c546376937291db4"><div class="ttname"><a href="classNetwork.html#ae63ae6d608c1c534c546376937291db4">Network::inbox</a></div><div class="ttdeci">char inbox[MaxPacketSize]</div><div class="ttdef"><b>Definition:</b> network.h:100</div></div>
+<div class="ttc" id="utility_8h_html_a2bf42b385c85e0c8aaedc4ba5d3a7bff"><div class="ttname"><a href="utility_8h.html#a2bf42b385c85e0c8aaedc4ba5d3a7bff">VoidFunctionPtr</a></div><div class="ttdeci">void(* VoidFunctionPtr)(size_t arg)</div><div class="ttdef"><b>Definition:</b> utility.h:53</div></div>
+<div class="ttc" id="classNetwork_html_ace79fd02d0d8404789162e991df951fe"><div class="ttname"><a href="classNetwork.html#ace79fd02d0d8404789162e991df951fe">Network::SendDone</a></div><div class="ttdeci">void SendDone()</div><div class="ttdef"><b>Definition:</b> network.cc:90</div></div>
+<div class="ttc" id="classNetwork_html_a1f06c6da33452d5d9485854d6f14ab04"><div class="ttname"><a href="classNetwork.html#a1f06c6da33452d5d9485854d6f14ab04">Network::Network</a></div><div class="ttdeci">Network(NetworkAddress addr, double reliability, VoidFunctionPtr readAvail, VoidFunctionPtr writeDone, size_t callArg)</div><div class="ttdef"><b>Definition:</b> network.cc:26</div></div>
+<div class="ttc" id="classNetwork_html_a1cd885e10158a863ee80b950c576c4a4"><div class="ttname"><a href="classNetwork.html#a1cd885e10158a863ee80b950c576c4a4">Network::sendBusy</a></div><div class="ttdeci">bool sendBusy</div><div class="ttdef"><b>Definition:</b> network.h:96</div></div>
+<div class="ttc" id="classNetwork_html_ad3175dd7f73b9fc80f6951e9bdbb4003"><div class="ttname"><a href="classNetwork.html#ad3175dd7f73b9fc80f6951e9bdbb4003">Network::sock</a></div><div class="ttdeci">int sock</div><div class="ttdef"><b>Definition:</b> network.h:88</div></div>
+<div class="ttc" id="network_8h_html_a13aa348efea7645f4ee794cfa0521335"><div class="ttname"><a href="network_8h.html#a13aa348efea7645f4ee794cfa0521335">MaxPacketSize</a></div><div class="ttdeci">#define MaxPacketSize</div><div class="ttdef"><b>Definition:</b> network.h:43</div></div>
+<div class="ttc" id="structdata_html"><div class="ttname"><a href="structdata.html">data</a></div><div class="ttdef"><b>Definition:</b> out.c:36</div></div>
+<div class="ttc" id="classNetwork_html_aa5b78b0da20c8fd26d812c7bfd191a43"><div class="ttname"><a href="classNetwork.html#aa5b78b0da20c8fd26d812c7bfd191a43">Network::packetAvail</a></div><div class="ttdeci">bool packetAvail</div><div class="ttdef"><b>Definition:</b> network.h:97</div></div>
+<div class="ttc" id="classNetwork_html_af33f61b6bb77606dc25805578e71abd0"><div class="ttname"><a href="classNetwork.html#af33f61b6bb77606dc25805578e71abd0">Network::CheckPktAvail</a></div><div class="ttdeci">void CheckPktAvail()</div><div class="ttdef"><b>Definition:</b> network.cc:60</div></div>
+<div class="ttc" id="copyright_8h_html"><div class="ttname"><a href="copyright_8h.html">copyright.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Dimanche 12 Février 2017 10:48:15 pour nachos par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.6
+</small></address>
+</body>
+</html>

@@ -1,0 +1,11 @@
+<map id="bin/disasm.c" name="bin/disasm.c">
+<area shape="rect" id="node2" href="$copyright_8h.html" title="copyright.h" alt="" coords="208,453,301,480"/>
+<area shape="rect" id="node4" href="$filehdr_8h.html" title="filehdr.h" alt="" coords="425,80,497,107"/>
+<area shape="rect" id="node15" href="$int_8h.html" title="int.h" alt="" coords="5,155,56,181"/>
+<area shape="rect" id="node5" href="$disk_8h.html" title="disk.h" alt="" coords="395,229,453,256"/>
+<area shape="rect" id="node10" href="$bitmap_8h.html" title="bitmap.h" alt="" coords="263,155,341,181"/>
+<area shape="rect" id="node6" href="$utility_8h.html" title="utility.h" alt="" coords="319,304,385,331"/>
+<area shape="rect" id="node7" href="$stdlib_8h.html" title="stdlib.h" alt="" coords="318,379,385,405"/>
+<area shape="rect" id="node8" href="$sysdep_8h.html" title="sysdep.h" alt="" coords="513,379,591,405"/>
+<area shape="rect" id="node11" href="$openfile_8h.html" title="../filesys/openfile.h" alt="" coords="181,229,320,256"/>
+</map>

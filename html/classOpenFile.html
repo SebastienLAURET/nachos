@@ -1,0 +1,415 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>nachos: Référence de la classe OpenFile</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">nachos
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Liste&#160;des&#160;classes</span></a></li>
+      <li><a href="classes.html"><span>Index&#160;des&#160;classes</span></a></li>
+      <li><a href="inherits.html"><span>Hiérarchie&#160;des&#160;classes</span></a></li>
+      <li><a href="functions.html"><span>Membres&#160;de&#160;classe</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Fonctions membres publiques</a> &#124;
+<a href="#pri-attribs">Attributs privés</a> &#124;
+<a href="classOpenFile-members.html">Liste de tous les membres</a>  </div>
+  <div class="headertitle">
+<div class="title">Référence de la classe OpenFile</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="openfile_8h_source.html">openfile.h</a>&gt;</code></p>
+<div class="dynheader">
+Graphe de collaboration de OpenFile:</div>
+<div class="dyncontent">
+<div class="center"><img src="classOpenFile__coll__graph.png" border="0" usemap="#OpenFile_coll__map" alt="Collaboration graph"/></div>
+<map name="OpenFile_coll__map" id="OpenFile_coll__map">
+<area shape="rect" id="node2" href="classFileHeader.html" title="FileHeader" alt="" coords="5,5,93,32"/></map>
+<center><span class="legend">[<a href="graph_legend.html">légende</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Fonctions membres publiques</h2></td></tr>
+<tr class="memitem:a89136ac6b54013a413398f9496d39963"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOpenFile.html#a89136ac6b54013a413398f9496d39963">OpenFile</a> (int sector)</td></tr>
+<tr class="separator:a89136ac6b54013a413398f9496d39963"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d59e2d0a4e8eb5f21f31f7179dd6e50"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOpenFile.html#a1d59e2d0a4e8eb5f21f31f7179dd6e50">~OpenFile</a> ()</td></tr>
+<tr class="separator:a1d59e2d0a4e8eb5f21f31f7179dd6e50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00f20ca65c80be4e6039a9f04cb03374"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOpenFile.html#a00f20ca65c80be4e6039a9f04cb03374">Seek</a> (int position)</td></tr>
+<tr class="separator:a00f20ca65c80be4e6039a9f04cb03374"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abefdb8536369821b345529022ffffdb9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOpenFile.html#abefdb8536369821b345529022ffffdb9">Read</a> (void *into, <a class="el" href="stdlib_8h.html#a7c94ea6f8948649f8d181ae55911eeaf">size_t</a> numBytes)</td></tr>
+<tr class="separator:abefdb8536369821b345529022ffffdb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c080f41ce01582e28053fd24734b472"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOpenFile.html#a1c080f41ce01582e28053fd24734b472">Write</a> (void *from, <a class="el" href="stdlib_8h.html#a7c94ea6f8948649f8d181ae55911eeaf">size_t</a> numBytes)</td></tr>
+<tr class="separator:a1c080f41ce01582e28053fd24734b472"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0af8cd52ec71a2ad407039cebee2ef3d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOpenFile.html#a0af8cd52ec71a2ad407039cebee2ef3d">ReadAt</a> (char *into, int numBytes, int position)</td></tr>
+<tr class="separator:a0af8cd52ec71a2ad407039cebee2ef3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4b5d26a169a7c22e6f27c1693adb1aa"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOpenFile.html#ad4b5d26a169a7c22e6f27c1693adb1aa">WriteAt</a> (char *from, int numBytes, int position)</td></tr>
+<tr class="separator:ad4b5d26a169a7c22e6f27c1693adb1aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d5618da2388829f294c3f33017fadac"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOpenFile.html#a5d5618da2388829f294c3f33017fadac">Length</a> ()</td></tr>
+<tr class="separator:a5d5618da2388829f294c3f33017fadac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Attributs privés</h2></td></tr>
+<tr class="memitem:a4aaa8d3ea50b339ebd9e9c4d9cc1ff9e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFileHeader.html">FileHeader</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOpenFile.html#a4aaa8d3ea50b339ebd9e9c4d9cc1ff9e">hdr</a></td></tr>
+<tr class="separator:a4aaa8d3ea50b339ebd9e9c4d9cc1ff9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae73fc3708c50308938c44a9cc65ff8e2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOpenFile.html#ae73fc3708c50308938c44a9cc65ff8e2">seekPosition</a></td></tr>
+<tr class="separator:ae73fc3708c50308938c44a9cc65ff8e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Documentation des constructeurs et destructeur</h2>
+<a class="anchor" id="a89136ac6b54013a413398f9496d39963"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">OpenFile::OpenFile </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>sector</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="classOpenFile_a89136ac6b54013a413398f9496d39963_cgraph.png" border="0" usemap="#classOpenFile_a89136ac6b54013a413398f9496d39963_cgraph" alt=""/></div>
+<map name="classOpenFile_a89136ac6b54013a413398f9496d39963_cgraph" id="classOpenFile_a89136ac6b54013a413398f9496d39963_cgraph">
+<area shape="rect" id="node2" href="classFileHeader.html#aa85564cee98fc9592df08cc5e4a2efc6" title="FileHeader::FetchFrom" alt="" coords="192,5,355,32"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a1d59e2d0a4e8eb5f21f31f7179dd6e50"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">OpenFile::~OpenFile </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des fonctions membres</h2>
+<a class="anchor" id="a5d5618da2388829f294c3f33017fadac"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int OpenFile::Length </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="classOpenFile_a5d5618da2388829f294c3f33017fadac_cgraph.png" border="0" usemap="#classOpenFile_a5d5618da2388829f294c3f33017fadac_cgraph" alt=""/></div>
+<map name="classOpenFile_a5d5618da2388829f294c3f33017fadac_cgraph" id="classOpenFile_a5d5618da2388829f294c3f33017fadac_cgraph">
+<area shape="rect" id="node2" href="classFileHeader.html#a676d88bbc37d3d108625be75d637a8e6" title="FileHeader::FileLength" alt="" coords="182,5,343,32"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="abefdb8536369821b345529022ffffdb9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int OpenFile::Read </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>into</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="stdlib_8h.html#a7c94ea6f8948649f8d181ae55911eeaf">size_t</a>&#160;</td>
+          <td class="paramname"><em>numBytes</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="classOpenFile_abefdb8536369821b345529022ffffdb9_cgraph.png" border="0" usemap="#classOpenFile_abefdb8536369821b345529022ffffdb9_cgraph" alt=""/></div>
+<map name="classOpenFile_abefdb8536369821b345529022ffffdb9_cgraph" id="classOpenFile_abefdb8536369821b345529022ffffdb9_cgraph">
+<area shape="rect" id="node2" href="classOpenFile.html#a0af8cd52ec71a2ad407039cebee2ef3d" title="OpenFile::ReadAt" alt="" coords="169,81,298,108"/><area shape="rect" id="node3" href="classFileHeader.html#a676d88bbc37d3d108625be75d637a8e6" title="FileHeader::FileLength" alt="" coords="357,5,518,32"/><area shape="rect" id="node4" href="utility_8cc.html#af1c6878736cbd9e1b531898d8951d613" title="DEBUG" alt="" coords="403,56,472,83"/><area shape="rect" id="node7" href="classFileHeader.html#adacbe1c1af441d0b1e978c65a05d60f2" title="FileHeader::ByteToSector" alt="" coords="347,107,528,133"/><area shape="rect" id="node8" href="memcpy_8c.html#a870aa7fc44d719f4e01a8edad14cf46c" title="memcpy" alt="" coords="398,157,477,184"/><area shape="rect" id="node5" href="utility_8cc.html#a79c7d1acabdb48f6f6a80ec0abf7cf89" title="DebugIsEnabled" alt="" coords="576,56,701,83"/><area shape="rect" id="node6" href="stdlib_8h.html#a89c177d1405cf367c2c4874c4449456a" title="strchr" alt="" coords="749,56,808,83"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a0af8cd52ec71a2ad407039cebee2ef3d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int OpenFile::ReadAt </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>into</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>numBytes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>position</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="classOpenFile_a0af8cd52ec71a2ad407039cebee2ef3d_cgraph.png" border="0" usemap="#classOpenFile_a0af8cd52ec71a2ad407039cebee2ef3d_cgraph" alt=""/></div>
+<map name="classOpenFile_a0af8cd52ec71a2ad407039cebee2ef3d_cgraph" id="classOpenFile_a0af8cd52ec71a2ad407039cebee2ef3d_cgraph">
+<area shape="rect" id="node2" href="classFileHeader.html#a676d88bbc37d3d108625be75d637a8e6" title="FileHeader::FileLength" alt="" coords="194,5,355,32"/><area shape="rect" id="node3" href="utility_8cc.html#af1c6878736cbd9e1b531898d8951d613" title="DEBUG" alt="" coords="240,56,309,83"/><area shape="rect" id="node6" href="classFileHeader.html#adacbe1c1af441d0b1e978c65a05d60f2" title="FileHeader::ByteToSector" alt="" coords="184,107,365,133"/><area shape="rect" id="node7" href="memcpy_8c.html#a870aa7fc44d719f4e01a8edad14cf46c" title="memcpy" alt="" coords="235,157,314,184"/><area shape="rect" id="node4" href="utility_8cc.html#a79c7d1acabdb48f6f6a80ec0abf7cf89" title="DebugIsEnabled" alt="" coords="413,56,539,83"/><area shape="rect" id="node5" href="stdlib_8h.html#a89c177d1405cf367c2c4874c4449456a" title="strchr" alt="" coords="587,56,645,83"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a00f20ca65c80be4e6039a9f04cb03374"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void OpenFile::Seek </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>position</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a1c080f41ce01582e28053fd24734b472"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int OpenFile::Write </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>from</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="stdlib_8h.html#a7c94ea6f8948649f8d181ae55911eeaf">size_t</a>&#160;</td>
+          <td class="paramname"><em>numBytes</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="classOpenFile_a1c080f41ce01582e28053fd24734b472_cgraph.png" border="0" usemap="#classOpenFile_a1c080f41ce01582e28053fd24734b472_cgraph" alt=""/></div>
+<map name="classOpenFile_a1c080f41ce01582e28053fd24734b472_cgraph" id="classOpenFile_a1c080f41ce01582e28053fd24734b472_cgraph">
+<area shape="rect" id="node2" href="classOpenFile.html#ad4b5d26a169a7c22e6f27c1693adb1aa" title="OpenFile::WriteAt" alt="" coords="169,100,298,127"/><area shape="rect" id="node3" href="classFileHeader.html#a676d88bbc37d3d108625be75d637a8e6" title="FileHeader::FileLength" alt="" coords="535,5,697,32"/><area shape="rect" id="node4" href="utility_8cc.html#af1c6878736cbd9e1b531898d8951d613" title="DEBUG" alt="" coords="581,81,651,108"/><area shape="rect" id="node7" href="classOpenFile.html#a0af8cd52ec71a2ad407039cebee2ef3d" title="OpenFile::ReadAt" alt="" coords="347,100,477,127"/><area shape="rect" id="node8" href="classFileHeader.html#adacbe1c1af441d0b1e978c65a05d60f2" title="FileHeader::ByteToSector" alt="" coords="525,144,707,171"/><area shape="rect" id="node9" href="memcpy_8c.html#a870aa7fc44d719f4e01a8edad14cf46c" title="memcpy" alt="" coords="577,195,655,221"/><area shape="rect" id="node5" href="utility_8cc.html#a79c7d1acabdb48f6f6a80ec0abf7cf89" title="DebugIsEnabled" alt="" coords="755,81,880,108"/><area shape="rect" id="node6" href="stdlib_8h.html#a89c177d1405cf367c2c4874c4449456a" title="strchr" alt="" coords="928,81,987,108"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ad4b5d26a169a7c22e6f27c1693adb1aa"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int OpenFile::WriteAt </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>from</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>numBytes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>position</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="classOpenFile_ad4b5d26a169a7c22e6f27c1693adb1aa_cgraph.png" border="0" usemap="#classOpenFile_ad4b5d26a169a7c22e6f27c1693adb1aa_cgraph" alt=""/></div>
+<map name="classOpenFile_ad4b5d26a169a7c22e6f27c1693adb1aa_cgraph" id="classOpenFile_ad4b5d26a169a7c22e6f27c1693adb1aa_cgraph">
+<area shape="rect" id="node2" href="classFileHeader.html#a676d88bbc37d3d108625be75d637a8e6" title="FileHeader::FileLength" alt="" coords="373,5,534,32"/><area shape="rect" id="node3" href="utility_8cc.html#af1c6878736cbd9e1b531898d8951d613" title="DEBUG" alt="" coords="419,81,488,108"/><area shape="rect" id="node6" href="classOpenFile.html#a0af8cd52ec71a2ad407039cebee2ef3d" title="OpenFile::ReadAt" alt="" coords="185,100,314,127"/><area shape="rect" id="node7" href="classFileHeader.html#adacbe1c1af441d0b1e978c65a05d60f2" title="FileHeader::ByteToSector" alt="" coords="363,144,544,171"/><area shape="rect" id="node8" href="memcpy_8c.html#a870aa7fc44d719f4e01a8edad14cf46c" title="memcpy" alt="" coords="414,195,493,221"/><area shape="rect" id="node4" href="utility_8cc.html#a79c7d1acabdb48f6f6a80ec0abf7cf89" title="DebugIsEnabled" alt="" coords="592,81,717,108"/><area shape="rect" id="node5" href="stdlib_8h.html#a89c177d1405cf367c2c4874c4449456a" title="strchr" alt="" coords="765,81,824,108"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des données membres</h2>
+<a class="anchor" id="a4aaa8d3ea50b339ebd9e9c4d9cc1ff9e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFileHeader.html">FileHeader</a>* OpenFile::hdr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ae73fc3708c50308938c44a9cc65ff8e2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int OpenFile::seekPosition</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>La documentation de cette classe a été générée à partir des fichiers suivants :<ul>
+<li>filesys/<a class="el" href="openfile_8h_source.html">openfile.h</a></li>
+<li>filesys/<a class="el" href="openfile_8cc.html">openfile.cc</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Dimanche 12 Février 2017 10:48:15 pour nachos par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.6
+</small></address>
+</body>
+</html>

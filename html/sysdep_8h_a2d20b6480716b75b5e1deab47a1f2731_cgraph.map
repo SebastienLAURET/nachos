@@ -1,0 +1,5 @@
+<map id="PollSocket" name="PollSocket">
+<area shape="rect" id="node2" href="$sysdep_8cc.html#a6d54b43fc541aae810be164b449b331a" title="PollFile" alt="" coords="141,31,205,57"/>
+<area shape="rect" id="node3" href="$classInterrupt.html#a6b240d463c36d4dcb18c444d4f71b778" title="Interrupt::getStatus" alt="" coords="254,5,402,32"/>
+<area shape="rect" id="node4" href="$sysdep_8cc.html#a2aec7b35176e92640714c91ef886f15c" title="select" alt="" coords="298,56,358,83"/>
+</map>

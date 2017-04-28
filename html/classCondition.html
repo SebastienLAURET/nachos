@@ -1,0 +1,325 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>nachos: Référence de la classe Condition</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">nachos
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Liste&#160;des&#160;classes</span></a></li>
+      <li><a href="classes.html"><span>Index&#160;des&#160;classes</span></a></li>
+      <li><a href="inherits.html"><span>Hiérarchie&#160;des&#160;classes</span></a></li>
+      <li><a href="functions.html"><span>Membres&#160;de&#160;classe</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Fonctions membres publiques</a> &#124;
+<a href="#pri-attribs">Attributs privés</a> &#124;
+<a href="classCondition-members.html">Liste de tous les membres</a>  </div>
+  <div class="headertitle">
+<div class="title">Référence de la classe Condition</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="synch_8h_source.html">synch.h</a>&gt;</code></p>
+<div class="dynheader">
+Graphe de collaboration de Condition:</div>
+<div class="dyncontent">
+<div class="center"><img src="classCondition__coll__graph.png" border="0" usemap="#Condition_coll__map" alt="Collaboration graph"/></div>
+<map name="Condition_coll__map" id="Condition_coll__map">
+<area shape="rect" id="node2" href="classList.html" title="List" alt="" coords="31,109,75,136"/><area shape="rect" id="node3" href="classListElement.html" title="ListElement" alt="" coords="5,5,101,32"/></map>
+<center><span class="legend">[<a href="graph_legend.html">légende</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Fonctions membres publiques</h2></td></tr>
+<tr class="memitem:a35681f12fab7081629d3d26efbcc5d28"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCondition.html#a35681f12fab7081629d3d26efbcc5d28">Condition</a> (char *debugName)</td></tr>
+<tr class="separator:a35681f12fab7081629d3d26efbcc5d28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab42f6d2dfb2d0de4bed4ed5032d4a8fc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCondition.html#ab42f6d2dfb2d0de4bed4ed5032d4a8fc">~Condition</a> ()</td></tr>
+<tr class="separator:ab42f6d2dfb2d0de4bed4ed5032d4a8fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aecaea65920dc0f4f723d56984dbe8e9e"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCondition.html#aecaea65920dc0f4f723d56984dbe8e9e">getName</a> ()</td></tr>
+<tr class="separator:aecaea65920dc0f4f723d56984dbe8e9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0442520888bd371ce07d07c0a4313a7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCondition.html#aa0442520888bd371ce07d07c0a4313a7">Wait</a> (<a class="el" href="classLock.html">Lock</a> *conditionLock)</td></tr>
+<tr class="separator:aa0442520888bd371ce07d07c0a4313a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada25a70d161b7dc9b81eaad0ef66d91c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCondition.html#ada25a70d161b7dc9b81eaad0ef66d91c">Signal</a> (<a class="el" href="classLock.html">Lock</a> *conditionLock)</td></tr>
+<tr class="separator:ada25a70d161b7dc9b81eaad0ef66d91c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aefae94b3f9be40a09df667e63a4bdab7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCondition.html#aefae94b3f9be40a09df667e63a4bdab7">Broadcast</a> (<a class="el" href="classLock.html">Lock</a> *conditionLock)</td></tr>
+<tr class="separator:aefae94b3f9be40a09df667e63a4bdab7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Attributs privés</h2></td></tr>
+<tr class="memitem:a39531f1955c611cfa1904cda81cd02d7"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCondition.html#a39531f1955c611cfa1904cda81cd02d7">name</a></td></tr>
+<tr class="separator:a39531f1955c611cfa1904cda81cd02d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a456d18532c46b396d8490bd5b951e796"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classList.html">List</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCondition.html#a456d18532c46b396d8490bd5b951e796">queue</a></td></tr>
+<tr class="separator:a456d18532c46b396d8490bd5b951e796"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Documentation des constructeurs et destructeur</h2>
+<a class="anchor" id="a35681f12fab7081629d3d26efbcc5d28"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Condition::Condition </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>debugName</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab42f6d2dfb2d0de4bed4ed5032d4a8fc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Condition::~Condition </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="classCondition_ab42f6d2dfb2d0de4bed4ed5032d4a8fc_cgraph.png" border="0" usemap="#classCondition_ab42f6d2dfb2d0de4bed4ed5032d4a8fc_cgraph" alt=""/></div>
+<map name="classCondition_ab42f6d2dfb2d0de4bed4ed5032d4a8fc_cgraph" id="classCondition_ab42f6d2dfb2d0de4bed4ed5032d4a8fc_cgraph">
+<area shape="rect" id="node2" href="classList.html#a4f804c07c4cfa4c9b631e6e117156e32" title="List::Remove" alt="" coords="249,31,351,57"/><area shape="rect" id="node4" href="classScheduler.html#a18e89ab130a40c423da77673f12585d7" title="Scheduler::ReadyToRun" alt="" coords="216,132,384,159"/><area shape="rect" id="node3" href="classList.html#a854e9656ddbfae181d12f9d9413bc2b8" title="List::IsEmpty" alt="" coords="683,5,786,32"/><area shape="rect" id="node5" href="utility_8cc.html#af1c6878736cbd9e1b531898d8951d613" title="DEBUG" alt="" coords="493,81,563,108"/><area shape="rect" id="node8" href="classThread.html#a46450bb50c81bbfc0fd254fa7b72d821" title="Thread::getName" alt="" coords="461,132,595,159"/><area shape="rect" id="node9" href="classThread.html#ad707af00a9ce1a1d324804e7c73dc4ab" title="Thread::Print" alt="" coords="477,183,579,209"/><area shape="rect" id="node10" href="classInterrupt.html#a863f619c2596c5cf53d412a94642db41" title="Interrupt::setNeedResched" alt="" coords="432,233,624,260"/><area shape="rect" id="node11" href="classThread.html#a39061ce2692542188f82f909d005b1c3" title="Thread::setStatus" alt="" coords="460,284,596,311"/><area shape="rect" id="node12" href="classList.html#aea4cc7578bb4db7f502dc005e5edc902" title="List::Append" alt="" coords="477,31,579,57"/><area shape="rect" id="node6" href="utility_8cc.html#a79c7d1acabdb48f6f6a80ec0abf7cf89" title="DebugIsEnabled" alt="" coords="672,81,797,108"/><area shape="rect" id="node7" href="stdlib_8h.html#a89c177d1405cf367c2c4874c4449456a" title="strchr" alt="" coords="845,81,904,108"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des fonctions membres</h2>
+<a class="anchor" id="aefae94b3f9be40a09df667e63a4bdab7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Condition::Broadcast </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classLock.html">Lock</a> *&#160;</td>
+          <td class="paramname"><em>conditionLock</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="classCondition_aefae94b3f9be40a09df667e63a4bdab7_cgraph.png" border="0" usemap="#classCondition_aefae94b3f9be40a09df667e63a4bdab7_cgraph" alt=""/></div>
+<map name="classCondition_aefae94b3f9be40a09df667e63a4bdab7_cgraph" id="classCondition_aefae94b3f9be40a09df667e63a4bdab7_cgraph">
+<area shape="rect" id="node2" href="classLock.html#ad4c4699fd1ab73f3927b10edc01c54db" title="Lock::Acquire" alt="" coords="209,311,316,337"/><area shape="rect" id="node14" href="classList.html#a4f804c07c4cfa4c9b631e6e117156e32" title="List::Remove" alt="" coords="1237,1121,1339,1148"/><area shape="rect" id="node20" href="classScheduler.html#a18e89ab130a40c423da77673f12585d7" title="Scheduler::ReadyToRun" alt="" coords="967,311,1135,337"/><area shape="rect" id="node37" href="classLock.html#a5ca005b84272e56c2bf447056ee9217c" title="Lock::Release" alt="" coords="209,361,317,388"/><area shape="rect" id="node3" href="classInterrupt.html#af55a6cea64a8a3de49bad9ea3843addb" title="Interrupt::SetLevel" alt="" coords="366,260,506,287"/><area shape="rect" id="node17" href="classList.html#aea4cc7578bb4db7f502dc005e5edc902" title="List::Append" alt="" coords="1237,716,1339,743"/><area shape="rect" id="node34" href="classThread.html#a187a4c1e62087511b69068220840244a" title="Thread::Sleep" alt="" coords="381,463,491,489"/><area shape="rect" id="node4" href="classInterrupt.html#ab3ca8b04757f024242b1037cf5b2ede8" title="Interrupt::ChangeLevel" alt="" coords="742,57,909,84"/><area shape="rect" id="node8" href="classInterrupt.html#af7e385b28c374d35c4ca3763efac2b33" title="Interrupt::OneTick" alt="" coords="557,108,691,135"/><area shape="rect" id="node5" href="utility_8cc.html#af1c6878736cbd9e1b531898d8951d613" title="DEBUG" alt="" coords="1457,412,1527,439"/><area shape="rect" id="node6" href="utility_8cc.html#a79c7d1acabdb48f6f6a80ec0abf7cf89" title="DebugIsEnabled" alt="" coords="1600,665,1725,692"/><area shape="rect" id="node7" href="stdlib_8h.html#a89c177d1405cf367c2c4874c4449456a" title="strchr" alt="" coords="1773,665,1832,692"/><area shape="rect" id="node9" href="classInterrupt.html#aa0b369ce526d17d07dc24027a1bf63a9" title="Interrupt::HandleIfDue" alt="" coords="744,817,907,844"/><area shape="rect" id="node18" href="classThread.html#adbc2bfb172d2eff4b46882aade9eeb8a" title="Thread::Yield" alt="" coords="774,260,877,287"/><area shape="rect" id="node10" href="classInterrupt.html#a8f9a7ddd0f250de0dcd45fa5bfd80c11" title="Interrupt::DumpState" alt="" coords="971,564,1130,591"/><area shape="rect" id="node13" href="classList.html#a27695119b3728f2a9315cdb14ab685e8" title="List::Head" alt="" coords="1007,1071,1094,1097"/><area shape="rect" id="node15" href="classList.html#a854e9656ddbfae181d12f9d9413bc2b8" title="List::IsEmpty" alt="" coords="1441,969,1543,996"/><area shape="rect" id="node16" href="classSortedList.html#aba1018141145192392e15ad6277d814a" title="SortedList::Insert" alt="" coords="985,716,1116,743"/><area shape="rect" id="node11" href="classList.html#ab57e90b8b2a790db7f2cad1e7aaa72d3" title="List::Mapcar" alt="" coords="1239,615,1337,641"/><area shape="rect" id="node12" href="interrupt_8cc.html#ae48c7f55ff352d1274e2563d8f97f20b" title="PrintPending" alt="" coords="1237,665,1339,692"/><area shape="rect" id="node19" href="classThread.html#a46450bb50c81bbfc0fd254fa7b72d821" title="Thread::getName" alt="" coords="1221,209,1355,236"/><area shape="rect" id="node24" href="classScheduler.html#a0fa7daec8d1058a8e6b5cbfbdd09555e" title="Scheduler::FindNextToRun" alt="" coords="958,969,1143,996"/><area shape="rect" id="node31" href="classScheduler.html#a87205b0773d3dd84752ec779c890f5e1" title="Scheduler::Run" alt="" coords="992,463,1109,489"/><area shape="rect" id="node21" href="classThread.html#ad707af00a9ce1a1d324804e7c73dc4ab" title="Thread::Print" alt="" coords="1237,817,1339,844"/><area shape="rect" id="node22" href="classInterrupt.html#a863f619c2596c5cf53d412a94642db41" title="Interrupt::setNeedResched" alt="" coords="1192,260,1384,287"/><area shape="rect" id="node23" href="classThread.html#a39061ce2692542188f82f909d005b1c3" title="Thread::setStatus" alt="" coords="1220,412,1356,439"/><area shape="rect" id="node25" href="classThread.html#ad75bd5375287a210520752785f503de4" title="Thread::getStatus" alt="" coords="1219,1020,1357,1047"/><area shape="rect" id="node26" href="classInterrupt.html#a4d9820efbc3e9fd82e82f2eb6ef3613b" title="Interrupt::Halt" alt="" coords="1233,1071,1343,1097"/><area shape="rect" id="node27" href="classStatistics.html#ade67669fb1436e69a215a780b1ade63e" title="Statistics::Print" alt="" coords="1433,1045,1551,1072"/><area shape="rect" id="node28" href="system_8cc.html#ae89a123aad1c66a76c398b7af216aae4" title="Cleanup" alt="" coords="1455,1096,1529,1123"/><area shape="rect" id="node29" href="sysdep_8cc.html#a8b9ef9330856c5a5a02f2d3ef0497e04" title="Exit" alt="" coords="1640,1096,1685,1123"/><area shape="rect" id="node30" href="sysdep_8cc.html#a358d2e2397ca11ccd17553e3c40e7901" title="exit" alt="" coords="1780,1096,1825,1123"/><area shape="rect" id="node32" href="classThread.html#afa6657ff14b9c6866eadd85ea32c9147" title="Thread::CheckOverflow" alt="" coords="1205,513,1371,540"/><area shape="rect" id="node33" href="thread_8h.html#a10e80b5f1da660f5390f448c8fee2ae7" title="SWITCH" alt="" coords="1253,564,1323,591"/><area shape="rect" id="node35" href="classInterrupt.html#aa519deead8b512a52ba4ad9fb0e2643b" title="Interrupt::getLevel" alt="" coords="555,1020,693,1047"/><area shape="rect" id="node36" href="classInterrupt.html#ace54aece18806bae3614ebf9cc8c2991" title="Interrupt::Idle" alt="" coords="571,969,677,996"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aecaea65920dc0f4f723d56984dbe8e9e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* Condition::getName </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ada25a70d161b7dc9b81eaad0ef66d91c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Condition::Signal </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classLock.html">Lock</a> *&#160;</td>
+          <td class="paramname"><em>conditionLock</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="classCondition_ada25a70d161b7dc9b81eaad0ef66d91c_cgraph.png" border="0" usemap="#classCondition_ada25a70d161b7dc9b81eaad0ef66d91c_cgraph" alt=""/></div>
+<map name="classCondition_ada25a70d161b7dc9b81eaad0ef66d91c_cgraph" id="classCondition_ada25a70d161b7dc9b81eaad0ef66d91c_cgraph">
+<area shape="rect" id="node2" href="classLock.html#ad4c4699fd1ab73f3927b10edc01c54db" title="Lock::Acquire" alt="" coords="185,311,292,337"/><area shape="rect" id="node14" href="classList.html#a4f804c07c4cfa4c9b631e6e117156e32" title="List::Remove" alt="" coords="1213,1121,1315,1148"/><area shape="rect" id="node20" href="classScheduler.html#a18e89ab130a40c423da77673f12585d7" title="Scheduler::ReadyToRun" alt="" coords="943,311,1111,337"/><area shape="rect" id="node37" href="classLock.html#a5ca005b84272e56c2bf447056ee9217c" title="Lock::Release" alt="" coords="185,361,293,388"/><area shape="rect" id="node3" href="classInterrupt.html#af55a6cea64a8a3de49bad9ea3843addb" title="Interrupt::SetLevel" alt="" coords="342,260,482,287"/><area shape="rect" id="node17" href="classList.html#aea4cc7578bb4db7f502dc005e5edc902" title="List::Append" alt="" coords="1213,716,1315,743"/><area shape="rect" id="node34" href="classThread.html#a187a4c1e62087511b69068220840244a" title="Thread::Sleep" alt="" coords="357,463,467,489"/><area shape="rect" id="node4" href="classInterrupt.html#ab3ca8b04757f024242b1037cf5b2ede8" title="Interrupt::ChangeLevel" alt="" coords="718,57,885,84"/><area shape="rect" id="node8" href="classInterrupt.html#af7e385b28c374d35c4ca3763efac2b33" title="Interrupt::OneTick" alt="" coords="533,108,667,135"/><area shape="rect" id="node5" href="utility_8cc.html#af1c6878736cbd9e1b531898d8951d613" title="DEBUG" alt="" coords="1433,412,1503,439"/><area shape="rect" id="node6" href="utility_8cc.html#a79c7d1acabdb48f6f6a80ec0abf7cf89" title="DebugIsEnabled" alt="" coords="1576,665,1701,692"/><area shape="rect" id="node7" href="stdlib_8h.html#a89c177d1405cf367c2c4874c4449456a" title="strchr" alt="" coords="1749,665,1808,692"/><area shape="rect" id="node9" href="classInterrupt.html#aa0b369ce526d17d07dc24027a1bf63a9" title="Interrupt::HandleIfDue" alt="" coords="720,817,883,844"/><area shape="rect" id="node18" href="classThread.html#adbc2bfb172d2eff4b46882aade9eeb8a" title="Thread::Yield" alt="" coords="750,260,853,287"/><area shape="rect" id="node10" href="classInterrupt.html#a8f9a7ddd0f250de0dcd45fa5bfd80c11" title="Interrupt::DumpState" alt="" coords="947,564,1106,591"/><area shape="rect" id="node13" href="classList.html#a27695119b3728f2a9315cdb14ab685e8" title="List::Head" alt="" coords="983,1071,1070,1097"/><area shape="rect" id="node15" href="classList.html#a854e9656ddbfae181d12f9d9413bc2b8" title="List::IsEmpty" alt="" coords="1417,969,1519,996"/><area shape="rect" id="node16" href="classSortedList.html#aba1018141145192392e15ad6277d814a" title="SortedList::Insert" alt="" coords="961,716,1092,743"/><area shape="rect" id="node11" href="classList.html#ab57e90b8b2a790db7f2cad1e7aaa72d3" title="List::Mapcar" alt="" coords="1215,615,1313,641"/><area shape="rect" id="node12" href="interrupt_8cc.html#ae48c7f55ff352d1274e2563d8f97f20b" title="PrintPending" alt="" coords="1213,665,1315,692"/><area shape="rect" id="node19" href="classThread.html#a46450bb50c81bbfc0fd254fa7b72d821" title="Thread::getName" alt="" coords="1197,209,1331,236"/><area shape="rect" id="node24" href="classScheduler.html#a0fa7daec8d1058a8e6b5cbfbdd09555e" title="Scheduler::FindNextToRun" alt="" coords="934,969,1119,996"/><area shape="rect" id="node31" href="classScheduler.html#a87205b0773d3dd84752ec779c890f5e1" title="Scheduler::Run" alt="" coords="968,463,1085,489"/><area shape="rect" id="node21" href="classThread.html#ad707af00a9ce1a1d324804e7c73dc4ab" title="Thread::Print" alt="" coords="1213,817,1315,844"/><area shape="rect" id="node22" href="classInterrupt.html#a863f619c2596c5cf53d412a94642db41" title="Interrupt::setNeedResched" alt="" coords="1168,260,1360,287"/><area shape="rect" id="node23" href="classThread.html#a39061ce2692542188f82f909d005b1c3" title="Thread::setStatus" alt="" coords="1196,412,1332,439"/><area shape="rect" id="node25" href="classThread.html#ad75bd5375287a210520752785f503de4" title="Thread::getStatus" alt="" coords="1195,1020,1333,1047"/><area shape="rect" id="node26" href="classInterrupt.html#a4d9820efbc3e9fd82e82f2eb6ef3613b" title="Interrupt::Halt" alt="" coords="1209,1071,1319,1097"/><area shape="rect" id="node27" href="classStatistics.html#ade67669fb1436e69a215a780b1ade63e" title="Statistics::Print" alt="" coords="1409,1045,1527,1072"/><area shape="rect" id="node28" href="system_8cc.html#ae89a123aad1c66a76c398b7af216aae4" title="Cleanup" alt="" coords="1431,1096,1505,1123"/><area shape="rect" id="node29" href="sysdep_8cc.html#a8b9ef9330856c5a5a02f2d3ef0497e04" title="Exit" alt="" coords="1616,1096,1661,1123"/><area shape="rect" id="node30" href="sysdep_8cc.html#a358d2e2397ca11ccd17553e3c40e7901" title="exit" alt="" coords="1756,1096,1801,1123"/><area shape="rect" id="node32" href="classThread.html#afa6657ff14b9c6866eadd85ea32c9147" title="Thread::CheckOverflow" alt="" coords="1181,513,1347,540"/><area shape="rect" id="node33" href="thread_8h.html#a10e80b5f1da660f5390f448c8fee2ae7" title="SWITCH" alt="" coords="1229,564,1299,591"/><area shape="rect" id="node35" href="classInterrupt.html#aa519deead8b512a52ba4ad9fb0e2643b" title="Interrupt::getLevel" alt="" coords="531,1020,669,1047"/><area shape="rect" id="node36" href="classInterrupt.html#ace54aece18806bae3614ebf9cc8c2991" title="Interrupt::Idle" alt="" coords="547,969,653,996"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aa0442520888bd371ce07d07c0a4313a7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Condition::Wait </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classLock.html">Lock</a> *&#160;</td>
+          <td class="paramname"><em>conditionLock</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="classCondition_aa0442520888bd371ce07d07c0a4313a7_cgraph.png" border="0" usemap="#classCondition_aa0442520888bd371ce07d07c0a4313a7_cgraph" alt=""/></div>
+<map name="classCondition_aa0442520888bd371ce07d07c0a4313a7_cgraph" id="classCondition_aa0442520888bd371ce07d07c0a4313a7_cgraph">
+<area shape="rect" id="node2" href="classList.html#aea4cc7578bb4db7f502dc005e5edc902" title="List::Append" alt="" coords="1200,233,1301,260"/><area shape="rect" id="node4" href="classLock.html#a5ca005b84272e56c2bf447056ee9217c" title="Lock::Release" alt="" coords="171,309,279,336"/><area shape="rect" id="node5" href="classInterrupt.html#af55a6cea64a8a3de49bad9ea3843addb" title="Interrupt::SetLevel" alt="" coords="329,487,469,513"/><area shape="rect" id="node34" href="classThread.html#a187a4c1e62087511b69068220840244a" title="Thread::Sleep" alt="" coords="343,436,454,463"/><area shape="rect" id="node37" href="classLock.html#ad4c4699fd1ab73f3927b10edc01c54db" title="Lock::Acquire" alt="" coords="172,385,279,412"/><area shape="rect" id="node3" href="classList.html#a854e9656ddbfae181d12f9d9413bc2b8" title="List::IsEmpty" alt="" coords="1403,233,1506,260"/><area shape="rect" id="node16" href="classList.html#a4f804c07c4cfa4c9b631e6e117156e32" title="List::Remove" alt="" coords="1199,81,1302,108"/><area shape="rect" id="node20" href="classScheduler.html#a18e89ab130a40c423da77673f12585d7" title="Scheduler::ReadyToRun" alt="" coords="929,335,1097,361"/><area shape="rect" id="node6" href="classInterrupt.html#ab3ca8b04757f024242b1037cf5b2ede8" title="Interrupt::ChangeLevel" alt="" coords="705,1044,871,1071"/><area shape="rect" id="node10" href="classInterrupt.html#af7e385b28c374d35c4ca3763efac2b33" title="Interrupt::OneTick" alt="" coords="519,816,654,843"/><area shape="rect" id="node7" href="utility_8cc.html#af1c6878736cbd9e1b531898d8951d613" title="DEBUG" alt="" coords="1420,841,1489,868"/><area shape="rect" id="node8" href="utility_8cc.html#a79c7d1acabdb48f6f6a80ec0abf7cf89" title="DebugIsEnabled" alt="" coords="1563,968,1688,995"/><area shape="rect" id="node9" href="stdlib_8h.html#a89c177d1405cf367c2c4874c4449456a" title="strchr" alt="" coords="1736,968,1795,995"/><area shape="rect" id="node11" href="classInterrupt.html#aa0b369ce526d17d07dc24027a1bf63a9" title="Interrupt::HandleIfDue" alt="" coords="707,588,869,615"/><area shape="rect" id="node18" href="classThread.html#adbc2bfb172d2eff4b46882aade9eeb8a" title="Thread::Yield" alt="" coords="737,487,839,513"/><area shape="rect" id="node12" href="classInterrupt.html#a8f9a7ddd0f250de0dcd45fa5bfd80c11" title="Interrupt::DumpState" alt="" coords="934,791,1093,817"/><area shape="rect" id="node15" href="classList.html#a27695119b3728f2a9315cdb14ab685e8" title="List::Head" alt="" coords="970,487,1057,513"/><area shape="rect" id="node17" href="classSortedList.html#aba1018141145192392e15ad6277d814a" title="SortedList::Insert" alt="" coords="948,537,1079,564"/><area shape="rect" id="node13" href="classList.html#ab57e90b8b2a790db7f2cad1e7aaa72d3" title="List::Mapcar" alt="" coords="1201,791,1300,817"/><area shape="rect" id="node14" href="interrupt_8cc.html#ae48c7f55ff352d1274e2563d8f97f20b" title="PrintPending" alt="" coords="1199,841,1302,868"/><area shape="rect" id="node19" href="classThread.html#a46450bb50c81bbfc0fd254fa7b72d821" title="Thread::getName" alt="" coords="1183,436,1318,463"/><area shape="rect" id="node24" href="classScheduler.html#a0fa7daec8d1058a8e6b5cbfbdd09555e" title="Scheduler::FindNextToRun" alt="" coords="921,132,1106,159"/><area shape="rect" id="node31" href="classScheduler.html#a87205b0773d3dd84752ec779c890f5e1" title="Scheduler::Run" alt="" coords="955,689,1072,716"/><area shape="rect" id="node21" href="classThread.html#ad707af00a9ce1a1d324804e7c73dc4ab" title="Thread::Print" alt="" coords="1199,183,1302,209"/><area shape="rect" id="node22" href="classInterrupt.html#a863f619c2596c5cf53d412a94642db41" title="Interrupt::setNeedResched" alt="" coords="1155,284,1347,311"/><area shape="rect" id="node23" href="classThread.html#a39061ce2692542188f82f909d005b1c3" title="Thread::setStatus" alt="" coords="1183,385,1319,412"/><area shape="rect" id="node25" href="classThread.html#ad75bd5375287a210520752785f503de4" title="Thread::getStatus" alt="" coords="1182,132,1319,159"/><area shape="rect" id="node26" href="classInterrupt.html#a4d9820efbc3e9fd82e82f2eb6ef3613b" title="Interrupt::Halt" alt="" coords="1195,31,1306,57"/><area shape="rect" id="node27" href="classStatistics.html#ade67669fb1436e69a215a780b1ade63e" title="Statistics::Print" alt="" coords="1395,56,1514,83"/><area shape="rect" id="node28" href="system_8cc.html#ae89a123aad1c66a76c398b7af216aae4" title="Cleanup" alt="" coords="1417,5,1492,32"/><area shape="rect" id="node29" href="sysdep_8cc.html#a8b9ef9330856c5a5a02f2d3ef0497e04" title="Exit" alt="" coords="1603,5,1648,32"/><area shape="rect" id="node30" href="sysdep_8cc.html#a358d2e2397ca11ccd17553e3c40e7901" title="exit" alt="" coords="1743,5,1788,32"/><area shape="rect" id="node32" href="classThread.html#afa6657ff14b9c6866eadd85ea32c9147" title="Thread::CheckOverflow" alt="" coords="1167,588,1334,615"/><area shape="rect" id="node33" href="thread_8h.html#a10e80b5f1da660f5390f448c8fee2ae7" title="SWITCH" alt="" coords="1215,639,1286,665"/><area shape="rect" id="node35" href="classInterrupt.html#aa519deead8b512a52ba4ad9fb0e2643b" title="Interrupt::getLevel" alt="" coords="517,436,656,463"/><area shape="rect" id="node36" href="classInterrupt.html#ace54aece18806bae3614ebf9cc8c2991" title="Interrupt::Idle" alt="" coords="533,537,640,564"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des données membres</h2>
+<a class="anchor" id="a39531f1955c611cfa1904cda81cd02d7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* Condition::name</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a456d18532c46b396d8490bd5b951e796"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classList.html">List</a> Condition::queue</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>La documentation de cette classe a été générée à partir des fichiers suivants :<ul>
+<li>threads/<a class="el" href="synch_8h_source.html">synch.h</a></li>
+<li>threads/<a class="el" href="synch_8cc.html">synch.cc</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Dimanche 12 Février 2017 10:48:15 pour nachos par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.6
+</small></address>
+</body>
+</html>

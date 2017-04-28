@@ -1,0 +1,216 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>nachos:  Fichier source de machine/console.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">nachos
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_0909f4a7c39d3e9616c1c9d755842fcb.html">machine</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">console.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="console_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// console.h </span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">//      Data structures to simulate the behavior of a terminal</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">//      I/O device.  A terminal has two parts -- a keyboard input,</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">//      and a display output, each of which produces/accepts </span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">//      characters sequentially.</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">//      The console hardware device is asynchronous.  When a character is</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">//      written to the device, the routine returns immediately, and an </span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">//      interrupt handler is called later when the I/O completes.</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">//      For reads, an interrupt handler is called when a character arrives. </span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">//      The user of the device can specify the routines to be called when </span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">//      the read/write interrupts occur.  There is a separate interrupt</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">//      for read and write, and the device is &quot;duplex&quot; -- a character</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">//      can be outgoing and incoming at the same time.</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">//  DO NOT CHANGE -- part of the machine emulation</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">// Copyright (c) 1992-1993 The Regents of the University of California.</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">// All rights reserved.  See copyright.h for copyright notice and limitation </span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">// of liability and disclaimer of warranty provisions.</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#ifndef CONSOLE_H</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define CONSOLE_H</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#pragma interface &quot;machine/console.h&quot;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="copyright_8h.html">copyright.h</a>&quot;</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="utility_8h.html">utility.h</a>&quot;</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="synch_8h.html">synch.h</a>&quot;</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="console_8h.html#a120b69058cfe93ad6744072685366f1a">   32</a></span>&#160;<span class="preprocessor">#define FLAG_EOF -2</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">// The following class defines a hardware console device.</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">// Input and output to the device is simulated by reading </span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">// and writing to UNIX files (&quot;readFile&quot; and &quot;writeFile&quot;).</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">// Since the device is asynchronous, the interrupt handler &quot;readAvail&quot; </span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">// is called when a character has arrived, ready to be read in.</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">// The interrupt handler &quot;writeDone&quot; is called when an output character </span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">// has been &quot;put&quot;, so that the next character can be written.</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">extern</span> <a class="code" href="classSemaphore.html">Semaphore</a>* <a class="code" href="console_8h.html#a5d6631c2d938e7a0f051dec4bc00f54f">consoleRead</a>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">extern</span> <a class="code" href="classSemaphore.html">Semaphore</a>* <a class="code" href="console_8h.html#a270121891411dea63701469792a18833">consoleReadAvail</a>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">extern</span> <a class="code" href="classSemaphore.html">Semaphore</a>* <a class="code" href="console_8h.html#ad84cbb50aab29df8694cf190c8f389ae">consoleWrite</a>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">extern</span> <a class="code" href="classSemaphore.html">Semaphore</a>* <a class="code" href="console_8h.html#adc60e61c5463b66e9662b21efd180fe3">consoleWriteDone</a>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">int</span> <a class="code" href="console_8h.html#a0f4f35f38125dc9ccb53f68bdc11932d">ConsoleWrite</a>(<span class="keywordtype">char</span> *buf, <span class="keywordtype">int</span> nbytes);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">int</span> <a class="code" href="console_8h.html#a68d9e137dff6160db003a1d39e92de44">ConsoleRead</a>(<span class="keywordtype">char</span> *buf, <span class="keywordtype">int</span> nbytes);</div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="classConsole.html">   48</a></span>&#160;<span class="keyword">class </span><a class="code" href="classConsole.html">Console</a> {</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <a class="code" href="classConsole.html#a223e45bc52d29d97b53e6ba75db11bbc">Console</a>(<span class="keywordtype">char</span> *readFile, <span class="keywordtype">char</span> *writeFile, <a class="code" href="utility_8h.html#a2bf42b385c85e0c8aaedc4ba5d3a7bff">VoidFunctionPtr</a> <a class="code" href="progtest_8cc.html#a8cb122f7adfddacaa7e4451bbe538390">readAvail</a>, </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <a class="code" href="utility_8h.html#a2bf42b385c85e0c8aaedc4ba5d3a7bff">VoidFunctionPtr</a> <a class="code" href="progtest_8cc.html#a11ada0e7115ad30e49bf3ac9783d2edb">writeDone</a>, <span class="keywordtype">size_t</span> callArg);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                                <span class="comment">// initialize the hardware console device</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <a class="code" href="classConsole.html#a32e8c79c8579b1b076e53848c540d4e7">~Console</a>();                 <span class="comment">// clean up console emulation</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">// external interface -- Nachos kernel code can call these</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classConsole.html#af4828702d63f7f144e8d17395471b59f">PutChar</a>(<span class="keywordtype">char</span> ch);      <span class="comment">// Write &quot;ch&quot; to the console display, </span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                                <span class="comment">// and return immediately.  &quot;writeHandler&quot; </span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                                <span class="comment">// is called when the I/O completes. </span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordtype">char</span> <a class="code" href="classConsole.html#aee2f18e347f92c0a1f3d8a4b86b024d9">GetChar</a>();             <span class="comment">// Poll the console input.  If a char is </span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                                <span class="comment">// available, return it.  Otherwise, return EOF.</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                                <span class="comment">// &quot;readHandler&quot; is called whenever there is </span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                                <span class="comment">// a char to be gotten</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment">//    int ConsoleRead(char *buf, int nbytes);</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">//    int ConsoleWrite(char *buf, int nbytes);</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">// internal emulation routines -- DO NOT call these. </span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classConsole.html#a8a611e74235a39a9b7216b6d66e32c30">WriteDone</a>();           <span class="comment">// internal routines to signal I/O completion</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classConsole.html#a099797597b7bd0b349518aac215fcb2f">CheckCharAvail</a>();</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="classConsole.html#a5bef93c9fefee9f1449ff30c2937411f">   71</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classConsole.html#a5bef93c9fefee9f1449ff30c2937411f">readFileNo</a>;                     <span class="comment">// UNIX file emulating the keyboard </span></div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="classConsole.html#ab9368216fde993c2cbf8309abb681985">   72</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classConsole.html#ab9368216fde993c2cbf8309abb681985">writeFileNo</a>;                    <span class="comment">// UNIX file emulating the display</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="classConsole.html#a061fe2979a56e61810ed2a245339a5e4">   73</a></span>&#160;    <a class="code" href="utility_8h.html#a2bf42b385c85e0c8aaedc4ba5d3a7bff">VoidFunctionPtr</a> <a class="code" href="classConsole.html#a061fe2979a56e61810ed2a245339a5e4">writeHandler</a>;       <span class="comment">// Interrupt handler to call when </span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                                        <span class="comment">// the PutChar I/O completes</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="classConsole.html#a75b91f9f02c7c7627708a747b558b45f">   75</a></span>&#160;    <a class="code" href="utility_8h.html#a2bf42b385c85e0c8aaedc4ba5d3a7bff">VoidFunctionPtr</a> <a class="code" href="classConsole.html#a75b91f9f02c7c7627708a747b558b45f">readHandler</a>;        <span class="comment">// Interrupt handler to call when </span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                                        <span class="comment">// a character arrives from the keyboard</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="classConsole.html#a82e8f6218aa9005f683c908db7676477">   77</a></span>&#160;    <span class="keywordtype">size_t</span> <a class="code" href="classConsole.html#a82e8f6218aa9005f683c908db7676477">handlerArg</a>;                  <span class="comment">// argument to be passed to the </span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                                        <span class="comment">// interrupt handlers</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="classConsole.html#a5a2296912ae98026f275b746ff6f0192">   79</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classConsole.html#a5a2296912ae98026f275b746ff6f0192">putBusy</a>;                       <span class="comment">// Is a PutChar operation in progress?</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                                        <span class="comment">// If so, you can&#39;t do another one!</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="classConsole.html#a3439910600490f41d70b02e1dd9acd91">   81</a></span>&#160;    <span class="keywordtype">char</span> <a class="code" href="classConsole.html#a3439910600490f41d70b02e1dd9acd91">incoming</a>;                      <span class="comment">// Contains the character to be read,</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                                        <span class="comment">// if there is one available. </span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                                        <span class="comment">// Otherwise contains EOF.</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;};</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="keyword">extern</span> <a class="code" href="classConsole.html">Console</a>* <a class="code" href="console_8h.html#a75ce5b980934e9e717d1e7088d6ed1bc">console</a>;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="preprocessor">#endif // CONSOLE_H</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
+<div class="ttc" id="console_8h_html_a75ce5b980934e9e717d1e7088d6ed1bc"><div class="ttname"><a href="console_8h.html#a75ce5b980934e9e717d1e7088d6ed1bc">console</a></div><div class="ttdeci">Console * console</div></div>
+<div class="ttc" id="classConsole_html"><div class="ttname"><a href="classConsole.html">Console</a></div><div class="ttdef"><b>Definition:</b> console.h:48</div></div>
+<div class="ttc" id="classConsole_html_a82e8f6218aa9005f683c908db7676477"><div class="ttname"><a href="classConsole.html#a82e8f6218aa9005f683c908db7676477">Console::handlerArg</a></div><div class="ttdeci">size_t handlerArg</div><div class="ttdef"><b>Definition:</b> console.h:77</div></div>
+<div class="ttc" id="classSemaphore_html"><div class="ttname"><a href="classSemaphore.html">Semaphore</a></div><div class="ttdef"><b>Definition:</b> synch.h:44</div></div>
+<div class="ttc" id="console_8h_html_ad84cbb50aab29df8694cf190c8f389ae"><div class="ttname"><a href="console_8h.html#ad84cbb50aab29df8694cf190c8f389ae">consoleWrite</a></div><div class="ttdeci">Semaphore * consoleWrite</div></div>
+<div class="ttc" id="classConsole_html_ab9368216fde993c2cbf8309abb681985"><div class="ttname"><a href="classConsole.html#ab9368216fde993c2cbf8309abb681985">Console::writeFileNo</a></div><div class="ttdeci">int writeFileNo</div><div class="ttdef"><b>Definition:</b> console.h:72</div></div>
+<div class="ttc" id="progtest_8cc_html_a11ada0e7115ad30e49bf3ac9783d2edb"><div class="ttname"><a href="progtest_8cc.html#a11ada0e7115ad30e49bf3ac9783d2edb">writeDone</a></div><div class="ttdeci">static Semaphore * writeDone</div><div class="ttdef"><b>Definition:</b> progtest.cc:53</div></div>
+<div class="ttc" id="classConsole_html_a061fe2979a56e61810ed2a245339a5e4"><div class="ttname"><a href="classConsole.html#a061fe2979a56e61810ed2a245339a5e4">Console::writeHandler</a></div><div class="ttdeci">VoidFunctionPtr writeHandler</div><div class="ttdef"><b>Definition:</b> console.h:73</div></div>
+<div class="ttc" id="console_8h_html_a68d9e137dff6160db003a1d39e92de44"><div class="ttname"><a href="console_8h.html#a68d9e137dff6160db003a1d39e92de44">ConsoleRead</a></div><div class="ttdeci">int ConsoleRead(char *buf, int nbytes)</div><div class="ttdef"><b>Definition:</b> console.cc:55</div></div>
+<div class="ttc" id="console_8h_html_a5d6631c2d938e7a0f051dec4bc00f54f"><div class="ttname"><a href="console_8h.html#a5d6631c2d938e7a0f051dec4bc00f54f">consoleRead</a></div><div class="ttdeci">Semaphore * consoleRead</div></div>
+<div class="ttc" id="console_8h_html_a0f4f35f38125dc9ccb53f68bdc11932d"><div class="ttname"><a href="console_8h.html#a0f4f35f38125dc9ccb53f68bdc11932d">ConsoleWrite</a></div><div class="ttdeci">int ConsoleWrite(char *buf, int nbytes)</div><div class="ttdef"><b>Definition:</b> console.cc:88</div></div>
+<div class="ttc" id="classConsole_html_a5bef93c9fefee9f1449ff30c2937411f"><div class="ttname"><a href="classConsole.html#a5bef93c9fefee9f1449ff30c2937411f">Console::readFileNo</a></div><div class="ttdeci">int readFileNo</div><div class="ttdef"><b>Definition:</b> console.h:71</div></div>
+<div class="ttc" id="classConsole_html_a32e8c79c8579b1b076e53848c540d4e7"><div class="ttname"><a href="classConsole.html#a32e8c79c8579b1b076e53848c540d4e7">Console::~Console</a></div><div class="ttdeci">~Console()</div><div class="ttdef"><b>Definition:</b> console.cc:148</div></div>
+<div class="ttc" id="progtest_8cc_html_a8cb122f7adfddacaa7e4451bbe538390"><div class="ttname"><a href="progtest_8cc.html#a8cb122f7adfddacaa7e4451bbe538390">readAvail</a></div><div class="ttdeci">static Semaphore * readAvail</div><div class="ttdef"><b>Definition:</b> progtest.cc:52</div></div>
+<div class="ttc" id="utility_8h_html"><div class="ttname"><a href="utility_8h.html">utility.h</a></div></div>
+<div class="ttc" id="console_8h_html_a270121891411dea63701469792a18833"><div class="ttname"><a href="console_8h.html#a270121891411dea63701469792a18833">consoleReadAvail</a></div><div class="ttdeci">Semaphore * consoleReadAvail</div></div>
+<div class="ttc" id="classConsole_html_a5a2296912ae98026f275b746ff6f0192"><div class="ttname"><a href="classConsole.html#a5a2296912ae98026f275b746ff6f0192">Console::putBusy</a></div><div class="ttdeci">bool putBusy</div><div class="ttdef"><b>Definition:</b> console.h:79</div></div>
+<div class="ttc" id="classConsole_html_aee2f18e347f92c0a1f3d8a4b86b024d9"><div class="ttname"><a href="classConsole.html#aee2f18e347f92c0a1f3d8a4b86b024d9">Console::GetChar</a></div><div class="ttdeci">char GetChar()</div><div class="ttdef"><b>Definition:</b> console.cc:216</div></div>
+<div class="ttc" id="utility_8h_html_a2bf42b385c85e0c8aaedc4ba5d3a7bff"><div class="ttname"><a href="utility_8h.html#a2bf42b385c85e0c8aaedc4ba5d3a7bff">VoidFunctionPtr</a></div><div class="ttdeci">void(* VoidFunctionPtr)(size_t arg)</div><div class="ttdef"><b>Definition:</b> utility.h:53</div></div>
+<div class="ttc" id="classConsole_html_a75b91f9f02c7c7627708a747b558b45f"><div class="ttname"><a href="classConsole.html#a75b91f9f02c7c7627708a747b558b45f">Console::readHandler</a></div><div class="ttdeci">VoidFunctionPtr readHandler</div><div class="ttdef"><b>Definition:</b> console.h:75</div></div>
+<div class="ttc" id="classConsole_html_af4828702d63f7f144e8d17395471b59f"><div class="ttname"><a href="classConsole.html#af4828702d63f7f144e8d17395471b59f">Console::PutChar</a></div><div class="ttdeci">void PutChar(char ch)</div><div class="ttdef"><b>Definition:</b> console.cc:231</div></div>
+<div class="ttc" id="classConsole_html_a3439910600490f41d70b02e1dd9acd91"><div class="ttname"><a href="classConsole.html#a3439910600490f41d70b02e1dd9acd91">Console::incoming</a></div><div class="ttdeci">char incoming</div><div class="ttdef"><b>Definition:</b> console.h:81</div></div>
+<div class="ttc" id="classConsole_html_a8a611e74235a39a9b7216b6d66e32c30"><div class="ttname"><a href="classConsole.html#a8a611e74235a39a9b7216b6d66e32c30">Console::WriteDone</a></div><div class="ttdeci">void WriteDone()</div><div class="ttdef"><b>Definition:</b> console.cc:198</div></div>
+<div class="ttc" id="synch_8h_html"><div class="ttname"><a href="synch_8h.html">synch.h</a></div></div>
+<div class="ttc" id="console_8h_html_adc60e61c5463b66e9662b21efd180fe3"><div class="ttname"><a href="console_8h.html#adc60e61c5463b66e9662b21efd180fe3">consoleWriteDone</a></div><div class="ttdeci">Semaphore * consoleWriteDone</div></div>
+<div class="ttc" id="classConsole_html_a099797597b7bd0b349518aac215fcb2f"><div class="ttname"><a href="classConsole.html#a099797597b7bd0b349518aac215fcb2f">Console::CheckCharAvail</a></div><div class="ttdeci">void CheckCharAvail()</div><div class="ttdef"><b>Definition:</b> console.cc:168</div></div>
+<div class="ttc" id="classConsole_html_a223e45bc52d29d97b53e6ba75db11bbc"><div class="ttname"><a href="classConsole.html#a223e45bc52d29d97b53e6ba75db11bbc">Console::Console</a></div><div class="ttdeci">Console(char *readFile, char *writeFile, VoidFunctionPtr readAvail, VoidFunctionPtr writeDone, size_t callArg)</div><div class="ttdef"><b>Definition:</b> console.cc:119</div></div>
+<div class="ttc" id="copyright_8h_html"><div class="ttname"><a href="copyright_8h.html">copyright.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Dimanche 12 Février 2017 10:48:15 pour nachos par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.6
+</small></address>
+</body>
+</html>

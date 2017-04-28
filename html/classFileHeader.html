@@ -1,0 +1,333 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>nachos: Référence de la classe FileHeader</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">nachos
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Liste&#160;des&#160;classes</span></a></li>
+      <li><a href="classes.html"><span>Index&#160;des&#160;classes</span></a></li>
+      <li><a href="inherits.html"><span>Hiérarchie&#160;des&#160;classes</span></a></li>
+      <li><a href="functions.html"><span>Membres&#160;de&#160;classe</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Fonctions membres publiques</a> &#124;
+<a href="#pri-attribs">Attributs privés</a> &#124;
+<a href="classFileHeader-members.html">Liste de tous les membres</a>  </div>
+  <div class="headertitle">
+<div class="title">Référence de la classe FileHeader</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="filehdr_8h_source.html">filehdr.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Fonctions membres publiques</h2></td></tr>
+<tr class="memitem:a2fb90f63470e10c847393e124763fd1a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFileHeader.html#a2fb90f63470e10c847393e124763fd1a">Allocate</a> (<a class="el" href="classBitMap.html">BitMap</a> *bitMap, int fileSize)</td></tr>
+<tr class="separator:a2fb90f63470e10c847393e124763fd1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d8a66db0af2460ccb27edd8d2331179"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFileHeader.html#a0d8a66db0af2460ccb27edd8d2331179">Deallocate</a> (<a class="el" href="classBitMap.html">BitMap</a> *bitMap)</td></tr>
+<tr class="separator:a0d8a66db0af2460ccb27edd8d2331179"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa85564cee98fc9592df08cc5e4a2efc6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFileHeader.html#aa85564cee98fc9592df08cc5e4a2efc6">FetchFrom</a> (int sectorNumber)</td></tr>
+<tr class="separator:aa85564cee98fc9592df08cc5e4a2efc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab896cc7dd7274e3f8072da2c7d9beee8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFileHeader.html#ab896cc7dd7274e3f8072da2c7d9beee8">WriteBack</a> (int sectorNumber)</td></tr>
+<tr class="separator:ab896cc7dd7274e3f8072da2c7d9beee8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adacbe1c1af441d0b1e978c65a05d60f2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFileHeader.html#adacbe1c1af441d0b1e978c65a05d60f2">ByteToSector</a> (int offset)</td></tr>
+<tr class="separator:adacbe1c1af441d0b1e978c65a05d60f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a676d88bbc37d3d108625be75d637a8e6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFileHeader.html#a676d88bbc37d3d108625be75d637a8e6">FileLength</a> ()</td></tr>
+<tr class="separator:a676d88bbc37d3d108625be75d637a8e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57b661cda2c4d51ee06cc29e7ea0a0c0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFileHeader.html#a57b661cda2c4d51ee06cc29e7ea0a0c0">Print</a> ()</td></tr>
+<tr class="separator:a57b661cda2c4d51ee06cc29e7ea0a0c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Attributs privés</h2></td></tr>
+<tr class="memitem:a8ce2c3a2c0eb628a60120acecf8a225b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFileHeader.html#a8ce2c3a2c0eb628a60120acecf8a225b">numBytes</a></td></tr>
+<tr class="separator:a8ce2c3a2c0eb628a60120acecf8a225b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab18c90cd87cf858a00b65bc7023cc28e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFileHeader.html#ab18c90cd87cf858a00b65bc7023cc28e">numSectors</a></td></tr>
+<tr class="separator:ab18c90cd87cf858a00b65bc7023cc28e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9ca0b73f5c5cac7821c4c919db43ccf"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFileHeader.html#aa9ca0b73f5c5cac7821c4c919db43ccf">dataSectors</a> [<a class="el" href="filehdr_8h.html#a193693ecec4f818d8270c659139e3961">NumDirect</a>]</td></tr>
+<tr class="separator:aa9ca0b73f5c5cac7821c4c919db43ccf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Documentation des fonctions membres</h2>
+<a class="anchor" id="a2fb90f63470e10c847393e124763fd1a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool FileHeader::Allocate </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classBitMap.html">BitMap</a> *&#160;</td>
+          <td class="paramname"><em>bitMap</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>fileSize</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="classFileHeader_a2fb90f63470e10c847393e124763fd1a_cgraph.png" border="0" usemap="#classFileHeader_a2fb90f63470e10c847393e124763fd1a_cgraph" alt=""/></div>
+<map name="classFileHeader_a2fb90f63470e10c847393e124763fd1a_cgraph" id="classFileHeader_a2fb90f63470e10c847393e124763fd1a_cgraph">
+<area shape="rect" id="node2" href="classBitMap.html#af73514736aff03229d58557d0423daca" title="BitMap::NumClear" alt="" coords="203,5,341,32"/><area shape="rect" id="node4" href="classBitMap.html#a031ad924663dcae2359403b3a76a9dd8" title="BitMap::Find" alt="" coords="223,56,321,83"/><area shape="rect" id="node3" href="classBitMap.html#af5a945ba7b79e92a5a1bb0db24ecf26a" title="BitMap::Test" alt="" coords="393,5,492,32"/><area shape="rect" id="node5" href="classBitMap.html#ae3eb006c755440ae830bf220457dbbc7" title="BitMap::Mark" alt="" coords="390,56,495,83"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="adacbe1c1af441d0b1e978c65a05d60f2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int FileHeader::ByteToSector </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>offset</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a0d8a66db0af2460ccb27edd8d2331179"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FileHeader::Deallocate </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classBitMap.html">BitMap</a> *&#160;</td>
+          <td class="paramname"><em>bitMap</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="classFileHeader_a0d8a66db0af2460ccb27edd8d2331179_cgraph.png" border="0" usemap="#classFileHeader_a0d8a66db0af2460ccb27edd8d2331179_cgraph" alt=""/></div>
+<map name="classFileHeader_a0d8a66db0af2460ccb27edd8d2331179_cgraph" id="classFileHeader_a0d8a66db0af2460ccb27edd8d2331179_cgraph">
+<area shape="rect" id="node2" href="classBitMap.html#af5a945ba7b79e92a5a1bb0db24ecf26a" title="BitMap::Test" alt="" coords="223,5,321,32"/><area shape="rect" id="node3" href="classBitMap.html#aee4445b4d2079c96f5c87896717569d2" title="BitMap::Clear" alt="" coords="219,56,325,83"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aa85564cee98fc9592df08cc5e4a2efc6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FileHeader::FetchFrom </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>sectorNumber</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a676d88bbc37d3d108625be75d637a8e6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int FileHeader::FileLength </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a57b661cda2c4d51ee06cc29e7ea0a0c0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FileHeader::Print </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab896cc7dd7274e3f8072da2c7d9beee8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FileHeader::WriteBack </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>sectorNumber</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des données membres</h2>
+<a class="anchor" id="aa9ca0b73f5c5cac7821c4c919db43ccf"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int FileHeader::dataSectors[<a class="el" href="filehdr_8h.html#a193693ecec4f818d8270c659139e3961">NumDirect</a>]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a8ce2c3a2c0eb628a60120acecf8a225b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int FileHeader::numBytes</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab18c90cd87cf858a00b65bc7023cc28e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int FileHeader::numSectors</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>La documentation de cette classe a été générée à partir des fichiers suivants :<ul>
+<li>filesys/<a class="el" href="filehdr_8h_source.html">filehdr.h</a></li>
+<li>filesys/<a class="el" href="filehdr_8cc.html">filehdr.cc</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Dimanche 12 Février 2017 10:48:15 pour nachos par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.6
+</small></address>
+</body>
+</html>

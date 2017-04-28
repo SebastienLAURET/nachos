@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>nachos:  Fichier source de userprog/syscallnumbers.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">nachos
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_1d382e90aafd8fa5d2a2b6b84b51ddb5.html">userprog</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">syscallnumbers.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="syscallnumbers_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">//SYSCALL_CHANGE</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">/* Includes the  #define constants which were</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * in syscall.h and systemcall.h</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#ifndef SYSCALL_CHANGE</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="syscallnumbers_8h.html#ab6a9f4e492f3216f5c61c4675801bedf">    8</a></span>&#160;<span class="preprocessor">#define SC_Halt         0</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="syscallnumbers_8h.html#a171374af0ffab79442015ddea69786c2">    9</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define SC_Exit         1</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="syscallnumbers_8h.html#a021b6ef9e5f08a6d3a053ff25c4c0df2">   10</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define SC_Exec         2</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="syscallnumbers_8h.html#a5d7f7f9d72a00b7f0c291f6ae06e39b4">   11</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define SC_Wait         3</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="syscallnumbers_8h.html#af37f41c7a3a4f4a03170cee55e3bdad3">   12</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define SC_Create       4</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="syscallnumbers_8h.html#a255286805d47cd6f92bebd07591e5b03">   13</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define SC_Open         5</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="syscallnumbers_8h.html#a2ed7f17c7f089e2b5d3af1f6fc8eb9d9">   14</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define SC_Read         6</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="syscallnumbers_8h.html#abda43217eee0d3ad38d5a9dc378e173d">   15</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define SC_Write        7</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="syscallnumbers_8h.html#acb19f3910e57cdd63dff1747435e2e5b">   16</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define SC_Close        8</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="syscallnumbers_8h.html#a81ceab9b3f7ebd0b510e9c7af670785b">   17</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define SC_Fork         9</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="syscallnumbers_8h.html#ac13724ee06fcba144c277c482cf4dd2a">   18</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define SC_Yield        10</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="syscallnumbers_8h.html#a8a9d9931540dbb45db69f53205546365">   19</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define SC_Unlink       11</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="syscallnumbers_8h.html#a9fcc8e98356eaa30304ebca55b280bfe">   20</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define SC_GetPID       12</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="syscallnumbers_8h.html#ae8eadf99b437a71d92a9205a87679f3f">   21</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define SC_GetPPID      13</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="syscallnumbers_8h.html#a4d1089f878e04ee32998ba54075c82f8">   22</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define SC_Nice         14</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#endif</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Dimanche 12 Février 2017 10:48:15 pour nachos par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.6
+</small></address>
+</body>
+</html>

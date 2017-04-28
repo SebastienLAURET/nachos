@@ -1,0 +1,213 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>nachos:  Fichier source de machine/disk.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">nachos
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_0909f4a7c39d3e9616c1c9d755842fcb.html">machine</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">disk.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="disk_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// disk.h </span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">//      Data structures to emulate a physical disk.  A physical disk</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">//      can accept (one at a time) requests to read/write a disk sector;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">//      when the request is satisfied, the CPU gets an interrupt, and </span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">//      the next request can be sent to the disk.</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">//      Disk contents are preserved across machine crashes, but if</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">//      a file system operation (eg, create a file) is in progress when the </span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">//      system shuts down, the file system may be corrupted.</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">//  DO NOT CHANGE -- part of the machine emulation</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">// Copyright (c) 1992-1993 The Regents of the University of California.</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">// All rights reserved.  See copyright.h for copyright notice and limitation </span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">// of liability and disclaimer of warranty provisions.</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#ifndef DISK_H</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define DISK_H</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#pragma interface &quot;machine/disk.h&quot;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="copyright_8h.html">copyright.h</a>&quot;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="utility_8h.html">utility.h</a>&quot;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">// The following class defines a physical disk I/O device.  The disk</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">// has a single surface, split up into &quot;tracks&quot;, and each track split</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">// up into &quot;sectors&quot; (the same number of sectors on each track, and each</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">// sector has the same number of bytes of storage).  </span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">// Addressing is by sector number -- each sector on the disk is given</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">// a unique number: track * SectorsPerTrack + offset within a track.</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">// As with other I/O devices, the raw physical disk is an asynchronous device --</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">// requests to read or write portions of the disk return immediately,</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">// and an interrupt is invoked later to signal that the operation completed.</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">// The physical disk is in fact simulated via operations on a UNIX file.</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">// To make life a little more realistic, the simulated time for</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">// each operation reflects a &quot;track buffer&quot; -- RAM to store the contents</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">// of the current track as the disk head passes by.  The idea is that the</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">// disk always transfers to the track buffer, in case that data is requested</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">// later on.  This has the benefit of eliminating the need for </span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">// &quot;skip-sector&quot; scheduling -- a read request which comes in shortly after </span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">// the head has passed the beginning of the sector can be satisfied more </span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">// quickly, because its contents are in the track buffer.  Most </span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">// disks these days now come with a track buffer.</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">// The track buffer simulation can be disabled by compiling with -DNOTRACKBUF</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="disk_8h.html#ac729b32bca4535899ef2ee58b6a13d68">   51</a></span>&#160;<span class="preprocessor">#define SectorSize              128     // number of bytes per disk sector</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="disk_8h.html#a0d5695df8c219cb6d4753763c841927d">   52</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define SectorsPerTrack         32      // number of sectors per disk track </span></div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="disk_8h.html#a7706c1f7142bd271fd49b59559cfb01b">   53</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define NumTracks               32      // number of tracks per disk</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="disk_8h.html#a0ee898980dd88701d0d9d67dad0b7c2c">   54</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define NumSectors              (SectorsPerTrack * NumTracks)</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor"></span>                                        <span class="comment">// total # of sectors per disk</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="classDisk.html">   57</a></span>&#160;<span class="keyword">class </span><a class="code" href="classDisk.html">Disk</a> {</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <a class="code" href="classDisk.html#acde8bb6fdfbae0957ad4440ef46d7706">Disk</a>(<span class="keywordtype">char</span>* name, <a class="code" href="utility_8h.html#a2bf42b385c85e0c8aaedc4ba5d3a7bff">VoidFunctionPtr</a> callWhenDone, <span class="keywordtype">size_t</span> callArg);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                                        <span class="comment">// Create a simulated disk.  </span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                                        <span class="comment">// Invoke (*callWhenDone)(callArg) </span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                                        <span class="comment">// every time a request completes.</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <a class="code" href="classDisk.html#a77518c808f3f5d9e902a55942542c337">~Disk</a>();                            <span class="comment">// Deallocate the disk.</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classDisk.html#a8b51a82d4f2fd009335d0c591ae11042">ReadRequest</a>(<span class="keywordtype">int</span> sectorNumber, <span class="keywordtype">char</span>* <a class="code" href="structdata.html">data</a>);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                                        <span class="comment">// Read/write an single disk sector.</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                                        <span class="comment">// These routines send a request to </span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                                        <span class="comment">// the disk and return immediately.</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                                        <span class="comment">// Only one request allowed at a time!</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classDisk.html#aec33797c6480a8c919fc7d340c316abe">WriteRequest</a>(<span class="keywordtype">int</span> sectorNumber, <span class="keywordtype">char</span>* data);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classDisk.html#a32d4a38e61501c221163ef845b9d6969">HandleInterrupt</a>();             <span class="comment">// Interrupt handler, invoked when</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                                        <span class="comment">// disk request finishes.</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classDisk.html#a2337b1c68eb5f6a15502d8327d15248b">ComputeLatency</a>(<span class="keywordtype">int</span> newSector, <span class="keywordtype">bool</span> writing);    </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                                        <span class="comment">// Return how long a request to </span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                                        <span class="comment">// newSector will take: </span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                                        <span class="comment">// (seek + rotational delay + transfer)</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="classDisk.html#a27881148b34cffd7005df5d7353ce775">   81</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classDisk.html#a27881148b34cffd7005df5d7353ce775">fileno</a>;                         <span class="comment">// UNIX file number for simulated disk </span></div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="classDisk.html#aa7ff4bb271805d97872bd0022a8c61a3">   82</a></span>&#160;    <a class="code" href="utility_8h.html#a2bf42b385c85e0c8aaedc4ba5d3a7bff">VoidFunctionPtr</a> <a class="code" href="classDisk.html#aa7ff4bb271805d97872bd0022a8c61a3">handler</a>;            <span class="comment">// Interrupt handler, to be invoked </span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                                        <span class="comment">// when any disk request finishes</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="classDisk.html#a68a017c0efd8a43e9a0cd489c355e008">   84</a></span>&#160;    <span class="keywordtype">size_t</span> <a class="code" href="classDisk.html#a68a017c0efd8a43e9a0cd489c355e008">handlerArg</a>;                  <span class="comment">// Argument to interrupt handler </span></div>
+<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="classDisk.html#a41ece24e9dead4ad0af20607d3ac4934">   85</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classDisk.html#a41ece24e9dead4ad0af20607d3ac4934">active</a>;                        <span class="comment">// Is a disk operation in progress?</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="classDisk.html#a09339a72e2d38a32238934f0ae2ae1bb">   86</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classDisk.html#a09339a72e2d38a32238934f0ae2ae1bb">lastSector</a>;                     <span class="comment">// The previous disk request </span></div>
+<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="classDisk.html#a90d96204820fdafec55af216ef9bf023">   87</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classDisk.html#a90d96204820fdafec55af216ef9bf023">bufferInit</a>;                     <span class="comment">// When the track buffer started </span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                                        <span class="comment">// being loaded</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classDisk.html#abecdf19e160925b1bc9b4542c90de2ac">TimeToSeek</a>(<span class="keywordtype">int</span> newSector, <span class="keywordtype">int</span> *rotate); <span class="comment">// time to get to the new track</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classDisk.html#a2b4e12aa9e93939c3e03985c16bed453">ModuloDiff</a>(<span class="keywordtype">int</span> to, <span class="keywordtype">int</span> from);        <span class="comment">// # sectors between to and from</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classDisk.html#aa87426eeedc8cf390fa4b293ecd34b42">UpdateLast</a>(<span class="keywordtype">int</span> newSector);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;};</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="preprocessor">#endif // DISK_H</span></div>
+<div class="ttc" id="classDisk_html_aec33797c6480a8c919fc7d340c316abe"><div class="ttname"><a href="classDisk.html#aec33797c6480a8c919fc7d340c316abe">Disk::WriteRequest</a></div><div class="ttdeci">void WriteRequest(int sectorNumber, char *data)</div><div class="ttdef"><b>Definition:</b> disk.cc:141</div></div>
+<div class="ttc" id="classDisk_html_a41ece24e9dead4ad0af20607d3ac4934"><div class="ttname"><a href="classDisk.html#a41ece24e9dead4ad0af20607d3ac4934">Disk::active</a></div><div class="ttdeci">bool active</div><div class="ttdef"><b>Definition:</b> disk.h:85</div></div>
+<div class="ttc" id="classDisk_html_abecdf19e160925b1bc9b4542c90de2ac"><div class="ttname"><a href="classDisk.html#abecdf19e160925b1bc9b4542c90de2ac">Disk::TimeToSeek</a></div><div class="ttdeci">int TimeToSeek(int newSector, int *rotate)</div><div class="ttdef"><b>Definition:</b> disk.cc:185</div></div>
+<div class="ttc" id="classDisk_html_a27881148b34cffd7005df5d7353ce775"><div class="ttname"><a href="classDisk.html#a27881148b34cffd7005df5d7353ce775">Disk::fileno</a></div><div class="ttdeci">int fileno</div><div class="ttdef"><b>Definition:</b> disk.h:81</div></div>
+<div class="ttc" id="classDisk_html"><div class="ttname"><a href="classDisk.html">Disk</a></div><div class="ttdef"><b>Definition:</b> disk.h:57</div></div>
+<div class="ttc" id="classDisk_html_a90d96204820fdafec55af216ef9bf023"><div class="ttname"><a href="classDisk.html#a90d96204820fdafec55af216ef9bf023">Disk::bufferInit</a></div><div class="ttdeci">int bufferInit</div><div class="ttdef"><b>Definition:</b> disk.h:87</div></div>
+<div class="ttc" id="classDisk_html_a77518c808f3f5d9e902a55942542c337"><div class="ttname"><a href="classDisk.html#a77518c808f3f5d9e902a55942542c337">Disk::~Disk</a></div><div class="ttdeci">~Disk()</div><div class="ttdef"><b>Definition:</b> disk.cc:81</div></div>
+<div class="ttc" id="classDisk_html_a2337b1c68eb5f6a15502d8327d15248b"><div class="ttname"><a href="classDisk.html#a2337b1c68eb5f6a15502d8327d15248b">Disk::ComputeLatency</a></div><div class="ttdeci">int ComputeLatency(int newSector, bool writing)</div><div class="ttdef"><b>Definition:</b> disk.cc:238</div></div>
+<div class="ttc" id="classDisk_html_a32d4a38e61501c221163ef845b9d6969"><div class="ttname"><a href="classDisk.html#a32d4a38e61501c221163ef845b9d6969">Disk::HandleInterrupt</a></div><div class="ttdeci">void HandleInterrupt()</div><div class="ttdef"><b>Definition:</b> disk.cc:167</div></div>
+<div class="ttc" id="utility_8h_html"><div class="ttname"><a href="utility_8h.html">utility.h</a></div></div>
+<div class="ttc" id="classDisk_html_a68a017c0efd8a43e9a0cd489c355e008"><div class="ttname"><a href="classDisk.html#a68a017c0efd8a43e9a0cd489c355e008">Disk::handlerArg</a></div><div class="ttdeci">size_t handlerArg</div><div class="ttdef"><b>Definition:</b> disk.h:84</div></div>
+<div class="ttc" id="classDisk_html_acde8bb6fdfbae0957ad4440ef46d7706"><div class="ttname"><a href="classDisk.html#acde8bb6fdfbae0957ad4440ef46d7706">Disk::Disk</a></div><div class="ttdeci">Disk(char *name, VoidFunctionPtr callWhenDone, size_t callArg)</div><div class="ttdef"><b>Definition:</b> disk.cc:45</div></div>
+<div class="ttc" id="utility_8h_html_a2bf42b385c85e0c8aaedc4ba5d3a7bff"><div class="ttname"><a href="utility_8h.html#a2bf42b385c85e0c8aaedc4ba5d3a7bff">VoidFunctionPtr</a></div><div class="ttdeci">void(* VoidFunctionPtr)(size_t arg)</div><div class="ttdef"><b>Definition:</b> utility.h:53</div></div>
+<div class="ttc" id="classDisk_html_a09339a72e2d38a32238934f0ae2ae1bb"><div class="ttname"><a href="classDisk.html#a09339a72e2d38a32238934f0ae2ae1bb">Disk::lastSector</a></div><div class="ttdeci">int lastSector</div><div class="ttdef"><b>Definition:</b> disk.h:86</div></div>
+<div class="ttc" id="classDisk_html_a8b51a82d4f2fd009335d0c591ae11042"><div class="ttname"><a href="classDisk.html#a8b51a82d4f2fd009335d0c591ae11042">Disk::ReadRequest</a></div><div class="ttdeci">void ReadRequest(int sectorNumber, char *data)</div><div class="ttdef"><b>Definition:</b> disk.cc:121</div></div>
+<div class="ttc" id="classDisk_html_aa87426eeedc8cf390fa4b293ecd34b42"><div class="ttname"><a href="classDisk.html#aa87426eeedc8cf390fa4b293ecd34b42">Disk::UpdateLast</a></div><div class="ttdeci">void UpdateLast(int newSector)</div><div class="ttdef"><b>Definition:</b> disk.cc:268</div></div>
+<div class="ttc" id="classDisk_html_aa7ff4bb271805d97872bd0022a8c61a3"><div class="ttname"><a href="classDisk.html#aa7ff4bb271805d97872bd0022a8c61a3">Disk::handler</a></div><div class="ttdeci">VoidFunctionPtr handler</div><div class="ttdef"><b>Definition:</b> disk.h:82</div></div>
+<div class="ttc" id="structdata_html"><div class="ttname"><a href="structdata.html">data</a></div><div class="ttdef"><b>Definition:</b> out.c:36</div></div>
+<div class="ttc" id="classDisk_html_a2b4e12aa9e93939c3e03985c16bed453"><div class="ttname"><a href="classDisk.html#a2b4e12aa9e93939c3e03985c16bed453">Disk::ModuloDiff</a></div><div class="ttdeci">int ModuloDiff(int to, int from)</div><div class="ttdef"><b>Definition:</b> disk.cc:208</div></div>
+<div class="ttc" id="copyright_8h_html"><div class="ttname"><a href="copyright_8h.html">copyright.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Dimanche 12 Février 2017 10:48:15 pour nachos par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.6
+</small></address>
+</body>
+</html>

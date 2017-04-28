@@ -1,0 +1,14 @@
+<map id="Disk::Disk" name="Disk::Disk">
+<area shape="rect" id="node2" href="$utility_8cc.html#af1c6878736cbd9e1b531898d8951d613" title="DEBUG" alt="" coords="173,5,243,32"/>
+<area shape="rect" id="node5" href="$sysdep_8cc.html#ab5cb68486a40540a7a3bd380e15d36d9" title="OpenForReadWrite" alt="" coords="139,56,277,83"/>
+<area shape="rect" id="node7" href="$sysdep_8cc.html#a5e6998f357c2b105b44fbb71fd54afd5" title="Read" alt="" coords="181,157,235,184"/>
+<area shape="rect" id="node9" href="$sysdep_8cc.html#a68068d69619efab5fe029a00b5114db9" title="OpenForWrite" alt="" coords="155,107,261,133"/>
+<area shape="rect" id="node10" href="$sysdep_8cc.html#a276f8e31e549b44a672e3b1d55951ac0" title="WriteFile" alt="" coords="171,208,245,235"/>
+<area shape="rect" id="node12" href="$sysdep_8cc.html#a5e24d90699a8caf5d5ecf0ea461050b4" title="Lseek" alt="" coords="179,259,237,285"/>
+<area shape="rect" id="node3" href="$utility_8cc.html#a79c7d1acabdb48f6f6a80ec0abf7cf89" title="DebugIsEnabled" alt="" coords="325,5,451,32"/>
+<area shape="rect" id="node4" href="$stdlib_8h.html#a89c177d1405cf367c2c4874c4449456a" title="strchr" alt="" coords="499,5,557,32"/>
+<area shape="rect" id="node6" href="$sysdep_8cc.html#ac843f2e35e60c3bbf1da47d84306f29b" title="open" alt="" coords="361,81,415,108"/>
+<area shape="rect" id="node8" href="$sysdep_8cc.html#ad69dc0274328d82982430dc65be73623" title="read" alt="" coords="363,157,413,184"/>
+<area shape="rect" id="node11" href="$sysdep_8cc.html#a9a432e107bd9a5102a2b6fe4e8d752ef" title="write" alt="" coords="362,208,414,235"/>
+<area shape="rect" id="node13" href="$sysdep_8cc.html#a4ac81417ea099dcfaa618b46d7fc1ea2" title="lseek" alt="" coords="361,259,415,285"/>
+</map>

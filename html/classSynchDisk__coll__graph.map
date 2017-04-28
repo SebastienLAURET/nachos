@@ -1,0 +1,8 @@
+<map id="SynchDisk" name="SynchDisk">
+<area shape="rect" id="node2" href="$classSemaphore.html" title="Semaphore" alt="" coords="139,200,236,227"/>
+<area shape="rect" id="node3" href="$classList.html" title="List" alt="" coords="131,109,175,136"/>
+<area shape="rect" id="node5" href="$classLock.html" title="Lock" alt="" coords="64,200,115,227"/>
+<area shape="rect" id="node4" href="$classListElement.html" title="ListElement" alt="" coords="105,5,201,32"/>
+<area shape="rect" id="node6" href="$classThread.html" title="Thread" alt="" coords="5,109,72,136"/>
+<area shape="rect" id="node7" href="$classDisk.html" title="Disk" alt="" coords="266,200,315,227"/>
+</map>

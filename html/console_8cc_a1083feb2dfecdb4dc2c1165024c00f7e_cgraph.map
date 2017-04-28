@@ -1,0 +1,5 @@
+<map id="ConsoleFinishWrite" name="ConsoleFinishWrite">
+<area shape="rect" id="node2" href="$sysdep_8cc.html#a276f8e31e549b44a672e3b1d55951ac0" title="WriteFile" alt="" coords="229,5,302,32"/>
+<area shape="rect" id="node4" href="$classConsole.html#a8a611e74235a39a9b7216b6d66e32c30" title="Console::WriteDone" alt="" coords="192,56,339,83"/>
+<area shape="rect" id="node3" href="$sysdep_8cc.html#a9a432e107bd9a5102a2b6fe4e8d752ef" title="write" alt="" coords="387,5,439,32"/>
+</map>

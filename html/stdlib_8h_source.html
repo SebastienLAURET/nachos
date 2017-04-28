@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>nachos:  Fichier source de lib/stdlib.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">nachos
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">stdlib.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="stdlib_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef STDLIB_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define STDLIB_H</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00004"></a><span class="lineno"><a class="line" href="stdlib_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">    4</a></span>&#160;<span class="preprocessor">#define NULL ((void*)0)</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno"><a class="line" href="stdlib_8h.html#a59adc4c82490d23754cd39c2fb99b0da">    5</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define EOF  (-1)</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="stdlib_8h.html#a7c94ea6f8948649f8d181ae55911eeaf">    7</a></span>&#160;<span class="keyword">typedef</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="stdlib_8h.html#a7c94ea6f8948649f8d181ae55911eeaf">size_t</a>;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">int</span> <a class="code" href="stdlib_8h.html#a30670a60464f77af17dfb353353d6df8">atoi</a> (<span class="keyword">const</span> <span class="keywordtype">char</span> *s);</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">char</span> *<a class="code" href="stdlib_8h.html#aab85b30d68ce9d9e0475e0f51bf610b1">gets</a> (<span class="keywordtype">char</span> *s);</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">char</span> *<a class="code" href="stdlib_8h.html#a2eb4e84d30d30f692f4ee87348aac05b">itoa</a> (<span class="keywordtype">int</span> num, <span class="keywordtype">char</span> *buffer);</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">char</span> *<a class="code" href="stdlib_8h.html#a8908188ae9fc2f05d993257ef001d553">strcat</a> (<span class="keywordtype">char</span> *s1, <span class="keyword">const</span> <span class="keywordtype">char</span> *s2);</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">char</span> *<a class="code" href="stdlib_8h.html#a89c177d1405cf367c2c4874c4449456a">strchr</a> (<span class="keyword">const</span> <span class="keywordtype">char</span> *s1, <span class="keywordtype">int</span> n);</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">int</span> <a class="code" href="stdlib_8h.html#a11bd144d7d44914099a3aeddf1c8567d">strcmp</a> (<span class="keyword">const</span> <span class="keywordtype">char</span> *s1, <span class="keyword">const</span> <span class="keywordtype">char</span> *s2);</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">char</span> *<a class="code" href="stdlib_8h.html#a1eb9cae61e6a6282c28dbc298ef7297e">strcpy</a> (<span class="keywordtype">char</span> *s1, <span class="keyword">const</span> <span class="keywordtype">char</span> *s2);</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">size_t</span> <a class="code" href="stdlib_8h.html#a40c47e6d6db2b268cf91d16f2b66ca79">strlen</a> (<span class="keyword">const</span> <span class="keywordtype">char</span> *ptr);</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">char</span> *<a class="code" href="stdlib_8h.html#a4c10a214b02eed3dafc48c59ad71abbd">strncat</a> (<span class="keywordtype">char</span> *s1, <span class="keyword">const</span> <span class="keywordtype">char</span> *s2, <span class="keywordtype">size_t</span> n);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">int</span> <a class="code" href="stdlib_8h.html#a07f4a84c11c106e95c32b6ab509346ef">strncmp</a> (<span class="keyword">const</span> <span class="keywordtype">char</span> *s1, <span class="keyword">const</span> <span class="keywordtype">char</span> *s2, <span class="keywordtype">size_t</span> n);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">char</span> *<a class="code" href="stdlib_8h.html#a7982e2515766b25c1157ac30f8bac394">strncpy</a> (<span class="keywordtype">char</span> *s1, <span class="keyword">const</span> <span class="keywordtype">char</span> *s2, <span class="keywordtype">size_t</span> n);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">char</span> *<a class="code" href="stdlib_8h.html#ad4f908603db727b2625141c4d4b41177">strrchr</a> (<span class="keyword">const</span> <span class="keywordtype">char</span> *s1, <span class="keywordtype">int</span> n);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">char</span> *<a class="code" href="stdlib_8h.html#aeb923ee2a7a01f82eb1e2f8ae188c6d4">strstr</a> (<span class="keyword">const</span> <span class="keywordtype">char</span> *s1, <span class="keyword">const</span> <span class="keywordtype">char</span> *s2);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* STDLIB_H */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="stdlib_8h_html_a40c47e6d6db2b268cf91d16f2b66ca79"><div class="ttname"><a href="stdlib_8h.html#a40c47e6d6db2b268cf91d16f2b66ca79">strlen</a></div><div class="ttdeci">size_t strlen(const char *ptr)</div><div class="ttdef"><b>Definition:</b> strlen.c:3</div></div>
+<div class="ttc" id="stdlib_8h_html_a30670a60464f77af17dfb353353d6df8"><div class="ttname"><a href="stdlib_8h.html#a30670a60464f77af17dfb353353d6df8">atoi</a></div><div class="ttdeci">int atoi(const char *s)</div><div class="ttdef"><b>Definition:</b> atoi.c:1</div></div>
+<div class="ttc" id="stdlib_8h_html_ad4f908603db727b2625141c4d4b41177"><div class="ttname"><a href="stdlib_8h.html#ad4f908603db727b2625141c4d4b41177">strrchr</a></div><div class="ttdeci">char * strrchr(const char *s1, int n)</div><div class="ttdef"><b>Definition:</b> strrchr.c:3</div></div>
+<div class="ttc" id="stdlib_8h_html_aeb923ee2a7a01f82eb1e2f8ae188c6d4"><div class="ttname"><a href="stdlib_8h.html#aeb923ee2a7a01f82eb1e2f8ae188c6d4">strstr</a></div><div class="ttdeci">char * strstr(const char *s1, const char *s2)</div><div class="ttdef"><b>Definition:</b> strstr.c:3</div></div>
+<div class="ttc" id="stdlib_8h_html_a11bd144d7d44914099a3aeddf1c8567d"><div class="ttname"><a href="stdlib_8h.html#a11bd144d7d44914099a3aeddf1c8567d">strcmp</a></div><div class="ttdeci">int strcmp(const char *s1, const char *s2)</div><div class="ttdef"><b>Definition:</b> strcmp.c:1</div></div>
+<div class="ttc" id="stdlib_8h_html_a7c94ea6f8948649f8d181ae55911eeaf"><div class="ttname"><a href="stdlib_8h.html#a7c94ea6f8948649f8d181ae55911eeaf">size_t</a></div><div class="ttdeci">unsigned int size_t</div><div class="ttdef"><b>Definition:</b> stdlib.h:7</div></div>
+<div class="ttc" id="stdlib_8h_html_a7982e2515766b25c1157ac30f8bac394"><div class="ttname"><a href="stdlib_8h.html#a7982e2515766b25c1157ac30f8bac394">strncpy</a></div><div class="ttdeci">char * strncpy(char *s1, const char *s2, size_t n)</div><div class="ttdef"><b>Definition:</b> strncpy.c:3</div></div>
+<div class="ttc" id="stdlib_8h_html_a89c177d1405cf367c2c4874c4449456a"><div class="ttname"><a href="stdlib_8h.html#a89c177d1405cf367c2c4874c4449456a">strchr</a></div><div class="ttdeci">char * strchr(const char *s1, int n)</div><div class="ttdef"><b>Definition:</b> strchr.c:3</div></div>
+<div class="ttc" id="stdlib_8h_html_a07f4a84c11c106e95c32b6ab509346ef"><div class="ttname"><a href="stdlib_8h.html#a07f4a84c11c106e95c32b6ab509346ef">strncmp</a></div><div class="ttdeci">int strncmp(const char *s1, const char *s2, size_t n)</div><div class="ttdef"><b>Definition:</b> strncmp.c:3</div></div>
+<div class="ttc" id="stdlib_8h_html_a8908188ae9fc2f05d993257ef001d553"><div class="ttname"><a href="stdlib_8h.html#a8908188ae9fc2f05d993257ef001d553">strcat</a></div><div class="ttdeci">char * strcat(char *s1, const char *s2)</div><div class="ttdef"><b>Definition:</b> strcat.c:1</div></div>
+<div class="ttc" id="stdlib_8h_html_a4c10a214b02eed3dafc48c59ad71abbd"><div class="ttname"><a href="stdlib_8h.html#a4c10a214b02eed3dafc48c59ad71abbd">strncat</a></div><div class="ttdeci">char * strncat(char *s1, const char *s2, size_t n)</div><div class="ttdef"><b>Definition:</b> strncat.c:3</div></div>
+<div class="ttc" id="stdlib_8h_html_a2eb4e84d30d30f692f4ee87348aac05b"><div class="ttname"><a href="stdlib_8h.html#a2eb4e84d30d30f692f4ee87348aac05b">itoa</a></div><div class="ttdeci">char * itoa(int num, char *buffer)</div><div class="ttdef"><b>Definition:</b> itoa.c:1</div></div>
+<div class="ttc" id="stdlib_8h_html_aab85b30d68ce9d9e0475e0f51bf610b1"><div class="ttname"><a href="stdlib_8h.html#aab85b30d68ce9d9e0475e0f51bf610b1">gets</a></div><div class="ttdeci">char * gets(char *s)</div><div class="ttdef"><b>Definition:</b> gets.c:9</div></div>
+<div class="ttc" id="stdlib_8h_html_a1eb9cae61e6a6282c28dbc298ef7297e"><div class="ttname"><a href="stdlib_8h.html#a1eb9cae61e6a6282c28dbc298ef7297e">strcpy</a></div><div class="ttdeci">char * strcpy(char *s1, const char *s2)</div><div class="ttdef"><b>Definition:</b> strcpy.c:1</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Dimanche 12 Février 2017 10:48:15 pour nachos par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.6
+</small></address>
+</body>
+</html>

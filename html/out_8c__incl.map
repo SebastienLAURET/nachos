@@ -1,0 +1,13 @@
+<map id="bin/out.c" name="bin/out.c">
+<area shape="rect" id="node2" href="$copyright_8h.html" title="copyright.h" alt="" coords="305,453,398,480"/>
+<area shape="rect" id="node3" href="$filehdr_8h.html" title="filehdr.h" alt="" coords="452,80,524,107"/>
+<area shape="rect" id="node17" href="$d_8c.html" title="d.c" alt="" coords="54,304,94,331"/>
+<area shape="rect" id="node4" href="$disk_8h.html" title="disk.h" alt="" coords="432,229,490,256"/>
+<area shape="rect" id="node10" href="$bitmap_8h.html" title="bitmap.h" alt="" coords="302,155,380,181"/>
+<area shape="rect" id="node5" href="$utility_8h.html" title="utility.h" alt="" coords="366,304,433,331"/>
+<area shape="rect" id="node6" href="$stdlib_8h.html" title="stdlib.h" alt="" coords="318,379,385,405"/>
+<area shape="rect" id="node7" href="$sysdep_8h.html" title="sysdep.h" alt="" coords="616,379,694,405"/>
+<area shape="rect" id="node11" href="$openfile_8h.html" title="../filesys/openfile.h" alt="" coords="218,229,357,256"/>
+<area shape="rect" id="node18" href="$instr_8h.html" title="instr.h" alt="" coords="24,379,85,405"/>
+<area shape="rect" id="node19" href="$encode_8h.html" title="encode.h" alt="" coords="110,379,190,405"/>
+</map>

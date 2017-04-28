@@ -1,0 +1,958 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>nachos: Référence du fichier bin/elf.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">nachos
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_2ea30aa2956a8db99dd22aa5e597f384.html">bin</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#define-members">Macros</a>  </div>
+  <div class="headertitle">
+<div class="title">Référence du fichier elf.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;inttypes.h&gt;</code><br/>
+</div><div class="textblock"><div class="dynheader">
+Graphe des dépendances par inclusion de elf.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="elf_8h__incl.png" border="0" usemap="#bin_2elf_8h" alt=""/></div>
+<map name="bin_2elf_8h" id="bin_2elf_8h">
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier :</div>
+<div class="dyncontent">
+<div class="center"><img src="elf_8h__dep__incl.png" border="0" usemap="#bin_2elf_8hdep" alt=""/></div>
+<map name="bin_2elf_8hdep" id="bin_2elf_8hdep">
+<area shape="rect" id="node2" href="addrspace_8h.html" title="userprog/addrspace.h" alt="" coords="188,80,351,107"/><area shape="rect" id="node3" href="translate_8cc.html" title="machine/translate.cc" alt="" coords="5,155,160,181"/><area shape="rect" id="node4" href="addrspace_8cc.html" title="userprog/addrspace.cc" alt="" coords="185,155,353,181"/><area shape="rect" id="node5" href="progtest_8cc.html" title="userprog/progtest.cc" alt="" coords="377,155,532,181"/></map>
+</div>
+</div>
+<p><a href="elf_8h_source.html">Aller au code source de ce fichier.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structElf32__Elf__header.html">Elf32_Elf_header</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structElf32__Program__header.html">Elf32_Program_header</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structElf32__Section__header.html">Elf32_Section_header</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:aba717f40a418b0d99c2efd4cdab4f54f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="elf_8h.html#aba717f40a418b0d99c2efd4cdab4f54f">EI_MAG0</a>&#160;&#160;&#160;0	/* File identification byte 0 index */</td></tr>
+<tr class="separator:aba717f40a418b0d99c2efd4cdab4f54f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ae7ae1a6df04e0ed6be07b94590686e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="elf_8h.html#a2ae7ae1a6df04e0ed6be07b94590686e">ELFMAG0</a>&#160;&#160;&#160;0x7F	/* Magic number byte 0 */</td></tr>
+<tr class="separator:a2ae7ae1a6df04e0ed6be07b94590686e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2cae3878d982911632b418680718d53b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="elf_8h.html#a2cae3878d982911632b418680718d53b">EI_MAG1</a>&#160;&#160;&#160;1	/* File identification byte 1 index */</td></tr>
+<tr class="separator:a2cae3878d982911632b418680718d53b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6237b3c20ffd799df7b9a91ab3bbdff4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="elf_8h.html#a6237b3c20ffd799df7b9a91ab3bbdff4">ELFMAG1</a>&#160;&#160;&#160;'E'	/* Magic number byte 1 */</td></tr>
+<tr class="separator:a6237b3c20ffd799df7b9a91ab3bbdff4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2884a339ef7aefee59d160ed3fbb1739"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="elf_8h.html#a2884a339ef7aefee59d160ed3fbb1739">EI_MAG2</a>&#160;&#160;&#160;2	/* File identification byte 2 index */</td></tr>
+<tr class="separator:a2884a339ef7aefee59d160ed3fbb1739"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ac1b98d78e30ca49e1d3f287939a18f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="elf_8h.html#a8ac1b98d78e30ca49e1d3f287939a18f">ELFMAG2</a>&#160;&#160;&#160;'L'	/* Magic number byte 2 */</td></tr>
+<tr class="separator:a8ac1b98d78e30ca49e1d3f287939a18f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace03d4c5e8952e27b8505581432c3b84"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="elf_8h.html#ace03d4c5e8952e27b8505581432c3b84">EI_MAG3</a>&#160;&#160;&#160;3	/* File identification byte 3 index */</td></tr>
+<tr class="separator:ace03d4c5e8952e27b8505581432c3b84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2beeae5974769f72da5f63dcbcc325fe"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="elf_8h.html#a2beeae5974769f72da5f63dcbcc325fe">ELFMAG3</a>&#160;&#160;&#160;'F'	/* Magic number byte 3 */</td></tr>
+<tr class="separator:a2beeae5974769f72da5f63dcbcc325fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b508cacf6662e4bc0e98ffe1eb61636"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="elf_8h.html#a5b508cacf6662e4bc0e98ffe1eb61636">EI_CLASS</a>&#160;&#160;&#160;4	/* File class */</td></tr>
+<tr class="separator:a5b508cacf6662e4bc0e98ffe1eb61636"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab8a7e71c15cccd3f1d721420cd3c2ee"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="elf_8h.html#aab8a7e71c15cccd3f1d721420cd3c2ee">ELFCLASSNONE</a>&#160;&#160;&#160;0	/* Invalid class */</td></tr>
+<tr class="separator:aab8a7e71c15cccd3f1d721420cd3c2ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f84b1bf6e07374d6289eab3d8c57f1c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="elf_8h.html#a5f84b1bf6e07374d6289eab3d8c57f1c">ELFCLASS32</a>&#160;&#160;&#160;1	/* 32-bit objects */</td></tr>
+<tr class="separator:a5f84b1bf6e07374d6289eab3d8c57f1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ee66b59be5c78ea1f1eea8a36f2c291"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="elf_8h.html#a9ee66b59be5c78ea1f1eea8a36f2c291">ELFCLASS64</a>&#160;&#160;&#160;2	/* 64-bit objects */</td></tr>
+<tr class="separator:a9ee66b59be5c78ea1f1eea8a36f2c291"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79c714b4bf89638ff576e163d7d2144f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="elf_8h.html#a79c714b4bf89638ff576e163d7d2144f">EI_DATA</a>&#160;&#160;&#160;5	/* Data encoding */</td></tr>
+<tr class="separator:a79c714b4bf89638ff576e163d7d2144f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad25f21c9d99ad7f440811610bfc57ff6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="elf_8h.html#ad25f21c9d99ad7f440811610bfc57ff6">ELFDATANONE</a>&#160;&#160;&#160;0	/* Invalid <a class="el" href="structdata.html">data</a> encoding */</td></tr>
+<tr class="separator:ad25f21c9d99ad7f440811610bfc57ff6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af66303c799da18c8aec282ea8592e7e7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="elf_8h.html#af66303c799da18c8aec282ea8592e7e7">ELFDATA2LSB</a>&#160;&#160;&#160;1	/* 2's complement, little endian */</td></tr>
+<tr class="separator:af66303c799da18c8aec282ea8592e7e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06385c3e5f0a3b62fae7f5e224e10f89"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="elf_8h.html#a06385c3e5f0a3b62fae7f5e224e10f89">ELFDATA2MSB</a>&#160;&#160;&#160;2	/* 2's complement, big endian */</td></tr>
+<tr class="separator:a06385c3e5f0a3b62fae7f5e224e10f89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac8694b14e6500d9dc5047ef62518845"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="elf_8h.html#aac8694b14e6500d9dc5047ef62518845">EI_VERSION</a>&#160;&#160;&#160;6	/* File version */</td></tr>
+<tr class="separator:aac8694b14e6500d9dc5047ef62518845"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a862a7ea859a2a2bed110aedf7744d969"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="elf_8h.html#a862a7ea859a2a2bed110aedf7744d969">EI_OSABI</a>&#160;&#160;&#160;7	/* Operating System/ABI indication */</td></tr>
+<tr class="separator:a862a7ea859a2a2bed110aedf7744d969"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30c6356669c087d6fdac00a23166bb30"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="elf_8h.html#a30c6356669c087d6fdac00a23166bb30">ELFOSABI_NONE</a>&#160;&#160;&#160;0	/* UNIX System V ABI */</td></tr>
+<tr class="separator:a30c6356669c087d6fdac00a23166bb30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3965d28a5b467c8193f440b66ba0a312"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="elf_8h.html#a3965d28a5b467c8193f440b66ba0a312">ELFOSABI_STANDALONE</a>&#160;&#160;&#160;255	/* Standalone (embedded) application */</td></tr>
+<tr class="separator:a3965d28a5b467c8193f440b66ba0a312"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72022210d08db2ebc18e6d785238871f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="elf_8h.html#a72022210d08db2ebc18e6d785238871f">EI_ABIVERSION</a>&#160;&#160;&#160;8	/* ABI version */</td></tr>
+<tr class="separator:a72022210d08db2ebc18e6d785238871f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed24a379d553d0e36853949dd6ddd6c1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="elf_8h.html#aed24a379d553d0e36853949dd6ddd6c1">EI_PAD</a>&#160;&#160;&#160;9	/* Start of padding bytes */</td></tr>
+<tr class="separator:aed24a379d553d0e36853949dd6ddd6c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a343a36d721130c5017a5669537e96822"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="elf_8h.html#a343a36d721130c5017a5669537e96822">ET_NONE</a>&#160;&#160;&#160;0	/* No file type */</td></tr>
+<tr class="separator:a343a36d721130c5017a5669537e96822"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a91046a80fd753ce3dbfb109212761d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="elf_8h.html#a2a91046a80fd753ce3dbfb109212761d">ET_REL</a>&#160;&#160;&#160;1	/* Relocatable file */</td></tr>
+<tr class="separator:a2a91046a80fd753ce3dbfb109212761d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a942478985eb016311380dee473cc8c3e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="elf_8h.html#a942478985eb016311380dee473cc8c3e">ET_EXEC</a>&#160;&#160;&#160;2	/* Executable file */</td></tr>
+<tr class="separator:a942478985eb016311380dee473cc8c3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4373ea3b3d512434ebe2213829b6751b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="elf_8h.html#a4373ea3b3d512434ebe2213829b6751b">ET_DYN</a>&#160;&#160;&#160;3	/* Shared object file */</td></tr>
+<tr class="separator:a4373ea3b3d512434ebe2213829b6751b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b9430d26ba60f7a9d65c8d43e54f213"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="elf_8h.html#a2b9430d26ba60f7a9d65c8d43e54f213">ET_CORE</a>&#160;&#160;&#160;4	/* Core file */</td></tr>
+<tr class="separator:a2b9430d26ba60f7a9d65c8d43e54f213"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a14b1234094272355977c59e351a14f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="elf_8h.html#a5a14b1234094272355977c59e351a14f">EM_NONE</a>&#160;&#160;&#160;0	/* No machine */</td></tr>
+<tr class="separator:a5a14b1234094272355977c59e351a14f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3168ea327621f9848abb996540342fb6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="elf_8h.html#a3168ea327621f9848abb996540342fb6">EM_MIPS</a>&#160;&#160;&#160;8	/* MIPS R3000 (officially, big-endian only) */</td></tr>
+<tr class="separator:a3168ea327621f9848abb996540342fb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a851ceddbf5546d941c2fd647c2200ba5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="elf_8h.html#a851ceddbf5546d941c2fd647c2200ba5">EM_MIPS_RS3_LE</a>&#160;&#160;&#160;10	/* MIPS R3000 little-endian (Oct 4 1999 Draft) Deprecated */</td></tr>
+<tr class="separator:a851ceddbf5546d941c2fd647c2200ba5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0307c9d093060e148ecca1c7cfb02429"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="elf_8h.html#a0307c9d093060e148ecca1c7cfb02429">EV_NONE</a>&#160;&#160;&#160;0		/* Invalid ELF version */</td></tr>
+<tr class="separator:a0307c9d093060e148ecca1c7cfb02429"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8085a255e82173046afefd2a1c6de930"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="elf_8h.html#a8085a255e82173046afefd2a1c6de930">EV_CURRENT</a>&#160;&#160;&#160;1		/* Current version */</td></tr>
+<tr class="separator:a8085a255e82173046afefd2a1c6de930"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1566f4c14cff9f4b539b00af54d62dbb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="elf_8h.html#a1566f4c14cff9f4b539b00af54d62dbb">SHT_NULL</a>&#160;&#160;&#160;0		/* Section header table entry unused */</td></tr>
+<tr class="separator:a1566f4c14cff9f4b539b00af54d62dbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4bff22edbae51353ba9b3572d424b91a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="elf_8h.html#a4bff22edbae51353ba9b3572d424b91a">SHT_PROGBITS</a>&#160;&#160;&#160;1		/* Program specific (private) <a class="el" href="structdata.html">data</a> */</td></tr>
+<tr class="separator:a4bff22edbae51353ba9b3572d424b91a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4add7784e43ec3d3b9c09d3ffc476a81"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="elf_8h.html#a4add7784e43ec3d3b9c09d3ffc476a81">SHT_SYMTAB</a>&#160;&#160;&#160;2		/* Link editing symbol table */</td></tr>
+<tr class="separator:a4add7784e43ec3d3b9c09d3ffc476a81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4b916dc4ca5016fb5c374068002a532"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="elf_8h.html#af4b916dc4ca5016fb5c374068002a532">SHT_STRTAB</a>&#160;&#160;&#160;3		/* A <a class="el" href="main_8c.html#a218d9a1bfd12d37d056a59cebd25149a">string</a> table */</td></tr>
+<tr class="separator:af4b916dc4ca5016fb5c374068002a532"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf2fc2781a2869352c2ffa0555f34118"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="elf_8h.html#abf2fc2781a2869352c2ffa0555f34118">SHT_RELA</a>&#160;&#160;&#160;4		/* Relocation entries with addends */</td></tr>
+<tr class="separator:abf2fc2781a2869352c2ffa0555f34118"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a446fd322326bea21373453c80c3f7925"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="elf_8h.html#a446fd322326bea21373453c80c3f7925">SHT_HASH</a>&#160;&#160;&#160;5		/* A symbol hash table */</td></tr>
+<tr class="separator:a446fd322326bea21373453c80c3f7925"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a9278d12cf2c9e7eaca87688d0a6e37"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="elf_8h.html#a3a9278d12cf2c9e7eaca87688d0a6e37">SHT_DYNAMIC</a>&#160;&#160;&#160;6		/* Information for dynamic linking */</td></tr>
+<tr class="separator:a3a9278d12cf2c9e7eaca87688d0a6e37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65506a79f0e972c851851af7b1008d94"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="elf_8h.html#a65506a79f0e972c851851af7b1008d94">SHT_NOTE</a>&#160;&#160;&#160;7		/* Information that marks file */</td></tr>
+<tr class="separator:a65506a79f0e972c851851af7b1008d94"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a820ff00317949be2ea1fd634a17dc13e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="elf_8h.html#a820ff00317949be2ea1fd634a17dc13e">SHT_NOBITS</a>&#160;&#160;&#160;8		/* Section occupies no space in file */</td></tr>
+<tr class="separator:a820ff00317949be2ea1fd634a17dc13e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2aea2ed985f81f13a157fe2da02a621a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="elf_8h.html#a2aea2ed985f81f13a157fe2da02a621a">SHT_REL</a>&#160;&#160;&#160;9		/* Relocation entries, no addends */</td></tr>
+<tr class="separator:a2aea2ed985f81f13a157fe2da02a621a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace0ce008ff50406077a9450174fe55a5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="elf_8h.html#ace0ce008ff50406077a9450174fe55a5">SHT_SHLIB</a>&#160;&#160;&#160;10		/* Reserved, unspecified semantics */</td></tr>
+<tr class="separator:ace0ce008ff50406077a9450174fe55a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9949aedf49107f6a07e618d5d791d40"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="elf_8h.html#aa9949aedf49107f6a07e618d5d791d40">SHT_DYNSYM</a>&#160;&#160;&#160;11		/* Dynamic linking symbol table */</td></tr>
+<tr class="separator:aa9949aedf49107f6a07e618d5d791d40"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0269f148b09419d27be6289b4ce026f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="elf_8h.html#aa0269f148b09419d27be6289b4ce026f">SHT_INIT_ARRAY</a>&#160;&#160;&#160;14		/* Array of ptrs to init functions */</td></tr>
+<tr class="separator:aa0269f148b09419d27be6289b4ce026f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09b4d64e68fc2a9ac211589c377ed76a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="elf_8h.html#a09b4d64e68fc2a9ac211589c377ed76a">SHT_FINI_ARRAY</a>&#160;&#160;&#160;15		/* Array of ptrs to finish functions */</td></tr>
+<tr class="separator:a09b4d64e68fc2a9ac211589c377ed76a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7326ce59e1988302584ba6ac9772c32"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="elf_8h.html#aa7326ce59e1988302584ba6ac9772c32">SHT_PREINIT_ARRAY</a>&#160;&#160;&#160;16		/* Array of ptrs to pre-init funcs */</td></tr>
+<tr class="separator:aa7326ce59e1988302584ba6ac9772c32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc7eaa3939293c6e4b422f96107b4824"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="elf_8h.html#adc7eaa3939293c6e4b422f96107b4824">SHT_GROUP</a>&#160;&#160;&#160;17		/* Section contains a <a class="el" href="out_8c.html#ab91b75e9b6dbaa62440ee2eafac9fccd">section</a> group */</td></tr>
+<tr class="separator:adc7eaa3939293c6e4b422f96107b4824"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ab74ecc44225e3741a171a962d79318"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="elf_8h.html#a1ab74ecc44225e3741a171a962d79318">SHT_SYMTAB_SHNDX</a>&#160;&#160;&#160;18		/* Indicies for SHN_XINDEX entries */</td></tr>
+<tr class="separator:a1ab74ecc44225e3741a171a962d79318"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a025c79223b0fee4676337d660f76b59b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="elf_8h.html#a025c79223b0fee4676337d660f76b59b">SHF_WRITE</a>&#160;&#160;&#160;(1 &lt;&lt; 0)	/* Writable <a class="el" href="structdata.html">data</a> during execution */</td></tr>
+<tr class="separator:a025c79223b0fee4676337d660f76b59b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38476fe4ed88ac83ba86a4e103199a86"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="elf_8h.html#a38476fe4ed88ac83ba86a4e103199a86">SHF_ALLOC</a>&#160;&#160;&#160;(1 &lt;&lt; 1)	/* Occupies memory during execution */</td></tr>
+<tr class="separator:a38476fe4ed88ac83ba86a4e103199a86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3780594e35fbbc6e5028bcb921d0a76"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="elf_8h.html#ab3780594e35fbbc6e5028bcb921d0a76">SHF_EXECINSTR</a>&#160;&#160;&#160;(1 &lt;&lt; 2)	/* Executable machine instructions */</td></tr>
+<tr class="separator:ab3780594e35fbbc6e5028bcb921d0a76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3bb64a905c4977463bdd4ad7f30691db"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="elf_8h.html#a3bb64a905c4977463bdd4ad7f30691db">SHF_MERGE</a>&#160;&#160;&#160;(1 &lt;&lt; 4)	/* Data in this <a class="el" href="out_8c.html#ab91b75e9b6dbaa62440ee2eafac9fccd">section</a> can be merged */</td></tr>
+<tr class="separator:a3bb64a905c4977463bdd4ad7f30691db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9122dd0dc0f69b0d03f694ac639a32d1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="elf_8h.html#a9122dd0dc0f69b0d03f694ac639a32d1">SHF_STRINGS</a>&#160;&#160;&#160;(1 &lt;&lt; 5)	/* Contains null terminated character strings */</td></tr>
+<tr class="separator:a9122dd0dc0f69b0d03f694ac639a32d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55c4381ab5a6fe81cd75120dabe34efb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="elf_8h.html#a55c4381ab5a6fe81cd75120dabe34efb">SHF_INFO_LINK</a>&#160;&#160;&#160;(1 &lt;&lt; 6)	/* sh_info holds <a class="el" href="out_8c.html#ab91b75e9b6dbaa62440ee2eafac9fccd">section</a> header table index */</td></tr>
+<tr class="separator:a55c4381ab5a6fe81cd75120dabe34efb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3085e8ad26bada9ade3f7bb0ac0732d2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="elf_8h.html#a3085e8ad26bada9ade3f7bb0ac0732d2">SHF_LINK_ORDER</a>&#160;&#160;&#160;(1 &lt;&lt; 7)	/* Preserve <a class="el" href="out_8c.html#ab91b75e9b6dbaa62440ee2eafac9fccd">section</a> ordering when linking */</td></tr>
+<tr class="separator:a3085e8ad26bada9ade3f7bb0ac0732d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c157dd84b2d90deef783fd4dbeba015"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="elf_8h.html#a4c157dd84b2d90deef783fd4dbeba015">SHF_OS_NONCONFORMING</a>&#160;&#160;&#160;(1 &lt;&lt; 8)	/* OS specific processing required */</td></tr>
+<tr class="separator:a4c157dd84b2d90deef783fd4dbeba015"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebc04de80df0464f9e5219e6aac45f36"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="elf_8h.html#aebc04de80df0464f9e5219e6aac45f36">SHF_GROUP</a>&#160;&#160;&#160;(1 &lt;&lt; 9)	/* Member of a <a class="el" href="out_8c.html#ab91b75e9b6dbaa62440ee2eafac9fccd">section</a> group */</td></tr>
+<tr class="separator:aebc04de80df0464f9e5219e6aac45f36"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2484a824af96dca3fb77c4fb8898e83b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="elf_8h.html#a2484a824af96dca3fb77c4fb8898e83b">SHF_TLS</a>&#160;&#160;&#160;(1 &lt;&lt; 10)	/* <a class="el" href="classThread.html">Thread</a> local storage <a class="el" href="out_8c.html#ab91b75e9b6dbaa62440ee2eafac9fccd">section</a> */</td></tr>
+<tr class="separator:a2484a824af96dca3fb77c4fb8898e83b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Documentation des macros</h2>
+<a class="anchor" id="a72022210d08db2ebc18e6d785238871f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EI_ABIVERSION&#160;&#160;&#160;8	/* ABI version */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a5b508cacf6662e4bc0e98ffe1eb61636"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EI_CLASS&#160;&#160;&#160;4	/* File class */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a79c714b4bf89638ff576e163d7d2144f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EI_DATA&#160;&#160;&#160;5	/* Data encoding */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aba717f40a418b0d99c2efd4cdab4f54f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EI_MAG0&#160;&#160;&#160;0	/* File identification byte 0 index */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a2cae3878d982911632b418680718d53b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EI_MAG1&#160;&#160;&#160;1	/* File identification byte 1 index */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a2884a339ef7aefee59d160ed3fbb1739"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EI_MAG2&#160;&#160;&#160;2	/* File identification byte 2 index */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ace03d4c5e8952e27b8505581432c3b84"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EI_MAG3&#160;&#160;&#160;3	/* File identification byte 3 index */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a862a7ea859a2a2bed110aedf7744d969"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EI_OSABI&#160;&#160;&#160;7	/* Operating System/ABI indication */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aed24a379d553d0e36853949dd6ddd6c1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EI_PAD&#160;&#160;&#160;9	/* Start of padding bytes */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aac8694b14e6500d9dc5047ef62518845"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EI_VERSION&#160;&#160;&#160;6	/* File version */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a5f84b1bf6e07374d6289eab3d8c57f1c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ELFCLASS32&#160;&#160;&#160;1	/* 32-bit objects */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a9ee66b59be5c78ea1f1eea8a36f2c291"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ELFCLASS64&#160;&#160;&#160;2	/* 64-bit objects */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aab8a7e71c15cccd3f1d721420cd3c2ee"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ELFCLASSNONE&#160;&#160;&#160;0	/* Invalid class */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af66303c799da18c8aec282ea8592e7e7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ELFDATA2LSB&#160;&#160;&#160;1	/* 2's complement, little endian */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a06385c3e5f0a3b62fae7f5e224e10f89"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ELFDATA2MSB&#160;&#160;&#160;2	/* 2's complement, big endian */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad25f21c9d99ad7f440811610bfc57ff6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ELFDATANONE&#160;&#160;&#160;0	/* Invalid <a class="el" href="structdata.html">data</a> encoding */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a2ae7ae1a6df04e0ed6be07b94590686e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ELFMAG0&#160;&#160;&#160;0x7F	/* Magic number byte 0 */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a6237b3c20ffd799df7b9a91ab3bbdff4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ELFMAG1&#160;&#160;&#160;'E'	/* Magic number byte 1 */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a8ac1b98d78e30ca49e1d3f287939a18f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ELFMAG2&#160;&#160;&#160;'L'	/* Magic number byte 2 */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a2beeae5974769f72da5f63dcbcc325fe"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ELFMAG3&#160;&#160;&#160;'F'	/* Magic number byte 3 */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a30c6356669c087d6fdac00a23166bb30"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ELFOSABI_NONE&#160;&#160;&#160;0	/* UNIX System V ABI */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a3965d28a5b467c8193f440b66ba0a312"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ELFOSABI_STANDALONE&#160;&#160;&#160;255	/* Standalone (embedded) application */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a3168ea327621f9848abb996540342fb6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EM_MIPS&#160;&#160;&#160;8	/* MIPS R3000 (officially, big-endian only) */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a851ceddbf5546d941c2fd647c2200ba5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EM_MIPS_RS3_LE&#160;&#160;&#160;10	/* MIPS R3000 little-endian (Oct 4 1999 Draft) Deprecated */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a5a14b1234094272355977c59e351a14f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EM_NONE&#160;&#160;&#160;0	/* No machine */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a2b9430d26ba60f7a9d65c8d43e54f213"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ET_CORE&#160;&#160;&#160;4	/* Core file */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4373ea3b3d512434ebe2213829b6751b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ET_DYN&#160;&#160;&#160;3	/* Shared object file */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a942478985eb016311380dee473cc8c3e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ET_EXEC&#160;&#160;&#160;2	/* Executable file */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a343a36d721130c5017a5669537e96822"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ET_NONE&#160;&#160;&#160;0	/* No file type */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a2a91046a80fd753ce3dbfb109212761d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ET_REL&#160;&#160;&#160;1	/* Relocatable file */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a8085a255e82173046afefd2a1c6de930"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EV_CURRENT&#160;&#160;&#160;1		/* Current version */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a0307c9d093060e148ecca1c7cfb02429"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EV_NONE&#160;&#160;&#160;0		/* Invalid ELF version */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a38476fe4ed88ac83ba86a4e103199a86"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SHF_ALLOC&#160;&#160;&#160;(1 &lt;&lt; 1)	/* Occupies memory during execution */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab3780594e35fbbc6e5028bcb921d0a76"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SHF_EXECINSTR&#160;&#160;&#160;(1 &lt;&lt; 2)	/* Executable machine instructions */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aebc04de80df0464f9e5219e6aac45f36"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SHF_GROUP&#160;&#160;&#160;(1 &lt;&lt; 9)	/* Member of a <a class="el" href="out_8c.html#ab91b75e9b6dbaa62440ee2eafac9fccd">section</a> group */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a55c4381ab5a6fe81cd75120dabe34efb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SHF_INFO_LINK&#160;&#160;&#160;(1 &lt;&lt; 6)	/* sh_info holds <a class="el" href="out_8c.html#ab91b75e9b6dbaa62440ee2eafac9fccd">section</a> header table index */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a3085e8ad26bada9ade3f7bb0ac0732d2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SHF_LINK_ORDER&#160;&#160;&#160;(1 &lt;&lt; 7)	/* Preserve <a class="el" href="out_8c.html#ab91b75e9b6dbaa62440ee2eafac9fccd">section</a> ordering when linking */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a3bb64a905c4977463bdd4ad7f30691db"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SHF_MERGE&#160;&#160;&#160;(1 &lt;&lt; 4)	/* Data in this <a class="el" href="out_8c.html#ab91b75e9b6dbaa62440ee2eafac9fccd">section</a> can be merged */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4c157dd84b2d90deef783fd4dbeba015"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SHF_OS_NONCONFORMING&#160;&#160;&#160;(1 &lt;&lt; 8)	/* OS specific processing required */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a9122dd0dc0f69b0d03f694ac639a32d1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SHF_STRINGS&#160;&#160;&#160;(1 &lt;&lt; 5)	/* Contains null terminated character strings */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a2484a824af96dca3fb77c4fb8898e83b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SHF_TLS&#160;&#160;&#160;(1 &lt;&lt; 10)	/* <a class="el" href="classThread.html">Thread</a> local storage <a class="el" href="out_8c.html#ab91b75e9b6dbaa62440ee2eafac9fccd">section</a> */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a025c79223b0fee4676337d660f76b59b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SHF_WRITE&#160;&#160;&#160;(1 &lt;&lt; 0)	/* Writable <a class="el" href="structdata.html">data</a> during execution */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a3a9278d12cf2c9e7eaca87688d0a6e37"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SHT_DYNAMIC&#160;&#160;&#160;6		/* Information for dynamic linking */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa9949aedf49107f6a07e618d5d791d40"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SHT_DYNSYM&#160;&#160;&#160;11		/* Dynamic linking symbol table */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a09b4d64e68fc2a9ac211589c377ed76a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SHT_FINI_ARRAY&#160;&#160;&#160;15		/* Array of ptrs to finish functions */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="adc7eaa3939293c6e4b422f96107b4824"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SHT_GROUP&#160;&#160;&#160;17		/* Section contains a <a class="el" href="out_8c.html#ab91b75e9b6dbaa62440ee2eafac9fccd">section</a> group */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a446fd322326bea21373453c80c3f7925"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SHT_HASH&#160;&#160;&#160;5		/* A symbol hash table */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa0269f148b09419d27be6289b4ce026f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SHT_INIT_ARRAY&#160;&#160;&#160;14		/* Array of ptrs to init functions */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a820ff00317949be2ea1fd634a17dc13e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SHT_NOBITS&#160;&#160;&#160;8		/* Section occupies no space in file */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a65506a79f0e972c851851af7b1008d94"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SHT_NOTE&#160;&#160;&#160;7		/* Information that marks file */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a1566f4c14cff9f4b539b00af54d62dbb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SHT_NULL&#160;&#160;&#160;0		/* Section header table entry unused */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa7326ce59e1988302584ba6ac9772c32"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SHT_PREINIT_ARRAY&#160;&#160;&#160;16		/* Array of ptrs to pre-init funcs */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4bff22edbae51353ba9b3572d424b91a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SHT_PROGBITS&#160;&#160;&#160;1		/* Program specific (private) <a class="el" href="structdata.html">data</a> */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a2aea2ed985f81f13a157fe2da02a621a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SHT_REL&#160;&#160;&#160;9		/* Relocation entries, no addends */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="abf2fc2781a2869352c2ffa0555f34118"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SHT_RELA&#160;&#160;&#160;4		/* Relocation entries with addends */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ace0ce008ff50406077a9450174fe55a5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SHT_SHLIB&#160;&#160;&#160;10		/* Reserved, unspecified semantics */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af4b916dc4ca5016fb5c374068002a532"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SHT_STRTAB&#160;&#160;&#160;3		/* A <a class="el" href="main_8c.html#a218d9a1bfd12d37d056a59cebd25149a">string</a> table */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4add7784e43ec3d3b9c09d3ffc476a81"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SHT_SYMTAB&#160;&#160;&#160;2		/* Link editing symbol table */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a1ab74ecc44225e3741a171a962d79318"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SHT_SYMTAB_SHNDX&#160;&#160;&#160;18		/* Indicies for SHN_XINDEX entries */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Dimanche 12 Février 2017 10:48:15 pour nachos par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.6
+</small></address>
+</body>
+</html>

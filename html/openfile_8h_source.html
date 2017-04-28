@@ -1,0 +1,213 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>nachos:  Fichier source de filesys/openfile.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">nachos
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_386a01e8c60160d2cb79aec927decd2f.html">filesys</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">openfile.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="openfile_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// openfile.h </span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">//      Data structures for opening, closing, reading and writing to </span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">//      individual files.  The operations supported are similar to</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">//      the UNIX ones -- type &#39;man open&#39; to the UNIX prompt.</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">//      There are two implementations.  One is a &quot;STUB&quot; that directly</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">//      turns the file operations into the underlying UNIX operations.</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">//      (cf. comment in filesys.h).</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">//      The other is the &quot;real&quot; implementation, that turns these</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">//      operations into read and write disk sector requests. </span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">//      In this baseline implementation of the file system, we don&#39;t </span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">//      worry about concurrent accesses to the file system</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">//      by different threads -- this is part of the assignment.</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">// Copyright (c) 1992-1993 The Regents of the University of California.</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">// All rights reserved.  See copyright.h for copyright notice and limitation </span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">// of liability and disclaimer of warranty provisions.</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#ifndef OPENFILE_H</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define OPENFILE_H</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="copyright_8h.html">copyright.h</a>&quot;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="utility_8h.html">utility.h</a>&quot;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#ifdef FILESYS_STUB                     // Temporarily implement calls to </span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor"></span>                                        <span class="comment">// Nachos file system as calls to UNIX!</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                                        <span class="comment">// See definitions listed under #else</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">class </span><a class="code" href="classOpenFile.html">OpenFile</a> {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <a class="code" href="classOpenFile.html#a89136ac6b54013a413398f9496d39963">OpenFile</a>(<span class="keywordtype">int</span> f) { file = f; currentOffset = 0; }    <span class="comment">// open the file</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <a class="code" href="classOpenFile.html#a1d59e2d0a4e8eb5f21f31f7179dd6e50">~OpenFile</a>() { <a class="code" href="sysdep_8cc.html#ade6d4842f21ea284e126636e424e6614">Close</a>(file); }                        <span class="comment">// close the file</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classOpenFile.html#a0af8cd52ec71a2ad407039cebee2ef3d">ReadAt</a>(<span class="keywordtype">void</span> *into, <span class="keywordtype">size_t</span> numBytes, <span class="keywordtype">int</span> position) { </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                <a class="code" href="sysdep_8cc.html#a5e24d90699a8caf5d5ecf0ea461050b4">Lseek</a>(file, position, 0); </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="sysdep_8cc.html#a63746bed38274bf40016eb8eb90774ea">ReadPartial</a>(file, into, numBytes); </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                }       </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classOpenFile.html#ad4b5d26a169a7c22e6f27c1693adb1aa">WriteAt</a>(<span class="keywordtype">void</span> *from, <span class="keywordtype">size_t</span> numBytes, <span class="keywordtype">int</span> position) { </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                <a class="code" href="sysdep_8cc.html#a5e24d90699a8caf5d5ecf0ea461050b4">Lseek</a>(file, position, 0); </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                <a class="code" href="sysdep_8cc.html#a276f8e31e549b44a672e3b1d55951ac0">WriteFile</a>(file, from, numBytes); </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                <span class="keywordflow">return</span> numBytes;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                }       </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classOpenFile.html#abefdb8536369821b345529022ffffdb9">Read</a>(<span class="keywordtype">void</span> *into, <span class="keywordtype">size_t</span> numBytes) {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                <span class="keywordtype">int</span> numRead = <a class="code" href="classOpenFile.html#a0af8cd52ec71a2ad407039cebee2ef3d">ReadAt</a>(into, numBytes, currentOffset); </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                currentOffset += numRead;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                <span class="keywordflow">return</span> numRead;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                }</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classOpenFile.html#a1c080f41ce01582e28053fd24734b472">Write</a>(<span class="keywordtype">void</span> *from, <span class="keywordtype">size_t</span> numBytes) {</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                <span class="keywordtype">int</span> numWritten = <a class="code" href="classOpenFile.html#ad4b5d26a169a7c22e6f27c1693adb1aa">WriteAt</a>(from, numBytes, currentOffset); </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                currentOffset += numWritten;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                <span class="keywordflow">return</span> numWritten;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                }</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classOpenFile.html#a5d5618da2388829f294c3f33017fadac">Length</a>() { <a class="code" href="sysdep_8cc.html#a5e24d90699a8caf5d5ecf0ea461050b4">Lseek</a>(file, 0, 2); <span class="keywordflow">return</span> <a class="code" href="sysdep_8cc.html#a031f3b5d904def89e5f0cb71bcd31f91">Tell</a>(file); }</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordtype">int</span> get_fd() { <span class="keywordflow">return</span> file; }</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordtype">int</span> file;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordtype">int</span> currentOffset;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;};</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">#else // FILESYS</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="preprocessor"></span><span class="keyword">class </span><a class="code" href="classFileHeader.html">FileHeader</a>;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="classOpenFile.html">   64</a></span>&#160;<span class="keyword">class </span><a class="code" href="classOpenFile.html">OpenFile</a> {</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <a class="code" href="classOpenFile.html#a89136ac6b54013a413398f9496d39963">OpenFile</a>(<span class="keywordtype">int</span> sector);               <span class="comment">// Open a file whose header is located</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                                        <span class="comment">// at &quot;sector&quot; on the disk</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <a class="code" href="classOpenFile.html#a1d59e2d0a4e8eb5f21f31f7179dd6e50">~OpenFile</a>();                        <span class="comment">// Close the file</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classOpenFile.html#a00f20ca65c80be4e6039a9f04cb03374">Seek</a>(<span class="keywordtype">int</span> position);            <span class="comment">// Set the position from which to </span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                                        <span class="comment">// start reading/writing -- UNIX lseek</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classOpenFile.html#abefdb8536369821b345529022ffffdb9">Read</a>(<span class="keywordtype">void</span> *into, <span class="keywordtype">size_t</span> numBytes); <span class="comment">// Read/write bytes from the file,</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                                        <span class="comment">// starting at the implicit position.</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                                        <span class="comment">// Return the # actually read/written,</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                                        <span class="comment">// and increment position in file.</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classOpenFile.html#a1c080f41ce01582e28053fd24734b472">Write</a>(<span class="keywordtype">void</span> *from, <span class="keywordtype">size_t</span> numBytes);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classOpenFile.html#a0af8cd52ec71a2ad407039cebee2ef3d">ReadAt</a>(<span class="keywordtype">char</span> *into, <span class="keywordtype">int</span> numBytes, <span class="keywordtype">int</span> position);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                                        <span class="comment">// Read/write bytes from the file,</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                                        <span class="comment">// bypassing the implicit position.</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classOpenFile.html#ad4b5d26a169a7c22e6f27c1693adb1aa">WriteAt</a>(<span class="keywordtype">char</span> *from, <span class="keywordtype">int</span> numBytes, <span class="keywordtype">int</span> position);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classOpenFile.html#a5d5618da2388829f294c3f33017fadac">Length</a>();                       <span class="comment">// Return the number of bytes in the</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                                        <span class="comment">// file (this interface is simpler </span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                                        <span class="comment">// than the UNIX idiom -- lseek to </span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                                        <span class="comment">// end of file, tell, lseek back </span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="classOpenFile.html#a4aaa8d3ea50b339ebd9e9c4d9cc1ff9e">   90</a></span>&#160;    <a class="code" href="classFileHeader.html">FileHeader</a> *<a class="code" href="classOpenFile.html#a4aaa8d3ea50b339ebd9e9c4d9cc1ff9e">hdr</a>;                    <span class="comment">// Header for this file </span></div>
+<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="classOpenFile.html#ae73fc3708c50308938c44a9cc65ff8e2">   91</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classOpenFile.html#ae73fc3708c50308938c44a9cc65ff8e2">seekPosition</a>;                   <span class="comment">// Current position within the file</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;};</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="preprocessor">#endif // FILESYS</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="preprocessor">#endif // OPENFILE_H</span></div>
+<div class="ttc" id="sysdep_8cc_html_a031f3b5d904def89e5f0cb71bcd31f91"><div class="ttname"><a href="sysdep_8cc.html#a031f3b5d904def89e5f0cb71bcd31f91">Tell</a></div><div class="ttdeci">int Tell(int fd)</div><div class="ttdef"><b>Definition:</b> sysdep.cc:253</div></div>
+<div class="ttc" id="classFileHeader_html"><div class="ttname"><a href="classFileHeader.html">FileHeader</a></div><div class="ttdef"><b>Definition:</b> filehdr.h:40</div></div>
+<div class="ttc" id="classOpenFile_html_a0af8cd52ec71a2ad407039cebee2ef3d"><div class="ttname"><a href="classOpenFile.html#a0af8cd52ec71a2ad407039cebee2ef3d">OpenFile::ReadAt</a></div><div class="ttdeci">int ReadAt(char *into, int numBytes, int position)</div><div class="ttdef"><b>Definition:</b> openfile.cc:114</div></div>
+<div class="ttc" id="classOpenFile_html_a4aaa8d3ea50b339ebd9e9c4d9cc1ff9e"><div class="ttname"><a href="classOpenFile.html#a4aaa8d3ea50b339ebd9e9c4d9cc1ff9e">OpenFile::hdr</a></div><div class="ttdeci">FileHeader * hdr</div><div class="ttdef"><b>Definition:</b> openfile.h:90</div></div>
+<div class="ttc" id="classOpenFile_html_ad4b5d26a169a7c22e6f27c1693adb1aa"><div class="ttname"><a href="classOpenFile.html#ad4b5d26a169a7c22e6f27c1693adb1aa">OpenFile::WriteAt</a></div><div class="ttdeci">int WriteAt(char *from, int numBytes, int position)</div><div class="ttdef"><b>Definition:</b> openfile.cc:144</div></div>
+<div class="ttc" id="classOpenFile_html"><div class="ttname"><a href="classOpenFile.html">OpenFile</a></div><div class="ttdef"><b>Definition:</b> openfile.h:64</div></div>
+<div class="ttc" id="classOpenFile_html_ae73fc3708c50308938c44a9cc65ff8e2"><div class="ttname"><a href="classOpenFile.html#ae73fc3708c50308938c44a9cc65ff8e2">OpenFile::seekPosition</a></div><div class="ttdeci">int seekPosition</div><div class="ttdef"><b>Definition:</b> openfile.h:91</div></div>
+<div class="ttc" id="classOpenFile_html_abefdb8536369821b345529022ffffdb9"><div class="ttname"><a href="classOpenFile.html#abefdb8536369821b345529022ffffdb9">OpenFile::Read</a></div><div class="ttdeci">int Read(void *into, size_t numBytes)</div><div class="ttdef"><b>Definition:</b> openfile.cc:72</div></div>
+<div class="ttc" id="sysdep_8cc_html_a63746bed38274bf40016eb8eb90774ea"><div class="ttname"><a href="sysdep_8cc.html#a63746bed38274bf40016eb8eb90774ea">ReadPartial</a></div><div class="ttdeci">int ReadPartial(int fd, void *buffer, size_t nBytes)</div><div class="ttdef"><b>Definition:</b> sysdep.cc:213</div></div>
+<div class="ttc" id="sysdep_8cc_html_ade6d4842f21ea284e126636e424e6614"><div class="ttname"><a href="sysdep_8cc.html#ade6d4842f21ea284e126636e424e6614">Close</a></div><div class="ttdeci">void Close(int fd)</div><div class="ttdef"><b>Definition:</b> sysdep.cc:269</div></div>
+<div class="ttc" id="sysdep_8cc_html_a276f8e31e549b44a672e3b1d55951ac0"><div class="ttname"><a href="sysdep_8cc.html#a276f8e31e549b44a672e3b1d55951ac0">WriteFile</a></div><div class="ttdeci">void WriteFile(int fd, void *buffer, size_t nBytes)</div><div class="ttdef"><b>Definition:</b> sysdep.cc:225</div></div>
+<div class="ttc" id="classOpenFile_html_a1d59e2d0a4e8eb5f21f31f7179dd6e50"><div class="ttname"><a href="classOpenFile.html#a1d59e2d0a4e8eb5f21f31f7179dd6e50">OpenFile::~OpenFile</a></div><div class="ttdeci">~OpenFile()</div><div class="ttdef"><b>Definition:</b> openfile.cc:39</div></div>
+<div class="ttc" id="classOpenFile_html_a5d5618da2388829f294c3f33017fadac"><div class="ttname"><a href="classOpenFile.html#a5d5618da2388829f294c3f33017fadac">OpenFile::Length</a></div><div class="ttdeci">int Length()</div><div class="ttdef"><b>Definition:</b> openfile.cc:191</div></div>
+<div class="ttc" id="utility_8h_html"><div class="ttname"><a href="utility_8h.html">utility.h</a></div></div>
+<div class="ttc" id="classOpenFile_html_a89136ac6b54013a413398f9496d39963"><div class="ttname"><a href="classOpenFile.html#a89136ac6b54013a413398f9496d39963">OpenFile::OpenFile</a></div><div class="ttdeci">OpenFile(int sector)</div><div class="ttdef"><b>Definition:</b> openfile.cc:27</div></div>
+<div class="ttc" id="classOpenFile_html_a1c080f41ce01582e28053fd24734b472"><div class="ttname"><a href="classOpenFile.html#a1c080f41ce01582e28053fd24734b472">OpenFile::Write</a></div><div class="ttdeci">int Write(void *from, size_t numBytes)</div><div class="ttdef"><b>Definition:</b> openfile.cc:80</div></div>
+<div class="ttc" id="classOpenFile_html_a00f20ca65c80be4e6039a9f04cb03374"><div class="ttname"><a href="classOpenFile.html#a00f20ca65c80be4e6039a9f04cb03374">OpenFile::Seek</a></div><div class="ttdeci">void Seek(int position)</div><div class="ttdef"><b>Definition:</b> openfile.cc:53</div></div>
+<div class="ttc" id="sysdep_8cc_html_a5e24d90699a8caf5d5ecf0ea461050b4"><div class="ttname"><a href="sysdep_8cc.html#a5e24d90699a8caf5d5ecf0ea461050b4">Lseek</a></div><div class="ttdeci">void Lseek(int fd, int offset, int whence)</div><div class="ttdef"><b>Definition:</b> sysdep.cc:241</div></div>
+<div class="ttc" id="copyright_8h_html"><div class="ttname"><a href="copyright_8h.html">copyright.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Dimanche 12 Février 2017 10:48:15 pour nachos par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.6
+</small></address>
+</body>
+</html>

@@ -1,0 +1,67 @@
+#!/bin/sh
+#
+# Run Nachos Tests
+#
+# Robert Hill (rhill@ittc.ukans.edu)
+# April 6, 1998
+#
+# Runs Nachos under several different configurations to compare page
+# replacement algorithms under different conditions.  Places the results
+# of the test in the file 'results' in the current directory.  This program
+# must be run from the nachos/test directory.
+#
+# usage: run-nachos-tests
+#
+
+# Where the results will go
+RESULTS="results"
+# The full command line to be executed
+COMMANDLINE='../userprog/nachos -printstats -prp $prp -delta $delta -x $testprog'
+# The list of page replacement policies
+POLICIES="fifo lru secondchance"
+# The list of Delta values
+DELTAS="1 2 4 8"
+# The list of test programs
+PROGRAMS="access1 access2"
+
+# Check for an old results file first
+if [ -f $RESULTS ]; then
+	echo "You have an old results file in the current directory."
+	echo "Please delete it or rename it and run this program again."
+	echo "(i.e. 'rm results' or 'mv results results.old')"
+	exit 1;
+fi
+
+let testno=1;
+for prp in $POLICIES; do
+	for delta in $DELTAS; do
+		for testprog in $PROGRAMS; do
+			# Print header to stdout
+			echo "Executing Test #$testno"
+			eval echo $COMMANDLINE
+
+			# Print full header to results file
+			echo "--------------------------------------------------------------------------------" >> $RESULTS
+			echo "Executing Test #$testno" >> $RESULTS
+			echo "Page Replacement Policy:  $prp" >> $RESULTS
+			echo "Delta:                    $delta" >> $RESULTS
+			echo "Program:                  $testprog" >> $RESULTS
+			eval echo "Command Line: $COMMANDLINE" >> $RESULTS
+			echo "" >> $RESULTS
+
+			# Run the program
+			eval $COMMANDLINE >> $RESULTS 2>&1
+
+			# Print the trailer and increment the test number
+			echo "" >> $RESULTS
+			echo "" >> $RESULTS
+			let testno=testno+1
+		done
+	done
+done
+
+# Print the final message
+echo ""
+echo "Tests finished.  The results are in the file 'results' in the "
+echo "current directory"
+

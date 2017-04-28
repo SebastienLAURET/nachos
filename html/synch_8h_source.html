@@ -1,0 +1,274 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>nachos:  Fichier source de threads/synch.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">nachos
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_b71e9c10552984757907f0ca0d59e659.html">threads</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">synch.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="synch_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// -*- C++ -*-</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">// synch.h </span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">//      Data structures for synchronizing threads.</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">//      Three kinds of synchronization are defined here: semaphores,</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">//      locks, and condition variables.  The implementation for</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">//      semaphores is given; for the latter two, only the procedure</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">//      interface is given -- they are to be implemented as part of </span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">//      the first assignment.</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">//      Note that all the synchronization objects take a &quot;name&quot; as</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">//      part of the initialization.  This is solely for debugging purposes.</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">// Copyright (c) 1992-1993 The Regents of the University of California.</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">// All rights reserved.  See copyright.h for copyright notice and limitation </span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">// synch.h -- synchronization primitives.  </span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#ifndef SYNCH_H</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define SYNCH_H</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#pragma interface &quot;threads/synch.h&quot;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="copyright_8h.html">copyright.h</a>&quot;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="list_8h.html">list.h</a>&quot;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">// Forward reference</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">class </span><a class="code" href="classThread.html">Thread</a>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">// The following class defines a &quot;semaphore&quot; whose value is a non-negative</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">// integer.  The semaphore has only two operations P() and V():</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">//      P() -- waits until value &gt; 0, then decrement</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">//      V() -- increment, waking up a thread waiting in P() if necessary</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">// </span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">// Note that the interface does *not* allow a thread to read the value of </span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">// the semaphore directly -- even if you did read the value, the</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">// only thing you would know is what the value used to be.  You don&#39;t</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">// know what the value is now, because by the time you get the value</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">// into a register, a context switch might have occurred,</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">// and some other thread might have called P or V, so the true value might</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">// now be different.</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="classSemaphore.html">   44</a></span>&#160;<span class="keyword">class </span><a class="code" href="classSemaphore.html">Semaphore</a> {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="classSemaphore.html#a1d359ecdd39eacb4a8ac9b274eacf15c">   46</a></span>&#160;  <a class="code" href="classSemaphore.html#a1d359ecdd39eacb4a8ac9b274eacf15c">Semaphore</a>(<span class="keywordtype">char</span>* debugName, <span class="keywordtype">int</span> initialValue)</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    : <a class="code" href="classSemaphore.html#abacd94dfabb321408c2b36f570ff3249">name</a>(debugName), <a class="code" href="classSemaphore.html#a951b9b5b03dd295a2cd1b193e03c03f6">value</a>(initialValue) {}</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <a class="code" href="classSemaphore.html#a633658a6fde276bffc912028725c6ade">~Semaphore</a>();                                         <span class="comment">// deallocate semaphore</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="classSemaphore.html#a4f7bb209b379142e8dbb41e2b2428773">   49</a></span>&#160;  <span class="keywordtype">char</span>* <a class="code" href="classSemaphore.html#a4f7bb209b379142e8dbb41e2b2428773">getName</a>() { <span class="keywordflow">return</span> <a class="code" href="classSemaphore.html#abacd94dfabb321408c2b36f570ff3249">name</a>;}                       <span class="comment">// debugging assist</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classSemaphore.html#a4fee22da0205e3c704b08beaa17e0e7a">P</a>();             <span class="comment">// these are the only operations on a semaphore</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classSemaphore.html#a3e42125b95660ef696d0d0069b804343">V</a>();             <span class="comment">// they are both *atomic*</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="classSemaphore.html#abacd94dfabb321408c2b36f570ff3249">   55</a></span>&#160;  <span class="keywordtype">char</span>* <a class="code" href="classSemaphore.html#abacd94dfabb321408c2b36f570ff3249">name</a>;           <span class="comment">// useful for debugging</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="classSemaphore.html#a951b9b5b03dd295a2cd1b193e03c03f6">   56</a></span>&#160;  <span class="keywordtype">int</span> <a class="code" href="classSemaphore.html#a951b9b5b03dd295a2cd1b193e03c03f6">value</a>;            <span class="comment">// semaphore value, always &gt;= 0</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="classSemaphore.html#a9f40b7a4506535e10a630fc323c486e3">   57</a></span>&#160;  <a class="code" href="classList.html">List</a> <a class="code" href="classSemaphore.html#a9f40b7a4506535e10a630fc323c486e3">queue</a>;           <span class="comment">// threads waiting in P() for value &gt; 0</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;};</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">// The following class defines a &quot;lock&quot;.  A lock can be BUSY or FREE.</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">// There are only two operations allowed on a lock: </span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment">//      Acquire -- wait until the lock is FREE, then set it to BUSY</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">//      Release -- set lock to be FREE, waking up a thread waiting</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">//              in Acquire if necessary</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment">// In addition, by convention, only the thread that acquired the lock</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment">// may release it.  As with semaphores, you can&#39;t read the lock value</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">// (because the value might change immediately after you read it).</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="keyword">class </span><a class="code" href="classThread.html">Thread</a>; <span class="comment">// Forward reference</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="classLock.html">   74</a></span>&#160;<span class="keyword">class </span><a class="code" href="classLock.html">Lock</a> {</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="classLock.html#a144d62163a7475b9909892d4d9aa9199">   76</a></span>&#160;  <a class="code" href="classLock.html#a144d62163a7475b9909892d4d9aa9199">Lock</a>(<span class="keywordtype">char</span>* debugName) : <a class="code" href="classLock.html#aac2ad412d7f5f3ee27496a152eb7f4c6">name</a>(debugName), <a class="code" href="classLock.html#a4c4a7da8e7d3974b7d84b310e7b2ef63">owner</a>(<a class="code" href="d_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {}</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <a class="code" href="classLock.html#a7ab6d9485c8665bb3643710432882971">~Lock</a>();                              <span class="comment">// deallocate lock</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="classLock.html#a99cfb639fe3cf24033eebdcc19be42f3">   78</a></span>&#160;  <span class="keywordtype">char</span>* <a class="code" href="classLock.html#a99cfb639fe3cf24033eebdcc19be42f3">getName</a>() { <span class="keywordflow">return</span> <a class="code" href="classLock.html#aac2ad412d7f5f3ee27496a152eb7f4c6">name</a>; }      <span class="comment">// debugging assist</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classLock.html#ad4c4699fd1ab73f3927b10edc01c54db">Acquire</a>(); <span class="comment">// these are the only operations on a lock</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classLock.html#a5ca005b84272e56c2bf447056ee9217c">Release</a>(); <span class="comment">// they are both *atomic*</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="classLock.html#a35b68baf5f5a3165a4e6fe50845a46a2">isHeldByCurrentThread</a>(); <span class="comment">// true if the current thread holds this</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                                <span class="comment">// lock.  Useful for checking in Release, and</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                                <span class="comment">// in Condition variable ops below.</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="classLock.html#aac2ad412d7f5f3ee27496a152eb7f4c6">   88</a></span>&#160;  <span class="keywordtype">char</span>* <a class="code" href="classLock.html#aac2ad412d7f5f3ee27496a152eb7f4c6">name</a>;                   <span class="comment">// for debugging</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="classLock.html#a4c4a7da8e7d3974b7d84b310e7b2ef63">   89</a></span>&#160;  <a class="code" href="classThread.html">Thread</a> *<a class="code" href="classLock.html#a4c4a7da8e7d3974b7d84b310e7b2ef63">owner</a>;                <span class="comment">// lock owner, NULL if none</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="classLock.html#ae070848cd30a0bddccaa1c9fc99b72b8">   90</a></span>&#160;  <a class="code" href="classList.html">List</a> <a class="code" href="classLock.html#ae070848cd30a0bddccaa1c9fc99b72b8">queue</a>;                   <span class="comment">// threads waiting for the lock</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;};</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="comment">// The following class defines a &quot;condition variable&quot;.  A condition</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="comment">// variable does not have a value, but threads may be queued, waiting</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="comment">// on the variable.  These are only operations on a condition variable: </span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="comment">//      Wait() -- release the lock, relinquish the CPU until signaled, </span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="comment">//              then re-acquire the lock</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="comment">//      Signal() -- wake up a thread, if there are any waiting on </span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="comment">//              the condition</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="comment">//      Broadcast() -- wake up all threads waiting on the condition</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="comment">// All operations on a condition variable must be made while</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="comment">// the current thread has acquired a lock.  Indeed, all accesses</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="comment">// to a given condition variable must be protected by the same lock.</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="comment">// In other words, mutual exclusion must be enforced among threads calling</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="comment">// the condition variable operations.</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="comment">// In Nachos, condition variables are assumed to obey *Mesa*-style</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="comment">// semantics.  When a Signal or Broadcast wakes up another thread,</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="comment">// it simply puts the thread on the ready list, and it is the responsibility</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="comment">// of the woken thread to re-acquire the lock (this re-acquire is</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="comment">// taken care of within Wait()).  By contrast, some define condition</span></div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="comment">// variables according to *Hoare*-style semantics -- where the signalling</span></div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="comment">// thread gives up control over the lock and the CPU to the woken thread,</span></div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="comment">// which runs immediately and gives back control over the lock to the </span></div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="comment">// signaller when the woken thread leaves the critical section.</span></div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="comment">// The consequence of using Mesa-style semantics is that some other thread</span></div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="comment">// can acquire the lock, and change data structures, before the woken</span></div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="comment">// thread gets a chance to run.</span></div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;</div>
+<div class="line"><a name="l00125"></a><span class="lineno"><a class="line" href="classCondition.html">  125</a></span>&#160;<span class="keyword">class </span><a class="code" href="classCondition.html">Condition</a> {</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00127"></a><span class="lineno"><a class="line" href="classCondition.html#a35681f12fab7081629d3d26efbcc5d28">  127</a></span>&#160;  <a class="code" href="classCondition.html#a35681f12fab7081629d3d26efbcc5d28">Condition</a>(<span class="keywordtype">char</span>* debugName) : <a class="code" href="classCondition.html#a39531f1955c611cfa1904cda81cd02d7">name</a>(debugName) {}</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;  <a class="code" href="classCondition.html#ab42f6d2dfb2d0de4bed4ed5032d4a8fc">~Condition</a>();                         <span class="comment">// deallocate the condition</span></div>
+<div class="line"><a name="l00129"></a><span class="lineno"><a class="line" href="classCondition.html#aecaea65920dc0f4f723d56984dbe8e9e">  129</a></span>&#160;  <span class="keywordtype">char</span>* <a class="code" href="classCondition.html#aecaea65920dc0f4f723d56984dbe8e9e">getName</a>() { <span class="keywordflow">return</span> <a class="code" href="classCondition.html#a39531f1955c611cfa1904cda81cd02d7">name</a>; }</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    </div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classCondition.html#aa0442520888bd371ce07d07c0a4313a7">Wait</a>(<a class="code" href="classLock.html">Lock</a> *conditionLock);       <span class="comment">// these are the 3 operations on </span></div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                                        <span class="comment">// condition variables; releasing the </span></div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;                                        <span class="comment">// lock and going to sleep are </span></div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;                                        <span class="comment">// *atomic* in Wait()</span></div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classCondition.html#ada25a70d161b7dc9b81eaad0ef66d91c">Signal</a>(<a class="code" href="classLock.html">Lock</a> *conditionLock);     <span class="comment">// conditionLock must be held by</span></div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classCondition.html#aefae94b3f9be40a09df667e63a4bdab7">Broadcast</a>(<a class="code" href="classLock.html">Lock</a> *conditionLock);  <span class="comment">// the currentThread for all of </span></div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;                                        <span class="comment">// these operations</span></div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00140"></a><span class="lineno"><a class="line" href="classCondition.html#a39531f1955c611cfa1904cda81cd02d7">  140</a></span>&#160;  <span class="keywordtype">char</span>* <a class="code" href="classCondition.html#a39531f1955c611cfa1904cda81cd02d7">name</a>;</div>
+<div class="line"><a name="l00141"></a><span class="lineno"><a class="line" href="classCondition.html#a456d18532c46b396d8490bd5b951e796">  141</a></span>&#160;  <a class="code" href="classList.html">List</a> <a class="code" href="classCondition.html#a456d18532c46b396d8490bd5b951e796">queue</a>;                           <span class="comment">// threads waiting on the condition</span></div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;};</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;<span class="preprocessor">#endif // SYNCH_H</span></div>
+<div class="ttc" id="classLock_html_a7ab6d9485c8665bb3643710432882971"><div class="ttname"><a href="classLock.html#a7ab6d9485c8665bb3643710432882971">Lock::~Lock</a></div><div class="ttdeci">~Lock()</div><div class="ttdef"><b>Definition:</b> synch.cc:100</div></div>
+<div class="ttc" id="classLock_html_a144d62163a7475b9909892d4d9aa9199"><div class="ttname"><a href="classLock.html#a144d62163a7475b9909892d4d9aa9199">Lock::Lock</a></div><div class="ttdeci">Lock(char *debugName)</div><div class="ttdef"><b>Definition:</b> synch.h:76</div></div>
+<div class="ttc" id="classLock_html_a35b68baf5f5a3165a4e6fe50845a46a2"><div class="ttname"><a href="classLock.html#a35b68baf5f5a3165a4e6fe50845a46a2">Lock::isHeldByCurrentThread</a></div><div class="ttdeci">bool isHeldByCurrentThread()</div><div class="ttdef"><b>Definition:</b> synch.cc:160</div></div>
+<div class="ttc" id="classLock_html_aac2ad412d7f5f3ee27496a152eb7f4c6"><div class="ttname"><a href="classLock.html#aac2ad412d7f5f3ee27496a152eb7f4c6">Lock::name</a></div><div class="ttdeci">char * name</div><div class="ttdef"><b>Definition:</b> synch.h:88</div></div>
+<div class="ttc" id="classLock_html"><div class="ttname"><a href="classLock.html">Lock</a></div><div class="ttdef"><b>Definition:</b> synch.h:74</div></div>
+<div class="ttc" id="classCondition_html_a35681f12fab7081629d3d26efbcc5d28"><div class="ttname"><a href="classCondition.html#a35681f12fab7081629d3d26efbcc5d28">Condition::Condition</a></div><div class="ttdeci">Condition(char *debugName)</div><div class="ttdef"><b>Definition:</b> synch.h:127</div></div>
+<div class="ttc" id="classCondition_html_aefae94b3f9be40a09df667e63a4bdab7"><div class="ttname"><a href="classCondition.html#aefae94b3f9be40a09df667e63a4bdab7">Condition::Broadcast</a></div><div class="ttdeci">void Broadcast(Lock *conditionLock)</div><div class="ttdef"><b>Definition:</b> synch.cc:224</div></div>
+<div class="ttc" id="classCondition_html_a39531f1955c611cfa1904cda81cd02d7"><div class="ttname"><a href="classCondition.html#a39531f1955c611cfa1904cda81cd02d7">Condition::name</a></div><div class="ttdeci">char * name</div><div class="ttdef"><b>Definition:</b> synch.h:140</div></div>
+<div class="ttc" id="classSemaphore_html"><div class="ttname"><a href="classSemaphore.html">Semaphore</a></div><div class="ttdef"><b>Definition:</b> synch.h:44</div></div>
+<div class="ttc" id="classLock_html_a4c4a7da8e7d3974b7d84b310e7b2ef63"><div class="ttname"><a href="classLock.html#a4c4a7da8e7d3974b7d84b310e7b2ef63">Lock::owner</a></div><div class="ttdeci">Thread * owner</div><div class="ttdef"><b>Definition:</b> synch.h:89</div></div>
+<div class="ttc" id="classCondition_html_a456d18532c46b396d8490bd5b951e796"><div class="ttname"><a href="classCondition.html#a456d18532c46b396d8490bd5b951e796">Condition::queue</a></div><div class="ttdeci">List queue</div><div class="ttdef"><b>Definition:</b> synch.h:141</div></div>
+<div class="ttc" id="classSemaphore_html_a951b9b5b03dd295a2cd1b193e03c03f6"><div class="ttname"><a href="classSemaphore.html#a951b9b5b03dd295a2cd1b193e03c03f6">Semaphore::value</a></div><div class="ttdeci">int value</div><div class="ttdef"><b>Definition:</b> synch.h:56</div></div>
+<div class="ttc" id="classCondition_html_ada25a70d161b7dc9b81eaad0ef66d91c"><div class="ttname"><a href="classCondition.html#ada25a70d161b7dc9b81eaad0ef66d91c">Condition::Signal</a></div><div class="ttdeci">void Signal(Lock *conditionLock)</div><div class="ttdef"><b>Definition:</b> synch.cc:207</div></div>
+<div class="ttc" id="classLock_html_ad4c4699fd1ab73f3927b10edc01c54db"><div class="ttname"><a href="classLock.html#ad4c4699fd1ab73f3927b10edc01c54db">Lock::Acquire</a></div><div class="ttdeci">void Acquire()</div><div class="ttdef"><b>Definition:</b> synch.cc:121</div></div>
+<div class="ttc" id="classList_html"><div class="ttname"><a href="classList.html">List</a></div><div class="ttdef"><b>Definition:</b> list.h:40</div></div>
+<div class="ttc" id="d_8c_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="d_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> d.c:11</div></div>
+<div class="ttc" id="list_8h_html"><div class="ttname"><a href="list_8h.html">list.h</a></div></div>
+<div class="ttc" id="classCondition_html"><div class="ttname"><a href="classCondition.html">Condition</a></div><div class="ttdef"><b>Definition:</b> synch.h:125</div></div>
+<div class="ttc" id="classSemaphore_html_a3e42125b95660ef696d0d0069b804343"><div class="ttname"><a href="classSemaphore.html#a3e42125b95660ef696d0d0069b804343">Semaphore::V</a></div><div class="ttdeci">void V()</div><div class="ttdef"><b>Definition:</b> synch.cc:83</div></div>
+<div class="ttc" id="classCondition_html_aa0442520888bd371ce07d07c0a4313a7"><div class="ttname"><a href="classCondition.html#aa0442520888bd371ce07d07c0a4313a7">Condition::Wait</a></div><div class="ttdeci">void Wait(Lock *conditionLock)</div><div class="ttdef"><b>Definition:</b> synch.cc:190</div></div>
+<div class="ttc" id="classSemaphore_html_a633658a6fde276bffc912028725c6ade"><div class="ttname"><a href="classSemaphore.html#a633658a6fde276bffc912028725c6ade">Semaphore::~Semaphore</a></div><div class="ttdeci">~Semaphore()</div><div class="ttdef"><b>Definition:</b> synch.cc:38</div></div>
+<div class="ttc" id="classLock_html_ae070848cd30a0bddccaa1c9fc99b72b8"><div class="ttname"><a href="classLock.html#ae070848cd30a0bddccaa1c9fc99b72b8">Lock::queue</a></div><div class="ttdeci">List queue</div><div class="ttdef"><b>Definition:</b> synch.h:90</div></div>
+<div class="ttc" id="classSemaphore_html_abacd94dfabb321408c2b36f570ff3249"><div class="ttname"><a href="classSemaphore.html#abacd94dfabb321408c2b36f570ff3249">Semaphore::name</a></div><div class="ttdeci">char * name</div><div class="ttdef"><b>Definition:</b> synch.h:55</div></div>
+<div class="ttc" id="classLock_html_a5ca005b84272e56c2bf447056ee9217c"><div class="ttname"><a href="classLock.html#a5ca005b84272e56c2bf447056ee9217c">Lock::Release</a></div><div class="ttdeci">void Release()</div><div class="ttdef"><b>Definition:</b> synch.cc:143</div></div>
+<div class="ttc" id="classCondition_html_aecaea65920dc0f4f723d56984dbe8e9e"><div class="ttname"><a href="classCondition.html#aecaea65920dc0f4f723d56984dbe8e9e">Condition::getName</a></div><div class="ttdeci">char * getName()</div><div class="ttdef"><b>Definition:</b> synch.h:129</div></div>
+<div class="ttc" id="classSemaphore_html_a4fee22da0205e3c704b08beaa17e0e7a"><div class="ttname"><a href="classSemaphore.html#a4fee22da0205e3c704b08beaa17e0e7a">Semaphore::P</a></div><div class="ttdeci">void P()</div><div class="ttdef"><b>Definition:</b> synch.cc:60</div></div>
+<div class="ttc" id="classThread_html"><div class="ttname"><a href="classThread.html">Thread</a></div><div class="ttdef"><b>Definition:</b> thread.h:93</div></div>
+<div class="ttc" id="classSemaphore_html_a4f7bb209b379142e8dbb41e2b2428773"><div class="ttname"><a href="classSemaphore.html#a4f7bb209b379142e8dbb41e2b2428773">Semaphore::getName</a></div><div class="ttdeci">char * getName()</div><div class="ttdef"><b>Definition:</b> synch.h:49</div></div>
+<div class="ttc" id="classCondition_html_ab42f6d2dfb2d0de4bed4ed5032d4a8fc"><div class="ttname"><a href="classCondition.html#ab42f6d2dfb2d0de4bed4ed5032d4a8fc">Condition::~Condition</a></div><div class="ttdeci">~Condition()</div><div class="ttdef"><b>Definition:</b> synch.cc:171</div></div>
+<div class="ttc" id="classSemaphore_html_a9f40b7a4506535e10a630fc323c486e3"><div class="ttname"><a href="classSemaphore.html#a9f40b7a4506535e10a630fc323c486e3">Semaphore::queue</a></div><div class="ttdeci">List queue</div><div class="ttdef"><b>Definition:</b> synch.h:57</div></div>
+<div class="ttc" id="classLock_html_a99cfb639fe3cf24033eebdcc19be42f3"><div class="ttname"><a href="classLock.html#a99cfb639fe3cf24033eebdcc19be42f3">Lock::getName</a></div><div class="ttdeci">char * getName()</div><div class="ttdef"><b>Definition:</b> synch.h:78</div></div>
+<div class="ttc" id="classSemaphore_html_a1d359ecdd39eacb4a8ac9b274eacf15c"><div class="ttname"><a href="classSemaphore.html#a1d359ecdd39eacb4a8ac9b274eacf15c">Semaphore::Semaphore</a></div><div class="ttdeci">Semaphore(char *debugName, int initialValue)</div><div class="ttdef"><b>Definition:</b> synch.h:46</div></div>
+<div class="ttc" id="copyright_8h_html"><div class="ttname"><a href="copyright_8h.html">copyright.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Dimanche 12 Février 2017 10:48:15 pour nachos par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.6
+</small></address>
+</body>
+</html>

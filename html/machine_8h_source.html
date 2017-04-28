@@ -1,0 +1,390 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>nachos:  Fichier source de machine/machine.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">nachos
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_0909f4a7c39d3e9616c1c9d755842fcb.html">machine</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">machine.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="machine_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// machine.h </span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">//      Data structures for simulating the execution of user programs</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">//      running on top of Nachos.</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">//      User programs are loaded into &quot;mainMemory&quot;; to Nachos,</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">//      this looks just like an array of bytes.  Of course, the Nachos</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">//      kernel is in memory too -- but as in most machines these days,</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">//      the kernel is loaded into a separate memory region from user</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">//      programs, and accesses to kernel memory are not translated or paged.</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">//      In Nachos, user programs are executed one instruction at a time, </span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">//      by the simulator.  Each memory reference is translated, checked</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">//      for errors, etc.</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">//  DO NOT CHANGE -- part of the machine emulation</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">// Copyright (c) 1992-1993 The Regents of the University of California.</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">// All rights reserved.  See copyright.h for copyright notice and limitation </span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">// of liability and disclaimer of warranty provisions.</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#ifndef MACHINE_H</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define MACHINE_H</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#pragma interface &quot;machine/machine.h&quot;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &lt;inttypes.h&gt;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">/* FIXME: configurate this for platforms that use stdint.h instead */</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &quot;../threads/ifdef_symbols.h&quot;</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="copyright_8h.html">copyright.h</a>&quot;</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="utility_8h.html">utility.h</a>&quot;</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="translate_8h.html">translate.h</a>&quot;</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="disk_8h.html">disk.h</a>&quot;</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#ifdef REMOTE_USER_PROGRAM_DEBUGGING</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &quot;<a class="code" href="breakpoint_8h.html">breakpoint.h</a>&quot;</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">// Definitions related to the size, and format of user memory</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="machine_8h.html#a25fe6c9816d1f84cecd50a0503825bf2">   39</a></span>&#160;<span class="preprocessor">#define PageSize        SectorSize      // set the page size equal to</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor"></span>                                        <span class="comment">// the disk sector size, for</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                                        <span class="comment">// simplicity</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="machine_8h.html#a0b9f33667767389c6dbb4a83017ce7ed">   43</a></span>&#160;<span class="preprocessor">#define NumPhysPages    128</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="machine_8h.html#ab1eabbc583c21d48596127b19d4ce754">   44</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define MemorySize      (NumPhysPages * PageSize)</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="machine_8h.html#af372ca9ab0550891f1b5fd24ecffbbf6">   45</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define TLBSize         4               // if there is a TLB, make it small</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="machine_8h.html#a0e0f0f1661d7aeb71ed9698bff6c6383aa9f0b3e8ed7edd84c99ad67fe7e2840b">   47</a></span>&#160;<span class="keyword">enum</span> <a class="code" href="machine_8h.html#a0e0f0f1661d7aeb71ed9698bff6c6383">ExceptionType</a> { <a class="code" href="machine_8h.html#a0e0f0f1661d7aeb71ed9698bff6c6383aa9f0b3e8ed7edd84c99ad67fe7e2840b">NoException</a>,           <span class="comment">// Everything ok!</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="machine_8h.html#a0e0f0f1661d7aeb71ed9698bff6c6383a50672e73dfc4b771d795f0b1e19c9f2e">   48</a></span>&#160;                     <a class="code" href="machine_8h.html#a0e0f0f1661d7aeb71ed9698bff6c6383a50672e73dfc4b771d795f0b1e19c9f2e">SyscallException</a>,      <span class="comment">// A program executed a system call.</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="machine_8h.html#a0e0f0f1661d7aeb71ed9698bff6c6383a7feb20114e4343254c7975ede81779d9">   49</a></span>&#160;                     <a class="code" href="machine_8h.html#a0e0f0f1661d7aeb71ed9698bff6c6383a7feb20114e4343254c7975ede81779d9">PageFaultException</a>,    <span class="comment">// No valid translation found</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="machine_8h.html#a0e0f0f1661d7aeb71ed9698bff6c6383a144db938002c99342eaca1600d273bed">   50</a></span>&#160;                     <a class="code" href="machine_8h.html#a0e0f0f1661d7aeb71ed9698bff6c6383a144db938002c99342eaca1600d273bed">ReadOnlyException</a>,     <span class="comment">// Write attempted to page marked </span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                                            <span class="comment">// &quot;read-only&quot;</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="machine_8h.html#a0e0f0f1661d7aeb71ed9698bff6c6383ae77fa678434b7d7bf2b07ab76b1fb8c1">   52</a></span>&#160;                     <a class="code" href="machine_8h.html#a0e0f0f1661d7aeb71ed9698bff6c6383ae77fa678434b7d7bf2b07ab76b1fb8c1">BusErrorException</a>,     <span class="comment">// Translation resulted in an </span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                                            <span class="comment">// invalid physical address</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="machine_8h.html#a0e0f0f1661d7aeb71ed9698bff6c6383a638f01c8abf4b8aebf394d9e2cfc6008">   54</a></span>&#160;                     <a class="code" href="machine_8h.html#a0e0f0f1661d7aeb71ed9698bff6c6383a638f01c8abf4b8aebf394d9e2cfc6008">AddressErrorException</a>, <span class="comment">// Unaligned reference or one that</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                                            <span class="comment">// was beyond the end of the</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                                            <span class="comment">// address space</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="machine_8h.html#a0e0f0f1661d7aeb71ed9698bff6c6383a1677a0da1c8126432430d0251d1f5152">   57</a></span>&#160;                     <a class="code" href="machine_8h.html#a0e0f0f1661d7aeb71ed9698bff6c6383a1677a0da1c8126432430d0251d1f5152">OverflowException</a>,     <span class="comment">// Integer overflow in add or sub.</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="machine_8h.html#a0e0f0f1661d7aeb71ed9698bff6c6383a7ac9ecf8ea8b50e2f3c90c3b3dc94787">   58</a></span>&#160;                     <a class="code" href="machine_8h.html#a0e0f0f1661d7aeb71ed9698bff6c6383a7ac9ecf8ea8b50e2f3c90c3b3dc94787">IllegalInstrException</a>, <span class="comment">// Unimplemented or reserved instr.</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor">#ifdef REMOTE_USER_PROGRAM_DEBUGGING</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor"></span>                     BreakpointException,   <span class="comment">// Breakpoint encountered.</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="machine_8h.html#a0e0f0f1661d7aeb71ed9698bff6c6383a693a56048c1e1863c980d58364247f7a">   62</a></span>&#160;<span class="preprocessor"></span>                     <a class="code" href="machine_8h.html#a0e0f0f1661d7aeb71ed9698bff6c6383a693a56048c1e1863c980d58364247f7a">OutOfMemory</a>,           <span class="comment">// We dont have enough memory.</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                     </div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="machine_8h.html#a0e0f0f1661d7aeb71ed9698bff6c6383a14c29fb18daabb3942ef3df2d657c6a6">   64</a></span>&#160;                     <a class="code" href="machine_8h.html#a0e0f0f1661d7aeb71ed9698bff6c6383a14c29fb18daabb3942ef3df2d657c6a6">NumExceptionTypes</a></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;};</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="preprocessor">#ifdef REMOTE_USER_PROGRAM_DEBUGGING</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define BREAKPOINT(addr) machine-&gt;RaiseException(BreakpointException, addr);</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment">// User program CPU state.  The full set of MIPS registers, plus a few</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment">// more because we need to be able to start/stop a user program between</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment">// any two instructions (thus we need to keep track of things like load</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment">// delay slots, etc.)</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
+<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="machine_8h.html#a6702d1d5ad2fe3c3e40d9eedaaa2630f">   76</a></span>&#160;<span class="preprocessor">#define StackReg        29      // User&#39;s stack pointer</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="machine_8h.html#afd61f2aedbb34ee6301a795667234d56">   77</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define RetAddrReg      31      // Holds return address for procedure calls</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="machine_8h.html#a89f6b3d90852476c519744e6c0fdc5ff">   79</a></span>&#160;<span class="preprocessor">#define NumGPRegs       32      // 32 general purpose registers on MIPS</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="machine_8h.html#a1ac19b064328f966d7cca64f3282ae91">   81</a></span>&#160;<span class="preprocessor">#define HiReg           32      // Double register to hold multiply result</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="machine_8h.html#afef46928a742121ce69b65dad1fb625a">   82</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define LoReg           33</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="machine_8h.html#a7152c26c857a03695afc8c8b05f1197b">   83</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define PCReg           34      // Current program counter</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="machine_8h.html#af95022bd1d0769baabadf6f1b771501a">   84</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define NextPCReg       35      // Next program counter (for branch delay) </span></div>
+<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="machine_8h.html#aa24552328a05615e6067ce5a0ad0bbf3">   85</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define PrevPCReg       36      // Previous program counter (for debugging)</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="machine_8h.html#a7ca86ddc51a5c44e599365ebce68b967">   86</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define LoadReg         37      // The register target of a delayed load.</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="machine_8h.html#a56dbce970aafbc98848593b4d4aa5eb7">   87</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define LoadValueReg    38      // The value to be loaded by a delayed load.</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="machine_8h.html#aceca7cc1b20f6970f96688c4f21efef2">   88</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define BadVAddrReg     39      // The failing virtual address on an exception</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="machine_8h.html#a3d05ab2fa1bfa8eb176488fe4119a464">   90</a></span>&#160;<span class="preprocessor">#define NumTotalRegs    40</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="comment">// The following class defines an instruction, represented in both</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="comment">//      undecoded binary form</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="comment">//      decoded to identify</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="comment">//          operation to do</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="comment">//          registers to act on</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="comment">//          any immediate operand value</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
+<div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="classInstruction.html">   99</a></span>&#160;<span class="keyword">class </span><a class="code" href="classInstruction.html">Instruction</a> {</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="comment">// decode the binary representation of the instruction </span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;   <span class="keywordtype">void</span> <a class="code" href="classInstruction.html#a768408b570ff48dfc9b8853d9a327139">Decode</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> binary_instr);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;</div>
+<div class="line"><a name="l00104"></a><span class="lineno"><a class="line" href="classInstruction.html#af63528444729d52b9b2e566f32681a25">  104</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classInstruction.html#af63528444729d52b9b2e566f32681a25">opCode</a>;      <span class="comment">// Type of instruction.  This is NOT the same as the</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                     <span class="comment">// opcode field from the instruction: see defs in mips.h</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno"><a class="line" href="classInstruction.html#a1bdf6fb56d599553ac80de2b691e9899">  106</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classInstruction.html#aa1e41c9c9aad3d23e8ca802834c8a7d0">rs</a>, <a class="code" href="classInstruction.html#a1bdf6fb56d599553ac80de2b691e9899">rt</a>, <a class="code" href="classInstruction.html#af262269d67db4d426de458f8b3767450">rd</a>;  <span class="comment">// Three registers from instruction.</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno"><a class="line" href="classInstruction.html#a194c6318e79c1a8dde023b1f2be2a593">  107</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classInstruction.html#a194c6318e79c1a8dde023b1f2be2a593">extra</a>;       <span class="comment">// Immediate or target or shamt field or offset.</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                     <span class="comment">// Immediates are sign-extended.</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;};</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="comment">// The following class defines the simulated host workstation hardware, as </span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="comment">// seen by user programs -- the CPU registers, main memory, etc.</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="comment">// User programs shouldn&#39;t be able to tell that they are running on our </span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="comment">// simulator or on the real hardware, except </span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="comment">//      we don&#39;t support floating point instructions</span></div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="comment">//      the system call interface to Nachos is not the same as UNIX </span></div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="comment">//        (10 system calls in Nachos vs. 200 in UNIX!)</span></div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="comment">// If we were to implement more of the UNIX system calls, we ought to be</span></div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="comment">// able to run Nachos on top of Nachos!</span></div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="comment">// The procedures in this class are defined in machine.cc, mipssim.cc, and</span></div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="comment">// translate.cc.</span></div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;</div>
+<div class="line"><a name="l00124"></a><span class="lineno"><a class="line" href="classMachine.html">  124</a></span>&#160;<span class="keyword">class </span><a class="code" href="classMachine.html">Machine</a> {</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <a class="code" href="classMachine.html#ad5958275a54dbc299b71ecdba7da0604">Machine</a>(<span class="keywordtype">bool</span> debug);        <span class="comment">// Initialize the simulation of the hardware</span></div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                                <span class="comment">// for running user programs</span></div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <a class="code" href="classMachine.html#a7f595e09b54761f6c1e73b192067bd9c">~Machine</a>();                 <span class="comment">// De-allocate the data structures</span></div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;<span class="comment">// Routines callable by the Nachos kernel</span></div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMachine.html#a83444e06eb7a7c163a1b9c87a7062d43">Run</a>();                 <span class="comment">// Run a user program</span></div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classMachine.html#a6a8ed459cb3700c406564db72957bae3">ReadRegister</a>(<span class="keywordtype">int</span> num);  <span class="comment">// read the contents of a CPU register</span></div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMachine.html#ad58cc61e347395586a1cb91272dc4d61">WriteRegister</a>(<span class="keywordtype">int</span> num, <span class="keywordtype">int</span> value);</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;                                <span class="comment">// store a value into a CPU register</span></div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;   <span class="keywordtype">void</span> <a class="code" href="classMachine.html#afd8815d4d21a597aebfab1bbc9333b7e">Fix_Fork_Registers</a>();</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;<span class="comment">// Routines internal to the machine simulation -- DO NOT call these </span></div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMachine.html#af8d77f2964313173f1bada56bc596e48">OneInstruction</a>(<a class="code" href="classInstruction.html">Instruction</a> *instr);    </div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;                                <span class="comment">// Run one instruction of a user program.</span></div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMachine.html#a11fda0ddf1f16d8b1a06f75d1ab5b8a1">DelayedLoad</a>(<span class="keywordtype">int</span> nextReg, <span class="keywordtype">int</span> nextVal);         </div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;                                <span class="comment">// Do a pending delayed load (modifying a reg)</span></div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <span class="comment">// FIXME : addr should be unsigned int as well as value in WriteMem    </span></div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classMachine.html#a9c5f4731c90e1df71a5e0145d8287888">ReadMem</a>(<span class="keywordtype">int</span> addr, <span class="keywordtype">int</span> size, <span class="keywordtype">void</span>* value);</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classMachine.html#a1f442601e649b537a65b8b2440342227">WriteMem</a>(<span class="keywordtype">int</span> addr, <span class="keywordtype">int</span> size, <span class="keywordtype">int</span> value);</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;                                <span class="comment">// Read or write 1, 2, or 4 bytes of virtual </span></div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;                                <span class="comment">// memory (at addr).  Return false if a </span></div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;                                <span class="comment">// correct translation couldn&#39;t be found.</span></div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    </div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    <a class="code" href="machine_8h.html#a0e0f0f1661d7aeb71ed9698bff6c6383">ExceptionType</a> <a class="code" href="classMachine.html#a754ddcbc077cc91463398de8b0f1d077">Translate</a>(<span class="keywordtype">int</span> virtAddr, <span class="keywordtype">int</span>* physAddr, <span class="keywordtype">int</span> size,<span class="keywordtype">bool</span> writing);</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;                                <span class="comment">// Translate an address, and check for </span></div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;                                <span class="comment">// alignment.  Set the use and dirty bits in </span></div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;                                <span class="comment">// the translation entry appropriately,</span></div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;                                <span class="comment">// and return an exception code if the </span></div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;                                <span class="comment">// translation couldn&#39;t be completed.</span></div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMachine.html#a0d6f63790c0568437b100171f61fd77f">RaiseException</a>(<a class="code" href="machine_8h.html#a0e0f0f1661d7aeb71ed9698bff6c6383">ExceptionType</a> which, <span class="keywordtype">int</span> badVAddr);</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;                                <span class="comment">// Trap to the Nachos kernel, because of a</span></div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;                                <span class="comment">// system call or other exception.  </span></div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMachine.html#a4e4dee4ed66da41de9bbebb161efd06f">DumpState</a>();           <span class="comment">// print the user CPU and memory state </span></div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;<span class="comment">// Data structures -- all of these are accessible to Nachos kernel code.</span></div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;<span class="comment">// &quot;public&quot; for convenience.</span></div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;<span class="comment">// Note that *all* communication between the user program and the kernel </span></div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;<span class="comment">// are in terms of these data structures.</span></div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;</div>
+<div class="line"><a name="l00171"></a><span class="lineno"><a class="line" href="classMachine.html#aa2ad571478bcc8aa88cebe50fc533ec7">  171</a></span>&#160;    <span class="keywordtype">char</span> *<a class="code" href="classMachine.html#aa2ad571478bcc8aa88cebe50fc533ec7">mainMemory</a>;           <span class="comment">// physical memory to store user program,</span></div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;                                <span class="comment">// code and data, while executing</span></div>
+<div class="line"><a name="l00173"></a><span class="lineno"><a class="line" href="classMachine.html#a97712e3db6165648d169598fdf26b756">  173</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classMachine.html#a97712e3db6165648d169598fdf26b756">registers</a>[<a class="code" href="machine_8h.html#a3d05ab2fa1bfa8eb176488fe4119a464">NumTotalRegs</a>]; <span class="comment">// CPU registers, for executing user programs</span></div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;<span class="comment">// NOTE: the hardware translation of virtual addresses in the user program</span></div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;<span class="comment">// to physical addresses (relative to the beginning of &quot;mainMemory&quot;)</span></div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;<span class="comment">// can be controlled by one of:</span></div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;<span class="comment">//      a traditional linear page table</span></div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;<span class="comment">//      a software-loaded translation lookaside buffer (tlb) -- a cache of </span></div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;<span class="comment">//        mappings of virtual page #&#39;s to physical page #&#39;s</span></div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;<span class="comment">// If &quot;tlb&quot; is NULL, the linear page table is used</span></div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;<span class="comment">// If &quot;tlb&quot; is non-NULL, the Nachos kernel is responsible for managing</span></div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;<span class="comment">//      the contents of the TLB.  But the kernel can use any data structure</span></div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;<span class="comment">//      it wants (eg, segmented paging) for handling TLB cache misses.</span></div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;<span class="comment">// </span></div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;<span class="comment">// For simplicity, both the page table pointer and the TLB pointer are</span></div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;<span class="comment">// public.  However, while there can be multiple page tables (one per address</span></div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;<span class="comment">// space, stored in memory), there is only one TLB (implemented in hardware).</span></div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;<span class="comment">// Thus the TLB pointer should be considered as *read-only*, although </span></div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;<span class="comment">// the contents of the TLB are free to be modified by the kernel software.</span></div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;</div>
+<div class="line"><a name="l00194"></a><span class="lineno"><a class="line" href="classMachine.html#a900108b92c72cfbcab9106d99be5a315">  194</a></span>&#160;    <a class="code" href="classTranslationEntry.html">TranslationEntry</a> *<a class="code" href="classMachine.html#a900108b92c72cfbcab9106d99be5a315">tlb</a>;              <span class="comment">// this pointer should be considered </span></div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;                                        <span class="comment">// &quot;read-only&quot; to Nachos kernel code</span></div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;</div>
+<div class="line"><a name="l00197"></a><span class="lineno"><a class="line" href="classMachine.html#a9e4092e3d7bab29b7d1f54ad005527ca">  197</a></span>&#160;    <a class="code" href="classTranslationEntry.html">TranslationEntry</a> *<a class="code" href="classMachine.html#a9e4092e3d7bab29b7d1f54ad005527ca">pageTable</a>;</div>
+<div class="line"><a name="l00198"></a><span class="lineno"><a class="line" href="classMachine.html#a439af96b1d906dbea5dfb538d8491418">  198</a></span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classMachine.html#a439af96b1d906dbea5dfb538d8491418">pageTableSize</a>;</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;<span class="preprocessor">#ifdef REMOTE_USER_PROGRAM_DEBUGGING</span></div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;<span class="preprocessor"></span>    <span class="keywordtype">bool</span> singleStep;            <span class="comment">// drop back into the debugger after each</span></div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;                                <span class="comment">// simulated instruction</span></div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    <a class="code" href="classBreakpointSet.html">BreakpointSet</a> breakpoints;</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;<span class="preprocessor"></span> </div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;};</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="machine_8h.html#a69c8c3bb4a492eeea6b21600a76cada7">ExceptionHandler</a>(<a class="code" href="machine_8h.html#a0e0f0f1661d7aeb71ed9698bff6c6383">ExceptionType</a> which);</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;                                <span class="comment">// Entry point into Nachos for handling</span></div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;                                <span class="comment">// user system calls and exceptions</span></div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;                                <span class="comment">// Defined in exception.cc</span></div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;<span class="comment">// Routines for converting Words and Short Words to and from the</span></div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;<span class="comment">// simulated machine&#39;s format of little endian.  If the host machine</span></div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;<span class="comment">// is little endian (DEC and Intel), these end up being NOPs.</span></div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;<span class="comment">// What is stored in each format:</span></div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;<span class="comment">//      host byte ordering:</span></div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;<span class="comment">//         kernel data structures</span></div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;<span class="comment">//         user registers</span></div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;<span class="comment">//      simulated machine byte ordering:</span></div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;<span class="comment">//         contents of main memory</span></div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;<span class="comment">// WARNING: the arguments to these macros are evaluated multiple times!</span></div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;<span class="preprocessor">#ifdef HOST_IS_BIG_ENDIAN</span></div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define WordToHost(word)                                                \</span></div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;<span class="preprocessor">  ((uint32_t)(                                                          \</span></div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;<span class="preprocessor">             (((uint32_t)(word) &amp; (uint32_t)0x000000ffUL) &lt;&lt; 24) |      \</span></div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;<span class="preprocessor">             (((uint32_t)(word) &amp; (uint32_t)0x0000ff00UL) &lt;&lt;  8) |      \</span></div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;<span class="preprocessor">             (((uint32_t)(word) &amp; (uint32_t)0x00ff0000UL) &gt;&gt;  8) |      \</span></div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;<span class="preprocessor">             (((uint32_t)(word) &amp; (uint32_t)0xff000000UL) &gt;&gt; 24) ))</span></div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ShortToHost(sword)                                      \</span></div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;<span class="preprocessor">  ((uint16_t)(                                                  \</span></div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;<span class="preprocessor">             (((uint16_t)(sword) &amp; (uint16_t)0x00ffU) &lt;&lt; 8) |   \</span></div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;<span class="preprocessor">             (((uint16_t)(sword) &amp; (uint16_t)0xff00U) &gt;&gt; 8) ));</span></div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00239"></a><span class="lineno"><a class="line" href="machine_8h.html#a182fa7619cd62c0c95ea9fd900205f90">  239</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define WordToHost(word)   word</span></div>
+<div class="line"><a name="l00240"></a><span class="lineno"><a class="line" href="machine_8h.html#a2270181f27d9ce6c74b2e17220458be4">  240</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ShortToHost(sword) sword</span></div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif </span><span class="comment">/* HOST_IS_BIG_ENDIAN */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00243"></a><span class="lineno"><a class="line" href="machine_8h.html#a8dd343c9e7f8fd58cba3b8612c6c6003">  243</a></span>&#160;<span class="preprocessor">#define WordToMachine(word)   WordToHost  (word)</span></div>
+<div class="line"><a name="l00244"></a><span class="lineno"><a class="line" href="machine_8h.html#a6c99331a1982974921884b73188f0004">  244</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ShortToMachine(sword) ShortToHost (sword)</span></div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;<span class="preprocessor">#endif // MACHINE_H</span></div>
+<div class="ttc" id="classMachine_html_a9e4092e3d7bab29b7d1f54ad005527ca"><div class="ttname"><a href="classMachine.html#a9e4092e3d7bab29b7d1f54ad005527ca">Machine::pageTable</a></div><div class="ttdeci">TranslationEntry * pageTable</div><div class="ttdef"><b>Definition:</b> machine.h:197</div></div>
+<div class="ttc" id="classMachine_html_a97712e3db6165648d169598fdf26b756"><div class="ttname"><a href="classMachine.html#a97712e3db6165648d169598fdf26b756">Machine::registers</a></div><div class="ttdeci">int registers[NumTotalRegs]</div><div class="ttdef"><b>Definition:</b> machine.h:173</div></div>
+<div class="ttc" id="classMachine_html_a9c5f4731c90e1df71a5e0145d8287888"><div class="ttname"><a href="classMachine.html#a9c5f4731c90e1df71a5e0145d8287888">Machine::ReadMem</a></div><div class="ttdeci">bool ReadMem(int addr, int size, void *value)</div><div class="ttdef"><b>Definition:</b> translate.cc:53</div></div>
+<div class="ttc" id="classMachine_html_ad58cc61e347395586a1cb91272dc4d61"><div class="ttname"><a href="classMachine.html#ad58cc61e347395586a1cb91272dc4d61">Machine::WriteRegister</a></div><div class="ttdeci">void WriteRegister(int num, int value)</div><div class="ttdef"><b>Definition:</b> machine.cc:178</div></div>
+<div class="ttc" id="classMachine_html_a900108b92c72cfbcab9106d99be5a315"><div class="ttname"><a href="classMachine.html#a900108b92c72cfbcab9106d99be5a315">Machine::tlb</a></div><div class="ttdeci">TranslationEntry * tlb</div><div class="ttdef"><b>Definition:</b> machine.h:194</div></div>
+<div class="ttc" id="classMachine_html_a11fda0ddf1f16d8b1a06f75d1ab5b8a1"><div class="ttname"><a href="classMachine.html#a11fda0ddf1f16d8b1a06f75d1ab5b8a1">Machine::DelayedLoad</a></div><div class="ttdeci">void DelayedLoad(int nextReg, int nextVal)</div><div class="ttdef"><b>Definition:</b> mipssim.cc:634</div></div>
+<div class="ttc" id="classInstruction_html_a194c6318e79c1a8dde023b1f2be2a593"><div class="ttname"><a href="classInstruction.html#a194c6318e79c1a8dde023b1f2be2a593">Instruction::extra</a></div><div class="ttdeci">int extra</div><div class="ttdef"><b>Definition:</b> machine.h:107</div></div>
+<div class="ttc" id="classInstruction_html_af262269d67db4d426de458f8b3767450"><div class="ttname"><a href="classInstruction.html#af262269d67db4d426de458f8b3767450">Instruction::rd</a></div><div class="ttdeci">int rd</div><div class="ttdef"><b>Definition:</b> machine.h:106</div></div>
+<div class="ttc" id="translate_8h_html"><div class="ttname"><a href="translate_8h.html">translate.h</a></div></div>
+<div class="ttc" id="classInstruction_html"><div class="ttname"><a href="classInstruction.html">Instruction</a></div><div class="ttdef"><b>Definition:</b> machine.h:99</div></div>
+<div class="ttc" id="classMachine_html_a4e4dee4ed66da41de9bbebb161efd06f"><div class="ttname"><a href="classMachine.html#a4e4dee4ed66da41de9bbebb161efd06f">Machine::DumpState</a></div><div class="ttdeci">void DumpState()</div><div class="ttdef"><b>Definition:</b> machine.cc:134</div></div>
+<div class="ttc" id="classTranslationEntry_html"><div class="ttname"><a href="classTranslationEntry.html">TranslationEntry</a></div><div class="ttdef"><b>Definition:</b> translate.h:33</div></div>
+<div class="ttc" id="classMachine_html_aa2ad571478bcc8aa88cebe50fc533ec7"><div class="ttname"><a href="classMachine.html#aa2ad571478bcc8aa88cebe50fc533ec7">Machine::mainMemory</a></div><div class="ttdeci">char * mainMemory</div><div class="ttdef"><b>Definition:</b> machine.h:171</div></div>
+<div class="ttc" id="classInstruction_html_a1bdf6fb56d599553ac80de2b691e9899"><div class="ttname"><a href="classInstruction.html#a1bdf6fb56d599553ac80de2b691e9899">Instruction::rt</a></div><div class="ttdeci">int rt</div><div class="ttdef"><b>Definition:</b> machine.h:106</div></div>
+<div class="ttc" id="classInstruction_html_af63528444729d52b9b2e566f32681a25"><div class="ttname"><a href="classInstruction.html#af63528444729d52b9b2e566f32681a25">Instruction::opCode</a></div><div class="ttdeci">int opCode</div><div class="ttdef"><b>Definition:</b> machine.h:104</div></div>
+<div class="ttc" id="classMachine_html_af8d77f2964313173f1bada56bc596e48"><div class="ttname"><a href="classMachine.html#af8d77f2964313173f1bada56bc596e48">Machine::OneInstruction</a></div><div class="ttdeci">void OneInstruction(Instruction *instr)</div><div class="ttdef"><b>Definition:</b> mipssim.cc:134</div></div>
+<div class="ttc" id="classMachine_html_a439af96b1d906dbea5dfb538d8491418"><div class="ttname"><a href="classMachine.html#a439af96b1d906dbea5dfb538d8491418">Machine::pageTableSize</a></div><div class="ttdeci">unsigned int pageTableSize</div><div class="ttdef"><b>Definition:</b> machine.h:198</div></div>
+<div class="ttc" id="machine_8h_html_a0e0f0f1661d7aeb71ed9698bff6c6383ae77fa678434b7d7bf2b07ab76b1fb8c1"><div class="ttname"><a href="machine_8h.html#a0e0f0f1661d7aeb71ed9698bff6c6383ae77fa678434b7d7bf2b07ab76b1fb8c1">BusErrorException</a></div><div class="ttdef"><b>Definition:</b> machine.h:52</div></div>
+<div class="ttc" id="machine_8h_html_a0e0f0f1661d7aeb71ed9698bff6c6383a50672e73dfc4b771d795f0b1e19c9f2e"><div class="ttname"><a href="machine_8h.html#a0e0f0f1661d7aeb71ed9698bff6c6383a50672e73dfc4b771d795f0b1e19c9f2e">SyscallException</a></div><div class="ttdef"><b>Definition:</b> machine.h:48</div></div>
+<div class="ttc" id="classMachine_html_ad5958275a54dbc299b71ecdba7da0604"><div class="ttname"><a href="classMachine.html#ad5958275a54dbc299b71ecdba7da0604">Machine::Machine</a></div><div class="ttdeci">Machine(bool debug)</div><div class="ttdef"><b>Definition:</b> machine.cc:62</div></div>
+<div class="ttc" id="classMachine_html_a1f442601e649b537a65b8b2440342227"><div class="ttname"><a href="classMachine.html#a1f442601e649b537a65b8b2440342227">Machine::WriteMem</a></div><div class="ttdeci">bool WriteMem(int addr, int size, int value)</div><div class="ttdef"><b>Definition:</b> translate.cc:111</div></div>
+<div class="ttc" id="machine_8h_html_a0e0f0f1661d7aeb71ed9698bff6c6383a693a56048c1e1863c980d58364247f7a"><div class="ttname"><a href="machine_8h.html#a0e0f0f1661d7aeb71ed9698bff6c6383a693a56048c1e1863c980d58364247f7a">OutOfMemory</a></div><div class="ttdef"><b>Definition:</b> machine.h:62</div></div>
+<div class="ttc" id="classMachine_html"><div class="ttname"><a href="classMachine.html">Machine</a></div><div class="ttdef"><b>Definition:</b> machine.h:124</div></div>
+<div class="ttc" id="classMachine_html_a6a8ed459cb3700c406564db72957bae3"><div class="ttname"><a href="classMachine.html#a6a8ed459cb3700c406564db72957bae3">Machine::ReadRegister</a></div><div class="ttdeci">int ReadRegister(int num)</div><div class="ttdef"><b>Definition:</b> machine.cc:172</div></div>
+<div class="ttc" id="classInstruction_html_a768408b570ff48dfc9b8853d9a327139"><div class="ttname"><a href="classInstruction.html#a768408b570ff48dfc9b8853d9a327139">Instruction::Decode</a></div><div class="ttdeci">void Decode(unsigned int binary_instr)</div><div class="ttdef"><b>Definition:</b> mipssim.cc:650</div></div>
+<div class="ttc" id="breakpoint_8h_html"><div class="ttname"><a href="breakpoint_8h.html">breakpoint.h</a></div></div>
+<div class="ttc" id="classMachine_html_a0d6f63790c0568437b100171f61fd77f"><div class="ttname"><a href="classMachine.html#a0d6f63790c0568437b100171f61fd77f">Machine::RaiseException</a></div><div class="ttdeci">void RaiseException(ExceptionType which, int badVAddr)</div><div class="ttdef"><b>Definition:</b> machine.cc:112</div></div>
+<div class="ttc" id="machine_8h_html_a3d05ab2fa1bfa8eb176488fe4119a464"><div class="ttname"><a href="machine_8h.html#a3d05ab2fa1bfa8eb176488fe4119a464">NumTotalRegs</a></div><div class="ttdeci">#define NumTotalRegs</div><div class="ttdef"><b>Definition:</b> machine.h:90</div></div>
+<div class="ttc" id="machine_8h_html_a0e0f0f1661d7aeb71ed9698bff6c6383a14c29fb18daabb3942ef3df2d657c6a6"><div class="ttname"><a href="machine_8h.html#a0e0f0f1661d7aeb71ed9698bff6c6383a14c29fb18daabb3942ef3df2d657c6a6">NumExceptionTypes</a></div><div class="ttdef"><b>Definition:</b> machine.h:64</div></div>
+<div class="ttc" id="machine_8h_html_a0e0f0f1661d7aeb71ed9698bff6c6383a7feb20114e4343254c7975ede81779d9"><div class="ttname"><a href="machine_8h.html#a0e0f0f1661d7aeb71ed9698bff6c6383a7feb20114e4343254c7975ede81779d9">PageFaultException</a></div><div class="ttdef"><b>Definition:</b> machine.h:49</div></div>
+<div class="ttc" id="utility_8h_html"><div class="ttname"><a href="utility_8h.html">utility.h</a></div></div>
+<div class="ttc" id="classMachine_html_a7f595e09b54761f6c1e73b192067bd9c"><div class="ttname"><a href="classMachine.html#a7f595e09b54761f6c1e73b192067bd9c">Machine::~Machine</a></div><div class="ttdeci">~Machine()</div><div class="ttdef"><b>Definition:</b> machine.cc:94</div></div>
+<div class="ttc" id="machine_8h_html_a69c8c3bb4a492eeea6b21600a76cada7"><div class="ttname"><a href="machine_8h.html#a69c8c3bb4a492eeea6b21600a76cada7">ExceptionHandler</a></div><div class="ttdeci">void ExceptionHandler(ExceptionType which)</div><div class="ttdef"><b>Definition:</b> exception.cc:53</div></div>
+<div class="ttc" id="classMachine_html_afd8815d4d21a597aebfab1bbc9333b7e"><div class="ttname"><a href="classMachine.html#afd8815d4d21a597aebfab1bbc9333b7e">Machine::Fix_Fork_Registers</a></div><div class="ttdeci">void Fix_Fork_Registers()</div><div class="ttdef"><b>Definition:</b> mipssim.cc:30</div></div>
+<div class="ttc" id="machine_8h_html_a0e0f0f1661d7aeb71ed9698bff6c6383"><div class="ttname"><a href="machine_8h.html#a0e0f0f1661d7aeb71ed9698bff6c6383">ExceptionType</a></div><div class="ttdeci">ExceptionType</div><div class="ttdef"><b>Definition:</b> machine.h:47</div></div>
+<div class="ttc" id="machine_8h_html_a0e0f0f1661d7aeb71ed9698bff6c6383a1677a0da1c8126432430d0251d1f5152"><div class="ttname"><a href="machine_8h.html#a0e0f0f1661d7aeb71ed9698bff6c6383a1677a0da1c8126432430d0251d1f5152">OverflowException</a></div><div class="ttdef"><b>Definition:</b> machine.h:57</div></div>
+<div class="ttc" id="machine_8h_html_a0e0f0f1661d7aeb71ed9698bff6c6383a7ac9ecf8ea8b50e2f3c90c3b3dc94787"><div class="ttname"><a href="machine_8h.html#a0e0f0f1661d7aeb71ed9698bff6c6383a7ac9ecf8ea8b50e2f3c90c3b3dc94787">IllegalInstrException</a></div><div class="ttdef"><b>Definition:</b> machine.h:58</div></div>
+<div class="ttc" id="classMachine_html_a83444e06eb7a7c163a1b9c87a7062d43"><div class="ttname"><a href="classMachine.html#a83444e06eb7a7c163a1b9c87a7062d43">Machine::Run</a></div><div class="ttdeci">void Run()</div><div class="ttdef"><b>Definition:</b> mipssim.cc:59</div></div>
+<div class="ttc" id="classInstruction_html_aa1e41c9c9aad3d23e8ca802834c8a7d0"><div class="ttname"><a href="classInstruction.html#aa1e41c9c9aad3d23e8ca802834c8a7d0">Instruction::rs</a></div><div class="ttdeci">int rs</div><div class="ttdef"><b>Definition:</b> machine.h:106</div></div>
+<div class="ttc" id="classMachine_html_a754ddcbc077cc91463398de8b0f1d077"><div class="ttname"><a href="classMachine.html#a754ddcbc077cc91463398de8b0f1d077">Machine::Translate</a></div><div class="ttdeci">ExceptionType Translate(int virtAddr, int *physAddr, int size, bool writing)</div><div class="ttdef"><b>Definition:</b> translate.cc:166</div></div>
+<div class="ttc" id="machine_8h_html_a0e0f0f1661d7aeb71ed9698bff6c6383aa9f0b3e8ed7edd84c99ad67fe7e2840b"><div class="ttname"><a href="machine_8h.html#a0e0f0f1661d7aeb71ed9698bff6c6383aa9f0b3e8ed7edd84c99ad67fe7e2840b">NoException</a></div><div class="ttdef"><b>Definition:</b> machine.h:47</div></div>
+<div class="ttc" id="machine_8h_html_a0e0f0f1661d7aeb71ed9698bff6c6383a144db938002c99342eaca1600d273bed"><div class="ttname"><a href="machine_8h.html#a0e0f0f1661d7aeb71ed9698bff6c6383a144db938002c99342eaca1600d273bed">ReadOnlyException</a></div><div class="ttdef"><b>Definition:</b> machine.h:50</div></div>
+<div class="ttc" id="machine_8h_html_a0e0f0f1661d7aeb71ed9698bff6c6383a638f01c8abf4b8aebf394d9e2cfc6008"><div class="ttname"><a href="machine_8h.html#a0e0f0f1661d7aeb71ed9698bff6c6383a638f01c8abf4b8aebf394d9e2cfc6008">AddressErrorException</a></div><div class="ttdef"><b>Definition:</b> machine.h:54</div></div>
+<div class="ttc" id="classBreakpointSet_html"><div class="ttname"><a href="classBreakpointSet.html">BreakpointSet</a></div><div class="ttdef"><b>Definition:</b> breakpoint.h:31</div></div>
+<div class="ttc" id="disk_8h_html"><div class="ttname"><a href="disk_8h.html">disk.h</a></div></div>
+<div class="ttc" id="copyright_8h_html"><div class="ttname"><a href="copyright_8h.html">copyright.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Dimanche 12 Février 2017 10:48:15 pour nachos par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.6
+</small></address>
+</body>
+</html>

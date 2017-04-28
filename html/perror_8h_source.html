@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>nachos:  Fichier source de lib/perror.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">nachos
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">perror.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="perror_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="syscall_8h.html">syscall.h</a>&quot;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * The perror routine below shows some of the current limitations with nachos.</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Because of the references to other routines in the library (strcpy, etc),</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * in combination with the static strings, gcc is unable to compile this if</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * it is created as perror.c and linked into lib.a.  Therefore, the only way</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> * to use this routine for now is to #include it in your main source file.</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="perror_8h.html#aff124fed9da448d585c441952a77e5da">   11</a></span>&#160;<span class="keywordtype">char</span> <a class="code" href="perror_8h.html#aff124fed9da448d585c441952a77e5da">perror_buffer</a>[80];</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">int</span> <a class="code" href="perror_8h.html#ad65a8842cc674e3ddf69355898c0ecbf">errno</a>;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="perror_8h.html#a01a54ddbbc6ab18e4853ba0427329aca">   14</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="perror_8h.html#a01a54ddbbc6ab18e4853ba0427329aca">perror</a> (<span class="keywordtype">char</span> *s) {</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  <span class="keywordtype">char</span> *errmsg;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  <a class="code" href="disasm_8c.html#add539a5755e4c4070b0c8ca97477fe47">strcpy</a> (<a class="code" href="perror_8h.html#aff124fed9da448d585c441952a77e5da">perror_buffer</a>, s);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  <a class="code" href="stdlib_8h.html#a8908188ae9fc2f05d993257ef001d553">strcat</a> (<a class="code" href="perror_8h.html#aff124fed9da448d585c441952a77e5da">perror_buffer</a>, <span class="stringliteral">&quot;: &quot;</span>);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  <span class="keywordflow">switch</span> (<a class="code" href="perror_8h.html#ad65a8842cc674e3ddf69355898c0ecbf">errno</a>) {</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordflow">case</span> 2:  </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        errmsg = <span class="stringliteral">&quot;No such file or directory&quot;</span>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordflow">case</span> 9:  </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        errmsg = <span class="stringliteral">&quot;Bad file number&quot;</span>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordflow">case</span> 10:  </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        errmsg = <span class="stringliteral">&quot;No child processes&quot;</span>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordflow">case</span> 11:</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        errmsg = <span class="stringliteral">&quot;Try again&quot;</span>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordflow">case</span> 12:</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        errmsg = <span class="stringliteral">&quot;Out of memory&quot;</span>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordflow">case</span> 24:</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        errmsg = <span class="stringliteral">&quot;Too many open files&quot;</span>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        errmsg = <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  }</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <a class="code" href="stdlib_8h.html#a8908188ae9fc2f05d993257ef001d553">strcat</a> (<a class="code" href="perror_8h.html#aff124fed9da448d585c441952a77e5da">perror_buffer</a>, errmsg);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <a class="code" href="stdlib_8h.html#a8908188ae9fc2f05d993257ef001d553">strcat</a> (<a class="code" href="perror_8h.html#aff124fed9da448d585c441952a77e5da">perror_buffer</a>, <span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <a class="code" href="sysdep_8cc.html#af318746bd623cdd12088995045caf66a">Write</a> (<a class="code" href="syscall_8h.html#a7596d7df6f0cd8b5c7c526fab77c00c5">ConsoleOutput</a>, <a class="code" href="perror_8h.html#aff124fed9da448d585c441952a77e5da">perror_buffer</a>, <a class="code" href="stdlib_8h.html#a40c47e6d6db2b268cf91d16f2b66ca79">strlen</a> (<a class="code" href="perror_8h.html#aff124fed9da448d585c441952a77e5da">perror_buffer</a>));</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;}</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
+<div class="ttc" id="stdlib_8h_html_a40c47e6d6db2b268cf91d16f2b66ca79"><div class="ttname"><a href="stdlib_8h.html#a40c47e6d6db2b268cf91d16f2b66ca79">strlen</a></div><div class="ttdeci">size_t strlen(const char *ptr)</div><div class="ttdef"><b>Definition:</b> strlen.c:3</div></div>
+<div class="ttc" id="disasm_8c_html_add539a5755e4c4070b0c8ca97477fe47"><div class="ttname"><a href="disasm_8c.html#add539a5755e4c4070b0c8ca97477fe47">strcpy</a></div><div class="ttdeci">char * strcpy()</div></div>
+<div class="ttc" id="perror_8h_html_aff124fed9da448d585c441952a77e5da"><div class="ttname"><a href="perror_8h.html#aff124fed9da448d585c441952a77e5da">perror_buffer</a></div><div class="ttdeci">char perror_buffer[80]</div><div class="ttdef"><b>Definition:</b> perror.h:11</div></div>
+<div class="ttc" id="sysdep_8cc_html_af318746bd623cdd12088995045caf66a"><div class="ttname"><a href="sysdep_8cc.html#af318746bd623cdd12088995045caf66a">Write</a></div><div class="ttdeci">void Write(int fd, void *buffer, size_t nBytes)</div><div class="ttdef"><b>Definition:</b> sysdep.cc:199</div></div>
+<div class="ttc" id="syscall_8h_html"><div class="ttname"><a href="syscall_8h.html">syscall.h</a></div></div>
+<div class="ttc" id="perror_8h_html_a01a54ddbbc6ab18e4853ba0427329aca"><div class="ttname"><a href="perror_8h.html#a01a54ddbbc6ab18e4853ba0427329aca">perror</a></div><div class="ttdeci">void perror(char *s)</div><div class="ttdef"><b>Definition:</b> perror.h:14</div></div>
+<div class="ttc" id="stdlib_8h_html_a8908188ae9fc2f05d993257ef001d553"><div class="ttname"><a href="stdlib_8h.html#a8908188ae9fc2f05d993257ef001d553">strcat</a></div><div class="ttdeci">char * strcat(char *s1, const char *s2)</div><div class="ttdef"><b>Definition:</b> strcat.c:1</div></div>
+<div class="ttc" id="perror_8h_html_ad65a8842cc674e3ddf69355898c0ecbf"><div class="ttname"><a href="perror_8h.html#ad65a8842cc674e3ddf69355898c0ecbf">errno</a></div><div class="ttdeci">int errno</div></div>
+<div class="ttc" id="syscall_8h_html_a7596d7df6f0cd8b5c7c526fab77c00c5"><div class="ttname"><a href="syscall_8h.html#a7596d7df6f0cd8b5c7c526fab77c00c5">ConsoleOutput</a></div><div class="ttdeci">#define ConsoleOutput</div><div class="ttdef"><b>Definition:</b> syscall.h:76</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Dimanche 12 Février 2017 10:48:15 pour nachos par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.6
+</small></address>
+</body>
+</html>

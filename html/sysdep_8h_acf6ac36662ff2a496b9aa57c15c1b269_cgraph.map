@@ -1,0 +1,5 @@
+<map id="SendToSocket" name="SendToSocket">
+<area shape="rect" id="node2" href="$sysdep_8cc.html#a9465e5e9d8096a8cb70dd8ea8d7dfa8a" title="InitSocketName" alt="" coords="166,5,290,32"/>
+<area shape="rect" id="node4" href="$sysdep_8cc.html#a5535d888ae2029d4bcb26e947c65bfdc" title="sendto" alt="" coords="195,56,261,83"/>
+<area shape="rect" id="node3" href="$disasm_8c.html#add539a5755e4c4070b0c8ca97477fe47" title="strcpy" alt="" coords="339,5,400,32"/>
+</map>

@@ -1,0 +1,18 @@
+<map id="machine/sysdep.cc" name="machine/sysdep.cc">
+<area shape="rect" id="node2" href="$copyright_8h.html" title="copyright.h" alt="" coords="643,528,736,555"/>
+<area shape="rect" id="node13" href="$interrupt_8h.html" title="interrupt.h" alt="" coords="1017,80,1105,107"/>
+<area shape="rect" id="node14" href="$system_8h.html" title="system.h" alt="" coords="589,155,669,181"/>
+<area shape="rect" id="node21" href="$list_8h.html" title="list.h" alt="" coords="803,304,855,331"/>
+<area shape="rect" id="node15" href="$utility_8h.html" title="utility.h" alt="" coords="343,379,409,405"/>
+<area shape="rect" id="node18" href="$thread_8h.html" title="thread.h" alt="" coords="459,304,535,331"/>
+<area shape="rect" id="node20" href="$scheduler_8h.html" title="scheduler.h" alt="" coords="582,229,676,256"/>
+<area shape="rect" id="node23" href="$stats_8h.html" title="stats.h" alt="" coords="848,379,915,405"/>
+<area shape="rect" id="node24" href="$timer_8h.html" title="timer.h" alt="" coords="272,304,339,331"/>
+<area shape="rect" id="node25" href="$memmgr_8h.html" title="memmgr.h" alt="" coords="464,229,557,256"/>
+<area shape="rect" id="node26" href="$swapmgr_8h.html" title="swapmgr.h" alt="" coords="701,229,792,256"/>
+<area shape="rect" id="node27" href="$ifdef__symbols_8h.html" title="ifdef_symbols.h" alt="" coords="817,229,937,256"/>
+<area shape="rect" id="node16" href="$stdlib_8h.html" title="stdlib.h" alt="" coords="394,453,461,480"/>
+<area shape="rect" id="node17" href="$sysdep_8h.html" title="sysdep.h" alt="" coords="189,453,267,480"/>
+<area shape="rect" id="node19" href="$defs_8h.html" title="defs.h" alt="" coords="535,379,596,405"/>
+<area shape="rect" id="node22" href="$nachos-gdb_8h.html" title="nachos&#45;gdb.h" alt="" coords="669,304,779,331"/>
+</map>

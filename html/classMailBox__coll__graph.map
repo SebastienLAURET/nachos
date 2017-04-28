@@ -1,0 +1,8 @@
+<map id="MailBox" name="MailBox">
+<area shape="rect" id="node2" href="$classSynchList.html" title="SynchList" alt="" coords="136,291,219,317"/>
+<area shape="rect" id="node3" href="$classList.html" title="List" alt="" coords="155,109,199,136"/>
+<area shape="rect" id="node5" href="$classLock.html" title="Lock" alt="" coords="87,200,137,227"/>
+<area shape="rect" id="node7" href="$classCondition.html" title="Condition" alt="" coords="215,200,297,227"/>
+<area shape="rect" id="node4" href="$classListElement.html" title="ListElement" alt="" coords="129,5,225,32"/>
+<area shape="rect" id="node6" href="$classThread.html" title="Thread" alt="" coords="5,109,72,136"/>
+</map>
